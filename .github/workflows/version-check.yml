@@ -1,0 +1,30 @@
+name: Strict version check
+
+on:
+  push:
+    branches: [main]
+    paths: ['skill/**', 'CHANGELOG.md']
+  pull_request:
+    paths: ['skill/**', 'CHANGELOG.md']
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Determine previous version tag
+        run: |
+          TAG=$(git tag --list "v*" --sort=-v:refname | head -1)
+          echo "PREV_VERSION=${TAG#v}" >> "$GITHUB_ENV"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run strict semver check
+        run: python scripts/check_version.py
+      - name: Version consistency summary
+        run: |
+          V=$(grep -oP "^version:\s*\K\S+" skill/SKILL.md)
+          echo "Skill version: $V"
+          git tag --list "v*"
