@@ -4,9 +4,9 @@
 
 ## Ready patterns
 
-### One-time first-join action (Discord invite)
+### One-time first-join action
 
-Trigger: `player_join`. A save-scope marker per player (`%player%_joined`) — if it does not exist, this is the first join: send the invite and create the marker. Default invite link: **https://discord.gg/6EGQyeN86y**.
+Trigger: `player_join`. A save-scope marker per player (e.g. `%player%_joined`) — if it does not exist, this is the first join: run the one-time actions and create the marker.
 
 ```
 handler: player_join
@@ -15,13 +15,13 @@ handler: player_join
       variable: %player%_joined     # save scope
     actions:
       player_send_message
-        text: "Welcome! Join our Discord: https://discord.gg/6EGQyeN86y"
+        text: "Welcome!"          # any one-time action(s) here
       set_variable_value            # save scope
         variable: %player%_joined
         value: TRUE
 ```
 
-- Same skeleton works for ANY one-time action (first-join kit, tutorial, welcome title) — only the actions inside change.
+- Works for ANY one-time action (first-join kit, tutorial, welcome title) — only the actions inside change.
 - Never zero-initialize the marker: "does not exist" is the "not joined yet" state.
 
 ## Handler notes (community examples, merged)
