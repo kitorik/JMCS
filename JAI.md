@@ -941,251 +941,251 @@ Now: %time%    Online: %online% of %player_amount%
 ## Quick ref
 > Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
-- `entity_attach_lead` — (no arguments)
+- `entity_attach_lead` — name_or_uuid: text, location: location
 - `entity_celar_potion_effects` — (no arguments)
 - `entity_clear_merchant_recipes` — (no arguments)
 - `entity_complete_using_active_item` — (no arguments)
-- `entity_damage` — (no arguments)
-- `entity_disguise_as_block` — (no arguments)
-- `entity_disguise_as_entity` — (no arguments)
-- `entity_disguise_as_item` — (no arguments)
-- `entity_disguise_as_player` — (no arguments)
+- `entity_damage` — damage: number, source: text
+- `entity_disguise_as_block` — block: block
+- `entity_disguise_as_entity` — entity_type: item
+- `entity_disguise_as_item` — item: item
+- `entity_disguise_as_player` — name_or_uuid: text, display_name: text, server_type: enum
 - `entity_eat_grass` — (no arguments)
-- `entity_eat_target` — (no arguments)
+- `entity_eat_target` — name_or_uuid: text
 - `entity_explode` — (no arguments)
-- `entity_face_location` — (no arguments)
-- `entity_get_attribute` — (no arguments)
-- `entity_get_custom_tag` — (no arguments)
-- `entity_get_custom_tags` — (no arguments)
-- `entity_get_equipment_item` — (no arguments)
-- `entity_get_nbt` — (no arguments)
-- `entity_give_potion_effects` — (no arguments)
-- `entity_heal` — (no arguments)
+- `entity_face_location` — location: location
+- `entity_get_attribute` — variable: variable, attribute_type: enum, return_value: enum
+- `entity_get_custom_tag` — variable: variable, name: text, default: any
+- `entity_get_custom_tags` — variable: variable
+- `entity_get_equipment_item` — variable: variable, slot: enum
+- `entity_get_nbt` — variable: variable, path: text, value_type: enum
+- `entity_give_potion_effects` — potions: potion, overwrite: enum{TF}, show_icon: enum{TF}, particle_mode: enum
+- `entity_heal` — heal: number
 - `entity_ignite_creeper` — (no arguments)
 - `entity_jump` — (no arguments)
-- `entity_launch_forward` — (no arguments)
-- `entity_launch_projectile` — (no arguments)
-- `entity_launch_to_location` — (no arguments)
-- `entity_launch_up` — (no arguments)
+- `entity_launch_forward` — power: number, increment: enum{TF}, launch_axis: enum
+- `entity_launch_projectile` — projectile: item, location: location, name: text, speed: number, inaccuracy: number, trail: particle
+- `entity_launch_to_location` — location: location, power: number, increment: enum{TF}
+- `entity_launch_up` — power: number, increment: enum{TF}
 - `entity_leave_vehicle` — (no arguments)
-- `entity_mimic_disguise_from_entity` — (no arguments)
-- `entity_modify_piglin_barter_materials` — (no arguments)
-- `entity_modify_piglin_interested_materials` — (no arguments)
-- `entity_move_to_location` — (no arguments)
+- `entity_mimic_disguise_from_entity` — name_or_uuid: text, include_disguise: enum{TF}, remove_original_entity: enum{TF}
+- `entity_modify_piglin_barter_materials` — materials: item, modification_mode: enum
+- `entity_modify_piglin_interested_materials` — materials: item, modification_mode: enum
+- `entity_move_to_location` — location: location, speed: number
 - `entity_move_to_location_stop` — (no arguments)
-- `entity_play_damage_animation` — (no arguments)
-- `entity_play_hurt_animation` — (no arguments)
-- `entity_ram_target` — (no arguments)
+- `entity_play_damage_animation` — damage_type: enum
+- `entity_play_hurt_animation` — yaw: number
+- `entity_ram_target` — name_or_uuid: text
 - `entity_remove` — (no arguments)
-- `entity_remove_custom_tag` — (no arguments)
+- `entity_remove_custom_tag` — name: text
 - `entity_remove_custom_tags` — (no arguments)
 - `entity_remove_disguise` — (no arguments)
-- `entity_remove_merchant_recipe` — (no arguments)
-- `entity_remove_potion_effect` — (no arguments)
+- `entity_remove_merchant_recipe` — recipe_index: number
+- `entity_remove_potion_effect` — effects: potion
 - `entity_reset_display_brightness` — (no arguments)
 - `entity_reset_display_glow_color` — (no arguments)
 - `entity_reset_mannequin_description` — (no arguments)
 - `entity_reset_text_display_background` — (no arguments)
 - `entity_reset_waypoint_color` — (no arguments)
-- `entity_retrieve_fishing_hook` — (no arguments)
-- `entity_ride_entity` — (no arguments)
-- `entity_roll_armadillo` — (no arguments)
-- `entity_set_absorption_health` — (no arguments)
-- `entity_set_age_lock` — (no arguments)
-- `entity_set_ai` — (no arguments)
-- `entity_set_allay_dancing` — (no arguments)
-- `entity_set_angry` — (no arguments)
-- `entity_set_animal_age` — (no arguments)
-- `entity_set_armor_items` — (no arguments)
-- `entity_set_armor_stand_parts` — (no arguments)
-- `entity_set_armor_stand_pose` — (no arguments)
-- `entity_set_arrow_hit_sound` — (no arguments)
-- `entity_set_arrow_pierce` — (no arguments)
-- `entity_set_attribute` — (no arguments)
-- `entity_set_aware` — (no arguments)
-- `entity_set_axolotl_type` — (no arguments)
-- `entity_set_baby` — (no arguments)
-- `entity_set_base_arrow_damage` — (no arguments)
-- `entity_set_bee_has_stinger` — (no arguments)
-- `entity_set_bee_nectar` — (no arguments)
-- `entity_set_block_display_block` — (no arguments)
-- `entity_set_camel_dashing` — (no arguments)
-- `entity_set_carrying_chest` — (no arguments)
-- `entity_set_cat_lying_down` — (no arguments)
-- `entity_set_cat_type` — (no arguments)
-- `entity_set_celebrating` — (no arguments)
-- `entity_set_chicken_type` — (no arguments)
-- `entity_set_collidable` — (no arguments)
-- `entity_set_copper_golem_oxidizing` — (no arguments)
-- `entity_set_copper_golem_oxidizing_at_time` — (no arguments)
-- `entity_set_copper_golem_weathering` — (no arguments)
-- `entity_set_cow_type` — (no arguments)
-- `entity_set_creeper_charge` — (no arguments)
-- `entity_set_creeper_fuse` — (no arguments)
-- `entity_set_current_health` — (no arguments)
-- `entity_set_custom_name` — (no arguments)
-- `entity_set_custom_name_visibility` — (no arguments)
-- `entity_set_custom_tag` — (no arguments)
-- `entity_set_death_drops` — (no arguments)
-- `entity_set_death_time` — (no arguments)
-- `entity_set_default_visible` — (no arguments)
-- `entity_set_despawning` — (no arguments)
-- `entity_set_display_billboard` — (no arguments)
-- `entity_set_display_brightness` — (no arguments)
-- `entity_set_display_correct_transformation_matrix` — (no arguments)
-- `entity_set_display_culling_suze` — (no arguments)
-- `entity_set_display_glow_color` — (no arguments)
-- `entity_set_display_interpolation` — (no arguments)
-- `entity_set_display_rotation_from_axis_angle` — (no arguments)
-- `entity_set_display_rotation_from_euler_angles` — (no arguments)
-- `entity_set_display_rotation_from_vector` — (no arguments)
-- `entity_set_display_scale` — (no arguments)
-- `entity_set_display_shadow` — (no arguments)
-- `entity_set_display_teleport_duration` — (no arguments)
-- `entity_set_display_transformation_matrix` — (no arguments) ⚠ deprecated
-- `entity_set_display_translation` — (no arguments)
-- `entity_set_display_view_range` — (no arguments)
-- `entity_set_dragon_phase` — (no arguments)
-- `entity_set_dye_color` — (no arguments)
-- `entity_set_end_crystal_beam` — (no arguments)
-- `entity_set_enderman_block` — (no arguments)
-- `entity_set_equipment_item` — (no arguments)
-- `entity_set_explosive_power` — (no arguments)
-- `entity_set_fall_distance` — (no arguments)
-- `entity_set_falling_block_type` — (no arguments)
-- `entity_set_fire_ticks` — (no arguments)
-- `entity_set_fishing_wait` — (no arguments)
-- `entity_set_fox_leaping` — (no arguments)
-- `entity_set_fox_type` — (no arguments)
-- `entity_set_freeze_ticks` — (no arguments)
-- `entity_set_friction` — (no arguments)
-- `entity_set_frog_type` — (no arguments)
-- `entity_set_fuse_ticks` — (no arguments)
-- `entity_set_gliding` — (no arguments)
-- `entity_set_glow_squid_dark` — (no arguments)
-- `entity_set_glowing` — (no arguments)
-- `entity_set_goat_screaming` — (no arguments)
-- `entity_set_gravity` — (no arguments)
-- `entity_set_hanging_facing_location` — (no arguments)
-- `entity_set_horse_jump` — (no arguments)
-- `entity_set_horse_pattern` — (no arguments)
-- `entity_set_immune_to_zombification` — (no arguments)
-- `entity_set_interaction_responsive` — (no arguments)
-- `entity_set_interaction_size` — (no arguments)
-- `entity_set_invisible` — (no arguments)
-- `entity_set_invulnerability_ticks` — (no arguments)
-- `entity_set_invulnerable` — (no arguments)
-- `entity_set_item` — (no arguments)
-- `entity_set_item_display_item` — (no arguments)
-- `entity_set_item_display_model_type` — (no arguments)
-- `entity_set_item_frame_item_drop_chance` — (no arguments)
-- `entity_set_item_in_frame` — (no arguments)
-- `entity_set_item_owner` — (no arguments)
-- `entity_set_llama_type` — (no arguments)
-- `entity_set_location` — (no arguments)
-- `entity_set_mannequin_description` — (no arguments)
-- `entity_set_mannequin_immovable` — (no arguments)
-- `entity_set_mannequin_main_hand` — (no arguments)
-- `entity_set_mannequin_skin` — (no arguments)
-- `entity_set_mannequin_skin_model` — (no arguments)
-- `entity_set_mannequin_skin_parts` — (no arguments)
-- `entity_set_mannequin_skin_patch` — (no arguments)
-- `entity_set_marker` — (no arguments)
-- `entity_set_max_health` — (no arguments)
-- `entity_set_max_invulnerability_ticks` — (no arguments)
-- `entity_set_merchant_recipe` — (no arguments)
-- `entity_set_minecart_block` — (no arguments)
-- `entity_set_mob_aggressive` — (no arguments)
-- `entity_set_mushroom_cow_type` — (no arguments)
-- `entity_set_no_physics` — (no arguments)
-- `entity_set_painting_art` — (no arguments)
-- `entity_set_panda_gene` — (no arguments)
-- `entity_set_panda_on_back` — (no arguments)
-- `entity_set_panda_rolling` — (no arguments)
-- `entity_set_panda_sad_ticks` — (no arguments)
-- `entity_set_parrot_type` — (no arguments)
-- `entity_set_pathfinder_settings` — (no arguments)
-- `entity_set_persistence` — (no arguments)
-- `entity_set_persistent` — (no arguments)
-- `entity_set_pickup` — (no arguments)
-- `entity_set_pickup_delay` — (no arguments)
-- `entity_set_pig_type` — (no arguments)
-- `entity_set_piglin_able_to_hunt` — (no arguments)
-- `entity_set_piglin_charging_crossbow` — (no arguments)
-- `entity_set_piglin_dancing` — (no arguments)
-- `entity_set_pose` — (no arguments)
-- `entity_set_potion_cloud_radius` — (no arguments)
-- `entity_set_primed_tnt_block` — (no arguments)
-- `entity_set_projectile_display_item` — (no arguments)
-- `entity_set_projectile_power` — (no arguments)
-- `entity_set_projectile_shooter` — (no arguments)
-- `entity_set_rabbit_type` — (no arguments)
-- `entity_set_rearing` — (no arguments)
-- `entity_set_riptiding` — (no arguments)
-- `entity_set_rotation` — (no arguments)
-- `entity_set_rotation_by_vector` — (no arguments)
-- `entity_set_sheep_sheared` — (no arguments) ⚠ deprecated
-- `entity_set_shulker_bullet_target` — (no arguments)
-- `entity_set_shulker_peek` — (no arguments)
-- `entity_set_silenced` — (no arguments)
-- `entity_set_sitting` — (no arguments)
-- `entity_set_size` — (no arguments)
-- `entity_set_sniffer_state` — (no arguments)
-- `entity_set_snowman_pumpkin` — (no arguments)
-- `entity_set_tame` — (no arguments)
-- `entity_set_target` — (no arguments)
-- `entity_set_text_display_alignment` — (no arguments)
-- `entity_set_text_display_background` — (no arguments)
-- `entity_set_text_display_line_width` — (no arguments)
-- `entity_set_text_display_opacity` — (no arguments)
-- `entity_set_text_display_see_through` — (no arguments)
-- `entity_set_text_display_text` — (no arguments)
-- `entity_set_text_display_text_shadow` — (no arguments)
-- `entity_set_tropical_fish_pattern` — (no arguments)
-- `entity_set_vex_charging` — (no arguments)
-- `entity_set_vex_limited_lifetime_ticks` — (no arguments)
-- `entity_set_villager_biome` — (no arguments)
-- `entity_set_villager_experience` — (no arguments)
-- `entity_set_villager_profession` — (no arguments)
-- `entity_set_visual_fire` — (no arguments)
-- `entity_set_warden_anger_level` — (no arguments)
-- `entity_set_warden_digging` — (no arguments)
-- `entity_set_waypoint_color` — (no arguments)
-- `entity_set_waypoint_style` — (no arguments)
-- `entity_set_wearing_saddle` — (no arguments)
-- `entity_set_wither_invulnerability_ticks` — (no arguments)
-- `entity_set_wolf_sound_variant` — (no arguments)
-- `entity_set_wolf_type` — (no arguments)
-- `entity_set_zombie_arms_raised` — (no arguments) ⚠ deprecated
-- `entity_set_zombie_nautilus_variant` — (no arguments)
+- `entity_retrieve_fishing_hook` — slot: enum
+- `entity_ride_entity` — name_or_uuid: text
+- `entity_roll_armadillo` — roll: enum
+- `entity_set_absorption_health` — health: number
+- `entity_set_age_lock` — age_lock: enum{TF}
+- `entity_set_ai` — ai: enum{TF}
+- `entity_set_allay_dancing` — dance: enum{TF}
+- `entity_set_angry` — angry: enum{TF}, target: text
+- `entity_set_animal_age` — age: number, lock: enum
+- `entity_set_armor_items` — helmet: item, chestplate: item, leggings: item, boots: item, silent: enum{TF}
+- `entity_set_armor_stand_parts` — arms: enum, base_plate: enum
+- `entity_set_armor_stand_pose` — x_rotation: number, y_rotation: number, z_rotation: number, body_part: enum
+- `entity_set_arrow_hit_sound` — sound: sound
+- `entity_set_arrow_pierce` — pierce: number
+- `entity_set_attribute` — value: number, attribute_type: enum
+- `entity_set_aware` — aware: enum{TF}
+- `entity_set_axolotl_type` — axolotl_type: enum
+- `entity_set_baby` — baby: enum{TF}
+- `entity_set_base_arrow_damage` — damage: number
+- `entity_set_bee_has_stinger` — stinger: enum{TF}
+- `entity_set_bee_nectar` — nectar: enum{TF}
+- `entity_set_block_display_block` — displayed_block: block
+- `entity_set_camel_dashing` — dashing: enum{TF}
+- `entity_set_carrying_chest` — carrying: enum{TF}
+- `entity_set_cat_lying_down` — lying_down: enum{TF}
+- `entity_set_cat_type` — cat_type: enum
+- `entity_set_celebrating` — celebrating: enum{TF}
+- `entity_set_chicken_type` — variant: enum
+- `entity_set_collidable` — collidable: enum{TF}
+- `entity_set_copper_golem_oxidizing` — oxidizing_state: enum
+- `entity_set_copper_golem_oxidizing_at_time` — time: number
+- `entity_set_copper_golem_weathering` — weathering_state: enum
+- `entity_set_cow_type` — variant: enum
+- `entity_set_creeper_charge` — charged: enum{TF}
+- `entity_set_creeper_fuse` — fuse_ticks: number
+- `entity_set_current_health` — health: number
+- `entity_set_custom_name` — custom_name: text
+- `entity_set_custom_name_visibility` — visibility: enum{TF}
+- `entity_set_custom_tag` — name: text, value: text
+- `entity_set_death_drops` — drops: enum{TF}
+- `entity_set_death_time` — death_time: number
+- `entity_set_default_visible` — default_visible: enum{TF}
+- `entity_set_despawning` — despawning: enum{TF}
+- `entity_set_display_billboard` — billboard_type: enum
+- `entity_set_display_brightness` — block_light_level: number, sky_light_level: number
+- `entity_set_display_correct_transformation_matrix` — matrix: number
+- `entity_set_display_culling_suze` — width: number, height: number
+- `entity_set_display_glow_color` — color_hexadecimal: text
+- `entity_set_display_interpolation` — interpolation_duration: number, interpolation_delay: number
+- `entity_set_display_rotation_from_axis_angle` — axis_vector: vector, angle: number, mode: enum, input: enum{DEG_RAD}, rotation: enum
+- `entity_set_display_rotation_from_euler_angles` — yaw: number, pitch: number, roll: number, mode: enum, input: enum{DEG_RAD}, rotation: enum
+- `entity_set_display_rotation_from_vector` — direction: vector, up: vector, rotation: enum
+- `entity_set_display_scale` — scale_vector: vector, mode: enum
+- `entity_set_display_shadow` — shadow_radius: number, shadow_opacity_percentage: number
+- `entity_set_display_teleport_duration` — duration: number
+- `entity_set_display_transformation_matrix` — row_major_matrix: number ⚠ deprecated
+- `entity_set_display_translation` — translation_vector: vector, mode: enum
+- `entity_set_display_view_range` — view_range: number
+- `entity_set_dragon_phase` — phase: enum
+- `entity_set_dye_color` — color: enum
+- `entity_set_end_crystal_beam` — beam: location
+- `entity_set_enderman_block` — block: block
+- `entity_set_equipment_item` — item: item, slot: enum
+- `entity_set_explosive_power` — power: number
+- `entity_set_fall_distance` — fall_distance: number
+- `entity_set_falling_block_type` — block: block
+- `entity_set_fire_ticks` — ticks: number
+- `entity_set_fishing_wait` — time: number, wait_type: enum
+- `entity_set_fox_leaping` — leaping: enum{TF}
+- `entity_set_fox_type` — fox_type: enum
+- `entity_set_freeze_ticks` — ticks: number, ticking_locked: enum{TF}
+- `entity_set_friction` — friction: enum{TFN}
+- `entity_set_frog_type` — frog_variant: enum
+- `entity_set_fuse_ticks` — fuse_ticks: number
+- `entity_set_gliding` — is_gliding: enum{TF}
+- `entity_set_glow_squid_dark` — dark_ticks: number
+- `entity_set_glowing` — glowing: enum{TF}
+- `entity_set_goat_screaming` — screams: enum{TF}
+- `entity_set_gravity` — gravity: enum{TF}
+- `entity_set_hanging_facing_location` — facing: enum, force: enum{TF}
+- `entity_set_horse_jump` — power: number
+- `entity_set_horse_pattern` — horse_color: enum, horse_style: enum
+- `entity_set_immune_to_zombification` — is_immune: enum{TF}
+- `entity_set_interaction_responsive` — responsive: enum{TF}
+- `entity_set_interaction_size` — width: number, height: number
+- `entity_set_invisible` — invisible: enum{TF}
+- `entity_set_invulnerability_ticks` — ticks: number
+- `entity_set_invulnerable` — invulnerable: enum{TF}
+- `entity_set_item` — item: item
+- `entity_set_item_display_item` — displayed_item: item
+- `entity_set_item_display_model_type` — display_model_type: enum
+- `entity_set_item_frame_item_drop_chance` — drop_chance: number
+- `entity_set_item_in_frame` — item: item, play_sound: enum{TF}
+- `entity_set_item_owner` — name_or_uuid: text
+- `entity_set_llama_type` — type: enum
+- `entity_set_location` — velocity: vector, increment: enum{TF}
+- `entity_set_mannequin_description` — description: text
+- `entity_set_mannequin_immovable` — immovable: enum{TF}
+- `entity_set_mannequin_main_hand` — hand: enum
+- `entity_set_mannequin_skin` — name_or_uuid: text, server_type: enum
+- `entity_set_mannequin_skin_model` — model: enum
+- `entity_set_mannequin_skin_parts` — hat: enum{TFN}, jacket: enum{TFN}, left_sleeve: enum{TFN}, right_sleeve: enum{TFN}, left_pants: enum{TFN}, right_pants: enum{TFN}, cape: enum{TFN}
+- `entity_set_mannequin_skin_patch` — texture_key: text, patch_target: enum
+- `entity_set_marker` — marker: enum{TF}
+- `entity_set_max_health` — max_health: number, heal_to_max: enum{TF}
+- `entity_set_max_invulnerability_ticks` — ticks: number
+- `entity_set_merchant_recipe` — result: item, ingredient_one: item, ingredient_two: item, index: number, mode: enum, uses: number, max_uses: number, villager_experience: number, price_multiplifier: number, demand: number, special_price: number, ignore_discounts: enum{TF}, experience_reward: enum{TF}
+- `entity_set_minecart_block` — block: block, block_offset: number
+- `entity_set_mob_aggressive` — aggressive: enum{TF}
+- `entity_set_mushroom_cow_type` — cow_type: enum
+- `entity_set_no_physics` — no_physics: enum{TF}
+- `entity_set_painting_art` — art: text, force: enum{TF}
+- `entity_set_panda_gene` — gene: enum, gene_type: enum
+- `entity_set_panda_on_back` — on_back: enum{TF}
+- `entity_set_panda_rolling` — rolling: enum{TF}
+- `entity_set_panda_sad_ticks` — sad_ticks: number
+- `entity_set_parrot_type` — parrot_type: enum
+- `entity_set_pathfinder_settings` — navigation_type: enum, can_float: enum{TFN}, can_open_door: enum{TFN}, can_pass_door: enum{TFN}
+- `entity_set_persistence` — persistence: enum{TF}
+- `entity_set_persistent` — persistent: enum{TF}
+- `entity_set_pickup` — can_mob_pickup: enum{TF}, can_player_pickup: enum{TF}
+- `entity_set_pickup_delay` — delay: number
+- `entity_set_pig_type` — variant: enum
+- `entity_set_piglin_able_to_hunt` — able: enum{TF}
+- `entity_set_piglin_charging_crossbow` — charging: enum{TF}
+- `entity_set_piglin_dancing` — dancing_time: number
+- `entity_set_pose` — pose: enum
+- `entity_set_potion_cloud_radius` — radius: number, shrinking_speed: number
+- `entity_set_primed_tnt_block` — block: block
+- `entity_set_projectile_display_item` — item: item
+- `entity_set_projectile_power` — power: vector
+- `entity_set_projectile_shooter` — uuid: text
+- `entity_set_rabbit_type` — rabbit_type: enum
+- `entity_set_rearing` — rearing: enum{TF}
+- `entity_set_riptiding` — riptiding: enum{TF}
+- `entity_set_rotation` — yaw: number, pitch: number
+- `entity_set_rotation_by_vector` — vector: vector
+- `entity_set_sheep_sheared` — sheared: enum{TF} ⚠ deprecated
+- `entity_set_shulker_bullet_target` — target: text
+- `entity_set_shulker_peek` — rolling: number, silent: enum{TF}
+- `entity_set_silenced` — silenced: enum{TF}
+- `entity_set_sitting` — sitting: enum{TF}
+- `entity_set_size` — size: number
+- `entity_set_sniffer_state` — state: enum
+- `entity_set_snowman_pumpkin` — pumpkin: enum{TF}
+- `entity_set_tame` — name_or_uuid: text
+- `entity_set_target` — name_or_uuid: text
+- `entity_set_text_display_alignment` — text_alignment: enum
+- `entity_set_text_display_background` — color_hexadecimal: text, opacity: number
+- `entity_set_text_display_line_width` — line_width: number
+- `entity_set_text_display_opacity` — text_opacity: number
+- `entity_set_text_display_see_through` — enable_see_through: enum{TF}
+- `entity_set_text_display_text` — displayed_text: text, merging_mode: enum
+- `entity_set_text_display_text_shadow` — enable_text_shadow: enum{TF}
+- `entity_set_tropical_fish_pattern` — pattern_color: enum, body_color: enum, pattern: enum
+- `entity_set_vex_charging` — charging: enum{TF}
+- `entity_set_vex_limited_lifetime_ticks` — lifetime: number
+- `entity_set_villager_biome` — biome: enum
+- `entity_set_villager_experience` — experience: number
+- `entity_set_villager_profession` — profession: enum
+- `entity_set_visual_fire` — visual_fire: enum{TFN}
+- `entity_set_warden_anger_level` — name_or_uuid: text, anger: number
+- `entity_set_warden_digging` — digging: enum
+- `entity_set_waypoint_color` — red: number, green: number, blue: number
+- `entity_set_waypoint_style` — style: text
+- `entity_set_wearing_saddle` — wearing: enum{TF}
+- `entity_set_wither_invulnerability_ticks` — ticks: number
+- `entity_set_wolf_sound_variant` — sound_variant: enum
+- `entity_set_wolf_type` — wolf_type: enum
+- `entity_set_zombie_arms_raised` — arms_raised: enum{TF} ⚠ deprecated
+- `entity_set_zombie_nautilus_variant` — variant: enum
 - `entity_shear` — (no arguments)
 - `entity_shear_sheep` — (no arguments) ⚠ deprecated
-- `entity_sleep` — (no arguments)
-- `entity_swing_hand` — (no arguments)
-- `entity_teleport` — (no arguments)
-- `entity_use_item` — (no arguments)
-- `if_entity_collides_at_location` — (no arguments)
-- `if_entity_collides_using_hitbox` — (no arguments)
-- `if_entity_collides_with_entity` — (no arguments)
+- `entity_sleep` — sleep: enum{TF}
+- `entity_swing_hand` — hand_type: enum
+- `entity_teleport` — location: location, keep_rotation: enum{TF}
+- `entity_use_item` — hand: enum, enable: enum{TF}
+- `if_entity_collides_at_location` — location: location
+- `if_entity_collides_using_hitbox` — min: location, max: location
+- `if_entity_collides_with_entity` — name_or_uuid: text, check_type: enum
 - `if_entity_exists` — (no arguments)
 - `if_entity_has_available_path` — (no arguments)
-- `if_entity_has_custom_tag` — (no arguments)
-- `if_entity_has_potion_effect` — (no arguments)
-- `if_entity_in_area` — (no arguments)
+- `if_entity_has_custom_tag` — tag: text, tag_value: text, compare_type: enum
+- `if_entity_has_potion_effect` — potions: potion, check_mode: enum{ANY_ALL}
+- `if_entity_in_area` — location_1: location, location_2: location, ignore_y_axis: enum{TF}, intersect_type: enum, check_type: enum
 - `if_entity_is_disguised` — (no arguments)
 - `if_entity_is_grounded` — (no arguments)
 - `if_entity_is_item` — (no arguments)
-- `if_entity_is_minecraft_tagged` — (no arguments)
+- `if_entity_is_minecraft_tagged` — namespace: text
 - `if_entity_is_mob` — (no arguments)
-- `if_entity_is_near_location` — (no arguments)
+- `if_entity_is_near_location` — ignore_y_axis: enum{TF}, location: location, range: number
 - `if_entity_is_projectile` — (no arguments)
-- `if_entity_is_riding_entity` — (no arguments)
-- `if_entity_is_standing_on_block` — (no arguments)
-- `if_entity_is_type` — (no arguments)
+- `if_entity_is_riding_entity` — entity_ids: text, compare_mode: enum
+- `if_entity_is_standing_on_block` — blocks: block, locations: location, only_solid: enum{TF}
+- `if_entity_is_type` — entity_types: item
 - `if_entity_is_undead` — (no arguments)
 - `if_entity_is_vehicle` — (no arguments)
-- `if_entity_name_equals` — (no arguments)
-- `if_entity_spawn_reason_equals` — (no arguments)
+- `if_entity_name_equals` — names_or_uuids: text
+- `if_entity_spawn_reason_equals` — reason: enum
 
 
 <!-- ===== FILE: skill/docs/actions/player.md ===== -->
@@ -2131,371 +2131,371 @@ Now: %time%    Online: %online% of %player_amount%
 ## Quick ref
 > Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
-- `if_variable_block_equals` — (no arguments)
-- `if_variable_block_is_minecraft_tagged` — (no arguments)
-- `if_variable_block_is_solid` — (no arguments)
-- `if_variable_equals` — (no arguments)
-- `if_variable_exists` — (no arguments)
-- `if_variable_greater` — (no arguments)
-- `if_variable_greater_or_equals` — (no arguments)
-- `if_variable_in_range` — (no arguments) ⚠ deprecated
-- `if_variable_is_type` — (no arguments)
-- `if_variable_item_equals` — (no arguments)
-- `if_variable_item_has_enchantment` — (no arguments)
-- `if_variable_item_has_stored_enchantment` — (no arguments) ⚠ deprecated
-- `if_variable_item_has_tag` — (no arguments)
-- `if_variable_item_is_block` — (no arguments)
-- `if_variable_item_is_minecraft_tagged` — (no arguments)
-- `if_variable_less` — (no arguments)
-- `if_variable_less_or_equals` — (no arguments)
-- `if_variable_list_contains_value` — (no arguments)
-- `if_variable_list_is_empty` — (no arguments)
-- `if_variable_list_value_equals` — (no arguments)
-- `if_variable_location_in_range` — (no arguments)
-- `if_variable_location_is_near` — (no arguments)
-- `if_variable_map_has_key` — (no arguments)
-- `if_variable_map_value_equals` — (no arguments)
-- `if_variable_multiple_equals` — (no arguments)
-- `if_variable_not_equals` — (no arguments) ⚠ deprecated
-- `if_variable_number_in_range` — (no arguments)
-- `if_variable_range_intersects_range` — (no arguments)
-- `if_variable_text_contains` — (no arguments)
-- `if_variable_text_ends_with` — (no arguments)
-- `if_variable_text_matches` — (no arguments)
-- `if_variable_text_starts_with` — (no arguments)
-- `set_variable_absolute` — (no arguments)
-- `set_variable_add` — (no arguments)
-- `set_variable_add_item_enchantment` — (no arguments)
-- `set_variable_add_item_potion_effects` — (no arguments)
-- `set_variable_add_item_stored_enchantment` — (no arguments) ⚠ deprecated
-- `set_variable_add_vectors` — (no arguments)
-- `set_variable_align_location` — (no arguments)
-- `set_variable_align_to_axis_vector` — (no arguments)
-- `set_variable_append_component` — (no arguments)
-- `set_variable_append_list` — (no arguments) ⚠ deprecated
-- `set_variable_append_lists` — (no arguments)
-- `set_variable_append_map` — (no arguments) ⚠ deprecated
-- `set_variable_append_maps` — (no arguments)
-- `set_variable_append_value` — (no arguments)
-- `set_variable_atan2` — (no arguments)
-- `set_variable_average` — (no arguments)
-- `set_variable_bitwise_operation` — (no arguments)
-- `set_variable_bytes_to_text` — (no arguments)
-- `set_variable_center_location` — (no arguments)
-- `set_variable_change_component_parsing` — (no arguments)
-- `set_variable_char_to_number` — (no arguments)
-- `set_variable_chunk_list` — (no arguments)
-- `set_variable_chunk_text` — (no arguments)
-- `set_variable_clamp` — (no arguments)
-- `set_variable_clamp_location` — (no arguments)
-- `set_variable_clear_color_codes` — (no arguments)
-- `set_variable_clear_map` — (no arguments) ⚠ deprecated
-- `set_variable_code_bytes` — (no arguments)
-- `set_variable_compact_component` — (no arguments)
-- `set_variable_component_of_children` — (no arguments)
-- `set_variable_convert_number_to_text` — (no arguments)
-- `set_variable_convert_text_to_number` — (no arguments)
-- `set_variable_cosine` — (no arguments)
-- `set_variable_cotangent` — (no arguments)
-- `set_variable_create_head_object_component` — (no arguments)
-- `set_variable_create_keybind_component` — (no arguments)
-- `set_variable_create_list` — (no arguments)
-- `set_variable_create_map` — (no arguments)
-- `set_variable_create_map_from_values` — (no arguments)
-- `set_variable_create_sprite_object_component` — (no arguments)
-- `set_variable_create_translatable_component` — (no arguments)
-- `set_variable_decrement` — (no arguments)
-- `set_variable_destructure_list` — (no arguments)
-- `set_variable_divide` — (no arguments)
-- `set_variable_divide_vector` — (no arguments)
-- `set_variable_edit_item_custom_model_data` — (no arguments)
-- `set_variable_face_location` — (no arguments)
-- `set_variable_find_nearest_location` — (no arguments)
-- `set_variable_find_nearest_number` — (no arguments)
-- `set_variable_flatten_list` — (no arguments)
-- `set_variable_format_timestamp` — (no arguments)
-- `set_variable_gamma_function` — (no arguments)
-- `set_variable_gaussian_distribution` — (no arguments)
-- `set_variable_get_all_block_data` — (no arguments)
-- `set_variable_get_all_coordinates` — (no arguments)
-- `set_variable_get_angle_between_vectors` — (no arguments)
-- `set_variable_get_block_data` — (no arguments)
-- `set_variable_get_block_growth` — (no arguments)
-- `set_variable_get_block_material` — (no arguments)
-- `set_variable_get_block_material_property` — (no arguments)
-- `set_variable_get_block_power` — (no arguments)
-- `set_variable_get_block_sound` — (no arguments)
-- `set_variable_get_blocks_by_tag` — (no arguments)
-- `set_variable_get_book_text` — (no arguments)
-- `set_variable_get_brushable_block_item` — (no arguments)
-- `set_variable_get_bundle_items` — (no arguments)
-- `set_variable_get_char_at` — (no arguments)
-- `set_variable_get_color_channels` — (no arguments)
-- `set_variable_get_compass_lodestone` — (no arguments)
-- `set_variable_get_component_children` — (no arguments)
-- `set_variable_get_component_decorations` — (no arguments)
-- `set_variable_get_component_hex_color` — (no arguments)
-- `set_variable_get_component_parsing` — (no arguments)
-- `set_variable_get_container_contents` — (no arguments)
-- `set_variable_get_container_lock` — (no arguments)
-- `set_variable_get_container_name` — (no arguments)
-- `set_variable_get_coordinate` — (no arguments)
-- `set_variable_get_custom_recipes` — (no arguments)
-- `set_variable_get_decorate_pot_sherd` — (no arguments)
-- `set_variable_get_entity_types_by_tag` — (no arguments)
-- `set_variable_get_index_of_subtext` — (no arguments)
-- `set_variable_get_item_amount` — (no arguments)
-- `set_variable_get_item_attack_range` — (no arguments)
-- `set_variable_get_item_attribute` — (no arguments)
-- `set_variable_get_item_break_sound` — (no arguments)
-- `set_variable_get_item_color` — (no arguments)
-- `set_variable_get_item_component` — (no arguments)
-- `set_variable_get_item_contents` — (no arguments)
-- `set_variable_get_item_custom_model_data` — (no arguments) ⚠ deprecated
-- `set_variable_get_item_custom_tag` — (no arguments)
-- `set_variable_get_item_custom_tags` — (no arguments)
-- `set_variable_get_item_destroyable_blocks` — (no arguments)
-- `set_variable_get_item_durability` — (no arguments)
-- `set_variable_get_item_effective_name` — (no arguments)
-- `set_variable_get_item_enchantment` — (no arguments)
-- `set_variable_get_item_enchantments` — (no arguments)
-- `set_variable_get_item_food_properties` — (no arguments)
-- `set_variable_get_item_lore` — (no arguments)
-- `set_variable_get_item_lore_line` — (no arguments)
-- `set_variable_get_item_max_stack_size` — (no arguments)
-- `set_variable_get_item_minimum_attack_charge` — (no arguments)
-- `set_variable_get_item_model_data` — (no arguments)
-- `set_variable_get_item_name` — (no arguments)
-- `set_variable_get_item_nbt_tags` — (no arguments)
-- `set_variable_get_item_placeable_blocks` — (no arguments)
-- `set_variable_get_item_potion_effects` — (no arguments)
-- `set_variable_get_item_rarity` — (no arguments)
-- `set_variable_get_item_sprite` — (no arguments)
-- `set_variable_get_item_stored_enchantments` — (no arguments) ⚠ deprecated
-- `set_variable_get_item_swing_animation` — (no arguments)
-- `set_variable_get_item_tooltip_style` — (no arguments)
-- `set_variable_get_item_type` — (no arguments)
-- `set_variable_get_item_use_remainder` — (no arguments)
-- `set_variable_get_item_weapon` — (no arguments)
-- `set_variable_get_items_by_tag` — (no arguments)
-- `set_variable_get_lectern_book` — (no arguments)
-- `set_variable_get_lectern_page` — (no arguments)
-- `set_variable_get_light_level` — (no arguments)
-- `set_variable_get_list_index_of_value` — (no arguments)
-- `set_variable_get_list_length` — (no arguments)
-- `set_variable_get_list_random_value` — (no arguments)
-- `set_variable_get_list_value` — (no arguments)
-- `set_variable_get_list_variables` — (no arguments)
-- `set_variable_get_location_direction` — (no arguments)
-- `set_variable_get_map_entry_by_index` — (no arguments)
-- `set_variable_get_map_key_by_index` — (no arguments) ⚠ deprecated
-- `set_variable_get_map_keys` — (no arguments)
-- `set_variable_get_map_keys_by_value` — (no arguments)
-- `set_variable_get_map_random_entry` — (no arguments)
-- `set_variable_get_map_size` — (no arguments)
-- `set_variable_get_map_value` — (no arguments) ⚠ deprecated
-- `set_variable_get_map_value_by_index` — (no arguments) ⚠ deprecated
-- `set_variable_get_map_value_single` — (no arguments)
-- `set_variable_get_map_values` — (no arguments)
-- `set_variable_get_midpoint_between_vectors` — (no arguments)
-- `set_variable_get_particle_amount` — (no arguments)
-- `set_variable_get_particle_color` — (no arguments)
-- `set_variable_get_particle_material` — (no arguments)
-- `set_variable_get_particle_offset` — (no arguments)
-- `set_variable_get_particle_size` — (no arguments)
-- `set_variable_get_particle_spread` — (no arguments)
-- `set_variable_get_particle_type` — (no arguments)
-- `set_variable_get_player_head` — (no arguments)
-- `set_variable_get_player_head_owner` — (no arguments)
-- `set_variable_get_player_head_value` — (no arguments)
-- `set_variable_get_potion_effect_amplifier` — (no arguments)
-- `set_variable_get_potion_effect_duration` — (no arguments)
-- `set_variable_get_potion_effect_type` — (no arguments)
-- `set_variable_get_sculk_shrieker_warning_level` — (no arguments)
-- `set_variable_get_sign_text` — (no arguments)
-- `set_variable_get_sound_pitch` — (no arguments)
-- `set_variable_get_sound_source` — (no arguments)
-- `set_variable_get_sound_type` — (no arguments)
-- `set_variable_get_sound_variation` — (no arguments)
-- `set_variable_get_sound_volume_action` — (no arguments)
-- `set_variable_get_template_code` — (no arguments)
-- `set_variable_get_text_regex_groups` — (no arguments)
-- `set_variable_get_text_similarity` — (no arguments)
-- `set_variable_get_text_width` — (no arguments)
-- `set_variable_get_tile_block_custom_tag` — (no arguments)
-- `set_variable_get_tile_block_nbt` — (no arguments)
-- `set_variable_get_vault_displayed_item` — (no arguments)
-- `set_variable_get_vault_next_state_update_time` — (no arguments)
-- `set_variable_get_vector_all_components` — (no arguments)
-- `set_variable_get_vector_between_locations` — (no arguments)
-- `set_variable_get_vector_component` — (no arguments)
-- `set_variable_get_vector_from_block_face` — (no arguments)
-- `set_variable_get_vector_length` — (no arguments)
-- `set_variable_hadamard_vector_product` — (no arguments)
-- `set_variable_hash` — (no arguments)
-- `set_variable_hide_item_components` — (no arguments)
-- `set_variable_increment` — (no arguments)
-- `set_variable_insert_list_value` — (no arguments)
-- `set_variable_join_text` — (no arguments)
-- `set_variable_join_to_component` — (no arguments)
-- `set_variable_lerp_number` — (no arguments)
-- `set_variable_location_relative` — (no arguments)
-- `set_variable_locations_distance` — (no arguments)
-- `set_variable_log` — (no arguments)
-- `set_variable_map_range` — (no arguments)
-- `set_variable_mathematical_expectation` — (no arguments)
-- `set_variable_max` — (no arguments)
-- `set_variable_median` — (no arguments)
-- `set_variable_min` — (no arguments)
-- `set_variable_multiple` — (no arguments)
-- `set_variable_multiply` — (no arguments)
-- `set_variable_multiply_vector` — (no arguments)
-- `set_variable_obtain_item_custom_model_data` — (no arguments)
-- `set_variable_parse_json` — (no arguments)
-- `set_variable_parse_to_component` — (no arguments)
-- `set_variable_perlin_noise_3d` — (no arguments)
-- `set_variable_pow` — (no arguments)
-- `set_variable_purge` — (no arguments)
-- `set_variable_put_map_value` — (no arguments)
-- `set_variable_random` — (no arguments)
-- `set_variable_random_location` — (no arguments)
-- `set_variable_random_number` — (no arguments)
-- `set_variable_randomize_list_order` — (no arguments)
-- `set_variable_randomize_map_order` — (no arguments)
-- `set_variable_ray_trace_result` — (no arguments)
-- `set_variable_reflect_vector_product` — (no arguments)
-- `set_variable_regex_replace_text` — (no arguments)
-- `set_variable_remainder` — (no arguments)
-- `set_variable_remove` — (no arguments)
-- `set_variable_remove_compass_lodestone` — (no arguments)
-- `set_variable_remove_enchantment` — (no arguments)
-- `set_variable_remove_item_attribute` — (no arguments)
-- `set_variable_remove_item_custom_model_data` — (no arguments) ⚠ deprecated
-- `set_variable_remove_item_custom_tag` — (no arguments)
-- `set_variable_remove_item_custom_tags` — (no arguments)
-- `set_variable_remove_item_lore_line` — (no arguments)
-- `set_variable_remove_item_potion_effects` — (no arguments)
-- `set_variable_remove_item_stored_enchantment` — (no arguments) ⚠ deprecated
-- `set_variable_remove_list_duplicates` — (no arguments)
-- `set_variable_remove_list_value` — (no arguments)
-- `set_variable_remove_list_value_at_index` — (no arguments)
-- `set_variable_remove_map_entry` — (no arguments)
-- `set_variable_remove_text` — (no arguments)
-- `set_variable_repeat_text` — (no arguments)
-- `set_variable_replace_text` — (no arguments)
-- `set_variable_reverse_list` — (no arguments)
-- `set_variable_reverse_map` — (no arguments)
-- `set_variable_root` — (no arguments)
-- `set_variable_rotate_vector_around_axis` — (no arguments)
-- `set_variable_rotate_vector_around_vector` — (no arguments)
-- `set_variable_round` — (no arguments)
-- `set_variable_set_all_coordinates` — (no arguments)
-- `set_variable_set_armor_trim` — (no arguments)
-- `set_variable_set_book_page` — (no arguments)
-- `set_variable_set_book_pages` — (no arguments)
-- `set_variable_set_bundle_items` — (no arguments)
-- `set_variable_set_compass_lodestone` — (no arguments)
-- `set_variable_set_component_children` — (no arguments)
-- `set_variable_set_component_click` — (no arguments)
-- `set_variable_set_component_decorations` — (no arguments)
-- `set_variable_set_component_entity_hover` — (no arguments)
-- `set_variable_set_component_font` — (no arguments)
-- `set_variable_set_component_hex_color` — (no arguments)
-- `set_variable_set_component_hover` — (no arguments)
-- `set_variable_set_component_insertion` — (no arguments)
-- `set_variable_set_component_item_hover` — (no arguments)
-- `set_variable_set_component_shadow_color` — (no arguments)
-- `set_variable_set_coordinate` — (no arguments)
-- `set_variable_set_item_amount` — (no arguments)
-- `set_variable_set_item_attack_range` — (no arguments)
-- `set_variable_set_item_attribute` — (no arguments)
-- `set_variable_set_item_break_sound` — (no arguments)
-- `set_variable_set_item_color` — (no arguments)
-- `set_variable_set_item_component` — (no arguments)
-- `set_variable_set_item_contents` — (no arguments)
-- `set_variable_set_item_custom_model_data` — (no arguments) ⚠ deprecated
-- `set_variable_set_item_custom_tag` — (no arguments)
-- `set_variable_set_item_destroyable_blocks` — (no arguments)
-- `set_variable_set_item_durability` — (no arguments)
-- `set_variable_set_item_enchantments` — (no arguments)
-- `set_variable_set_item_food_properties` — (no arguments)
-- `set_variable_set_item_glider` — (no arguments)
-- `set_variable_set_item_glint_override` — (no arguments)
-- `set_variable_set_item_hidden_tooltip` — (no arguments)
-- `set_variable_set_item_lore` — (no arguments)
-- `set_variable_set_item_lore_line` — (no arguments)
-- `set_variable_set_item_max_stack_size` — (no arguments)
-- `set_variable_set_item_minimum_attack_charge` — (no arguments)
-- `set_variable_set_item_model_data` — (no arguments)
-- `set_variable_set_item_name` — (no arguments)
-- `set_variable_set_item_piercing_weapon` — (no arguments)
-- `set_variable_set_item_placeable_blocks` — (no arguments)
-- `set_variable_set_item_rarity` — (no arguments)
-- `set_variable_set_item_swing_animation` — (no arguments)
-- `set_variable_set_item_tooltip_style` — (no arguments)
-- `set_variable_set_item_type` — (no arguments)
-- `set_variable_set_item_unbreakable` — (no arguments)
-- `set_variable_set_item_use_effects` — (no arguments)
-- `set_variable_set_item_use_remainder` — (no arguments)
-- `set_variable_set_item_visibility_flags` — (no arguments)
-- `set_variable_set_item_weapon` — (no arguments)
-- `set_variable_set_list_value` — (no arguments)
-- `set_variable_set_location_direction` — (no arguments)
-- `set_variable_set_map_value` — (no arguments)
-- `set_variable_set_particle_amount` — (no arguments)
-- `set_variable_set_particle_color` — (no arguments)
-- `set_variable_set_particle_material` — (no arguments)
-- `set_variable_set_particle_offset` — (no arguments)
-- `set_variable_set_particle_size` — (no arguments)
-- `set_variable_set_particle_spread` — (no arguments)
-- `set_variable_set_particle_type` — (no arguments)
-- `set_variable_set_potion_effect_amplifier` — (no arguments)
-- `set_variable_set_potion_effect_duration` — (no arguments)
-- `set_variable_set_potion_effect_type` — (no arguments)
-- `set_variable_set_sound_pitch` — (no arguments)
-- `set_variable_set_sound_source` — (no arguments)
-- `set_variable_set_sound_type` — (no arguments)
-- `set_variable_set_sound_variation` — (no arguments)
-- `set_variable_set_sound_volume_action` — (no arguments)
-- `set_variable_set_template_code` — (no arguments)
-- `set_variable_set_texture_to_map` — (no arguments)
-- `set_variable_set_vector_component` — (no arguments)
-- `set_variable_set_vector_length` — (no arguments)
-- `set_variable_shift_all_coordinates` — (no arguments)
-- `set_variable_shift_coordinate` — (no arguments)
-- `set_variable_shift_location_in_direction` — (no arguments)
-- `set_variable_shift_location_on_vector` — (no arguments)
-- `set_variable_shift_location_towards_location` — (no arguments)
-- `set_variable_simplex_noise_3d` — (no arguments)
-- `set_variable_sine` — (no arguments)
-- `set_variable_sort_any_list` — (no arguments)
-- `set_variable_sort_any_map` — (no arguments)
-- `set_variable_split_text` — (no arguments)
-- `set_variable_split_text_by_length` — (no arguments)
-- `set_variable_strip_text` — (no arguments)
-- `set_variable_subtract` — (no arguments)
-- `set_variable_subtract_vectors` — (no arguments)
-- `set_variable_tangent` — (no arguments)
-- `set_variable_text` — (no arguments)
-- `set_variable_text_case` — (no arguments)
-- `set_variable_text_length` — (no arguments)
-- `set_variable_text_to_bytes` — (no arguments)
-- `set_variable_text_to_chars` — (no arguments)
-- `set_variable_to_char` — (no arguments)
-- `set_variable_to_hsb` — (no arguments)
-- `set_variable_to_hsl` — (no arguments)
-- `set_variable_to_json` — (no arguments)
-- `set_variable_to_rgb` — (no arguments)
-- `set_variable_trim_list` — (no arguments)
-- `set_variable_trim_text` — (no arguments)
-- `set_variable_unset_item_components` — (no arguments)
-- `set_variable_value` — (no arguments)
-- `set_variable_vector` — (no arguments)
-- `set_variable_vector_cross_product` — (no arguments)
-- `set_variable_vector_dot_product` — (no arguments)
-- `set_variable_vector_to_direction_name` — (no arguments)
-- `set_variable_voronoi_noise_3d` — (no arguments)
-- `set_variable_warp` — (no arguments)
+- `if_variable_block_equals` — value: block, compare: block
+- `if_variable_block_is_minecraft_tagged` — block: block, namespace: text
+- `if_variable_block_is_solid` — block: block
+- `if_variable_equals` — value: any, compare: any, compare_type: enum{ANY_ALL}
+- `if_variable_exists` — variable: variable, compare_type: enum{ANY_ALL}
+- `if_variable_greater` — value: number, compare: number
+- `if_variable_greater_or_equals` — value: number, compare: number
+- `if_variable_in_range` — value: any, min: any, max: any ⚠ deprecated
+- `if_variable_is_type` — value: any, variable_type: enum, compare_type: enum{ANY_ALL}
+- `if_variable_item_equals` — value: item, compare: item, comparison_mode: enum{CMP}
+- `if_variable_item_has_enchantment` — item: item, enchant: text, level: number, enchantment_type: enum
+- `if_variable_item_has_stored_enchantment` — item: item, enchant: text, level: number ⚠ deprecated
+- `if_variable_item_has_tag` — item: item, tag: text, value: text, compare_type: enum
+- `if_variable_item_is_block` — item: item
+- `if_variable_item_is_minecraft_tagged` — item: item, namespace: text
+- `if_variable_less` — value: number, compare: number
+- `if_variable_less_or_equals` — value: number, compare: number
+- `if_variable_list_contains_value` — list: array, values: any, check_mode: enum{ANY_ALL}
+- `if_variable_list_is_empty` — list: any, compare_type: enum{ANY_ALL}
+- `if_variable_list_value_equals` — list: array, index: number, values: any
+- `if_variable_location_in_range` — value: location, min: location, max: location, border_handling: enum
+- `if_variable_location_is_near` — location: location, radius: number, check: location, shape: enum
+- `if_variable_map_has_key` — map: map, key: any, check_mode: enum{ANY_ALL}
+- `if_variable_map_value_equals` — map: map, key: any, values: any
+- `if_variable_multiple_equals` — values: any, compares: any, compare_type: enum{ANY_ALL}
+- `if_variable_not_equals` — value: any, compare: any ⚠ deprecated
+- `if_variable_number_in_range` — value: number, min: number, max: number, including: enum
+- `if_variable_range_intersects_range` — min1: location, max1: location, min2: location, max2: location, check_type: enum
+- `if_variable_text_contains` — value: text, compare: text, ignore_case: enum{TF}
+- `if_variable_text_ends_with` — value: text, compare: text, ignore_case: enum{TF}
+- `if_variable_text_matches` — match: text, values: text, ignore_case: enum{TF}, regular_expressions: enum{TF}
+- `if_variable_text_starts_with` — value: text, compare: text, ignore_case: enum{TF}
+- `set_variable_absolute` — variable: variable, number: number
+- `set_variable_add` — variable: variable, value: number
+- `set_variable_add_item_enchantment` — variable: variable, item: item, enchantment: text, level: number, enchantment_type: enum
+- `set_variable_add_item_potion_effects` — variable: variable, item: item, potions: potion, overwrite: enum{TF}, show_icon: enum{TF}, particle_mode: enum
+- `set_variable_add_item_stored_enchantment` — variable: variable, item: item, enchantment: text, level: number ⚠ deprecated
+- `set_variable_add_vectors` — variable: variable, vectors: vector
+- `set_variable_align_location` — variable: variable, location: location, rotation_mode: enum, coordinates_mode: enum, align_mode: enum
+- `set_variable_align_to_axis_vector` — variable: variable, vector: vector, normalize: enum{TF}
+- `set_variable_append_component` — variable: variable, components: text, merging: enum
+- `set_variable_append_list` — variable: variable, list_1: array, list_2: array ⚠ deprecated
+- `set_variable_append_lists` — variable: variable, lists: array
+- `set_variable_append_map` — variable: variable, map: map, other_map: map ⚠ deprecated
+- `set_variable_append_maps` — variable: variable, maps: map
+- `set_variable_append_value` — variable: variable, values: any
+- `set_variable_atan2` — variable: variable, y: number, x: number
+- `set_variable_average` — variable: variable, value: number, type: enum
+- `set_variable_bitwise_operation` — variable: variable, operand1: number, operand2: number, operator: enum
+- `set_variable_bytes_to_text` — variable: variable, bytes: array, charset: enum
+- `set_variable_center_location` — variable: variable, locations: location
+- `set_variable_change_component_parsing` — variable: variable, component: text, parsing: enum
+- `set_variable_char_to_number` — variable: variable, char: text
+- `set_variable_chunk_list` — variable: variable, list: array, size: number
+- `set_variable_chunk_text` — variable: variable, text: text, size: number
+- `set_variable_clamp` — variable: variable, number: number, min: number, max: number
+- `set_variable_clamp_location` — variable: variable, location: location, corner_1: location, corner_2: location, coordinates_mode: enum
+- `set_variable_clear_color_codes` — variable: variable, text: text
+- `set_variable_clear_map` — map: variable ⚠ deprecated
+- `set_variable_code_bytes` — variable: variable, input: array, codec: enum
+- `set_variable_compact_component` — variable: variable, component: text
+- `set_variable_component_of_children` — variable: variable, components: text
+- `set_variable_convert_number_to_text` — variable: variable, number: number, radix: number
+- `set_variable_convert_text_to_number` — variable: variable, text: text, radix: number
+- `set_variable_cosine` — variable: variable, number: number, variant: enum, input: enum{DEG_RAD}
+- `set_variable_cotangent` — variable: variable, number: number, variant: enum, input: enum{DEG_RAD}
+- `set_variable_create_head_object_component` — variable: variable, name_or_uuid: text, hat: enum{TF}
+- `set_variable_create_keybind_component` — variable: variable, key: text
+- `set_variable_create_list` — variable: variable, values: any
+- `set_variable_create_map` — variable: variable, keys: array, values: array
+- `set_variable_create_map_from_values` — variable: variable, keys: any, values: any
+- `set_variable_create_sprite_object_component` — variable: variable, sprite: text, atlas: text
+- `set_variable_create_translatable_component` — variable: variable, key: text, fallback: text, args: text
+- `set_variable_decrement` — variable: variable, number: number
+- `set_variable_destructure_list` — variables: variable, list: array
+- `set_variable_divide` — variable: variable, value: number, division_mode: enum
+- `set_variable_divide_vector` — variable: variable, vector: vector, divider: vector
+- `set_variable_edit_item_custom_model_data` — variable: variable, item: item, data: any, value_type: enum, setup_mode: enum
+- `set_variable_face_location` — variable: variable, location: location, target: location
+- `set_variable_find_nearest_location` — variable: variable, location: location, locations: location, distance_type: enum, compare_mode: enum
+- `set_variable_find_nearest_number` — variable: variable, number: number, numbers: number
+- `set_variable_flatten_list` — variable: variable, list: array, deep: enum{TF}
+- `set_variable_format_timestamp` — variable: variable, time: number, pattern: text, zone_id: text, locale: text, format: enum
+- `set_variable_gamma_function` — variable: variable, number: number
+- `set_variable_gaussian_distribution` — variable: variable, deviant: number, mean: number, distribution: enum
+- `set_variable_get_all_block_data` — variable: variable, location: location, hide_unspecified: enum{TF}
+- `set_variable_get_all_coordinates` — location: location, x: variable, y: variable, z: variable, yaw: variable, pitch: variable
+- `set_variable_get_angle_between_vectors` — variable: variable, vector_1: vector, vector_2: vector, angle_units: enum{DEG_RAD}
+- `set_variable_get_block_data` — variable: variable, location: location, tag_name: text
+- `set_variable_get_block_growth` — variable: variable, location: location, growth_unit: enum
+- `set_variable_get_block_material` — variable: variable, location: location, value_type: enum
+- `set_variable_get_block_material_property` — variable: variable, block: block, property: enum
+- `set_variable_get_block_power` — variable: variable, location: location
+- `set_variable_get_block_sound` — variable: variable, block: block, source: enum
+- `set_variable_get_blocks_by_tag` — variable: variable, namespace: text, result_type: enum
+- `set_variable_get_book_text` — variable: variable, book: item, page: number
+- `set_variable_get_brushable_block_item` — variable: variable, location: location
+- `set_variable_get_bundle_items` — variable: variable, bundle: item
+- `set_variable_get_char_at` — variable: variable, text: text, index: number
+- `set_variable_get_color_channels` — variable: variable, color: text, color_channels: enum
+- `set_variable_get_compass_lodestone` — variable: variable, item: item
+- `set_variable_get_component_children` — variable: variable, component: text
+- `set_variable_get_component_decorations` — variable: variable, component: text
+- `set_variable_get_component_hex_color` — variable: variable, component: text
+- `set_variable_get_component_parsing` — variable: variable, component: text
+- `set_variable_get_container_contents` — variable: variable, location: location, ignore_empty_slots: enum{TF}
+- `set_variable_get_container_lock` — variable: variable, location: location
+- `set_variable_get_container_name` — variable: variable, location: location
+- `set_variable_get_coordinate` — variable: variable, location: location, type: enum
+- `set_variable_get_custom_recipes` — variable: variable, is_vanilla_recipes: enum{TF}
+- `set_variable_get_decorate_pot_sherd` — variable: variable, location: location, side: enum
+- `set_variable_get_entity_types_by_tag` — variable: variable, namespace: text, result_type: enum
+- `set_variable_get_index_of_subtext` — variable: variable, text: text, subtext: text, start_index: number, search_mode: enum
+- `set_variable_get_item_amount` — variable: variable, item: item
+- `set_variable_get_item_attack_range` — variable: variable, item: item, property: enum
+- `set_variable_get_item_attribute` — variable: variable, item: item, name: text, attribute: enum, slot: enum
+- `set_variable_get_item_break_sound` — variable: variable, item: item
+- `set_variable_get_item_color` — variable: variable, item: item
+- `set_variable_get_item_component` — variable: variable, item: item, component: text
+- `set_variable_get_item_contents` — variable: variable, item: item
+- `set_variable_get_item_custom_model_data` — variable: variable, item: item ⚠ deprecated
+- `set_variable_get_item_custom_tag` — variable: variable, item: item, tag_name: text, default_value: any
+- `set_variable_get_item_custom_tags` — variable: variable, item: item
+- `set_variable_get_item_destroyable_blocks` — variable: variable, item: item
+- `set_variable_get_item_durability` — variable: variable, item: item, durability_type: enum
+- `set_variable_get_item_effective_name` — variable: variable, item: item
+- `set_variable_get_item_enchantment` — variable: variable, item: item, enchantment: text, enchantment_type: enum
+- `set_variable_get_item_enchantments` — variable: variable, item: item, enchantment_type: enum
+- `set_variable_get_item_food_properties` — variable: variable, item: item, property: enum
+- `set_variable_get_item_lore` — variable: variable, item: item
+- `set_variable_get_item_lore_line` — variable: variable, item: item, line: number
+- `set_variable_get_item_max_stack_size` — variable: variable, item: item
+- `set_variable_get_item_minimum_attack_charge` — variable: variable, item: item
+- `set_variable_get_item_model_data` — variable: variable, item: item
+- `set_variable_get_item_name` — variable: variable, item: item
+- `set_variable_get_item_nbt_tags` — variable: variable, item: item, fetch_mode: enum
+- `set_variable_get_item_placeable_blocks` — variable: variable, item: item
+- `set_variable_get_item_potion_effects` — variable: variable, item: item
+- `set_variable_get_item_rarity` — variable: variable, item: item
+- `set_variable_get_item_sprite` — variable: variable, item: item
+- `set_variable_get_item_stored_enchantments` — variable: variable, item: item ⚠ deprecated
+- `set_variable_get_item_swing_animation` — variable: variable, item: item, property: enum
+- `set_variable_get_item_tooltip_style` — variable: variable, item: item
+- `set_variable_get_item_type` — variable: variable, type: item, value: enum
+- `set_variable_get_item_use_remainder` — variable: variable, item: item
+- `set_variable_get_item_weapon` — variable: variable, item: item, property: enum
+- `set_variable_get_items_by_tag` — variable: variable, namespace: text, result_type: enum
+- `set_variable_get_lectern_book` — variable: variable, location: location
+- `set_variable_get_lectern_page` — variable: variable, location: location
+- `set_variable_get_light_level` — variable: variable, location: location, value_type: enum
+- `set_variable_get_list_index_of_value` — variable: variable, list: array, value: any, search_mode: enum
+- `set_variable_get_list_length` — variable: variable, list: array
+- `set_variable_get_list_random_value` — variable: variable, list: array
+- `set_variable_get_list_value` — variable: variable, list: array, number: number, default_value: any
+- `set_variable_get_list_variables` — variable: variable, names: text, scope: enum, match: enum, ignore_case: enum{TF}
+- `set_variable_get_location_direction` — variable: variable, location: location
+- `set_variable_get_map_entry_by_index` — variable_key: variable, variable_value: variable, map: map, index: number, default_key: any, default_value: any
+- `set_variable_get_map_key_by_index` — variable: variable, map: map, index: number, default_value: any ⚠ deprecated
+- `set_variable_get_map_keys` — variable: variable, map: map
+- `set_variable_get_map_keys_by_value` — variable: variable, map: map, value: any, default_value: any, find_mode: enum
+- `set_variable_get_map_random_entry` — variable_key: variable, variable_value: variable, map: map
+- `set_variable_get_map_size` — variable: variable, map: map
+- `set_variable_get_map_value` — variable: variable, map: map, key: any, default_value: any ⚠ deprecated
+- `set_variable_get_map_value_by_index` — variable: variable, map: map, index: number, default_value: any ⚠ deprecated
+- `set_variable_get_map_value_single` — variable: variable, map: map, key: any, default_value: any
+- `set_variable_get_map_values` — variable: variable, map: map
+- `set_variable_get_midpoint_between_vectors` — variable: variable, vector_1: vector, vector_2: vector
+- `set_variable_get_particle_amount` — variable: variable, particle: particle
+- `set_variable_get_particle_color` — variable: variable, particle: particle, color_type: enum
+- `set_variable_get_particle_material` — variable: variable, particle: particle
+- `set_variable_get_particle_offset` — variable: variable, particle: particle
+- `set_variable_get_particle_size` — variable: variable, particle: particle
+- `set_variable_get_particle_spread` — variable: variable, particle: particle, type: enum
+- `set_variable_get_particle_type` — variable: variable, particle: particle
+- `set_variable_get_player_head` — variable: variable, name_or_uuid: text, receive_type: enum
+- `set_variable_get_player_head_owner` — variable: variable, head: item, return_value: enum
+- `set_variable_get_player_head_value` — variable: variable, location: location, return_value: enum
+- `set_variable_get_potion_effect_amplifier` — variable: variable, potion: potion
+- `set_variable_get_potion_effect_duration` — variable: variable, potion: potion
+- `set_variable_get_potion_effect_type` — variable: variable, potion: potion
+- `set_variable_get_sculk_shrieker_warning_level` — variable: variable, location: location
+- `set_variable_get_sign_text` — variable: variable, location: location, check_side: enum, sign_line: enum
+- `set_variable_get_sound_pitch` — variable: variable, sound: sound
+- `set_variable_get_sound_source` — variable: variable, sound: sound
+- `set_variable_get_sound_type` — variable: variable, sound: sound
+- `set_variable_get_sound_variation` — variable: variable, sound: sound
+- `set_variable_get_sound_volume_action` — variable: variable, sound: sound
+- `set_variable_get_template_code` — variable: variable, template: item, return_type: enum
+- `set_variable_get_text_regex_groups` — variable: variable, text: text, regex: text, group: text, match_mode: enum, get_group_by: enum, ignore_case: enum{TF}, multiline: enum{TF}, literal: enum{TF}, unix_lines: enum{TF}, comments: enum{TF}, dot_matches_all: enum{TF}, cannon_eq: enum{TF}
+- `set_variable_get_text_similarity` — variable: variable, text_1: text, text_2: text, value_type: enum
+- `set_variable_get_text_width` — variable: variable, text: text
+- `set_variable_get_tile_block_custom_tag` — variable: variable, location: location, tag_name: text, default_value: any
+- `set_variable_get_tile_block_nbt` — variable: variable, location: location, path: text, value_type: enum
+- `set_variable_get_vault_displayed_item` — variable: variable, location: location
+- `set_variable_get_vault_next_state_update_time` — variable: variable, location: location
+- `set_variable_get_vector_all_components` — vector: vector, x: variable, y: variable, z: variable
+- `set_variable_get_vector_between_locations` — variable: variable, start_location: location, end_location: location
+- `set_variable_get_vector_component` — variable: variable, vector: vector, vector_component: enum
+- `set_variable_get_vector_from_block_face` — variable: variable, block_face: text
+- `set_variable_get_vector_length` — variable: variable, vector: vector, length_type: enum
+- `set_variable_hadamard_vector_product` — variable: variable, vector_1: vector, vector_2: vector
+- `set_variable_hash` — variable: variable, text: text, algorithm: enum
+- `set_variable_hide_item_components` — variable: variable, item: item, components: text, mode: enum
+- `set_variable_increment` — variable: variable, number: number
+- `set_variable_insert_list_value` — variable: variable, list: array, number: number, value: any
+- `set_variable_join_text` — variable: variable, list: array, separator: text, prefix: text, postfix: text, limit: number, truncated: text
+- `set_variable_join_to_component` — variable: variable, list: array, separator: text, prefix: text, suffix: text
+- `set_variable_lerp_number` — variable: variable, start: number, stop: number, amount: number
+- `set_variable_location_relative` — variable: variable, location: location, distance: number, block_face: enum
+- `set_variable_locations_distance` — variable: variable, location_1: location, location_2: location, type: enum
+- `set_variable_log` — variable: variable, number: number, base: number
+- `set_variable_map_range` — variable: variable, number: number, from_start: number, from_stop: number, to_start: number, to_stop: number
+- `set_variable_mathematical_expectation` — variable: variable, values: number, probabilities: number
+- `set_variable_max` — variable: variable, value: number
+- `set_variable_median` — variable: variable, value: number
+- `set_variable_min` — variable: variable, value: number
+- `set_variable_multiple` — variables: variable, values: any
+- `set_variable_multiply` — variable: variable, value: number
+- `set_variable_multiply_vector` — variable: variable, vector: vector, multiplier: number
+- `set_variable_obtain_item_custom_model_data` — variable: variable, item: item, value_type: enum
+- `set_variable_parse_json` — variable: variable, json: text
+- `set_variable_parse_to_component` — variable: variable, text: text, parsing: enum
+- `set_variable_perlin_noise_3d` — variable: variable, location: location, seed: number, loc_frequency: number, octaves: number, frequency: number, amplitude: number, range_mode: enum, normalized: enum{TF}
+- `set_variable_pow` — variable: variable, base: number, power: number
+- `set_variable_purge` — names: text, scope: enum, match: enum, ignore_case: enum{TF}
+- `set_variable_put_map_value` — replaced_value: variable, variable: variable, map: map, key: any, value: any
+- `set_variable_random` — variable: variable, values: any
+- `set_variable_random_location` — variable: variable, location_1: location, location_2: location, integer: enum{TF}
+- `set_variable_random_number` — variable: variable, min: number, max: number, integer: enum{TF}
+- `set_variable_randomize_list_order` — variable: variable, list: array
+- `set_variable_randomize_map_order` — variable: variable, map: map
+- `set_variable_ray_trace_result` — start: location, ray_size: number, max_distance: number, ray_collision_mode: enum, ignore_passable_blocks: enum{TF}, fluid_collision_mode: enum, variable_for_hit_location: variable, variable_for_hit_block_location: variable, variable_for_hit_block_face: variable, variable_for_hit_entity_uuid: variable, entities: array, blocks: block
+- `set_variable_reflect_vector_product` — variable: variable, vector_1: vector, vector_2: vector, bounce: number
+- `set_variable_regex_replace_text` — variable: variable, text: text, regex: text, replacement: text, first: enum, ignore_case: enum{TF}, multiline: enum{TF}, literal: enum{TF}, unix_lines: enum{TF}, comments: enum{TF}, dot_matches_all: enum{TF}, cannon_eq: enum{TF}
+- `set_variable_remainder` — variable: variable, dividend: number, divisor: number, remainder_mode: enum
+- `set_variable_remove` — variables: variable
+- `set_variable_remove_compass_lodestone` — variable: variable, item: item
+- `set_variable_remove_enchantment` — variable: variable, item: item, enchantment: text, enchantment_type: enum
+- `set_variable_remove_item_attribute` — variable: variable, item: item, name_or_uuid: text, attribute: enum
+- `set_variable_remove_item_custom_model_data` — variable: variable, item: item ⚠ deprecated
+- `set_variable_remove_item_custom_tag` — variable: variable, item: item, tag_name: text
+- `set_variable_remove_item_custom_tags` — variable: variable, item: item
+- `set_variable_remove_item_lore_line` — variable: variable, item: item, line: number
+- `set_variable_remove_item_potion_effects` — variable: variable, item: item, effects: potion
+- `set_variable_remove_item_stored_enchantment` — variable: variable, item: item, enchantment: text ⚠ deprecated
+- `set_variable_remove_list_duplicates` — variable: variable, list: array
+- `set_variable_remove_list_value` — variable: variable, list: array, value: any, remove_mode: enum
+- `set_variable_remove_list_value_at_index` — removed_value: variable, variable: variable, list: array, index: number
+- `set_variable_remove_map_entry` — removed_value: variable, variable: variable, map: map, key: any, values: any
+- `set_variable_remove_text` — variable: variable, text: text, remove: text, regex: enum{TF}
+- `set_variable_repeat_text` — variable: variable, text: text, repeat: number
+- `set_variable_replace_text` — variable: variable, text: text, replace: text, replacement: text, first: enum, ignore_case: enum{TF}
+- `set_variable_reverse_list` — variable: variable, list: array
+- `set_variable_reverse_map` — variable: variable, map: map
+- `set_variable_root` — variable: variable, base: number, root: number
+- `set_variable_rotate_vector_around_axis` — variable: variable, vector: vector, angle: number, axis: enum, angle_units: enum{DEG_RAD}
+- `set_variable_rotate_vector_around_vector` — variable: variable, rotating_vector: vector, axis_vector: vector, angle: number, angle_units: enum{DEG_RAD}
+- `set_variable_round` — variable: variable, number: number, precision: number, round_type: enum
+- `set_variable_set_all_coordinates` — variable: variable, x: number, y: number, z: number, yaw: number, pitch: number
+- `set_variable_set_armor_trim` — variable: variable, armor: item, material: item, pattern: item
+- `set_variable_set_book_page` — variable: variable, book: item, text: text, page: number, mode: enum
+- `set_variable_set_book_pages` — variable: variable, book: item, text: text
+- `set_variable_set_bundle_items` — variable: variable, bundle: item, items: item, setting_mode: enum
+- `set_variable_set_compass_lodestone` — variable: variable, item: item, location: location, tracked: enum{TF}
+- `set_variable_set_component_children` — variable: variable, component: text, children: text
+- `set_variable_set_component_click` — variable: variable, component: text, value: text, click_action: enum
+- `set_variable_set_component_decorations` — variable: variable, component: text, bold: enum, italic: enum, underlined: enum, strikethrough: enum, obfuscated: enum
+- `set_variable_set_component_entity_hover` — variable: variable, component: text, name_or_uuid: text
+- `set_variable_set_component_font` — variable: variable, component: text, namespace: text, value: text
+- `set_variable_set_component_hex_color` — variable: variable, component: text, color: text
+- `set_variable_set_component_hover` — variable: variable, component: text, hover: text
+- `set_variable_set_component_insertion` — variable: variable, component: text, insertion: text
+- `set_variable_set_component_item_hover` — variable: variable, component: text, hover: item
+- `set_variable_set_component_shadow_color` — variable: variable, component: text, color: text
+- `set_variable_set_coordinate` — variable: variable, location: location, coordinate: number, type: enum
+- `set_variable_set_item_amount` — variable: variable, item: item, amount: number
+- `set_variable_set_item_attack_range` — variable: variable, item: item, min_reach: number, min_max: number, min_creative_reach: number, max_creative_reach: number, hitbox_margin: number, mob_factor: number
+- `set_variable_set_item_attribute` — variable: variable, item: item, amount: number, name: text, attribute: enum, slot: enum, operation: enum
+- `set_variable_set_item_break_sound` — variable: variable, item: item, break_sound: sound
+- `set_variable_set_item_color` — variable: variable, item: item, color: text
+- `set_variable_set_item_component` — variable: variable, item: item, component: text, value: text
+- `set_variable_set_item_contents` — variable: variable, item: item, items: item, setting_mode: enum
+- `set_variable_set_item_custom_model_data` — variable: variable, item: item, model: number ⚠ deprecated
+- `set_variable_set_item_custom_tag` — variable: variable, item: item, tag_name: text, tag_value: text
+- `set_variable_set_item_destroyable_blocks` — variable: variable, item: item, destroyable: item
+- `set_variable_set_item_durability` — variable: variable, item: item, durability: number, durability_type: enum
+- `set_variable_set_item_enchantments` — variable: variable, item: item, enchantments: map, enchantment_type: enum
+- `set_variable_set_item_food_properties` — variable: variable, item: item, nutrition: number, saturation: number, can_always_eat: enum{TF}
+- `set_variable_set_item_glider` — variable: variable, item: item, glider: enum{TF}
+- `set_variable_set_item_glint_override` — variable: variable, item: item, glowing: enum{TFN}
+- `set_variable_set_item_hidden_tooltip` — variable: variable, item: item, tooltip_hidden: enum{TF}
+- `set_variable_set_item_lore` — variable: variable, lore: text, item: item
+- `set_variable_set_item_lore_line` — variable: variable, item: item, text: text, line: number, mode: enum
+- `set_variable_set_item_max_stack_size` — variable: variable, item: item, size: number
+- `set_variable_set_item_minimum_attack_charge` — variable: variable, item: item, minimum_attack_charge: number
+- `set_variable_set_item_model_data` — variable: variable, item: item, model: text
+- `set_variable_set_item_name` — variable: variable, item: item, text: text
+- `set_variable_set_item_piercing_weapon` — variable: variable, item: item, deals_knockback: enum{TF}, dismounts: enum{TF}, sound: sound, hit_sound: sound
+- `set_variable_set_item_placeable_blocks` — variable: variable, item: item, placeable: item
+- `set_variable_set_item_rarity` — variable: variable, item: item, rarity: enum
+- `set_variable_set_item_swing_animation` — variable: variable, item: item, duration: number, animation: enum
+- `set_variable_set_item_tooltip_style` — variable: variable, item: item, style: text
+- `set_variable_set_item_type` — variable: variable, item: item, type: text
+- `set_variable_set_item_unbreakable` — variable: variable, item: item, unbreakable: enum{TF}
+- `set_variable_set_item_use_effects` — variable: variable, item: item, can_sprint: enum{TF}, interact_vibrations: enum{TF}, speed_multiplier: number
+- `set_variable_set_item_use_remainder` — variable: variable, item: item, remainder: item
+- `set_variable_set_item_visibility_flags` — variable: variable, item: item, hide_dye: enum, hide_enchantments: enum, hide_attributes: enum, hide_unbreakable: enum, hide_place_on: enum, hide_destroys: enum, hide_potion_effects: enum, hide_armor_trim: enum
+- `set_variable_set_item_weapon` — variable: variable, item: item, item_damage_per_attack: number, disable_blocking: number
+- `set_variable_set_list_value` — variable: variable, list: array, number: number, value: any
+- `set_variable_set_location_direction` — variable: variable, location: location, vector: vector
+- `set_variable_set_map_value` — variable: variable, map: map, key: any, value: any
+- `set_variable_set_particle_amount` — variable: variable, particle: particle, amount: number
+- `set_variable_set_particle_color` — variable: variable, particle: particle, hex_color: text, color_type: enum
+- `set_variable_set_particle_material` — variable: variable, particle: particle, material: item
+- `set_variable_set_particle_offset` — variable: variable, particle: particle, offset: vector
+- `set_variable_set_particle_size` — variable: variable, particle: particle, size: number
+- `set_variable_set_particle_spread` — variable: variable, particle: particle, horizontal: number, vertical: number
+- `set_variable_set_particle_type` — variable: variable, particle: particle, type: text
+- `set_variable_set_potion_effect_amplifier` — variable: variable, potion: potion, amplifier: number
+- `set_variable_set_potion_effect_duration` — variable: variable, potion: potion, duration: number
+- `set_variable_set_potion_effect_type` — variable: variable, potion: potion, effect_type: text
+- `set_variable_set_sound_pitch` — variable: variable, sound: sound, pitch: number
+- `set_variable_set_sound_source` — variable: variable, sound: sound, source: enum
+- `set_variable_set_sound_type` — variable: variable, sound: sound, namespace: text, value: text
+- `set_variable_set_sound_variation` — variable: variable, sound: sound, variation: text
+- `set_variable_set_sound_volume_action` — variable: variable, sound: sound, volume: number
+- `set_variable_set_template_code` — variable: variable, template: item, code: any
+- `set_variable_set_texture_to_map` — variable: variable, map: item, url: text
+- `set_variable_set_vector_component` — variable: variable, vector: vector, value: number, vector_component: enum
+- `set_variable_set_vector_length` — variable: variable, vector: vector, length: number
+- `set_variable_shift_all_coordinates` — variable: variable, location: location, x: number, y: number, z: number, yaw: number, pitch: number
+- `set_variable_shift_coordinate` — variable: variable, location: location, distance: number, type: enum
+- `set_variable_shift_location_in_direction` — variable: variable, location: location, shift: number, direction: enum
+- `set_variable_shift_location_on_vector` — variable: variable, location: location, vector: vector, length: number
+- `set_variable_shift_location_towards_location` — variable: variable, location_from: location, location_to: location, distance: number
+- `set_variable_simplex_noise_3d` — variable: variable, location: location, seed: number, loc_frequency: number, octaves: number, frequency: number, amplitude: number, range_mode: enum, normalized: enum{TF}
+- `set_variable_sine` — variable: variable, number: number, variant: enum, input: enum{DEG_RAD}
+- `set_variable_sort_any_list` — variable: variable, list: array, sort_mode: enum
+- `set_variable_sort_any_map` — variable: variable, map: map, sort_order: enum, sort_type: enum
+- `set_variable_split_text` — variable: variable, text: text, delimiter: text
+- `set_variable_split_text_by_length` — variable: variable, text: text, max_length: number
+- `set_variable_strip_text` — variable: variable, text: text, strip_type: enum
+- `set_variable_subtract` — variable: variable, value: number
+- `set_variable_subtract_vectors` — variable: variable, vectors: vector
+- `set_variable_tangent` — variable: variable, number: number, variant: enum, input: enum{DEG_RAD}
+- `set_variable_text` — variable: variable, text: text, merging: enum
+- `set_variable_text_case` — variable: variable, text: text, case_type: enum
+- `set_variable_text_length` — variable: variable, text: text
+- `set_variable_text_to_bytes` — variable: variable, text: text, charset: enum
+- `set_variable_text_to_chars` — variable: variable, text: text, chars_type: enum
+- `set_variable_to_char` — variable: variable, number: number
+- `set_variable_to_hsb` — variable: variable, hue: number, saturation: number, brightness: number
+- `set_variable_to_hsl` — variable: variable, hue: number, saturation: number, lightness: number
+- `set_variable_to_json` — variable: variable, value: any, pretty_print: enum{TF}
+- `set_variable_to_rgb` — variable: variable, red: number, green: number, blue: number
+- `set_variable_trim_list` — variable: variable, list: array, start: number, end: number
+- `set_variable_trim_text` — variable: variable, text: text, start: number, end: number
+- `set_variable_unset_item_components` — variable: variable, item: item, components: text
+- `set_variable_value` — variable: variable, value: any
+- `set_variable_vector` — variable: variable, x: number, y: number, z: number
+- `set_variable_vector_cross_product` — variable: variable, vector_1: vector, vector_2: vector
+- `set_variable_vector_dot_product` — variable: variable, vector_1: vector, vector_2: vector
+- `set_variable_vector_to_direction_name` — variable: variable, vector: vector
+- `set_variable_voronoi_noise_3d` — variable: variable, location: location, seed: number, frequency: number, displacement: number, range_mode: enum, enable_distance: enum{TF}
+- `set_variable_warp` — variable: variable, number: number, min: number, max: number
 
 
 <!-- ===== FILE: skill/docs/actions/world.md ===== -->
