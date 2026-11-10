@@ -1,6 +1,6 @@
 # JAI skill version
 
-**Current version: 1.0.2**
+**Current version: 1.0.3**
 
 *Last updated: 2026-11-10*
 
@@ -13,6 +13,12 @@ Before answering a user question about JustMc:
 3. **If the versions differ (lower or higher) — tell the user FIRST**, then answer:
    > ⚠️ My JAI skill version in SKILL.md is **X**, but VERSION.md says **Y**. Files are out of sync: the skill is outdated or corrupted. Download a fresh `JAI.zip` from https://github.com/kitorik/JMCS.
 4. If the versions match — proceed as usual.
+
+## 1.0.3 (2026-11-10)
+- **New rules for AI agents (rules.md → Variables):**
+  - Never create variables with a zero value or "declare" them: an unset variable already reads as 0.
+  - To clear a variable use one of the two "Clear variables" actions: `set_variable_remove` (variable in the `variables` slot) or `set_variable_purge` (variable name as text + scope + match).
+  - To check game start, check variable existence with `if_variable_exists` instead of creating marker variables.
 
 ## 1.0.2 (2026-11-10)
 - **Added the missing `docs/value-types/parameter.md`** — 1.0.0/1.0.1 claimed 13 value-types including `parameter`, but the reference file did not exist.

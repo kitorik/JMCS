@@ -2,6 +2,14 @@
 
 All notable changes to the JAI skill. The current version lives in `skill/SKILL.md` and `skill/VERSION.md` (kept in sync).
 
+## [1.0.3] — 2026-11-10
+
+### New rules (variables)
+
+- Never zero-initialize or "declare" variables: an unset variable already reads as 0.
+- Clear variables only via the two "Clear variables" actions: `set_variable_remove` (takes the variable) or `set_variable_purge` (takes the name as text, plus scope and match).
+- Check game start via variable existence (`if_variable_exists`), not by pre-created marker variables.
+
 ## [1.0.2] — 2026-11-10
 
 ### Fixes

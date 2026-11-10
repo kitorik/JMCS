@@ -104,6 +104,12 @@ A function handler declares its parameters in `values`: a single entry named `pa
 - In the function body the parameter is read as a variable: `%var_line(name)` (or `%var_local(name)`, depending on the call).
 - Each `call_function` must pass `args` (a `map`) for every required parameter — see Function calls above; the game injects the values into the parameters before running the function code.
 
+## Variables: no zero-initialization, no fake "declaration"
+- **Never create variables just to hold 0 or to "declare" them.** An unset variable already reads as 0 (and as empty for text/list/map checks). Do not zero-initialize variables at game/world start.
+- **To clear or reset a variable, use one of the two "Clear variables" actions** — never assign 0:
+  - `set_variable_remove` — pass the variable itself in the `variables` slot;
+  - `set_variable_purge` — pass the variable **name as text** in `names`, plus `scope` (GAME/SAVE/LOCAL/LINE) and `match` (EQUALS/NAME_CONTAINS/...).
+- **Game-start / state checks: don't create marker variables** — check whether the variable exists with `if_variable_exists` instead of pre-creating it with a zero value.
 ## Variable scopes
 - **Use the narrowest scope that works — not only `game`:** `line` — temporaries within one line/loop iteration; `local` — per-handler temporaries (also used for function parameters); `game` — state shared across the whole game run; `save` — data that must persist after the game stops. Do not promote variables to `game`/`save` "just in case".
 
