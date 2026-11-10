@@ -1419,224 +1419,224 @@ Now: %time%    Online: %online% of %player_amount%
 > Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
 - `if_player_chat_colors_enabled` — (no arguments)
-- `if_player_chat_message_equals` — (no arguments)
-- `if_player_collides_at_location` — (no arguments)
-- `if_player_collides_using_hitbox` — (no arguments)
-- `if_player_collides_with_entity` — (no arguments)
-- `if_player_cursor_item_equals` — (no arguments)
-- `if_player_gamemode_equals` — (no arguments)
-- `if_player_has_custom_recipe_discovered` — (no arguments)
-- `if_player_has_input` — (no arguments)
-- `if_player_has_item` — (no arguments)
-- `if_player_has_item_at_least` — (no arguments)
-- `if_player_has_item_in_slot` — (no arguments)
-- `if_player_has_potion_effect` — (no arguments)
-- `if_player_has_privilege` — (no arguments)
-- `if_player_has_room_for_item` — (no arguments)
-- `if_player_hotbar_slot_equals` — (no arguments)
-- `if_player_in_area` — (no arguments)
-- `if_player_inventory_menu_slot_equals` — (no arguments)
-- `if_player_inventory_type_open` — (no arguments)
+- `if_player_chat_message_equals` — chat_messages: text, ignore_case: enum{TF}
+- `if_player_collides_at_location` — location: location
+- `if_player_collides_using_hitbox` — min: location, max: location
+- `if_player_collides_with_entity` — name_or_uuid: text, check_type: enum
+- `if_player_cursor_item_equals` — items: item, comparison_mode: enum{CMP}
+- `if_player_gamemode_equals` — gamemode: enum
+- `if_player_has_custom_recipe_discovered` — names: text, is_vanilla_recipe: enum{TF}, compare_type: enum{ANY_ALL}
+- `if_player_has_input` — input_type: enum
+- `if_player_has_item` — items: item, check_mode: enum{ANY_ALL}, comparison_mode: enum{CMP}
+- `if_player_has_item_at_least` — item: item, count: number, comparison_mode: enum
+- `if_player_has_item_in_slot` — items: item, slots: number, comparison_mode: enum{CMP}
+- `if_player_has_potion_effect` — potions: potion, check_mode: enum{ANY_ALL}
+- `if_player_has_privilege` — privilege: enum, exact: enum{TF}
+- `if_player_has_room_for_item` — items: item, check_mode: enum{ANY_ALL}, checked_slots: enum
+- `if_player_hotbar_slot_equals` — slot: number
+- `if_player_in_area` — location_1: location, location_2: location, ignore_y_axis: enum{TF}, intersect_type: enum, check_type: enum
+- `if_player_inventory_menu_slot_equals` — items: item, slots: number, comparison_mode: enum{CMP}
+- `if_player_inventory_type_open` — inventory_type: enum
 - `if_player_is_allow_server_listing` — (no arguments)
 - `if_player_is_blocking` — (no arguments)
 - `if_player_is_disguised` — (no arguments)
 - `if_player_is_flying` — (no arguments)
 - `if_player_is_gliding` — (no arguments)
-- `if_player_is_holding` — (no arguments)
-- `if_player_is_looking_at_block` — (no arguments)
-- `if_player_is_near` — (no arguments)
+- `if_player_is_holding` — items: item, hand_slot: enum, comparison_mode: enum{CMP}
+- `if_player_is_looking_at_block` — blocks: block, locations: location, distance: number, fluid_mode: enum
+- `if_player_is_near` — ignore_y_axis: enum{TF}, location: location, range: number
 - `if_player_is_on_ground` — (no arguments)
 - `if_player_is_online_mode` — (no arguments)
-- `if_player_is_riding_entity` — (no arguments)
+- `if_player_is_riding_entity` — entity_ids: text, compare_mode: enum
 - `if_player_is_self_disguised` — (no arguments)
 - `if_player_is_sleeping` — (no arguments)
 - `if_player_is_sneaking` — (no arguments)
 - `if_player_is_sprinting` — (no arguments)
-- `if_player_is_standing_on_block` — (no arguments)
+- `if_player_is_standing_on_block` — blocks: block, locations: location, only_solid: enum{TF}
 - `if_player_is_swimming` — (no arguments)
 - `if_player_is_transferred` — (no arguments)
-- `if_player_is_using_item` — (no arguments)
-- `if_player_is_wearing_item` — (no arguments)
-- `if_player_item_group_is_not_on_cooldown` — (no arguments)
-- `if_player_item_is_not_on_cooldown` — (no arguments)
-- `if_player_name_equals` — (no arguments)
+- `if_player_is_using_item` — items: item, comparison_mode: enum{CMP}
+- `if_player_is_wearing_item` — items: item, check_mode: enum{ANY_ALL}, comparison_mode: enum{CMP}
+- `if_player_item_group_is_not_on_cooldown` — item_keys: text, check_mode: enum{ANY_ALL}
+- `if_player_item_is_not_on_cooldown` — items: item, check_mode: enum{ANY_ALL}
+- `if_player_name_equals` — names_or_uuids: text
 - `if_player_text_filtering_enabled` — (no arguments)
-- `player_add_inventory_menu_row` — (no arguments)
-- `player_allow_placing_breaking_blocks` — (no arguments)
-- `player_boost_elytra` — (no arguments)
+- `player_add_inventory_menu_row` — items: item, position: enum
+- `player_allow_placing_breaking_blocks` — allow: enum{TF}, blocks: block
+- `player_boost_elytra` — firework: item
 - `player_clear_active_item` — (no arguments)
 - `player_clear_chat` — (no arguments)
 - `player_clear_debug_markers` — (no arguments)
 - `player_clear_ender_chest_contents` — (no arguments)
-- `player_clear_inventory` — (no arguments)
-- `player_clear_items` — (no arguments)
+- `player_clear_inventory` — clear_mode: enum
+- `player_clear_items` — items: item
 - `player_clear_potion_effects` — (no arguments)
 - `player_close_dialog_menu` — (no arguments)
 - `player_close_inventory` — (no arguments)
 - `player_complete_using_active_item` — (no arguments)
-- `player_connect_to_server` — (no arguments)
-- `player_damage` — (no arguments)
-- `player_disguise_as_block` — (no arguments)
-- `player_disguise_as_entity` — (no arguments)
-- `player_disguise_as_item` — (no arguments)
-- `player_display_bell_ring` — (no arguments)
-- `player_display_block` — (no arguments)
-- `player_display_end_gateway_beam` — (no arguments)
-- `player_display_hologram` — (no arguments)
-- `player_display_lightning` — (no arguments)
-- `player_display_particle` — (no arguments)
-- `player_display_particle_circle` — (no arguments)
-- `player_display_particle_cube` — (no arguments)
-- `player_display_particle_line` — (no arguments)
-- `player_display_particle_ray` — (no arguments)
-- `player_display_particle_sphere` — (no arguments)
-- `player_display_particle_spiral` — (no arguments)
-- `player_display_pick_up_animation` — (no arguments)
-- `player_display_sign_text` — (no arguments)
-- `player_display_vibration` — (no arguments)
-- `player_expand_inventory_menu` — (no arguments)
-- `player_face_location` — (no arguments)
-- `player_get_attribute` — (no arguments)
-- `player_get_nbt` — (no arguments)
-- `player_give_experience` — (no arguments)
-- `player_give_items` — (no arguments)
-- `player_give_potion_effect` — (no arguments)
-- `player_give_random_item` — (no arguments)
-- `player_heal` — (no arguments)
-- `player_hide_custom_recipe` — (no arguments)
-- `player_hide_entity` — (no arguments)
+- `player_connect_to_server` — server_name: text
+- `player_damage` — damage: number, source: text
+- `player_disguise_as_block` — block: block, visible_to_self: enum{TF}
+- `player_disguise_as_entity` — entity_type: item, visible_to_self: enum{TF}
+- `player_disguise_as_item` — item: item, visible_to_self: enum{TF}
+- `player_display_bell_ring` — location: location, direction: enum
+- `player_display_block` — location: location, block: block
+- `player_display_end_gateway_beam` — location: location, color: enum
+- `player_display_hologram` — location: location, text: text
+- `player_display_lightning` — location: location
+- `player_display_particle` — particle: particle, location: location
+- `player_display_particle_circle` — particle: particle, center: location, radius: number, points: number, start_angle: number, perpendicular: vector, angle_unit: enum{DEG_RAD}
+- `player_display_particle_cube` — particle: particle, first_corner: location, second_corner: location, spacing: number, type: enum
+- `player_display_particle_line` — particle: particle, start: location, end: location, divider: number, unit_of_measurement: enum
+- `player_display_particle_ray` — particle: particle, start: location, ray: vector, divider: number, unit_of_measurement: enum
+- `player_display_particle_sphere` — particle: particle, center: location, radius: number, points: number
+- `player_display_particle_spiral` — particle: particle, center: location, distance: number, radius: number, points: number, rotations: number, start_angle: number, angle_unit: enum{DEG_RAD}
+- `player_display_pick_up_animation` — collected_name_or_uuid: text, collector_name_or_uuid: text, amount: number
+- `player_display_sign_text` — location: location, line_1: text, line_2: text, line_3: text, line_4: text, side: enum
+- `player_display_vibration` — from: location, to: location, destination_time: number
+- `player_expand_inventory_menu` — items: item, size: number
+- `player_face_location` — location: location
+- `player_get_attribute` — variable: variable, attribute_type: enum, return_value: enum
+- `player_get_nbt` — variable: variable, path: text, value_type: enum
+- `player_give_experience` — experience: number, mode: enum
+- `player_give_items` — items: item, amount: number
+- `player_give_potion_effect` — potions: potion, overwrite: enum{TF}, show_icon: enum{TF}, particle_mode: enum
+- `player_give_random_item` — items: item
+- `player_heal` — heal: number
+- `player_hide_custom_recipe` — names: text, is_vanilla_recipe: enum{TF}
+- `player_hide_entity` — name_or_uuid: text, hide: enum{TF}
 - `player_hide_scoreboard` — (no arguments)
 - `player_kick` — (no arguments)
-- `player_launch_forward` — (no arguments)
-- `player_launch_projectile` — (no arguments)
-- `player_launch_to_location` — (no arguments)
-- `player_launch_up` — (no arguments)
+- `player_launch_forward` — power: number, increment: enum{TF}, launch_axis: enum
+- `player_launch_projectile` — projectile: item, location: location, name: text, speed: number, inaccuracy: number, trail: particle
+- `player_launch_to_location` — location: location, power: number, increment: enum{TF}
+- `player_launch_up` — power: number, increment: enum{TF}
 - `player_leave_vehicle` — (no arguments)
 - `player_load_inventory` — (no arguments)
-- `player_mimic_disguise_from_entity` — (no arguments)
-- `player_open_book` — (no arguments)
-- `player_open_container_inventory` — (no arguments)
+- `player_mimic_disguise_from_entity` — name_or_uuid: text, include_disguise: enum{TF}, disguise: enum, remove_original_entity: enum{TF}
+- `player_open_book` — book: item
+- `player_open_container_inventory` — location: location
 - `player_open_ender_chest` — (no arguments)
-- `player_open_working_menu` — (no arguments)
-- `player_play_animation_action` — (no arguments)
-- `player_play_hurt_animation` — (no arguments)
-- `player_play_sound` — (no arguments)
-- `player_play_sound_from_entity` — (no arguments)
-- `player_play_sound_sequence` — (no arguments)
-- `player_randomized_teleport` — (no arguments)
-- `player_redirect_world` — (no arguments)
-- `player_remove_boss_bar` — (no arguments)
+- `player_open_working_menu` — title: text, menu_type: enum
+- `player_play_animation_action` — animation: enum
+- `player_play_hurt_animation` — yaw: number
+- `player_play_sound` — sound: sound, location: location
+- `player_play_sound_from_entity` — sounds: sound, name_or_uuid: text
+- `player_play_sound_sequence` — sounds: sound, delay: number, location: location
+- `player_randomized_teleport` — locations: location, keep_rotation: enum{TF}, keep_velocity: enum{TF}, dismount: enum{TF}
+- `player_redirect_world` — world_id: text
+- `player_remove_boss_bar` — id: text
 - `player_remove_disguise` — (no arguments)
-- `player_remove_display_blocks` — (no arguments)
-- `player_remove_inventory_menu_row` — (no arguments)
-- `player_remove_items` — (no arguments)
+- `player_remove_display_blocks` — pos_1: location, pos_2: location
+- `player_remove_inventory_menu_row` — size: number, position: enum
+- `player_remove_items` — items: item
 - `player_remove_pose` — (no arguments)
-- `player_remove_potion_effect` — (no arguments)
+- `player_remove_potion_effect` — potions: potion
 - `player_remove_self_disguise` — (no arguments)
 - `player_remove_skin` — (no arguments)
 - `player_remove_world_border` — (no arguments)
-- `player_replace_items` — (no arguments)
+- `player_replace_items` — items: item, replace: item, count: number
 - `player_reset_waypoint_color` — (no arguments)
 - `player_reset_weather` — (no arguments)
-- `player_ride_entity` — (no arguments)
+- `player_ride_entity` — name_or_uuid: text
 - `player_save_inventory` — (no arguments)
-- `player_self_disguise_as_block` — (no arguments)
-- `player_self_disguise_as_entity` — (no arguments)
-- `player_self_disguise_as_item` — (no arguments)
-- `player_send_action_bar` — (no arguments)
-- `player_send_advancement` — (no arguments)
-- `player_send_break_animation` — (no arguments)
-- `player_send_dialogue` — (no arguments)
-- `player_send_hover` — (no arguments)
-- `player_send_message` — (no arguments)
-- `player_send_minimessage` — (no arguments)
-- `player_send_title` — (no arguments)
-- `player_set_absorption_health` — (no arguments)
-- `player_set_air_ticks` — (no arguments)
-- `player_set_allow_flying` — (no arguments)
-- `player_set_armor` — (no arguments)
-- `player_set_arrows_in_body` — (no arguments)
-- `player_set_attack_speed` — (no arguments)
-- `player_set_attribute` — (no arguments)
-- `player_set_bee_stingers_in_body` — (no arguments)
-- `player_set_block_opened_state` — (no arguments)
-- `player_set_boss_bar` — (no arguments)
-- `player_set_chat_completions` — (no arguments)
-- `player_set_collidable` — (no arguments)
-- `player_set_compass_target` — (no arguments)
-- `player_set_cursor_item` — (no arguments)
-- `player_set_death_drops` — (no arguments)
-- `player_set_death_screen_score` — (no arguments)
-- `player_set_default_visible` — (no arguments)
-- `player_set_enchantment_seed` — (no arguments)
-- `player_set_ender_chest_contents` — (no arguments)
-- `player_set_entity_glowing` — (no arguments)
-- `player_set_equipment` — (no arguments)
-- `player_set_exhaustion` — (no arguments)
-- `player_set_experience` — (no arguments)
-- `player_set_fall_distance` — (no arguments)
-- `player_set_fire_ticks` — (no arguments)
-- `player_set_flying` — (no arguments)
-- `player_set_fog_distance` — (no arguments)
-- `player_set_food` — (no arguments)
-- `player_set_freeze_ticks` — (no arguments)
-- `player_set_gamemode` — (no arguments)
-- `player_set_gliding` — (no arguments)
-- `player_set_health` — (no arguments)
-- `player_set_hotbar_slot` — (no arguments)
-- `player_set_instant_respawn` — (no arguments)
-- `player_set_inventory_kept` — (no arguments)
-- `player_set_inventory_menu_custom_id` — (no arguments)
-- `player_set_inventory_menu_item` — (no arguments)
-- `player_set_inventory_menu_name` — (no arguments)
-- `player_set_invulnerability_ticks` — (no arguments)
-- `player_set_item_cooldown` — (no arguments)
-- `player_set_item_group_cooldown` — (no arguments)
-- `player_set_items` — (no arguments)
-- `player_set_max_health` — (no arguments)
-- `player_set_max_invulnerability_ticks` — (no arguments)
-- `player_set_movement_speed` — (no arguments)
-- `player_set_nametag_visible` — (no arguments)
-- `player_set_player_list_info` — (no arguments)
-- `player_set_pose` — (no arguments)
-- `player_set_pvp` — (no arguments)
-- `player_set_rain_level` — (no arguments)
-- `player_set_rotation` — (no arguments)
-- `player_set_rotation_by_vector` — (no arguments)
-- `player_set_saturated_regen_rate` — (no arguments)
-- `player_set_saturation` — (no arguments)
-- `player_set_simulation_distance` — (no arguments)
-- `player_set_skin` — (no arguments)
-- `player_set_slot_item` — (no arguments)
-- `player_set_spawn_point` — (no arguments)
-- `player_set_starvation_rate` — (no arguments)
-- `player_set_thunder_level` — (no arguments)
-- `player_set_tick_rate` — (no arguments)
-- `player_set_time` — (no arguments)
-- `player_set_unsaturated_regen_rate` — (no arguments)
-- `player_set_velocity` — (no arguments)
-- `player_set_visual_fire` — (no arguments)
-- `player_set_waypoint_color` — (no arguments)
-- `player_set_waypoint_style` — (no arguments)
-- `player_set_weather` — (no arguments)
-- `player_set_world_border` — (no arguments)
-- `player_shift_world_border` — (no arguments)
-- `player_show_custom_recipe` — (no arguments)
-- `player_show_debug_marker` — (no arguments)
+- `player_self_disguise_as_block` — block: block
+- `player_self_disguise_as_entity` — entity_type: item
+- `player_self_disguise_as_item` — item: item
+- `player_send_action_bar` — messages: text, merging: enum
+- `player_send_advancement` — frame: enum, name: text, icon: item
+- `player_send_break_animation` — locations: location, stage: number
+- `player_send_dialogue` — messages: text, delay: number
+- `player_send_hover` — message: text, hover: text
+- `player_send_message` — messages: text, merging: enum
+- `player_send_minimessage` — minimessage: text
+- `player_send_title` — title: text, subtitle: text, fade_in: number, stay: number, fade_out: number
+- `player_set_absorption_health` — health: number
+- `player_set_air_ticks` — ticks: number
+- `player_set_allow_flying` — allow_flying: enum{TF}
+- `player_set_armor` — helmet: item, chestplate: item, leggings: item, boots: item
+- `player_set_arrows_in_body` — amount: number
+- `player_set_attack_speed` — speed: number
+- `player_set_attribute` — value: number, attribute_type: enum
+- `player_set_bee_stingers_in_body` — amount: number
+- `player_set_block_opened_state` — location: location, is_opened: enum{TF}
+- `player_set_boss_bar` — id: text, title: text, progress: number, color: enum, style: enum, sky_effect: enum
+- `player_set_chat_completions` — completions: text, setting_mode: enum
+- `player_set_collidable` — collidable: enum{TF}
+- `player_set_compass_target` — location: location
+- `player_set_cursor_item` — item: item
+- `player_set_death_drops` — death_drops: enum{TF}
+- `player_set_death_screen_score` — score: number
+- `player_set_default_visible` — default_visible: enum{TF}
+- `player_set_enchantment_seed` — seed: number
+- `player_set_ender_chest_contents` — items: item
+- `player_set_entity_glowing` — name_or_uuid: text, color: enum, glow: enum{TF}
+- `player_set_equipment` — item: item, slot: enum
+- `player_set_exhaustion` — exhaustion: number, mode: enum
+- `player_set_experience` — experience: number, mode: enum
+- `player_set_fall_distance` — distance: number
+- `player_set_fire_ticks` — ticks: number
+- `player_set_flying` — is_flying: enum{TF}
+- `player_set_fog_distance` — distance: number
+- `player_set_food` — food: number, mode: enum
+- `player_set_freeze_ticks` — ticks: number, ticking_locked: enum{TF}
+- `player_set_gamemode` — gamemode: enum, flight_mode: enum
+- `player_set_gliding` — is_gliding: enum{TF}
+- `player_set_health` — health: number
+- `player_set_hotbar_slot` — slot: number
+- `player_set_instant_respawn` — instant_respawn: enum{TF}
+- `player_set_inventory_kept` — kept: enum{TF}
+- `player_set_inventory_menu_custom_id` — custom_id: text
+- `player_set_inventory_menu_item` — item: item, slot: number
+- `player_set_inventory_menu_name` — text: text
+- `player_set_invulnerability_ticks` — ticks: number
+- `player_set_item_cooldown` — item: item, cooldown: number, sound: sound
+- `player_set_item_group_cooldown` — key: text, cooldown: number
+- `player_set_items` — items: item
+- `player_set_max_health` — health: number, heal: enum{TF}
+- `player_set_max_invulnerability_ticks` — ticks: number
+- `player_set_movement_speed` — distance: number, movement_type: enum
+- `player_set_nametag_visible` — visible: enum{TF}
+- `player_set_player_list_info` — text: text, position: enum, merging: enum
+- `player_set_pose` — pose: enum, locked: enum{TF}
+- `player_set_pvp` — pvp: enum{TF}
+- `player_set_rain_level` — rain_level: number
+- `player_set_rotation` — yaw: number, pitch: number
+- `player_set_rotation_by_vector` — vector: vector
+- `player_set_saturated_regen_rate` — rate: number
+- `player_set_saturation` — saturation: number, mode: enum
+- `player_set_simulation_distance` — distance: number
+- `player_set_skin` — name_or_uuid: text, server_type: enum
+- `player_set_slot_item` — item: item, slot: number
+- `player_set_spawn_point` — spawn_point: location
+- `player_set_starvation_rate` — rate: number
+- `player_set_thunder_level` — thunder_level: number
+- `player_set_tick_rate` — tick_rate: number
+- `player_set_time` — time: number
+- `player_set_unsaturated_regen_rate` — rate: number
+- `player_set_velocity` — velocity: vector, increment: enum{TF}
+- `player_set_visual_fire` — visual_fire: enum{TFN}
+- `player_set_waypoint_color` — red: number, green: number, blue: number
+- `player_set_waypoint_style` — style: text
+- `player_set_weather` — weather_type: enum
+- `player_set_world_border` — center: location, size: number, warning: number
+- `player_shift_world_border` — old_size: number, size: number, time: number
+- `player_show_custom_recipe` — names: text, is_vanilla_recipe: enum{TF}
+- `player_show_debug_marker` — location: location, name: text, duration: number, red: number, green: number, blue: number, alpha: number
 - `player_show_demo_screen` — (no arguments)
-- `player_show_dialog_menu_from_nbt` — (no arguments)
-- `player_show_inventory_menu` — (no arguments)
-- `player_show_scoreboard` — (no arguments)
+- `player_show_dialog_menu_from_nbt` — dialog_nbt: text
+- `player_show_inventory_menu` — items: item, name: text, custom_id: text, inventory_type: enum
+- `player_show_scoreboard` — id: text
 - `player_show_win_screen` — (no arguments)
-- `player_spectate_target` — (no arguments)
-- `player_start_using_item` — (no arguments)
-- `player_stop_sound` — (no arguments)
-- `player_stop_sounds_by_source` — (no arguments)
-- `player_swing_hand` — (no arguments)
-- `player_teleport` — (no arguments)
-- `player_teleport_sequence` — (no arguments)
-- `player_transfer_to_other_server` — (no arguments)
-- `send_currency_transaction` — (no arguments)
+- `player_spectate_target` — name_or_uuid: text
+- `player_start_using_item` — equipment: enum
+- `player_stop_sound` — sounds: sound
+- `player_stop_sounds_by_source` — source: enum
+- `player_swing_hand` — hand_type: enum
+- `player_teleport` — location: location, keep_rotation: enum{TF}, keep_velocity: enum{TF}, dismount: enum{TF}
+- `player_teleport_sequence` — delay: number, locations: location
+- `player_transfer_to_other_server` — domain: text, port: number
+- `send_currency_transaction` — amount: number, description: text, reason: text
 
 
 <!-- ===== FILE: skill/docs/actions/repeat.md ===== -->
@@ -2664,161 +2664,161 @@ Now: %time%    Online: %online% of %player_amount%
 ## Quick ref
 > Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
-- `game_add_custom_cooking_recipe` — (no arguments)
-- `game_add_custom_crafting_recipe` — (no arguments)
-- `game_add_custom_smithing_transform_recipe` — (no arguments)
-- `game_add_custom_smithing_trim_recipe` — (no arguments)
-- `game_add_custom_stonecutting_recipe` — (no arguments)
-- `game_add_custom_transmute_recipe` — (no arguments)
-- `game_block_growth` — (no arguments)
-- `game_bloom_skulk_catalyst` — (no arguments)
-- `game_bone_meal_block` — (no arguments)
-- `game_break_block` — (no arguments)
+- `game_add_custom_cooking_recipe` — name: text, input: item, result: item, experience: number, cooking_time: number, replace_vanilla: enum{TF}, input_match: enum{ITEM_MATCH}, recipe_type: enum, category: enum
+- `game_add_custom_crafting_recipe` — name: text, items: item, result: item, replace_vanilla: enum{TF}, recipe_match_slot_1: enum{ITEM_MATCH}, recipe_match_slot_2: enum{ITEM_MATCH}, recipe_match_slot_3: enum{ITEM_MATCH}, recipe_match_slot_4: enum{ITEM_MATCH}, recipe_match_slot_5: enum{ITEM_MATCH}, recipe_match_slot_6: enum{ITEM_MATCH}, recipe_match_slot_7: enum{ITEM_MATCH}, recipe_match_slot_8: enum{ITEM_MATCH}, recipe_match_slot_9: enum{ITEM_MATCH}, recipe_type: enum, category: enum
+- `game_add_custom_smithing_transform_recipe` — name: text, template: item, base: item, addition: item, result: item, replace_vanilla: enum{TF}, template_match: enum{ITEM_MATCH}, base_match: enum{ITEM_MATCH}, recipe_match: enum{ITEM_MATCH}, copy_data_components: enum{TF}
+- `game_add_custom_smithing_trim_recipe` — name: text, template: item, base: item, addition: item, trim: item, replace_vanilla: enum{TF}, template_match: enum{ITEM_MATCH}, base_match: enum{ITEM_MATCH}, addition_match: enum{ITEM_MATCH}, copy_data_components: enum{TF}
+- `game_add_custom_stonecutting_recipe` — name: text, input: item, result: item, replace_vanilla: enum{TF}, input_match: enum{ITEM_MATCH}
+- `game_add_custom_transmute_recipe` — name: text, input: item, material: item, result: item, replace_vanilla: enum{TF}, input_match: enum{ITEM_MATCH}, material_match: enum{ITEM_MATCH}, category: enum
+- `game_block_growth` — location: location, growth_stage: number, growth_type: enum
+- `game_bloom_skulk_catalyst` — location: location, bloom_location: location, charge: number
+- `game_bone_meal_block` — location: location, count: number
+- `game_break_block` — locations: location, tool: item, drop_exp: enum{TF}
 - `game_cancel_event` — (no arguments)
-- `game_chunk_get_custom_tag` — (no arguments)
-- `game_chunk_get_custom_tags` — (no arguments)
-- `game_chunk_remove_custom_tag` — (no arguments)
-- `game_chunk_remove_custom_tags` — (no arguments)
-- `game_chunk_set_custom_tag` — (no arguments)
-- `game_clear_container` — (no arguments)
-- `game_clear_container_items` — (no arguments)
+- `game_chunk_get_custom_tag` — variable: variable, location: location, tag_name: text, default_value: any
+- `game_chunk_get_custom_tags` — variable: variable, location: location
+- `game_chunk_remove_custom_tag` — location: location, tag_names: text
+- `game_chunk_remove_custom_tags` — location: location
+- `game_chunk_set_custom_tag` — location: location, tag_names: text, tag_values: text
+- `game_clear_container` — location: location
+- `game_clear_container_items` — location: location, items: item
 - `game_clear_custom_recipes` — (no arguments)
-- `game_clear_exploded_blocks` — (no arguments)
-- `game_clear_region` — (no arguments)
-- `game_clear_scoreboard_scores` — (no arguments)
-- `game_clone_region` — (no arguments)
-- `game_create_explosion` — (no arguments)
-- `game_create_scoreboard` — (no arguments)
-- `game_fill_container` — (no arguments)
-- `game_generate_tree` — (no arguments)
-- `game_get_tile_block_custom_tags` — (no arguments)
-- `game_hide_event_message` — (no arguments)
-- `game_launch_firework` — (no arguments)
-- `game_launch_projectile` — (no arguments)
-- `game_random_tick_block` — (no arguments)
-- `game_remove_container_items` — (no arguments)
-- `game_remove_custom_recipe` — (no arguments)
-- `game_remove_scoreboard` — (no arguments)
-- `game_remove_scoreboard_score_by_name` — (no arguments)
-- `game_remove_scoreboard_score_by_score` — (no arguments)
-- `game_remove_tile_block_custom_tag` — (no arguments)
-- `game_remove_tile_block_custom_tags` — (no arguments)
-- `game_replace_blocks_in_region` — (no arguments)
-- `game_replace_container_items` — (no arguments)
-- `game_send_web_request` — (no arguments)
-- `game_set_age` — (no arguments)
-- `game_set_block` — (no arguments)
-- `game_set_block_analogue_power` — (no arguments)
-- `game_set_block_data` — (no arguments) ⚠ deprecated
-- `game_set_block_drops_enabled` — (no arguments)
-- `game_set_block_nbt` — (no arguments)
-- `game_set_block_powered` — (no arguments)
-- `game_set_block_single_data` — (no arguments)
-- `game_set_brushable_block_item` — (no arguments)
-- `game_set_campfire_item` — (no arguments)
-- `game_set_container` — (no arguments)
-- `game_set_container_lock` — (no arguments)
-- `game_set_container_name` — (no arguments)
-- `game_set_copper_golem_statue_pose` — (no arguments)
-- `game_set_creaking_heart_natural` — (no arguments)
-- `game_set_creaking_heart_state` — (no arguments)
-- `game_set_decorate_pot_sherd` — (no arguments)
-- `game_set_dried_ghast_hydration` — (no arguments)
-- `game_set_event_anvil_damage_state` — (no arguments)
-- `game_set_event_anvil_repair_cost` — (no arguments)
-- `game_set_event_combust_duration` — (no arguments)
-- `game_set_event_damage` — (no arguments)
-- `game_set_event_death_screen_message` — (no arguments)
-- `game_set_event_enchantment_offers` — (no arguments)
-- `game_set_event_exhaustion` — (no arguments)
-- `game_set_event_experience` — (no arguments)
-- `game_set_event_gamemode` — (no arguments)
-- `game_set_event_heal` — (no arguments)
-- `game_set_event_item` — (no arguments)
-- `game_set_event_item_cooldown` — (no arguments)
-- `game_set_event_items` — (no arguments)
-- `game_set_event_knockback_vector` — (no arguments)
-- `game_set_event_move_allowed` — (no arguments)
-- `game_set_event_projectile` — (no arguments)
-- `game_set_event_should_drop_leash` — (no arguments)
-- `game_set_event_should_play_effect` — (no arguments)
-- `game_set_event_sound` — (no arguments)
-- `game_set_event_source_slot` — (no arguments)
-- `game_set_event_target_slot` — (no arguments)
-- `game_set_event_uery_info` — (no arguments)
-- `game_set_event_velocity` — (no arguments)
-- `game_set_furnace_cook_time` — (no arguments)
-- `game_set_hardcore` — (no arguments) ⚠ deprecated
-- `game_set_item_in_container_slot` — (no arguments)
-- `game_set_lectern_book` — (no arguments)
-- `game_set_player_head` — (no arguments)
-- `game_set_potent_sulfur_state` — (no arguments)
-- `game_set_region` — (no arguments)
-- `game_set_scoreboard_line` — (no arguments)
-- `game_set_scoreboard_line_display` — (no arguments)
-- `game_set_scoreboard_line_format` — (no arguments)
-- `game_set_scoreboard_number_format` — (no arguments)
-- `game_set_scoreboard_score` — (no arguments)
-- `game_set_scoreboard_title` — (no arguments)
-- `game_set_sculk_shrieker_can_summon` — (no arguments)
-- `game_set_sculk_shrieker_shrieking` — (no arguments)
-- `game_set_sculk_shrieker_warning_level` — (no arguments)
-- `game_set_sign_text` — (no arguments)
-- `game_set_sign_text_color` — (no arguments)
-- `game_set_sign_waxed` — (no arguments)
-- `game_set_spawner_entity` — (no arguments)
-- `game_set_tile_block_custom_tag` — (no arguments)
-- `game_set_vault_displayed_item` — (no arguments)
-- `game_set_vault_next_state_update_time` — (no arguments)
-- `game_set_world_difficulty` — (no arguments)
-- `game_set_world_gamerule` — (no arguments)
-- `game_set_world_simulation_distance` — (no arguments)
-- `game_set_world_time` — (no arguments)
-- `game_set_world_weather` — (no arguments)
-- `game_spawn_armor_stand` — (no arguments)
-- `game_spawn_block_display` — (no arguments)
-- `game_spawn_effect_cloud` — (no arguments)
-- `game_spawn_end_crystal` — (no arguments)
-- `game_spawn_evoker_fangs` — (no arguments)
-- `game_spawn_experience_orb` — (no arguments)
-- `game_spawn_eye_of_ender` — (no arguments)
-- `game_spawn_falling_block` — (no arguments)
-- `game_spawn_interaction_entity` — (no arguments)
-- `game_spawn_item` — (no arguments)
-- `game_spawn_item_display` — (no arguments)
-- `game_spawn_item_frame` — (no arguments)
-- `game_spawn_lightning_bolt` — (no arguments)
-- `game_spawn_mob` — (no arguments)
-- `game_spawn_painting` — (no arguments)
-- `game_spawn_primed_tnt` — (no arguments)
-- `game_spawn_shulker_bullet` — (no arguments)
-- `game_spawn_text_display` — (no arguments)
-- `game_spawn_vehicle` — (no arguments)
+- `game_clear_exploded_blocks` — location: location
+- `game_clear_region` — pos_1: location, pos_2: location
+- `game_clear_scoreboard_scores` — id: text
+- `game_clone_region` — pos_1: location, pos_2: location, target_pos: location, paste_pos: location, ignore_air: enum{TF}, copy_entity: enum{TF}
+- `game_create_explosion` — location: location, power: number, name_or_uuid: text, fire: enum{TF}, break_blocks: enum{TF}
+- `game_create_scoreboard` — id: text, display_name: text
+- `game_fill_container` — location: location, items: item
+- `game_generate_tree` — location: location, tree_type: enum
+- `game_get_tile_block_custom_tags` — variable: variable, location: location
+- `game_hide_event_message` — hide: enum{TF}
+- `game_launch_firework` — firework: item, location: location, movement: enum, instant: enum{TF}
+- `game_launch_projectile` — projectile: item, location: location, speed: number, inaccuracy: number, custom_name: text, trail: particle
+- `game_random_tick_block` — location: location, times: number
+- `game_remove_container_items` — location: location, items: item
+- `game_remove_custom_recipe` — names: text, remove_vanilla: enum{TF}
+- `game_remove_scoreboard` — id: text
+- `game_remove_scoreboard_score_by_name` — id: text, text: text
+- `game_remove_scoreboard_score_by_score` — id: text, score: number
+- `game_remove_tile_block_custom_tag` — location: location, tag_name: text
+- `game_remove_tile_block_custom_tags` — location: location
+- `game_replace_blocks_in_region` — old_block: block, pos_1: location, pos_2: location, new_block: block
+- `game_replace_container_items` — items: item, location: location, replace: item, count: number
+- `game_send_web_request` — url: text, content_body: text, headers: map, request_type: enum, content_type: enum
+- `game_set_age` — location: location, tick: number
+- `game_set_block` — block: block, locations: location, update_blocks: enum{TF}
+- `game_set_block_analogue_power` — location: location, power_level: number
+- `game_set_block_data` — location: location, block_data: text ⚠ deprecated
+- `game_set_block_drops_enabled` — enable: enum{TF}
+- `game_set_block_nbt` — location: location, tag_names: text, tag_values: text
+- `game_set_block_powered` — location: location, powered: enum{TF}
+- `game_set_block_single_data` — location: location, data: text, value: text
+- `game_set_brushable_block_item` — location: location, item: item
+- `game_set_campfire_item` — location: location, item: item, cooking_time: number, slot: enum
+- `game_set_container` — location: location, items: item
+- `game_set_container_lock` — location: location, container_key: text
+- `game_set_container_name` — location: location, name: text
+- `game_set_copper_golem_statue_pose` — location: location, pose: enum
+- `game_set_creaking_heart_natural` — location: location, natural: enum{TF}
+- `game_set_creaking_heart_state` — location: location, heart_state: enum
+- `game_set_decorate_pot_sherd` — location: location, item: item, side: enum
+- `game_set_dried_ghast_hydration` — location: location, hydration: number
+- `game_set_event_anvil_damage_state` — damage_state: enum
+- `game_set_event_anvil_repair_cost` — repair_cost: number, repair_cost_type: enum, bypass_cost: enum{TF}
+- `game_set_event_combust_duration` — duration: number
+- `game_set_event_damage` — damage: number
+- `game_set_event_death_screen_message` — message: text
+- `game_set_event_enchantment_offers` — enchantments: text, levels: number, costs: number
+- `game_set_event_exhaustion` — exhaustion: number
+- `game_set_event_experience` — experience: number
+- `game_set_event_gamemode` — gamemode: enum
+- `game_set_event_heal` — heal: number
+- `game_set_event_item` — item: item
+- `game_set_event_item_cooldown` — cooldown: number
+- `game_set_event_items` — items: item
+- `game_set_event_knockback_vector` — knockback: vector
+- `game_set_event_move_allowed` — allowed: enum{TF}
+- `game_set_event_projectile` — projectile: item, name: text
+- `game_set_event_should_drop_leash` — should_drop_leash: enum{TF}
+- `game_set_event_should_play_effect` — should_play_effect: enum{TF}
+- `game_set_event_sound` — sound: sound
+- `game_set_event_source_slot` — source_slot: number
+- `game_set_event_target_slot` — target: number
+- `game_set_event_uery_info` — information: text
+- `game_set_event_velocity` — velocity: vector
+- `game_set_furnace_cook_time` — location: location, time: number
+- `game_set_hardcore` — hardcore: enum{TF} ⚠ deprecated
+- `game_set_item_in_container_slot` — location: location, item: item, slot: number
+- `game_set_lectern_book` — location: location, item: item, page: number
+- `game_set_player_head` — location: location, name_or_uuid: text, receive_type: enum
+- `game_set_potent_sulfur_state` — location: location, state: enum
+- `game_set_region` — block: block, pos_1: location, pos_2: location
+- `game_set_scoreboard_line` — id: text, line: text, display: text, score: number, format_content: text, format: enum
+- `game_set_scoreboard_line_display` — id: text, line: text, display: text
+- `game_set_scoreboard_line_format` — id: text, line: text, format_content: text, format: enum
+- `game_set_scoreboard_number_format` — id: text, format_content: text, format: enum
+- `game_set_scoreboard_score` — id: text, text: text, score: number
+- `game_set_scoreboard_title` — id: text, title: text
+- `game_set_sculk_shrieker_can_summon` — location: location, can_summon: enum{TF}
+- `game_set_sculk_shrieker_shrieking` — location: location, shrieking: enum{TF}
+- `game_set_sculk_shrieker_warning_level` — location: location, warning_level: number
+- `game_set_sign_text` — location: location, text: text, line: number, side: enum
+- `game_set_sign_text_color` — location: location, side: enum, sign_text_color: enum, glowing: enum{TF}
+- `game_set_sign_waxed` — location: location, waxed: enum{TF}
+- `game_set_spawner_entity` — location: location, entity: item
+- `game_set_tile_block_custom_tag` — location: location, tag_name: text, tag_value: text
+- `game_set_vault_displayed_item` — location: location, item: item
+- `game_set_vault_next_state_update_time` — location: location, time: number
+- `game_set_world_difficulty` — difficulty: enum
+- `game_set_world_gamerule` — gamerule: enum, value: text
+- `game_set_world_simulation_distance` — distance: number
+- `game_set_world_time` — time: number
+- `game_set_world_weather` — weather_type: enum, weather_duration: number
+- `game_spawn_armor_stand` — helmet: item, chestplate: item, leggings: item, boots: item, right_hand: item, left_hand: item, gravity: enum{TF}, marker: enum{TF}, small: enum{TF}, show_arms: enum{TF}, base_plate: enum{TF}, invisible: enum{TF}, location: location, custom_name: text
+- `game_spawn_block_display` — spawn_location: location, custom_name: text, block: block
+- `game_spawn_effect_cloud` — location: location, effects: potion, radius: number, duration: number, particle: particle, custom_name: text
+- `game_spawn_end_crystal` — location: location, custom_name: text, show_bottom: enum{TF}
+- `game_spawn_evoker_fangs` — location: location, custom_name: text
+- `game_spawn_experience_orb` — location: location, experience_amount: number, custom_name: text
+- `game_spawn_eye_of_ender` — location: location, destination: location, lifespan: number, custom_name: text, end_of_lifespan: enum
+- `game_spawn_falling_block` — block: block, location: location, name: text, should_expire: enum{TF}
+- `game_spawn_interaction_entity` — location: location, custom_name: text, width: number, height: number, responsive: enum{TF}
+- `game_spawn_item` — item: item, location: location, custom_name: text, apply_motion: enum{TF}, can_mob_pickup: enum{TF}, can_player_pickup: enum{TF}
+- `game_spawn_item_display` — spawn_location: location, custom_name: text, displayed_item: item
+- `game_spawn_item_frame` — spawn_location: location, item: item, rotation: enum, block_face: enum, glowing: enum{TF}, visible: enum{TF}, fixed: enum{TF}
+- `game_spawn_lightning_bolt` — location: location
+- `game_spawn_mob` — mob: item, location: location, health: number, custom_name: text, potion_effects: potion, main_hand: item, helmet: item, chestplate: item, leggings: item, boots: item, off_hand: item, natural_equipment: enum{TF}
+- `game_spawn_painting` — spawn_location: location, art: text, block_face: enum
+- `game_spawn_primed_tnt` — location: location, tnt_power: number, fuse_duration: number, custom_name: text, block: block
+- `game_spawn_shulker_bullet` — location: location, custom_name: text
+- `game_spawn_text_display` — spawn_location: location, custom_name: text, merging_mode: enum, displayed_text: text
+- `game_spawn_vehicle` — vehicle: item, location: location, custom_name: text
 - `game_uncancel_event` — (no arguments)
-- `game_update_block` — (no arguments)
-- `game_wobble_decorated_pot` — (no arguments)
-- `if_game_block_equals` — (no arguments)
-- `if_game_block_powered` — (no arguments)
-- `if_game_chunk_has_custom_tag` — (no arguments)
-- `if_game_chunk_is_loaded` — (no arguments)
-- `if_game_container_has` — (no arguments)
-- `if_game_container_has_room_for_item` — (no arguments)
-- `if_game_damage_cause_equals` — (no arguments)
+- `game_update_block` — location: location
+- `game_wobble_decorated_pot` — location: location, style: enum
+- `if_game_block_equals` — location: location, blocks: block
+- `if_game_block_powered` — locations: location, power_mode: enum
+- `if_game_chunk_has_custom_tag` — location: location, tag: text, tag_value: text, compare_type: enum
+- `if_game_chunk_is_loaded` — location: location
+- `if_game_container_has` — location: location, items: item, check_mode: enum{ANY_ALL}, comparison_mode: enum{CMP}
+- `if_game_container_has_room_for_item` — location: location, items: item, check_mode: enum{ANY_ALL}
+- `if_game_damage_cause_equals` — cause: enum
 - `if_game_event_attack_is_critical` — (no arguments)
-- `if_game_event_block_equals` — (no arguments)
-- `if_game_event_has_input` — (no arguments)
+- `if_game_event_block_equals` — blocks: block, locations: location
+- `if_game_event_has_input` — input_type: enum
 - `if_game_event_is_age_locked` — (no arguments)
 - `if_game_event_is_canceled` — (no arguments)
-- `if_game_event_item_equals` — (no arguments)
-- `if_game_has_custom_recipe` — (no arguments)
-- `if_game_has_entity` — (no arguments)
-- `if_game_has_player` — (no arguments)
-- `if_game_heal_cause_equals` — (no arguments)
-- `if_game_ignite_cause_equals` — (no arguments)
-- `if_game_instrument_equals` — (no arguments)
-- `if_game_location_in_block` — (no arguments)
-- `if_game_sign_contains` — (no arguments)
-- `if_game_tile_block_has_custom_tag` — (no arguments)
+- `if_game_event_item_equals` — items: item, comparison_mode: enum{CMP}
+- `if_game_has_custom_recipe` — names: text, is_vanilla_recipe: enum{TF}, compare_type: enum{ANY_ALL}
+- `if_game_has_entity` — names_or_uuids: text, check_mode: enum{ANY_ALL}
+- `if_game_has_player` — names_or_uuids: text, check_mode: enum{ANY_ALL}
+- `if_game_heal_cause_equals` — heal_cause: enum
+- `if_game_ignite_cause_equals` — cause: enum
+- `if_game_instrument_equals` — instrument: enum
+- `if_game_location_in_block` — location: location
+- `if_game_sign_contains` — location: location, texts: text, check_side: enum, check_mode: enum, lines: enum
+- `if_game_tile_block_has_custom_tag` — location: location, tag: text, tag_value: text, compare_type: enum
 
 
 <!-- ===== FILE: skill/docs/events/events.md ===== -->
