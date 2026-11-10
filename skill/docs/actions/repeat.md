@@ -15,3 +15,18 @@
 |  repeat_on_range  |  Range loop  |  Assigns the current number from the given range with a given step into the given variable.  |  repeat  |  variable: variable<br/>start: number<br/>end: number<br/>interval: number  |
 |  repeat_on_sphere  |  Iterate sphere  |  Sequentially yields the location of each point on the sphere with the given parameters.  |  repeat  |  variable: variable<br/>center: location<br/>radius: number<br/>points: number<br/>rotate_location: enum<br/>&nbsp;&nbsp;- NO_CHANGES<br/>&nbsp;&nbsp;- INWARDS<br/>&nbsp;&nbsp;- OUTWARDS  |
 |  repeat_while  |  While loop  |  Runs the code as long as the chosen condition is true.  |  repeat  |    |
+
+## Quick ref
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above.
+
+- `repeat_adjacently` — (no arguments)
+- `repeat_for_each_in_list` — (no arguments)
+- `repeat_for_each_map_entry` — (no arguments)
+- `repeat_forever` — (no arguments)
+- `repeat_multi_times` — (no arguments)
+- `repeat_on_circle` — (no arguments)
+- `repeat_on_grid` — (no arguments)
+- `repeat_on_path` — (no arguments)
+- `repeat_on_range` — (no arguments)
+- `repeat_on_sphere` — (no arguments)
+- `repeat_while` — (no arguments)

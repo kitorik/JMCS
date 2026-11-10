@@ -38,3 +38,41 @@
 |  select_random_mob  |  Select random mob  |  Selects a random mob in the world.  |  select/creation  |    |
 |  select_random_player  |  Select random player  |  Selects a random player in the world.  |  select/creation  |    |
 |  select_reset  |  Reset selection  |  Resets the whole selection.  |  select/creation  |    |
+
+## Quick ref
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above.
+
+- `select_add_all_entities` — (no arguments)
+- `select_add_all_mobs` — (no arguments)
+- `select_add_all_players` — (no arguments)
+- `select_add_entity_by_conditional` — (no arguments)
+- `select_add_entity_by_name` — (no arguments)
+- `select_add_event_target` — (no arguments)
+- `select_add_last_entity` — (no arguments)
+- `select_add_last_mob` — (no arguments)
+- `select_add_mob_by_name` — (no arguments)
+- `select_add_player_by_conditional` — (no arguments)
+- `select_add_player_by_name` — (no arguments)
+- `select_add_random_entity` — (no arguments)
+- `select_add_random_mob` — (no arguments)
+- `select_add_random_player` — (no arguments)
+- `select_all_entities` — (no arguments)
+- `select_all_mobs` — (no arguments)
+- `select_all_players` — (no arguments)
+- `select_entity_by_conditional` — (no arguments)
+- `select_entity_by_name` — (no arguments)
+- `select_event_target` — (no arguments)
+- `select_filter_by_conditional` — (no arguments)
+- `select_filter_by_distance` — (no arguments)
+- `select_filter_by_raycast` — (no arguments)
+- `select_filter_randomly` — (no arguments)
+- `select_invert` — (no arguments)
+- `select_last_entity` — (no arguments)
+- `select_last_mob` — (no arguments)
+- `select_mob_by_name` — (no arguments)
+- `select_player_by_conditional` — (no arguments)
+- `select_player_by_name` — (no arguments)
+- `select_random_entity` — (no arguments)
+- `select_random_mob` — (no arguments)
+- `select_random_player` — (no arguments)
+- `select_reset` — (no arguments)

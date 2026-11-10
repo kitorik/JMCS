@@ -14,3 +14,17 @@
 |  control_wait  |  Wait  |  Pauses the current code block sequence for the given time.  |  control  |  duration: number<br/>time_unit: enum<br/>&nbsp;&nbsp;- TICKS<br/>&nbsp;&nbsp;- SECONDS<br/>&nbsp;&nbsp;- MINUTES  |    |  Minimum delay is 1 tick; in Ticks mode only whole numbers are allowed.  |
 |  else  |  Else  |  ...  |  else  |    |    |    |
 |  start_process  |  Start process  |  Starts a process code line.  |  start_process  |  process_name: text<br/>target_mode: enum<br/>&nbsp;&nbsp;- CURRENT_TARGET<br/>&nbsp;&nbsp;- CURRENT_SELECTION<br/>&nbsp;&nbsp;- NO_TARGET<br/>&nbsp;&nbsp;- FOR_EACH_IN_SELECTION<br/>local_variables_mode: enum<br/>&nbsp;&nbsp;- DONT_COPY<br/>&nbsp;&nbsp;- COPY<br/>&nbsp;&nbsp;- SHARE<br/>args: map  |    |    |
+
+## Quick ref
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above.
+
+- `call_function` — (no arguments)
+- `control_break_label` — (no arguments)
+- `control_call_exception` — (no arguments)
+- `control_end_thread` — (no arguments)
+- `control_return_function` — (no arguments)
+- `control_skip_iteration` — (no arguments)
+- `control_stop_repeat` — (no arguments)
+- `control_wait` — (no arguments)
+- `else` — (no arguments)
+- `start_process` — (no arguments)
