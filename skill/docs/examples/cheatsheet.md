@@ -52,3 +52,39 @@ handler: player_join
 
 > Caveat: one handler used `%math(1-breaker_on)` with a bare name inside — do
  NOT adopt that; keep the rule: wrap variables in the %var family inside %math().
+
+## Structure skeletons
+
+> Minimal structure skeletons — take the shape, fill with task content. Full JSON syntax: `docs/rules.md`.
+
+### Event handler with condition + else
+```
+handler: <event>
+  conditional:
+    condition: <if_...>          # is_inverted where needed
+    operations: [ ...actions... ]
+    else: [ ...fallback actions... ]   # sits right after ITS condition
+```
+
+### Function with parameters
+```
+function <name>
+  parameters: [ {parameter: name, value_type, is_required, default_value, slot} ]
+  is_hidden: FALSE
+  ...actions...                  # read params as %var_line(name)
+  control_return_function        # early return if needed
+```
+
+### Loop with wait (safe)
+```
+repeat_forever / repeat_while:
+  ...body actions...
+  control_wait  duration: 1  time_unit: TICKS   # every big loop body
+```
+
+### Cancel-event handler (block vanilla behavior)
+```
+handler: <event>
+  game_cancel_event
+  ...then custom logic...
+```

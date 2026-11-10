@@ -161,6 +161,15 @@ Then continue with the answer as usual. Do NOT repeat the link later in the same
 
 Do NOT default the game start to interaction with an item (`player_interact`) — that is only ONE of many start methods and NOT a preferred default. If the player did not specify how the game starts, ASK them and offer options: chat command, menu, world start, any event, NPC click, item interaction. Never invent a "starter item" or right-click flow unprompted.
 
+## Static data stays inline
+
+Do NOT store static values in variables. A fixed item, location, vector, text or number known at build time goes DIRECTLY into the argument slot as a value literal — using it inline saves a `set_variable_value` action, a variable, and a read.
+
+- Wrong: `set_variable_value` (sword_item = NBT sword) -> `player_give_items` (items = %var(sword_item)).
+- Right: `player_give_items` (items = the NBT item literal, inline).
+- A variable is justified ONLY when the value: changes at runtime, is computed (`%math(...)`, game values, player input), is read many times where a literal cannot express it, or must persist between runs (save/local scopes).
+- Same principle: prefer the inline `location` literal over the "Create location" action (`docs/value-types/location.md`).
+
 ## Pre-answer self-check
 Run this reasoning pass over the FINAL module before giving it — think each item through against THIS task, do not recite it:
 
@@ -169,7 +178,7 @@ Run this reasoning pass over the FINAL module before giving it — think each it
 3. **Numbers:** numeric slots hold numbers only, or a single `%math(...)` covering the whole slot.
 4. **Variables:** every read goes through the `%var` family (`%var`, `%var_local`, `%var_line`, `%var_save`) — also inside `%math()`.
 5. **Loops:** big loops (>10 iterations) contain `control_wait` (>= 1 tick, integer in TICKS); <= 300 iterations without a wait; loop conditions have ALL required args.
-6. **Scopes:** each variable uses the narrowest scope that works; no zero-initialization.
+6. **Scopes & statics:** each variable uses the narrowest scope that works; no zero-initialization; no variables for static build-time values (inline literals instead).
 7. **Locations:** inline literal when coordinates are known; default build = `spawn_location` with Y - 1.
 8. **Functions:** called only via `call_function`, exact `name`, `args` for every required parameter.
 9. **else:** sits right after its condition; no trailing `else` after independent `if`s.
