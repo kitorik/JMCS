@@ -630,18 +630,18 @@ Now: %time%    Online: %online% of %player_amount%
 |  start_process  |  Start process  |  Starts a process code line.  |  start_process  |  process_name: text<br/>target_mode: enum<br/>&nbsp;&nbsp;- CURRENT_TARGET<br/>&nbsp;&nbsp;- CURRENT_SELECTION<br/>&nbsp;&nbsp;- NO_TARGET<br/>&nbsp;&nbsp;- FOR_EACH_IN_SELECTION<br/>local_variables_mode: enum<br/>&nbsp;&nbsp;- DONT_COPY<br/>&nbsp;&nbsp;- COPY<br/>&nbsp;&nbsp;- SHARE<br/>args: map  |    |    |
 
 ## Quick ref
-> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above.
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
-- `call_function` — (no arguments)
-- `control_break_label` — (no arguments)
-- `control_call_exception` — (no arguments)
+- `call_function` — function_name: text, args: map
+- `control_break_label` — label: text
+- `control_call_exception` — id: text, message: text, type: enum
 - `control_end_thread` — (no arguments)
 - `control_return_function` — (no arguments)
 - `control_skip_iteration` — (no arguments)
 - `control_stop_repeat` — (no arguments)
-- `control_wait` — (no arguments)
+- `control_wait` — duration: number, time_unit: enum
 - `else` — (no arguments)
-- `start_process` — (no arguments)
+- `start_process` — process_name: text, target_mode: enum, local_variables_mode: enum, args: map
 
 
 <!-- ===== FILE: skill/docs/actions/controller.md ===== -->
@@ -658,13 +658,13 @@ Now: %time%    Online: %online% of %player_amount%
 |  controller_measure_time  |  Measure execution time  |  Measures the execution time of the code inside the pistons and assigns the result to a variable.  |  controller  |  variable: variable<br/>duration: enum<br/>&nbsp;&nbsp;- NANOSECONDS<br/>&nbsp;&nbsp;- MICROSECONDS<br/>&nbsp;&nbsp;- MILLISECONDS  |  Accounts for "Wait" blocks.  |
 
 ## Quick ref
-> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above.
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
 - `controller_do_not_run` — (no arguments)
-- `controller_exception` — (no arguments)
-- `controller_isolated_selection` — (no arguments)
-- `controller_label` — (no arguments)
-- `controller_measure_time` — (no arguments)
+- `controller_exception` — variable: variable
+- `controller_isolated_selection` — selection_mode: enum
+- `controller_label` — label: text
+- `controller_measure_time` — variable: variable, duration: enum
 
 
 <!-- ===== FILE: skill/docs/actions/entity.md ===== -->
@@ -1641,18 +1641,18 @@ Now: %time%    Online: %online% of %player_amount%
 |  repeat_while  |  While loop  |  Runs the code as long as the chosen condition is true.  |  repeat  |    |
 
 ## Quick ref
-> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above.
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
-- `repeat_adjacently` — (no arguments)
-- `repeat_for_each_in_list` — (no arguments)
-- `repeat_for_each_map_entry` — (no arguments)
+- `repeat_adjacently` — variable: variable, origin: location, change_rotation: enum{TF}, include_self: enum{TF}, pattern: enum
+- `repeat_for_each_in_list` — index_variable: variable, value_variable: variable, list: array
+- `repeat_for_each_map_entry` — key_variable: variable, value_variable: variable, map: map
 - `repeat_forever` — (no arguments)
-- `repeat_multi_times` — (no arguments)
-- `repeat_on_circle` — (no arguments)
-- `repeat_on_grid` — (no arguments)
-- `repeat_on_path` — (no arguments)
-- `repeat_on_range` — (no arguments)
-- `repeat_on_sphere` — (no arguments)
+- `repeat_multi_times` — variable: variable, amount: number
+- `repeat_on_circle` — variable: variable, center: location, radius: number, circle_points: number, perpendicular_to_plane: vector, start_angle: number, angle_unit: enum{DEG_RAD}
+- `repeat_on_grid` — variable: variable, start: location, end: location
+- `repeat_on_path` — variable: variable, step: number, locations: location, rotation: enum{TF}
+- `repeat_on_range` — variable: variable, start: number, end: number, interval: number
+- `repeat_on_sphere` — variable: variable, center: location, radius: number, points: number, rotate_location: enum
 - `repeat_while` — (no arguments)
 
 
@@ -1699,19 +1699,19 @@ Now: %time%    Online: %online% of %player_amount%
 |  select_reset  |  Reset selection  |  Resets the whole selection.  |  select/creation  |    |
 
 ## Quick ref
-> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above.
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
 - `select_add_all_entities` — (no arguments)
 - `select_add_all_mobs` — (no arguments)
 - `select_add_all_players` — (no arguments)
 - `select_add_entity_by_conditional` — (no arguments)
-- `select_add_entity_by_name` — (no arguments)
-- `select_add_event_target` — (no arguments)
+- `select_add_entity_by_name` — name_or_uuid: text
+- `select_add_event_target` — selection_type: enum
 - `select_add_last_entity` — (no arguments)
 - `select_add_last_mob` — (no arguments)
-- `select_add_mob_by_name` — (no arguments)
+- `select_add_mob_by_name` — name_or_uuid: text
 - `select_add_player_by_conditional` — (no arguments)
-- `select_add_player_by_name` — (no arguments)
+- `select_add_player_by_name` — name_or_uuid: text
 - `select_add_random_entity` — (no arguments)
 - `select_add_random_mob` — (no arguments)
 - `select_add_random_player` — (no arguments)
@@ -1719,18 +1719,18 @@ Now: %time%    Online: %online% of %player_amount%
 - `select_all_mobs` — (no arguments)
 - `select_all_players` — (no arguments)
 - `select_entity_by_conditional` — (no arguments)
-- `select_entity_by_name` — (no arguments)
-- `select_event_target` — (no arguments)
+- `select_entity_by_name` — name_or_uuid: text
+- `select_event_target` — selection_type: enum
 - `select_filter_by_conditional` — (no arguments)
-- `select_filter_by_distance` — (no arguments)
-- `select_filter_by_raycast` — (no arguments)
-- `select_filter_randomly` — (no arguments)
+- `select_filter_by_distance` — location: location, selection_size: number, ignore_y_axis: enum{TF}, compare_mode: enum
+- `select_filter_by_raycast` — variable: variable, origin: location, max_distance: number, ray_size: number, selection_size: number, consider_blocks: enum{TF}, ignore_passable_blocks: enum{TF}, fluid_collision_mode: enum
+- `select_filter_randomly` — size: number
 - `select_invert` — (no arguments)
 - `select_last_entity` — (no arguments)
 - `select_last_mob` — (no arguments)
-- `select_mob_by_name` — (no arguments)
+- `select_mob_by_name` — name_or_uuid: text
 - `select_player_by_conditional` — (no arguments)
-- `select_player_by_name` — (no arguments)
+- `select_player_by_name` — name_or_uuid: text
 - `select_random_entity` — (no arguments)
 - `select_random_mob` — (no arguments)
 - `select_random_player` — (no arguments)
