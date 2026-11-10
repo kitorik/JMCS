@@ -13,9 +13,10 @@ A skill for AI agents that helps them understand coding on the **JustMc** Minecr
 
 - `JAI.zip` — ready-made skill archive (built automatically)
 - `skill/` — skill sources (SKILL.md, VERSION.md, docs/)
-- `.github/workflows/build-zip.yml` — GitHub Action: rebuilds `JAI.zip` on every change to `skill/**`
+- `JAI.md` — flat single-file build of the skill (for models/tools that cannot read zip)
+- `.github/workflows/build-zip.yml` — GitHub Action: rebuilds `JAI.zip` + `JAI.md` on every change to `skill/**`
 
-> ⚠️ Examples in the skill show syntax, not design: chat commands there are demos; start mini-games via interaction events.
+> ⚠️ Examples and notes in the skill show syntax, not design: the mini-game start method is ALWAYS the player's choice — never default to interaction events; ask if unspecified.
 
 ## v1.0.0 (2026-11-10)
 
