@@ -46,6 +46,8 @@ A **line** is one linear code flow (line-scope), without function branches.
 - **Fill EVERY argument slot of every action.** An empty `{}` slot is allowed ONLY after you have deliberately re-checked the action's row in the reference table and are sure (≥90% confidence, re-verified) that this slot must remain empty. When unsure — fill the slot with a value of the required type. The most frequent breakage is items left empty (`{}` in an `items`/`item` slot).
 - Conditions take `"is_inverted"` and nested `"operations"`; `else` is a separate action `{ "action": "else", "values": [], "operations": [...] }` right after the condition.
 
+**Exception — actions that store nothing:** for transient output actions (player messages, action bars, sounds, particles, titles, effects — nothing is saved anywhere) REASON about every slot: fill the slots the task needs; leave a slot `{}` only where you decide this effect genuinely does not need that value (e.g. no sound, no particle). Never use the exception to skip item/block content the task clearly expects.
+
 ## Value types
 - Math is ALWAYS a `number` with a `%math(...)` **string**: `{"type":"number","number":"%math(a + 1)"}`. Never wrap math in `text`.
 - Numeric slot with a placeholder: wrap in `%math()` — e.g. a weight from a map: `%math(%entry(dict, key))` as a number string.
@@ -155,7 +157,7 @@ Do NOT default the game start to interaction with an item (`player_interact`) �
 Run this reasoning pass over the FINAL module before giving it — think each item through against THIS task, do not recite it:
 
 1. **IDs:** every action/event/value ID exists in the reference tables (not invented, not deprecated).
-2. **Slots:** every argument slot is filled per the action row; item/block/sound slots hold NBT item values, not text.
+2. **Slots:** every argument slot is filled per the action row; item/block/sound slots hold NBT item values, not text. For actions that store nothing (player feedback) — reasoned per slot, `{}` only where genuinely not needed.
 3. **Numbers:** numeric slots hold numbers only, or a single `%math(...)` covering the whole slot.
 4. **Variables:** every read goes through the `%var` family (`%var`, `%var_local`, `%var_line`, `%var_save`) — also inside `%math()`.
 5. **Loops:** big loops (>10 iterations) contain `control_wait` (>= 1 tick, integer in TICKS); <= 300 iterations without a wait; loop conditions have ALL required args.
