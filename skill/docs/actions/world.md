@@ -163,158 +163,158 @@
 ## Quick ref
 > Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
-- `game_add_custom_cooking_recipe` — (no arguments)
-- `game_add_custom_crafting_recipe` — (no arguments)
-- `game_add_custom_smithing_transform_recipe` — (no arguments)
-- `game_add_custom_smithing_trim_recipe` — (no arguments)
-- `game_add_custom_stonecutting_recipe` — (no arguments)
-- `game_add_custom_transmute_recipe` — (no arguments)
-- `game_block_growth` — (no arguments)
-- `game_bloom_skulk_catalyst` — (no arguments)
-- `game_bone_meal_block` — (no arguments)
-- `game_break_block` — (no arguments)
+- `game_add_custom_cooking_recipe` — name: text, input: item, result: item, experience: number, cooking_time: number, replace_vanilla: enum{TF}, input_match: enum{ITEM_MATCH}, recipe_type: enum, category: enum
+- `game_add_custom_crafting_recipe` — name: text, items: item, result: item, replace_vanilla: enum{TF}, recipe_match_slot_1: enum{ITEM_MATCH}, recipe_match_slot_2: enum{ITEM_MATCH}, recipe_match_slot_3: enum{ITEM_MATCH}, recipe_match_slot_4: enum{ITEM_MATCH}, recipe_match_slot_5: enum{ITEM_MATCH}, recipe_match_slot_6: enum{ITEM_MATCH}, recipe_match_slot_7: enum{ITEM_MATCH}, recipe_match_slot_8: enum{ITEM_MATCH}, recipe_match_slot_9: enum{ITEM_MATCH}, recipe_type: enum, category: enum
+- `game_add_custom_smithing_transform_recipe` — name: text, template: item, base: item, addition: item, result: item, replace_vanilla: enum{TF}, template_match: enum{ITEM_MATCH}, base_match: enum{ITEM_MATCH}, recipe_match: enum{ITEM_MATCH}, copy_data_components: enum{TF}
+- `game_add_custom_smithing_trim_recipe` — name: text, template: item, base: item, addition: item, trim: item, replace_vanilla: enum{TF}, template_match: enum{ITEM_MATCH}, base_match: enum{ITEM_MATCH}, addition_match: enum{ITEM_MATCH}, copy_data_components: enum{TF}
+- `game_add_custom_stonecutting_recipe` — name: text, input: item, result: item, replace_vanilla: enum{TF}, input_match: enum{ITEM_MATCH}
+- `game_add_custom_transmute_recipe` — name: text, input: item, material: item, result: item, replace_vanilla: enum{TF}, input_match: enum{ITEM_MATCH}, material_match: enum{ITEM_MATCH}, category: enum
+- `game_block_growth` — location: location, growth_stage: number, growth_type: enum
+- `game_bloom_skulk_catalyst` — location: location, bloom_location: location, charge: number
+- `game_bone_meal_block` — location: location, count: number
+- `game_break_block` — locations: location, tool: item, drop_exp: enum{TF}
 - `game_cancel_event` — (no arguments)
-- `game_chunk_get_custom_tag` — (no arguments)
-- `game_chunk_get_custom_tags` — (no arguments)
-- `game_chunk_remove_custom_tag` — (no arguments)
-- `game_chunk_remove_custom_tags` — (no arguments)
-- `game_chunk_set_custom_tag` — (no arguments)
-- `game_clear_container` — (no arguments)
-- `game_clear_container_items` — (no arguments)
+- `game_chunk_get_custom_tag` — variable: variable, location: location, tag_name: text, default_value: any
+- `game_chunk_get_custom_tags` — variable: variable, location: location
+- `game_chunk_remove_custom_tag` — location: location, tag_names: text
+- `game_chunk_remove_custom_tags` — location: location
+- `game_chunk_set_custom_tag` — location: location, tag_names: text, tag_values: text
+- `game_clear_container` — location: location
+- `game_clear_container_items` — location: location, items: item
 - `game_clear_custom_recipes` — (no arguments)
-- `game_clear_exploded_blocks` — (no arguments)
-- `game_clear_region` — (no arguments)
-- `game_clear_scoreboard_scores` — (no arguments)
-- `game_clone_region` — (no arguments)
-- `game_create_explosion` — (no arguments)
-- `game_create_scoreboard` — (no arguments)
-- `game_fill_container` — (no arguments)
-- `game_generate_tree` — (no arguments)
-- `game_get_tile_block_custom_tags` — (no arguments)
-- `game_hide_event_message` — (no arguments)
-- `game_launch_firework` — (no arguments)
-- `game_launch_projectile` — (no arguments)
-- `game_random_tick_block` — (no arguments)
-- `game_remove_container_items` — (no arguments)
-- `game_remove_custom_recipe` — (no arguments)
-- `game_remove_scoreboard` — (no arguments)
-- `game_remove_scoreboard_score_by_name` — (no arguments)
-- `game_remove_scoreboard_score_by_score` — (no arguments)
-- `game_remove_tile_block_custom_tag` — (no arguments)
-- `game_remove_tile_block_custom_tags` — (no arguments)
-- `game_replace_blocks_in_region` — (no arguments)
-- `game_replace_container_items` — (no arguments)
-- `game_send_web_request` — (no arguments)
-- `game_set_age` — (no arguments)
-- `game_set_block` — (no arguments)
-- `game_set_block_analogue_power` — (no arguments)
-- `game_set_block_data` — (no arguments) ⚠ deprecated
-- `game_set_block_drops_enabled` — (no arguments)
-- `game_set_block_nbt` — (no arguments)
-- `game_set_block_powered` — (no arguments)
-- `game_set_block_single_data` — (no arguments)
-- `game_set_brushable_block_item` — (no arguments)
-- `game_set_campfire_item` — (no arguments)
-- `game_set_container` — (no arguments)
-- `game_set_container_lock` — (no arguments)
-- `game_set_container_name` — (no arguments)
-- `game_set_copper_golem_statue_pose` — (no arguments)
-- `game_set_creaking_heart_natural` — (no arguments)
-- `game_set_creaking_heart_state` — (no arguments)
-- `game_set_decorate_pot_sherd` — (no arguments)
-- `game_set_dried_ghast_hydration` — (no arguments)
-- `game_set_event_anvil_damage_state` — (no arguments)
-- `game_set_event_anvil_repair_cost` — (no arguments)
-- `game_set_event_combust_duration` — (no arguments)
-- `game_set_event_damage` — (no arguments)
-- `game_set_event_death_screen_message` — (no arguments)
-- `game_set_event_enchantment_offers` — (no arguments)
-- `game_set_event_exhaustion` — (no arguments)
-- `game_set_event_experience` — (no arguments)
-- `game_set_event_gamemode` — (no arguments)
-- `game_set_event_heal` — (no arguments)
-- `game_set_event_item` — (no arguments)
-- `game_set_event_item_cooldown` — (no arguments)
-- `game_set_event_items` — (no arguments)
-- `game_set_event_knockback_vector` — (no arguments)
-- `game_set_event_move_allowed` — (no arguments)
-- `game_set_event_projectile` — (no arguments)
-- `game_set_event_should_drop_leash` — (no arguments)
-- `game_set_event_should_play_effect` — (no arguments)
-- `game_set_event_sound` — (no arguments)
-- `game_set_event_source_slot` — (no arguments)
-- `game_set_event_target_slot` — (no arguments)
-- `game_set_event_uery_info` — (no arguments)
-- `game_set_event_velocity` — (no arguments)
-- `game_set_furnace_cook_time` — (no arguments)
-- `game_set_hardcore` — (no arguments) ⚠ deprecated
-- `game_set_item_in_container_slot` — (no arguments)
-- `game_set_lectern_book` — (no arguments)
-- `game_set_player_head` — (no arguments)
-- `game_set_potent_sulfur_state` — (no arguments)
-- `game_set_region` — (no arguments)
-- `game_set_scoreboard_line` — (no arguments)
-- `game_set_scoreboard_line_display` — (no arguments)
-- `game_set_scoreboard_line_format` — (no arguments)
-- `game_set_scoreboard_number_format` — (no arguments)
-- `game_set_scoreboard_score` — (no arguments)
-- `game_set_scoreboard_title` — (no arguments)
-- `game_set_sculk_shrieker_can_summon` — (no arguments)
-- `game_set_sculk_shrieker_shrieking` — (no arguments)
-- `game_set_sculk_shrieker_warning_level` — (no arguments)
-- `game_set_sign_text` — (no arguments)
-- `game_set_sign_text_color` — (no arguments)
-- `game_set_sign_waxed` — (no arguments)
-- `game_set_spawner_entity` — (no arguments)
-- `game_set_tile_block_custom_tag` — (no arguments)
-- `game_set_vault_displayed_item` — (no arguments)
-- `game_set_vault_next_state_update_time` — (no arguments)
-- `game_set_world_difficulty` — (no arguments)
-- `game_set_world_gamerule` — (no arguments)
-- `game_set_world_simulation_distance` — (no arguments)
-- `game_set_world_time` — (no arguments)
-- `game_set_world_weather` — (no arguments)
-- `game_spawn_armor_stand` — (no arguments)
-- `game_spawn_block_display` — (no arguments)
-- `game_spawn_effect_cloud` — (no arguments)
-- `game_spawn_end_crystal` — (no arguments)
-- `game_spawn_evoker_fangs` — (no arguments)
-- `game_spawn_experience_orb` — (no arguments)
-- `game_spawn_eye_of_ender` — (no arguments)
-- `game_spawn_falling_block` — (no arguments)
-- `game_spawn_interaction_entity` — (no arguments)
-- `game_spawn_item` — (no arguments)
-- `game_spawn_item_display` — (no arguments)
-- `game_spawn_item_frame` — (no arguments)
-- `game_spawn_lightning_bolt` — (no arguments)
-- `game_spawn_mob` — (no arguments)
-- `game_spawn_painting` — (no arguments)
-- `game_spawn_primed_tnt` — (no arguments)
-- `game_spawn_shulker_bullet` — (no arguments)
-- `game_spawn_text_display` — (no arguments)
-- `game_spawn_vehicle` — (no arguments)
+- `game_clear_exploded_blocks` — location: location
+- `game_clear_region` — pos_1: location, pos_2: location
+- `game_clear_scoreboard_scores` — id: text
+- `game_clone_region` — pos_1: location, pos_2: location, target_pos: location, paste_pos: location, ignore_air: enum{TF}, copy_entity: enum{TF}
+- `game_create_explosion` — location: location, power: number, name_or_uuid: text, fire: enum{TF}, break_blocks: enum{TF}
+- `game_create_scoreboard` — id: text, display_name: text
+- `game_fill_container` — location: location, items: item
+- `game_generate_tree` — location: location, tree_type: enum
+- `game_get_tile_block_custom_tags` — variable: variable, location: location
+- `game_hide_event_message` — hide: enum{TF}
+- `game_launch_firework` — firework: item, location: location, movement: enum, instant: enum{TF}
+- `game_launch_projectile` — projectile: item, location: location, speed: number, inaccuracy: number, custom_name: text, trail: particle
+- `game_random_tick_block` — location: location, times: number
+- `game_remove_container_items` — location: location, items: item
+- `game_remove_custom_recipe` — names: text, remove_vanilla: enum{TF}
+- `game_remove_scoreboard` — id: text
+- `game_remove_scoreboard_score_by_name` — id: text, text: text
+- `game_remove_scoreboard_score_by_score` — id: text, score: number
+- `game_remove_tile_block_custom_tag` — location: location, tag_name: text
+- `game_remove_tile_block_custom_tags` — location: location
+- `game_replace_blocks_in_region` — old_block: block, pos_1: location, pos_2: location, new_block: block
+- `game_replace_container_items` — items: item, location: location, replace: item, count: number
+- `game_send_web_request` — url: text, content_body: text, headers: map, request_type: enum, content_type: enum
+- `game_set_age` — location: location, tick: number
+- `game_set_block` — block: block, locations: location, update_blocks: enum{TF}
+- `game_set_block_analogue_power` — location: location, power_level: number
+- `game_set_block_data` — location: location, block_data: text ⚠ deprecated
+- `game_set_block_drops_enabled` — enable: enum{TF}
+- `game_set_block_nbt` — location: location, tag_names: text, tag_values: text
+- `game_set_block_powered` — location: location, powered: enum{TF}
+- `game_set_block_single_data` — location: location, data: text, value: text
+- `game_set_brushable_block_item` — location: location, item: item
+- `game_set_campfire_item` — location: location, item: item, cooking_time: number, slot: enum
+- `game_set_container` — location: location, items: item
+- `game_set_container_lock` — location: location, container_key: text
+- `game_set_container_name` — location: location, name: text
+- `game_set_copper_golem_statue_pose` — location: location, pose: enum
+- `game_set_creaking_heart_natural` — location: location, natural: enum{TF}
+- `game_set_creaking_heart_state` — location: location, heart_state: enum
+- `game_set_decorate_pot_sherd` — location: location, item: item, side: enum
+- `game_set_dried_ghast_hydration` — location: location, hydration: number
+- `game_set_event_anvil_damage_state` — damage_state: enum
+- `game_set_event_anvil_repair_cost` — repair_cost: number, repair_cost_type: enum, bypass_cost: enum{TF}
+- `game_set_event_combust_duration` — duration: number
+- `game_set_event_damage` — damage: number
+- `game_set_event_death_screen_message` — message: text
+- `game_set_event_enchantment_offers` — enchantments: text, levels: number, costs: number
+- `game_set_event_exhaustion` — exhaustion: number
+- `game_set_event_experience` — experience: number
+- `game_set_event_gamemode` — gamemode: enum
+- `game_set_event_heal` — heal: number
+- `game_set_event_item` — item: item
+- `game_set_event_item_cooldown` — cooldown: number
+- `game_set_event_items` — items: item
+- `game_set_event_knockback_vector` — knockback: vector
+- `game_set_event_move_allowed` — allowed: enum{TF}
+- `game_set_event_projectile` — projectile: item, name: text
+- `game_set_event_should_drop_leash` — should_drop_leash: enum{TF}
+- `game_set_event_should_play_effect` — should_play_effect: enum{TF}
+- `game_set_event_sound` — sound: sound
+- `game_set_event_source_slot` — source_slot: number
+- `game_set_event_target_slot` — target: number
+- `game_set_event_uery_info` — information: text
+- `game_set_event_velocity` — velocity: vector
+- `game_set_furnace_cook_time` — location: location, time: number
+- `game_set_hardcore` — hardcore: enum{TF} ⚠ deprecated
+- `game_set_item_in_container_slot` — location: location, item: item, slot: number
+- `game_set_lectern_book` — location: location, item: item, page: number
+- `game_set_player_head` — location: location, name_or_uuid: text, receive_type: enum
+- `game_set_potent_sulfur_state` — location: location, state: enum
+- `game_set_region` — block: block, pos_1: location, pos_2: location
+- `game_set_scoreboard_line` — id: text, line: text, display: text, score: number, format_content: text, format: enum
+- `game_set_scoreboard_line_display` — id: text, line: text, display: text
+- `game_set_scoreboard_line_format` — id: text, line: text, format_content: text, format: enum
+- `game_set_scoreboard_number_format` — id: text, format_content: text, format: enum
+- `game_set_scoreboard_score` — id: text, text: text, score: number
+- `game_set_scoreboard_title` — id: text, title: text
+- `game_set_sculk_shrieker_can_summon` — location: location, can_summon: enum{TF}
+- `game_set_sculk_shrieker_shrieking` — location: location, shrieking: enum{TF}
+- `game_set_sculk_shrieker_warning_level` — location: location, warning_level: number
+- `game_set_sign_text` — location: location, text: text, line: number, side: enum
+- `game_set_sign_text_color` — location: location, side: enum, sign_text_color: enum, glowing: enum{TF}
+- `game_set_sign_waxed` — location: location, waxed: enum{TF}
+- `game_set_spawner_entity` — location: location, entity: item
+- `game_set_tile_block_custom_tag` — location: location, tag_name: text, tag_value: text
+- `game_set_vault_displayed_item` — location: location, item: item
+- `game_set_vault_next_state_update_time` — location: location, time: number
+- `game_set_world_difficulty` — difficulty: enum
+- `game_set_world_gamerule` — gamerule: enum, value: text
+- `game_set_world_simulation_distance` — distance: number
+- `game_set_world_time` — time: number
+- `game_set_world_weather` — weather_type: enum, weather_duration: number
+- `game_spawn_armor_stand` — helmet: item, chestplate: item, leggings: item, boots: item, right_hand: item, left_hand: item, gravity: enum{TF}, marker: enum{TF}, small: enum{TF}, show_arms: enum{TF}, base_plate: enum{TF}, invisible: enum{TF}, location: location, custom_name: text
+- `game_spawn_block_display` — spawn_location: location, custom_name: text, block: block
+- `game_spawn_effect_cloud` — location: location, effects: potion, radius: number, duration: number, particle: particle, custom_name: text
+- `game_spawn_end_crystal` — location: location, custom_name: text, show_bottom: enum{TF}
+- `game_spawn_evoker_fangs` — location: location, custom_name: text
+- `game_spawn_experience_orb` — location: location, experience_amount: number, custom_name: text
+- `game_spawn_eye_of_ender` — location: location, destination: location, lifespan: number, custom_name: text, end_of_lifespan: enum
+- `game_spawn_falling_block` — block: block, location: location, name: text, should_expire: enum{TF}
+- `game_spawn_interaction_entity` — location: location, custom_name: text, width: number, height: number, responsive: enum{TF}
+- `game_spawn_item` — item: item, location: location, custom_name: text, apply_motion: enum{TF}, can_mob_pickup: enum{TF}, can_player_pickup: enum{TF}
+- `game_spawn_item_display` — spawn_location: location, custom_name: text, displayed_item: item
+- `game_spawn_item_frame` — spawn_location: location, item: item, rotation: enum, block_face: enum, glowing: enum{TF}, visible: enum{TF}, fixed: enum{TF}
+- `game_spawn_lightning_bolt` — location: location
+- `game_spawn_mob` — mob: item, location: location, health: number, custom_name: text, potion_effects: potion, main_hand: item, helmet: item, chestplate: item, leggings: item, boots: item, off_hand: item, natural_equipment: enum{TF}
+- `game_spawn_painting` — spawn_location: location, art: text, block_face: enum
+- `game_spawn_primed_tnt` — location: location, tnt_power: number, fuse_duration: number, custom_name: text, block: block
+- `game_spawn_shulker_bullet` — location: location, custom_name: text
+- `game_spawn_text_display` — spawn_location: location, custom_name: text, merging_mode: enum, displayed_text: text
+- `game_spawn_vehicle` — vehicle: item, location: location, custom_name: text
 - `game_uncancel_event` — (no arguments)
-- `game_update_block` — (no arguments)
-- `game_wobble_decorated_pot` — (no arguments)
-- `if_game_block_equals` — (no arguments)
-- `if_game_block_powered` — (no arguments)
-- `if_game_chunk_has_custom_tag` — (no arguments)
-- `if_game_chunk_is_loaded` — (no arguments)
-- `if_game_container_has` — (no arguments)
-- `if_game_container_has_room_for_item` — (no arguments)
-- `if_game_damage_cause_equals` — (no arguments)
+- `game_update_block` — location: location
+- `game_wobble_decorated_pot` — location: location, style: enum
+- `if_game_block_equals` — location: location, blocks: block
+- `if_game_block_powered` — locations: location, power_mode: enum
+- `if_game_chunk_has_custom_tag` — location: location, tag: text, tag_value: text, compare_type: enum
+- `if_game_chunk_is_loaded` — location: location
+- `if_game_container_has` — location: location, items: item, check_mode: enum{ANY_ALL}, comparison_mode: enum{CMP}
+- `if_game_container_has_room_for_item` — location: location, items: item, check_mode: enum{ANY_ALL}
+- `if_game_damage_cause_equals` — cause: enum
 - `if_game_event_attack_is_critical` — (no arguments)
-- `if_game_event_block_equals` — (no arguments)
-- `if_game_event_has_input` — (no arguments)
+- `if_game_event_block_equals` — blocks: block, locations: location
+- `if_game_event_has_input` — input_type: enum
 - `if_game_event_is_age_locked` — (no arguments)
 - `if_game_event_is_canceled` — (no arguments)
-- `if_game_event_item_equals` — (no arguments)
-- `if_game_has_custom_recipe` — (no arguments)
-- `if_game_has_entity` — (no arguments)
-- `if_game_has_player` — (no arguments)
-- `if_game_heal_cause_equals` — (no arguments)
-- `if_game_ignite_cause_equals` — (no arguments)
-- `if_game_instrument_equals` — (no arguments)
-- `if_game_location_in_block` — (no arguments)
-- `if_game_sign_contains` — (no arguments)
-- `if_game_tile_block_has_custom_tag` — (no arguments)
+- `if_game_event_item_equals` — items: item, comparison_mode: enum{CMP}
+- `if_game_has_custom_recipe` — names: text, is_vanilla_recipe: enum{TF}, compare_type: enum{ANY_ALL}
+- `if_game_has_entity` — names_or_uuids: text, check_mode: enum{ANY_ALL}
+- `if_game_has_player` — names_or_uuids: text, check_mode: enum{ANY_ALL}
+- `if_game_heal_cause_equals` — heal_cause: enum
+- `if_game_ignite_cause_equals` — cause: enum
+- `if_game_instrument_equals` — instrument: enum
+- `if_game_location_in_block` — location: location
+- `if_game_sign_contains` — location: location, texts: text, check_side: enum, check_mode: enum, lines: enum
+- `if_game_tile_block_has_custom_tag` — location: location, tag: text, tag_value: text, compare_type: enum
