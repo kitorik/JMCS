@@ -71,6 +71,9 @@ A **line** is one linear code flow (line-scope), without function branches.
 - The name must exactly match the function's `"name"`.
 - **NEVER call a function via `start_process`.** `start_process` starts a process code line (parallel/reusable lines); functions are called ONLY via `call_function`.
 
+## Default build location
+- **If the player did not give coordinates where to build the map, build by default at the world spawn** — the world center where players spawn. Take the `spawn_location` game value (`selection: "null"`) and **lower the Y coordinate by 1** (`%math(%var(y)-1)` or `set_variable_change` with −1), so the build sits on the ground under the spawn point instead of floating at the spawn block.
+- Use exact coordinates only when the player explicitly gave them.
 ## Function parameters (the `"Parameter"` value)
 A function handler declares its parameters in `values`: a single entry named `parameters` of type `array`, where each element is a value of type `parameter`:
 

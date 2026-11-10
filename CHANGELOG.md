@@ -2,6 +2,12 @@
 
 All notable changes to the JAI skill. The current version lives in `skill/SKILL.md` and `skill/VERSION.md` (kept in sync).
 
+## [1.1.0] — 2026-11-10
+
+### New knowledge
+
+- Default build location: when the player gives no coordinates, build at the world spawn (`spawn_location` game value, `selection: "null"`) with Y lowered by 1.
+
 ## [1.0.3] — 2026-11-10
 
 ### New rules (variables)

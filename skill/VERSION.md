@@ -1,6 +1,6 @@
 # JAI skill version
 
-**Current version: 1.0.3**
+**Current version: 1.1.0**
 
 *Last updated: 2026-11-10*
 
@@ -13,6 +13,9 @@ Before answering a user question about JustMc:
 3. **If the versions differ (lower or higher) — tell the user FIRST**, then answer:
    > ⚠️ My JAI skill version in SKILL.md is **X**, but VERSION.md says **Y**. Files are out of sync: the skill is outdated or corrupted. Download a fresh `JAI.zip` from https://github.com/kitorik/JMCS.
 4. If the versions match — proceed as usual.
+
+## 1.1.0 (2026-11-10)
+- **New rule (rules.md → Default build location):** if the player did not give coordinates where to build the map, build by default at the world spawn — the point where players spawn. Use the `spawn_location` game value (`selection: "null"`) and lower the Y coordinate by 1, so the build sits on the ground under the spawn point.
 
 ## 1.0.3 (2026-11-10)
 - **New rules for AI agents (rules.md → Variables):**

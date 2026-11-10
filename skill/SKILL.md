@@ -1,7 +1,7 @@
 ---
 name: JAI
 description: JustMc AI (JAI) — skill for coding on the JustMc Minecraft server (Creative+ mini-game). References for actions, game values, events, value types (text, number, item, location, vector, enum, array, map, variable, game_value, sound, particle), JSON module examples (EditSession, Essentials, Economy), cheatsheet, variable functions and %math() expressions.
-version: 1.0.3
+version: 1.1.0
 tags:
   - minecraft
   - justmc
@@ -247,10 +247,12 @@ Now: %time%    Online: %online% of %player_amount%
 7. **Prefer the inline `location` value literal** over the "Create location" action when coordinates are known — see `docs/value-types/location.md`.
 8. **Use the narrowest variable scope that works** (`line` → `local` → `game` → `save`) — do not default everything to `game`. Function parameters are read as `%var_line(name)`.
 9. **Delays:** `control_wait` minimum is 1 tick, integers only in TICKS mode. Under heavy world load use the CPU-wait pattern (`rules.md` → Delays and world load) — the world must never reach the critical error caused by sustained 100%+ load.
+10. **Default build location:** if the player gave no coordinates, build at the world spawn (`spawn_location` game value) with Y lowered by 1 (`rules.md` → Default build location).
 
 ---
 
 ## 📝 Versions
+- **1.1.0** — New rule: when the player gives no build coordinates, build by default at the world spawn (`spawn_location` game value) with Y lowered by 1.
 - **1.0.3** — New variable rules: never zero-initialize or "declare" variables (unset = 0); clear variables only via `set_variable_remove` / `set_variable_purge`; check game start with `if_variable_exists`, not marker variables.
 - **1.0.2** — Added the missing `parameter` value-type reference (`docs/value-types/parameter.md`); removed dead references to deleted example files in cheatsheet.md.
 - **1.0.0** — Initial release: complete starter set (SKILL.md, rules, 8 action references, events, values, 13 value-types incl. `parameter`, cheatsheet, official examples EditSession/Essentials/Economy).
