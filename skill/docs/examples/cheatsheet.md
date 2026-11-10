@@ -62,7 +62,7 @@ Before every thread/process start: `token = token + 1`; inside the thread save `
 
 ### 5. Chat command
 `player_chat` + `if_player_chat_message_equals` (ignore_case TRUE) → `cancel_event` → `call_function`. Prefix `@` or `\`.
-> ⚠️ Chat commands are for admin commands and syntax demos. **Start mini-games via interaction** (item RMB with `if_game_event_item_equals`, plate, menu), see randombox.json.
+> ⚠️ Chat commands are for admin commands and syntax demos. The mini-game start method is always the player's choice (see `docs/rules.md`).
 
 ### 6. Block coordinates (corners)
 JustMc gives coordinates from the block CENTER; a display spawns from the corner: `cl = center − 0.5` per axis (`set_variable_get_all_coordinates` → `set_variable_set_all_coordinates` with `%math(x-0.5)`).
@@ -71,4 +71,4 @@ JustMc gives coordinates from the block CENTER; a display spawns from the corner
 `fb_%random_uuid%` — base name; add construction-part suffixes. Never name two entities the same.
 
 ### 8. Random pick
-`rnd = %math(floor(random*10))` + an `if_variable_less` / else chain. Or `repeat_on_grid` with a random point inside p1..p2 (see breakblock.json).
+`rnd = %math(floor(random*10))` + an `if_variable_less` / else chain. Or `repeat_on_grid` with a random point inside p1..p2.

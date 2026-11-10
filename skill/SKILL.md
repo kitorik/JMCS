@@ -1,7 +1,7 @@
 ---
 name: JAI
 description: JustMc AI (JAI) — skill for coding on the JustMc Minecraft server (Creative+ mini-game). References for actions, game values, events, value types (text, number, item, location, vector, enum, array, map, variable, game_value, sound, particle), JSON module examples (EditSession, Essentials, Economy), cheatsheet, variable functions and %math() expressions.
-version: 1.0.1
+version: 1.0.2
 tags:
   - minecraft
   - justmc
@@ -251,6 +251,7 @@ Now: %time%    Online: %online% of %player_amount%
 ---
 
 ## 📝 Versions
+- **1.0.2** — Added the missing `parameter` value-type reference (`docs/value-types/parameter.md`); removed dead references to deleted example files in cheatsheet.md.
 - **1.0.0** — Initial release: complete starter set (SKILL.md, rules, 8 action references, events, values, 13 value-types incl. `parameter`, cheatsheet, official examples EditSession/Essentials/Economy).
 
 ---

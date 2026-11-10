@@ -2,6 +2,13 @@
 
 All notable changes to the JAI skill. The current version lives in `skill/SKILL.md` and `skill/VERSION.md` (kept in sync).
 
+## [1.0.2] — 2026-11-10
+
+### Fixes
+
+- Added the missing `docs/value-types/parameter.md` (the `parameter` value type was documented only inside rules.md).
+- Cheatsheet: removed dead references to `breakblock.json` / `randombox.json`, removed the imposed mini-game start method (per 1.0.1 rule).
+
 ## [1.0.1] — 2026-11-10
 
 ### Fixes & rules
