@@ -1,8 +1,8 @@
 # JAI skill version
 
-**Current version: 3.2.0**
+**Current version: 1.0.0**
 
-*Last updated: 2026-11-09*
+*Last updated: 2026-11-10*
 
 ## Instruction for AI agents
 
@@ -11,8 +11,14 @@ Before answering a user question about JustMc:
 1. Read the version of your skill copy — the `version:` field in the SKILL.md frontmatter.
 2. Compare it with the version in this file (VERSION.md).
 3. **If the versions differ (lower or higher) — tell the user FIRST**, then answer:
-   > ⚠️ My JAI skill version in SKILL.md is **X**, but VERSION.md says **Y**. Files are out of sync: the skill is outdated or corrupted. Download a fresh `JAI.zip` from https://github.com/kitorik/justmc-ai.
+   > ⚠️ My JAI skill version in SKILL.md is **X**, but VERSION.md says **Y**. Files are out of sync: the skill is outdated or corrupted. Download a fresh `JAI.zip` from https://github.com/kitorik/JMCS.
 4. If the versions match — proceed as usual.
+
+## 1.0.0 (2026-11-10)
+- **Version numbering reset to 1.0.0** — stable release version. No content changes.
+
+## 3.2.1 (2026-11-10)
+- Removed the skill-authored examples `breakblock.json` and `randombox.json`. Only official in-game exports remain (EditSession, Essentials, Economy), left untouched.
 
 ## 3.2.0 (2026-11-09)
 - **Compact reference tables** (`docs/actions/*.md`, `docs/events/events.md`, `docs/values/values.md`): Icon column and empty columns removed; repeated enum sets replaced with macros — `{TF}` (TRUE/FALSE), `{TFN}` (TRUE/FALSE/NOT_SET), `{ANY_ALL}` (ANY/ALL), `{ITEM_MATCH}`, `{DEG_RAD}`, `{CMP}` (legend at the top of each file). Tables ~26% smaller, meaning and IDs unchanged.
