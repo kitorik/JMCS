@@ -253,248 +253,248 @@
 ## Quick ref
 > Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
-- `entity_attach_lead` — (no arguments)
+- `entity_attach_lead` — name_or_uuid: text, location: location
 - `entity_celar_potion_effects` — (no arguments)
 - `entity_clear_merchant_recipes` — (no arguments)
 - `entity_complete_using_active_item` — (no arguments)
-- `entity_damage` — (no arguments)
-- `entity_disguise_as_block` — (no arguments)
-- `entity_disguise_as_entity` — (no arguments)
-- `entity_disguise_as_item` — (no arguments)
-- `entity_disguise_as_player` — (no arguments)
+- `entity_damage` — damage: number, source: text
+- `entity_disguise_as_block` — block: block
+- `entity_disguise_as_entity` — entity_type: item
+- `entity_disguise_as_item` — item: item
+- `entity_disguise_as_player` — name_or_uuid: text, display_name: text, server_type: enum
 - `entity_eat_grass` — (no arguments)
-- `entity_eat_target` — (no arguments)
+- `entity_eat_target` — name_or_uuid: text
 - `entity_explode` — (no arguments)
-- `entity_face_location` — (no arguments)
-- `entity_get_attribute` — (no arguments)
-- `entity_get_custom_tag` — (no arguments)
-- `entity_get_custom_tags` — (no arguments)
-- `entity_get_equipment_item` — (no arguments)
-- `entity_get_nbt` — (no arguments)
-- `entity_give_potion_effects` — (no arguments)
-- `entity_heal` — (no arguments)
+- `entity_face_location` — location: location
+- `entity_get_attribute` — variable: variable, attribute_type: enum, return_value: enum
+- `entity_get_custom_tag` — variable: variable, name: text, default: any
+- `entity_get_custom_tags` — variable: variable
+- `entity_get_equipment_item` — variable: variable, slot: enum
+- `entity_get_nbt` — variable: variable, path: text, value_type: enum
+- `entity_give_potion_effects` — potions: potion, overwrite: enum{TF}, show_icon: enum{TF}, particle_mode: enum
+- `entity_heal` — heal: number
 - `entity_ignite_creeper` — (no arguments)
 - `entity_jump` — (no arguments)
-- `entity_launch_forward` — (no arguments)
-- `entity_launch_projectile` — (no arguments)
-- `entity_launch_to_location` — (no arguments)
-- `entity_launch_up` — (no arguments)
+- `entity_launch_forward` — power: number, increment: enum{TF}, launch_axis: enum
+- `entity_launch_projectile` — projectile: item, location: location, name: text, speed: number, inaccuracy: number, trail: particle
+- `entity_launch_to_location` — location: location, power: number, increment: enum{TF}
+- `entity_launch_up` — power: number, increment: enum{TF}
 - `entity_leave_vehicle` — (no arguments)
-- `entity_mimic_disguise_from_entity` — (no arguments)
-- `entity_modify_piglin_barter_materials` — (no arguments)
-- `entity_modify_piglin_interested_materials` — (no arguments)
-- `entity_move_to_location` — (no arguments)
+- `entity_mimic_disguise_from_entity` — name_or_uuid: text, include_disguise: enum{TF}, remove_original_entity: enum{TF}
+- `entity_modify_piglin_barter_materials` — materials: item, modification_mode: enum
+- `entity_modify_piglin_interested_materials` — materials: item, modification_mode: enum
+- `entity_move_to_location` — location: location, speed: number
 - `entity_move_to_location_stop` — (no arguments)
-- `entity_play_damage_animation` — (no arguments)
-- `entity_play_hurt_animation` — (no arguments)
-- `entity_ram_target` — (no arguments)
+- `entity_play_damage_animation` — damage_type: enum
+- `entity_play_hurt_animation` — yaw: number
+- `entity_ram_target` — name_or_uuid: text
 - `entity_remove` — (no arguments)
-- `entity_remove_custom_tag` — (no arguments)
+- `entity_remove_custom_tag` — name: text
 - `entity_remove_custom_tags` — (no arguments)
 - `entity_remove_disguise` — (no arguments)
-- `entity_remove_merchant_recipe` — (no arguments)
-- `entity_remove_potion_effect` — (no arguments)
+- `entity_remove_merchant_recipe` — recipe_index: number
+- `entity_remove_potion_effect` — effects: potion
 - `entity_reset_display_brightness` — (no arguments)
 - `entity_reset_display_glow_color` — (no arguments)
 - `entity_reset_mannequin_description` — (no arguments)
 - `entity_reset_text_display_background` — (no arguments)
 - `entity_reset_waypoint_color` — (no arguments)
-- `entity_retrieve_fishing_hook` — (no arguments)
-- `entity_ride_entity` — (no arguments)
-- `entity_roll_armadillo` — (no arguments)
-- `entity_set_absorption_health` — (no arguments)
-- `entity_set_age_lock` — (no arguments)
-- `entity_set_ai` — (no arguments)
-- `entity_set_allay_dancing` — (no arguments)
-- `entity_set_angry` — (no arguments)
-- `entity_set_animal_age` — (no arguments)
-- `entity_set_armor_items` — (no arguments)
-- `entity_set_armor_stand_parts` — (no arguments)
-- `entity_set_armor_stand_pose` — (no arguments)
-- `entity_set_arrow_hit_sound` — (no arguments)
-- `entity_set_arrow_pierce` — (no arguments)
-- `entity_set_attribute` — (no arguments)
-- `entity_set_aware` — (no arguments)
-- `entity_set_axolotl_type` — (no arguments)
-- `entity_set_baby` — (no arguments)
-- `entity_set_base_arrow_damage` — (no arguments)
-- `entity_set_bee_has_stinger` — (no arguments)
-- `entity_set_bee_nectar` — (no arguments)
-- `entity_set_block_display_block` — (no arguments)
-- `entity_set_camel_dashing` — (no arguments)
-- `entity_set_carrying_chest` — (no arguments)
-- `entity_set_cat_lying_down` — (no arguments)
-- `entity_set_cat_type` — (no arguments)
-- `entity_set_celebrating` — (no arguments)
-- `entity_set_chicken_type` — (no arguments)
-- `entity_set_collidable` — (no arguments)
-- `entity_set_copper_golem_oxidizing` — (no arguments)
-- `entity_set_copper_golem_oxidizing_at_time` — (no arguments)
-- `entity_set_copper_golem_weathering` — (no arguments)
-- `entity_set_cow_type` — (no arguments)
-- `entity_set_creeper_charge` — (no arguments)
-- `entity_set_creeper_fuse` — (no arguments)
-- `entity_set_current_health` — (no arguments)
-- `entity_set_custom_name` — (no arguments)
-- `entity_set_custom_name_visibility` — (no arguments)
-- `entity_set_custom_tag` — (no arguments)
-- `entity_set_death_drops` — (no arguments)
-- `entity_set_death_time` — (no arguments)
-- `entity_set_default_visible` — (no arguments)
-- `entity_set_despawning` — (no arguments)
-- `entity_set_display_billboard` — (no arguments)
-- `entity_set_display_brightness` — (no arguments)
-- `entity_set_display_correct_transformation_matrix` — (no arguments)
-- `entity_set_display_culling_suze` — (no arguments)
-- `entity_set_display_glow_color` — (no arguments)
-- `entity_set_display_interpolation` — (no arguments)
-- `entity_set_display_rotation_from_axis_angle` — (no arguments)
-- `entity_set_display_rotation_from_euler_angles` — (no arguments)
-- `entity_set_display_rotation_from_vector` — (no arguments)
-- `entity_set_display_scale` — (no arguments)
-- `entity_set_display_shadow` — (no arguments)
-- `entity_set_display_teleport_duration` — (no arguments)
-- `entity_set_display_transformation_matrix` — (no arguments) ⚠ deprecated
-- `entity_set_display_translation` — (no arguments)
-- `entity_set_display_view_range` — (no arguments)
-- `entity_set_dragon_phase` — (no arguments)
-- `entity_set_dye_color` — (no arguments)
-- `entity_set_end_crystal_beam` — (no arguments)
-- `entity_set_enderman_block` — (no arguments)
-- `entity_set_equipment_item` — (no arguments)
-- `entity_set_explosive_power` — (no arguments)
-- `entity_set_fall_distance` — (no arguments)
-- `entity_set_falling_block_type` — (no arguments)
-- `entity_set_fire_ticks` — (no arguments)
-- `entity_set_fishing_wait` — (no arguments)
-- `entity_set_fox_leaping` — (no arguments)
-- `entity_set_fox_type` — (no arguments)
-- `entity_set_freeze_ticks` — (no arguments)
-- `entity_set_friction` — (no arguments)
-- `entity_set_frog_type` — (no arguments)
-- `entity_set_fuse_ticks` — (no arguments)
-- `entity_set_gliding` — (no arguments)
-- `entity_set_glow_squid_dark` — (no arguments)
-- `entity_set_glowing` — (no arguments)
-- `entity_set_goat_screaming` — (no arguments)
-- `entity_set_gravity` — (no arguments)
-- `entity_set_hanging_facing_location` — (no arguments)
-- `entity_set_horse_jump` — (no arguments)
-- `entity_set_horse_pattern` — (no arguments)
-- `entity_set_immune_to_zombification` — (no arguments)
-- `entity_set_interaction_responsive` — (no arguments)
-- `entity_set_interaction_size` — (no arguments)
-- `entity_set_invisible` — (no arguments)
-- `entity_set_invulnerability_ticks` — (no arguments)
-- `entity_set_invulnerable` — (no arguments)
-- `entity_set_item` — (no arguments)
-- `entity_set_item_display_item` — (no arguments)
-- `entity_set_item_display_model_type` — (no arguments)
-- `entity_set_item_frame_item_drop_chance` — (no arguments)
-- `entity_set_item_in_frame` — (no arguments)
-- `entity_set_item_owner` — (no arguments)
-- `entity_set_llama_type` — (no arguments)
-- `entity_set_location` — (no arguments)
-- `entity_set_mannequin_description` — (no arguments)
-- `entity_set_mannequin_immovable` — (no arguments)
-- `entity_set_mannequin_main_hand` — (no arguments)
-- `entity_set_mannequin_skin` — (no arguments)
-- `entity_set_mannequin_skin_model` — (no arguments)
-- `entity_set_mannequin_skin_parts` — (no arguments)
-- `entity_set_mannequin_skin_patch` — (no arguments)
-- `entity_set_marker` — (no arguments)
-- `entity_set_max_health` — (no arguments)
-- `entity_set_max_invulnerability_ticks` — (no arguments)
-- `entity_set_merchant_recipe` — (no arguments)
-- `entity_set_minecart_block` — (no arguments)
-- `entity_set_mob_aggressive` — (no arguments)
-- `entity_set_mushroom_cow_type` — (no arguments)
-- `entity_set_no_physics` — (no arguments)
-- `entity_set_painting_art` — (no arguments)
-- `entity_set_panda_gene` — (no arguments)
-- `entity_set_panda_on_back` — (no arguments)
-- `entity_set_panda_rolling` — (no arguments)
-- `entity_set_panda_sad_ticks` — (no arguments)
-- `entity_set_parrot_type` — (no arguments)
-- `entity_set_pathfinder_settings` — (no arguments)
-- `entity_set_persistence` — (no arguments)
-- `entity_set_persistent` — (no arguments)
-- `entity_set_pickup` — (no arguments)
-- `entity_set_pickup_delay` — (no arguments)
-- `entity_set_pig_type` — (no arguments)
-- `entity_set_piglin_able_to_hunt` — (no arguments)
-- `entity_set_piglin_charging_crossbow` — (no arguments)
-- `entity_set_piglin_dancing` — (no arguments)
-- `entity_set_pose` — (no arguments)
-- `entity_set_potion_cloud_radius` — (no arguments)
-- `entity_set_primed_tnt_block` — (no arguments)
-- `entity_set_projectile_display_item` — (no arguments)
-- `entity_set_projectile_power` — (no arguments)
-- `entity_set_projectile_shooter` — (no arguments)
-- `entity_set_rabbit_type` — (no arguments)
-- `entity_set_rearing` — (no arguments)
-- `entity_set_riptiding` — (no arguments)
-- `entity_set_rotation` — (no arguments)
-- `entity_set_rotation_by_vector` — (no arguments)
-- `entity_set_sheep_sheared` — (no arguments) ⚠ deprecated
-- `entity_set_shulker_bullet_target` — (no arguments)
-- `entity_set_shulker_peek` — (no arguments)
-- `entity_set_silenced` — (no arguments)
-- `entity_set_sitting` — (no arguments)
-- `entity_set_size` — (no arguments)
-- `entity_set_sniffer_state` — (no arguments)
-- `entity_set_snowman_pumpkin` — (no arguments)
-- `entity_set_tame` — (no arguments)
-- `entity_set_target` — (no arguments)
-- `entity_set_text_display_alignment` — (no arguments)
-- `entity_set_text_display_background` — (no arguments)
-- `entity_set_text_display_line_width` — (no arguments)
-- `entity_set_text_display_opacity` — (no arguments)
-- `entity_set_text_display_see_through` — (no arguments)
-- `entity_set_text_display_text` — (no arguments)
-- `entity_set_text_display_text_shadow` — (no arguments)
-- `entity_set_tropical_fish_pattern` — (no arguments)
-- `entity_set_vex_charging` — (no arguments)
-- `entity_set_vex_limited_lifetime_ticks` — (no arguments)
-- `entity_set_villager_biome` — (no arguments)
-- `entity_set_villager_experience` — (no arguments)
-- `entity_set_villager_profession` — (no arguments)
-- `entity_set_visual_fire` — (no arguments)
-- `entity_set_warden_anger_level` — (no arguments)
-- `entity_set_warden_digging` — (no arguments)
-- `entity_set_waypoint_color` — (no arguments)
-- `entity_set_waypoint_style` — (no arguments)
-- `entity_set_wearing_saddle` — (no arguments)
-- `entity_set_wither_invulnerability_ticks` — (no arguments)
-- `entity_set_wolf_sound_variant` — (no arguments)
-- `entity_set_wolf_type` — (no arguments)
-- `entity_set_zombie_arms_raised` — (no arguments) ⚠ deprecated
-- `entity_set_zombie_nautilus_variant` — (no arguments)
+- `entity_retrieve_fishing_hook` — slot: enum
+- `entity_ride_entity` — name_or_uuid: text
+- `entity_roll_armadillo` — roll: enum
+- `entity_set_absorption_health` — health: number
+- `entity_set_age_lock` — age_lock: enum{TF}
+- `entity_set_ai` — ai: enum{TF}
+- `entity_set_allay_dancing` — dance: enum{TF}
+- `entity_set_angry` — angry: enum{TF}, target: text
+- `entity_set_animal_age` — age: number, lock: enum
+- `entity_set_armor_items` — helmet: item, chestplate: item, leggings: item, boots: item, silent: enum{TF}
+- `entity_set_armor_stand_parts` — arms: enum, base_plate: enum
+- `entity_set_armor_stand_pose` — x_rotation: number, y_rotation: number, z_rotation: number, body_part: enum
+- `entity_set_arrow_hit_sound` — sound: sound
+- `entity_set_arrow_pierce` — pierce: number
+- `entity_set_attribute` — value: number, attribute_type: enum
+- `entity_set_aware` — aware: enum{TF}
+- `entity_set_axolotl_type` — axolotl_type: enum
+- `entity_set_baby` — baby: enum{TF}
+- `entity_set_base_arrow_damage` — damage: number
+- `entity_set_bee_has_stinger` — stinger: enum{TF}
+- `entity_set_bee_nectar` — nectar: enum{TF}
+- `entity_set_block_display_block` — displayed_block: block
+- `entity_set_camel_dashing` — dashing: enum{TF}
+- `entity_set_carrying_chest` — carrying: enum{TF}
+- `entity_set_cat_lying_down` — lying_down: enum{TF}
+- `entity_set_cat_type` — cat_type: enum
+- `entity_set_celebrating` — celebrating: enum{TF}
+- `entity_set_chicken_type` — variant: enum
+- `entity_set_collidable` — collidable: enum{TF}
+- `entity_set_copper_golem_oxidizing` — oxidizing_state: enum
+- `entity_set_copper_golem_oxidizing_at_time` — time: number
+- `entity_set_copper_golem_weathering` — weathering_state: enum
+- `entity_set_cow_type` — variant: enum
+- `entity_set_creeper_charge` — charged: enum{TF}
+- `entity_set_creeper_fuse` — fuse_ticks: number
+- `entity_set_current_health` — health: number
+- `entity_set_custom_name` — custom_name: text
+- `entity_set_custom_name_visibility` — visibility: enum{TF}
+- `entity_set_custom_tag` — name: text, value: text
+- `entity_set_death_drops` — drops: enum{TF}
+- `entity_set_death_time` — death_time: number
+- `entity_set_default_visible` — default_visible: enum{TF}
+- `entity_set_despawning` — despawning: enum{TF}
+- `entity_set_display_billboard` — billboard_type: enum
+- `entity_set_display_brightness` — block_light_level: number, sky_light_level: number
+- `entity_set_display_correct_transformation_matrix` — matrix: number
+- `entity_set_display_culling_suze` — width: number, height: number
+- `entity_set_display_glow_color` — color_hexadecimal: text
+- `entity_set_display_interpolation` — interpolation_duration: number, interpolation_delay: number
+- `entity_set_display_rotation_from_axis_angle` — axis_vector: vector, angle: number, mode: enum, input: enum{DEG_RAD}, rotation: enum
+- `entity_set_display_rotation_from_euler_angles` — yaw: number, pitch: number, roll: number, mode: enum, input: enum{DEG_RAD}, rotation: enum
+- `entity_set_display_rotation_from_vector` — direction: vector, up: vector, rotation: enum
+- `entity_set_display_scale` — scale_vector: vector, mode: enum
+- `entity_set_display_shadow` — shadow_radius: number, shadow_opacity_percentage: number
+- `entity_set_display_teleport_duration` — duration: number
+- `entity_set_display_transformation_matrix` — row_major_matrix: number ⚠ deprecated
+- `entity_set_display_translation` — translation_vector: vector, mode: enum
+- `entity_set_display_view_range` — view_range: number
+- `entity_set_dragon_phase` — phase: enum
+- `entity_set_dye_color` — color: enum
+- `entity_set_end_crystal_beam` — beam: location
+- `entity_set_enderman_block` — block: block
+- `entity_set_equipment_item` — item: item, slot: enum
+- `entity_set_explosive_power` — power: number
+- `entity_set_fall_distance` — fall_distance: number
+- `entity_set_falling_block_type` — block: block
+- `entity_set_fire_ticks` — ticks: number
+- `entity_set_fishing_wait` — time: number, wait_type: enum
+- `entity_set_fox_leaping` — leaping: enum{TF}
+- `entity_set_fox_type` — fox_type: enum
+- `entity_set_freeze_ticks` — ticks: number, ticking_locked: enum{TF}
+- `entity_set_friction` — friction: enum{TFN}
+- `entity_set_frog_type` — frog_variant: enum
+- `entity_set_fuse_ticks` — fuse_ticks: number
+- `entity_set_gliding` — is_gliding: enum{TF}
+- `entity_set_glow_squid_dark` — dark_ticks: number
+- `entity_set_glowing` — glowing: enum{TF}
+- `entity_set_goat_screaming` — screams: enum{TF}
+- `entity_set_gravity` — gravity: enum{TF}
+- `entity_set_hanging_facing_location` — facing: enum, force: enum{TF}
+- `entity_set_horse_jump` — power: number
+- `entity_set_horse_pattern` — horse_color: enum, horse_style: enum
+- `entity_set_immune_to_zombification` — is_immune: enum{TF}
+- `entity_set_interaction_responsive` — responsive: enum{TF}
+- `entity_set_interaction_size` — width: number, height: number
+- `entity_set_invisible` — invisible: enum{TF}
+- `entity_set_invulnerability_ticks` — ticks: number
+- `entity_set_invulnerable` — invulnerable: enum{TF}
+- `entity_set_item` — item: item
+- `entity_set_item_display_item` — displayed_item: item
+- `entity_set_item_display_model_type` — display_model_type: enum
+- `entity_set_item_frame_item_drop_chance` — drop_chance: number
+- `entity_set_item_in_frame` — item: item, play_sound: enum{TF}
+- `entity_set_item_owner` — name_or_uuid: text
+- `entity_set_llama_type` — type: enum
+- `entity_set_location` — velocity: vector, increment: enum{TF}
+- `entity_set_mannequin_description` — description: text
+- `entity_set_mannequin_immovable` — immovable: enum{TF}
+- `entity_set_mannequin_main_hand` — hand: enum
+- `entity_set_mannequin_skin` — name_or_uuid: text, server_type: enum
+- `entity_set_mannequin_skin_model` — model: enum
+- `entity_set_mannequin_skin_parts` — hat: enum{TFN}, jacket: enum{TFN}, left_sleeve: enum{TFN}, right_sleeve: enum{TFN}, left_pants: enum{TFN}, right_pants: enum{TFN}, cape: enum{TFN}
+- `entity_set_mannequin_skin_patch` — texture_key: text, patch_target: enum
+- `entity_set_marker` — marker: enum{TF}
+- `entity_set_max_health` — max_health: number, heal_to_max: enum{TF}
+- `entity_set_max_invulnerability_ticks` — ticks: number
+- `entity_set_merchant_recipe` — result: item, ingredient_one: item, ingredient_two: item, index: number, mode: enum, uses: number, max_uses: number, villager_experience: number, price_multiplifier: number, demand: number, special_price: number, ignore_discounts: enum{TF}, experience_reward: enum{TF}
+- `entity_set_minecart_block` — block: block, block_offset: number
+- `entity_set_mob_aggressive` — aggressive: enum{TF}
+- `entity_set_mushroom_cow_type` — cow_type: enum
+- `entity_set_no_physics` — no_physics: enum{TF}
+- `entity_set_painting_art` — art: text, force: enum{TF}
+- `entity_set_panda_gene` — gene: enum, gene_type: enum
+- `entity_set_panda_on_back` — on_back: enum{TF}
+- `entity_set_panda_rolling` — rolling: enum{TF}
+- `entity_set_panda_sad_ticks` — sad_ticks: number
+- `entity_set_parrot_type` — parrot_type: enum
+- `entity_set_pathfinder_settings` — navigation_type: enum, can_float: enum{TFN}, can_open_door: enum{TFN}, can_pass_door: enum{TFN}
+- `entity_set_persistence` — persistence: enum{TF}
+- `entity_set_persistent` — persistent: enum{TF}
+- `entity_set_pickup` — can_mob_pickup: enum{TF}, can_player_pickup: enum{TF}
+- `entity_set_pickup_delay` — delay: number
+- `entity_set_pig_type` — variant: enum
+- `entity_set_piglin_able_to_hunt` — able: enum{TF}
+- `entity_set_piglin_charging_crossbow` — charging: enum{TF}
+- `entity_set_piglin_dancing` — dancing_time: number
+- `entity_set_pose` — pose: enum
+- `entity_set_potion_cloud_radius` — radius: number, shrinking_speed: number
+- `entity_set_primed_tnt_block` — block: block
+- `entity_set_projectile_display_item` — item: item
+- `entity_set_projectile_power` — power: vector
+- `entity_set_projectile_shooter` — uuid: text
+- `entity_set_rabbit_type` — rabbit_type: enum
+- `entity_set_rearing` — rearing: enum{TF}
+- `entity_set_riptiding` — riptiding: enum{TF}
+- `entity_set_rotation` — yaw: number, pitch: number
+- `entity_set_rotation_by_vector` — vector: vector
+- `entity_set_sheep_sheared` — sheared: enum{TF} ⚠ deprecated
+- `entity_set_shulker_bullet_target` — target: text
+- `entity_set_shulker_peek` — rolling: number, silent: enum{TF}
+- `entity_set_silenced` — silenced: enum{TF}
+- `entity_set_sitting` — sitting: enum{TF}
+- `entity_set_size` — size: number
+- `entity_set_sniffer_state` — state: enum
+- `entity_set_snowman_pumpkin` — pumpkin: enum{TF}
+- `entity_set_tame` — name_or_uuid: text
+- `entity_set_target` — name_or_uuid: text
+- `entity_set_text_display_alignment` — text_alignment: enum
+- `entity_set_text_display_background` — color_hexadecimal: text, opacity: number
+- `entity_set_text_display_line_width` — line_width: number
+- `entity_set_text_display_opacity` — text_opacity: number
+- `entity_set_text_display_see_through` — enable_see_through: enum{TF}
+- `entity_set_text_display_text` — displayed_text: text, merging_mode: enum
+- `entity_set_text_display_text_shadow` — enable_text_shadow: enum{TF}
+- `entity_set_tropical_fish_pattern` — pattern_color: enum, body_color: enum, pattern: enum
+- `entity_set_vex_charging` — charging: enum{TF}
+- `entity_set_vex_limited_lifetime_ticks` — lifetime: number
+- `entity_set_villager_biome` — biome: enum
+- `entity_set_villager_experience` — experience: number
+- `entity_set_villager_profession` — profession: enum
+- `entity_set_visual_fire` — visual_fire: enum{TFN}
+- `entity_set_warden_anger_level` — name_or_uuid: text, anger: number
+- `entity_set_warden_digging` — digging: enum
+- `entity_set_waypoint_color` — red: number, green: number, blue: number
+- `entity_set_waypoint_style` — style: text
+- `entity_set_wearing_saddle` — wearing: enum{TF}
+- `entity_set_wither_invulnerability_ticks` — ticks: number
+- `entity_set_wolf_sound_variant` — sound_variant: enum
+- `entity_set_wolf_type` — wolf_type: enum
+- `entity_set_zombie_arms_raised` — arms_raised: enum{TF} ⚠ deprecated
+- `entity_set_zombie_nautilus_variant` — variant: enum
 - `entity_shear` — (no arguments)
 - `entity_shear_sheep` — (no arguments) ⚠ deprecated
-- `entity_sleep` — (no arguments)
-- `entity_swing_hand` — (no arguments)
-- `entity_teleport` — (no arguments)
-- `entity_use_item` — (no arguments)
-- `if_entity_collides_at_location` — (no arguments)
-- `if_entity_collides_using_hitbox` — (no arguments)
-- `if_entity_collides_with_entity` — (no arguments)
+- `entity_sleep` — sleep: enum{TF}
+- `entity_swing_hand` — hand_type: enum
+- `entity_teleport` — location: location, keep_rotation: enum{TF}
+- `entity_use_item` — hand: enum, enable: enum{TF}
+- `if_entity_collides_at_location` — location: location
+- `if_entity_collides_using_hitbox` — min: location, max: location
+- `if_entity_collides_with_entity` — name_or_uuid: text, check_type: enum
 - `if_entity_exists` — (no arguments)
 - `if_entity_has_available_path` — (no arguments)
-- `if_entity_has_custom_tag` — (no arguments)
-- `if_entity_has_potion_effect` — (no arguments)
-- `if_entity_in_area` — (no arguments)
+- `if_entity_has_custom_tag` — tag: text, tag_value: text, compare_type: enum
+- `if_entity_has_potion_effect` — potions: potion, check_mode: enum{ANY_ALL}
+- `if_entity_in_area` — location_1: location, location_2: location, ignore_y_axis: enum{TF}, intersect_type: enum, check_type: enum
 - `if_entity_is_disguised` — (no arguments)
 - `if_entity_is_grounded` — (no arguments)
 - `if_entity_is_item` — (no arguments)
-- `if_entity_is_minecraft_tagged` — (no arguments)
+- `if_entity_is_minecraft_tagged` — namespace: text
 - `if_entity_is_mob` — (no arguments)
-- `if_entity_is_near_location` — (no arguments)
+- `if_entity_is_near_location` — ignore_y_axis: enum{TF}, location: location, range: number
 - `if_entity_is_projectile` — (no arguments)
-- `if_entity_is_riding_entity` — (no arguments)
-- `if_entity_is_standing_on_block` — (no arguments)
-- `if_entity_is_type` — (no arguments)
+- `if_entity_is_riding_entity` — entity_ids: text, compare_mode: enum
+- `if_entity_is_standing_on_block` — blocks: block, locations: location, only_solid: enum{TF}
+- `if_entity_is_type` — entity_types: item
 - `if_entity_is_undead` — (no arguments)
 - `if_entity_is_vehicle` — (no arguments)
-- `if_entity_name_equals` — (no arguments)
-- `if_entity_spawn_reason_equals` — (no arguments)
+- `if_entity_name_equals` — names_or_uuids: text
+- `if_entity_spawn_reason_equals` — reason: enum
