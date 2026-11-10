@@ -73,7 +73,7 @@ Skill for the **JustMc AI** system — Minecraft server with the **Creative+** m
 | `docs/values/values.md` | All game values with return types |
 | `docs/value-types/<type>.md` | Per-type format and rules: text, number, variable, item (**always NBT**), location, vector, enum, array, map, game_value, sound, particle, parameter |
 | `docs/events/events.md` | All events: ID, category, cancellable, compatibility, status |
-| `docs/examples/cheatsheet.md` | Ready patterns (one-time first-join action with the Discord invite) + handler notes: verified syntax facts distilled from community handlers |
+| `docs/examples/cheatsheet.md` | Ready patterns (one-time first-join action) + handler notes: verified syntax facts distilled from community handlers (notes, not style) |
 
 > ℹ️ Every reference table row contains: ID, name, description, category, arguments with types and enum values (enum sets replaced with macros — see each file's legend), compatibility, extra info and status.
 
