@@ -3029,6 +3029,221 @@ Now: %time%    Online: %online% of %player_amount%
 |  world_web_exception  |  Web request error  |  Runs code if a web request could not get a response.  |  world  |  false  |    |    |    |
 |  world_web_response  |  Server response  |  Runs code when the server that received a web request responds.  |  world  |  false  |    |    |    |
 
+## Quick ref
+> All event IDs, one per line — scan this first when picking a trigger.
+> Frequency marks (N/10): 0 = almost never used, 10 = used most often. Unmarked = normal use. Details and compatibility: see the full table above.
+
+- `beacon_activate`
+- `beacon_deactivate`
+- `bell_ring`
+- `block_break_block`
+- `block_burn`
+- `block_damage`
+- `block_damage_abort`
+- `block_dispense_loot`
+- `block_explode`
+- `block_fade`
+- `block_failed_dispense`
+- `block_fall`
+- `block_fertilize`
+- `block_flow`
+- `block_form`
+- `block_form_by_entity`
+- `block_grow`
+- `block_ignite`
+- `block_piston_extend`
+- `block_piston_retract`
+- `block_spread`
+- `brew_complete`
+- `chunk_load`
+- `chunk_unload`
+- `crafter_craft`
+- `dispenser_dispense_item`
+- `dispenser_equip_armor`
+- `dispenser_shear_sheep`
+- `elder_guardian_appears_at_player`
+- `enderman_attack_player`
+- `enderman_escape`
+- `entity_bell_ring`
+- `entity_block_break_progress_update`
+- `entity_combust`
+- `entity_damage_entity`
+- `entity_damage_player`
+- `entity_death`
+- `entity_drop_item`
+- `entity_equipment_changed`
+- `entity_explode`
+- `entity_explosion`
+- `entity_heal`
+- `entity_interact`
+- `entity_kill_entity`
+- `entity_knockback`
+- `entity_load_crossbow`
+- `entity_pickup_item`
+- `entity_removed_from_world`
+- `entity_resurrect`
+- `entity_shot_bow`
+- `entity_spawn`
+- `entity_spell_cast`
+- `entity_start_gliding`
+- `entity_stop_gliding`
+- `entity_take_damage`
+- `entity_teleport`
+- `entity_transform`
+- `entity_unleash_event`
+- `experience_orb_merge`
+- `falling_block_land`
+- `firework_explode`
+- `fishing_hook_state_change`
+- `fluid_level_change`
+- `furnace_burn`
+- `furnace_smelt`
+- `furnace_start_smelt`
+- `goat_ram_entity`
+- `hanging_break`
+- `hopper_pickup_item`
+- `item_despawn`
+- `item_merge`
+- `item_moved_into_container`
+- `leaves_decay`
+- `mob_kill_player`
+- `moisture_change`
+- `note_play`
+- `piglin_barter`
+- `player_anticheat_flag`
+- `player_anvil_damaged`
+- `player_anvil_rename_input`
+- `player_arm_swing`
+- `player_ask_gamemode_change`
+- `player_block_break_progress_update`
+- `player_block_dispense_loot`
+- `player_break_block`
+- `player_break_item`
+- `player_change_slot`
+- `player_chat` (8/10)
+- `player_click_inventory`
+- `player_click_own_inventory`
+- `player_close_advancements_menu`
+- `player_close_inventory`
+- `player_combust`
+- `player_consume_item`
+- `player_craft_item`
+- `player_currency_transaction`
+- `player_custom_click`
+- `player_damage_entity`
+- `player_damage_item`
+- `player_damage_player`
+- `player_death`
+- `player_dismount`
+- `player_drag_inventory`
+- `player_drop_item`
+- `player_edit_book`
+- `player_enchant_item`
+- `player_equipment_changed`
+- `player_exhaustion`
+- `player_fail_move`
+- `player_feed_sulfur_cube_item`
+- `player_fish`
+- `player_flowerpot_manipulate`
+- `player_food_level_change`
+- `player_furnace_extract`
+- `player_harvest_block`
+- `player_heal`
+- `player_horse_jump`
+- `player_imbue_potion_cloud`
+- `player_input_event` (6/10)
+- `player_interact` (8/10)
+- `player_inventory_slot_change`
+- `player_item_cooldown`
+- `player_item_group_cooldown`
+- `player_item_mend`
+- `player_join` (7/10)
+- `player_jump` (5/10)
+- `player_kill_mob`
+- `player_kill_player`
+- `player_knockback`
+- `player_launch_projectile`
+- `player_leash_entity`
+- `player_left_click`
+- `player_load_crossbow`
+- `player_location_change`
+- `player_move`
+- `player_open_advancements_tab`
+- `player_open_inventory`
+- `player_pick_block`
+- `player_pick_entity`
+- `player_pick_item`
+- `player_pickup_experience`
+- `player_pickup_item`
+- `player_pickup_projectile`
+- `player_place_block`
+- `player_pre_attack_entity`
+- `player_prepare_item_craft`
+- `player_prepare_item_enchant`
+- `player_prepare_result`
+- `player_projectile_hit`
+- `player_query_block_info`
+- `player_query_entity_info`
+- `player_quit` (5/10)
+- `player_rejoin`
+- `player_request_stats`
+- `player_respawn`
+- `player_resurrect`
+- `player_right_click`
+- `player_right_click_entity` (5/10)
+- `player_right_click_player`
+- `player_riptide`
+- `player_rotate`
+- `player_shear_block`
+- `player_shot_bow`
+- `player_sign_change`
+- `player_skin_change`
+- `player_sneak`
+- `player_start_flight`
+- `player_start_gliding`
+- `player_start_spectating_entity`
+- `player_start_sprint`
+- `player_stop_flight`
+- `player_stop_gliding`
+- `player_stop_spectating_entity`
+- `player_stop_sprint`
+- `player_stop_using_item`
+- `player_structure_grow`
+- `player_swap_hands`
+- `player_take_damage`
+- `player_tame_entity`
+- `player_teleport`
+- `player_toggle_entity_age_lock`
+- `player_unleash_entity`
+- `player_unsneak`
+- `player_vault_change_state`
+- `player_vehicle_jump`
+- `player_vehicle_move`
+- `player_velocity`
+- `portal_create`
+- `projectile_damage_entity`
+- `projectile_damage_player`
+- `projectile_hit`
+- `projectile_kill_entity`
+- `projectile_launch`
+- `projective_collide`
+- `redstone_level_change`
+- `sculk_bloom`
+- `sheep_regrow_wool`
+- `sponge_absorb`
+- `structure_grow`
+- `time_skip`
+- `tnt_prime`
+- `vault_change_state`
+- `vault_display_item`
+- `vehicle_take_damage`
+- `witch_throw_potion`
+- `world_reload` (2/10)
+- `world_start` (6/10)
+- `world_stop` (3/10)
+- `world_web_exception` (1/10)
+- `world_web_response` (2/10)
+
 
 <!-- ===== FILE: skill/docs/values/values.md ===== -->
 # Game values
@@ -3259,6 +3474,232 @@ Now: %time%    Online: %online% of %player_amount%
 |  yaw  |  Horizontal rotation  |  Gets the target horizontal (left/right) rotation (yaw).  |  Location  |  number  |    |    |
 |  z_coordinate  |  Coordinate Z  |  Gets the target location Z coordinate.  |  Location  |  number  |    |    |
 
+
+## Quick ref
+> All game value IDs, one per line — scan this first when picking a value.
+> Frequency marks (N/10): 0 = almost never used, 10 = used most often. Unmarked = normal use. Details and compatibility: see the full table above.
+
+- `absorption_health`
+- `active_item_used_time`
+- `age`
+- `all_entities_names`
+- `all_entities_uuids`
+- `all_players_names`
+- `all_players_uuids`
+- `anticheat_check`
+- `anticheat_violations`
+- `armor_items`
+- `armor_points`
+- `armor_toughness`
+- `arrows_in_body`
+- `attached_leads`
+- `attack_cooldown_strength`
+- `attack_cooldown_ticks`
+- `attack_damage`
+- `attack_speed`
+- `block_beneath`
+- `blocks_beneath`
+- `body_yaw`
+- `cape_location`
+- `cardinal_direction`
+- `chat_visibility`
+- `client_brand_name`
+- `client_view_distance`
+- `clientside_locale`
+- `cpu_usage` (5/10)
+- `currency_transaction_amount`
+- `currency_transaction_reason`
+- `currency_transaction_result`
+- `current_health`
+- `current_input_list`
+- `cursor_item`
+- `custom_inventory_items`
+- `death_screen_score`
+- `delay_reload_count`
+- `direction_of_view`
+- `display_entity_left_rotation`
+- `display_entity_right_rotation`
+- `display_entity_scale`
+- `display_entity_translation`
+- `display_name`
+- `enchantment_seed`
+- `entity_fuse_ticks`
+- `entity_height`
+- `entity_item`
+- `entity_pathfinder_point_index`
+- `entity_pathfinder_points`
+- `entity_pick_item_stack`
+- `entity_ticks_lived`
+- `entity_type`
+- `entity_width_x`
+- `entity_width_z`
+- `event_added_items`
+- `event_advancement_tab_name` ⚠ deprecated
+- `event_anvil_damage_state`
+- `event_anvil_rename_input`
+- `event_block`
+- `event_block_break_progress`
+- `event_block_face`
+- `event_block_location` (7/10)
+- `event_blocks_involved`
+- `event_chat_message`
+- `event_close_inventory_cause`
+- `event_combust_duration`
+- `event_combust_reason`
+- `event_custom_click_dialog_view_data`
+- `event_custom_click_key`
+- `event_damage`
+- `event_damage_cause`
+- `event_death_screen_message`
+- `event_drag_type`
+- `event_enchantment_bonus`
+- `event_enchantment_hint`
+- `event_enchantment_level_hint`
+- `event_enchantment_offers`
+- `event_enchantments_to_add`
+- `event_entity_unleash_reason`
+- `event_equipment_slot`
+- `event_exhaustion_amount`
+- `event_exhaustion_reason`
+- `event_experience`
+- `event_fail_move_reason`
+- `event_final_damage`
+- `event_fish_state`
+- `event_food_level`
+- `event_from_location` (4/10)
+- `event_gamemode`
+- `event_hanging_break_cause`
+- `event_heal_amount`
+- `event_heal_cause`
+- `event_hotbar_slot`
+- `event_input_list`
+- `event_interaction` (6/10)
+- `event_inventory_action`
+- `event_inventory_click_type`
+- `event_item`
+- `event_item_cooldown`
+- `event_item_cooldown_group`
+- `event_item_damage`
+- `event_items`
+- `event_knockback_cause`
+- `event_knockback_event_type`
+- `event_knockback_vector`
+- `event_message`
+- `event_new_equipments`
+- `event_new_fishing_hook_state`
+- `event_new_location` (4/10)
+- `event_new_potion_effect`
+- `event_new_vault_state`
+- `event_old_equipments`
+- `event_old_item`
+- `event_old_vault_state`
+- `event_power`
+- `event_projectile_item`
+- `event_query_info`
+- `event_replaced_block`
+- `event_sign_lines`
+- `event_sign_side`
+- `event_slot`
+- `event_slot_type`
+- `event_slots_involved`
+- `event_teleport_cause`
+- `event_ticks_held_for`
+- `event_time_skip_amount`
+- `event_time_skip_reason`
+- `event_transform_reason`
+- `event_transformed_entities`
+- `event_tree_type`
+- `event_velocity`
+- `experience_level`
+- `experience_progress`
+- `eye_location`
+- `fall_distance`
+- `fire_ticks`
+- `flying_speed`
+- `food_exhaustion`
+- `food_level`
+- `food_saturation`
+- `freeze_ticks`
+- `gamemode`
+- `held_slot`
+- `hitbox_midpoint_location`
+- `hotbar_items`
+- `idle_duration`
+- `inventory_items`
+- `invulnerability_ticks`
+- `item_usage_progress`
+- `last_damage_cause`
+- `last_death_location`
+- `lead_holder`
+- `location` (5/10)
+- `main_hand`
+- `main_hand_item`
+- `max_health`
+- `max_invulnerability_ticks`
+- `merchant_recipe_count`
+- `name`
+- `off_hand_item`
+- `open_inventory_custom_id`
+- `open_inventory_size`
+- `open_inventory_title`
+- `open_inventory_type`
+- `origin`
+- `owner_uuid`
+- `particle_cpu_usage`
+- `particle_visibility`
+- `passengers`
+- `ping`
+- `pitch`
+- `player_count`
+- `player_ender_pearls`
+- `player_enderchest_items`
+- `pose`
+- `potion_effects`
+- `projectile_owner_uuid`
+- `projectile_power`
+- `protocol_version`
+- `remaining_air`
+- `response_headers`
+- `saddle_item`
+- `saturated_regen_rate`
+- `selection_size`
+- `selection_target_names`
+- `selection_target_uuids` (5/10)
+- `server_current_tick`
+- `server_tps`
+- `spawn_location` (6/10)
+- `spawn_reason`
+- `start_reload_tick`
+- `starvation_rate`
+- `steer_forward`
+- `steer_sideways`
+- `target_block_face`
+- `target_block_location`
+- `target_fluid_location`
+- `targeted_entity`
+- `timestamp`
+- `unsaturated_regen_rate`
+- `url`
+- `url_response`
+- `url_response_code`
+- `user_locale`
+- `uuid`
+- `vehicle`
+- `velocity`
+- `walking_speed`
+- `world_clear_weather_duration`
+- `world_game_time`
+- `world_id`
+- `world_moon_phase`
+- `world_size`
+- `world_thunder_duration`
+- `world_time`
+- `world_weather`
+- `world_weather_duration`
+- `x_coordinate`
+- `y_coordinate`
+- `yaw`
+- `z_coordinate`
 
 
 <!-- ===== FILE: skill/docs/value-types/array.md ===== -->
