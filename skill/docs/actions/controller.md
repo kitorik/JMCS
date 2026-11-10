@@ -11,10 +11,10 @@
 |  controller_measure_time  |  Measure execution time  |  Measures the execution time of the code inside the pistons and assigns the result to a variable.  |  controller  |  variable: variable<br/>duration: enum<br/>&nbsp;&nbsp;- NANOSECONDS<br/>&nbsp;&nbsp;- MICROSECONDS<br/>&nbsp;&nbsp;- MILLISECONDS  |  Accounts for "Wait" blocks.  |
 
 ## Quick ref
-> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above.
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
 - `controller_do_not_run` — (no arguments)
-- `controller_exception` — (no arguments)
-- `controller_isolated_selection` — (no arguments)
-- `controller_label` — (no arguments)
-- `controller_measure_time` — (no arguments)
+- `controller_exception` — variable: variable
+- `controller_isolated_selection` — selection_mode: enum
+- `controller_label` — label: text
+- `controller_measure_time` — variable: variable, duration: enum

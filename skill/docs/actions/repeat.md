@@ -17,16 +17,16 @@
 |  repeat_while  |  While loop  |  Runs the code as long as the chosen condition is true.  |  repeat  |    |
 
 ## Quick ref
-> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above.
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
 
-- `repeat_adjacently` — (no arguments)
-- `repeat_for_each_in_list` — (no arguments)
-- `repeat_for_each_map_entry` — (no arguments)
+- `repeat_adjacently` — variable: variable, origin: location, change_rotation: enum{TF}, include_self: enum{TF}, pattern: enum
+- `repeat_for_each_in_list` — index_variable: variable, value_variable: variable, list: array
+- `repeat_for_each_map_entry` — key_variable: variable, value_variable: variable, map: map
 - `repeat_forever` — (no arguments)
-- `repeat_multi_times` — (no arguments)
-- `repeat_on_circle` — (no arguments)
-- `repeat_on_grid` — (no arguments)
-- `repeat_on_path` — (no arguments)
-- `repeat_on_range` — (no arguments)
-- `repeat_on_sphere` — (no arguments)
+- `repeat_multi_times` — variable: variable, amount: number
+- `repeat_on_circle` — variable: variable, center: location, radius: number, circle_points: number, perpendicular_to_plane: vector, start_angle: number, angle_unit: enum{DEG_RAD}
+- `repeat_on_grid` — variable: variable, start: location, end: location
+- `repeat_on_path` — variable: variable, step: number, locations: location, rotation: enum{TF}
+- `repeat_on_range` — variable: variable, start: number, end: number, interval: number
+- `repeat_on_sphere` — variable: variable, center: location, radius: number, points: number, rotate_location: enum
 - `repeat_while` — (no arguments)
