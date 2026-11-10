@@ -136,3 +136,17 @@ A function handler declares its parameters in `values`: a single entry named `pa
 - **Catching the jump key mid-air** (double jump etc.): `player_jump` is not guaranteed to fire for a key press while the player is already airborne — poll the movement input instead: `if_player_has_input` (`input_type: JUMP`) in a tick process, or the `player_input_event` event (fires when the pressed movement keys change; Space = jump).
 - **`if_variable_not_equals` (Not equal)** — restored on the server (the deprecated mark is removed from the tables). Also expressible as `if_variable_equals` with `is_inverted: true`; prefer the dedicated action.
 - Animation speed: `control_wait` with `time_unit: TICKS` (integers only, ≥1 tick).
+
+## Pre-answer self-check
+Run this reasoning pass over the FINAL module before giving it — think each item through against THIS task, do not recite it:
+
+1. **IDs:** every action/event/value ID exists in the reference tables (not invented, not deprecated).
+2. **Slots:** every argument slot is filled per the action row; item/block/sound slots hold NBT item values, not text.
+3. **Numbers:** numeric slots hold numbers only, or a single `%math(...)` covering the whole slot.
+4. **Variables:** every read goes through the `%var` family (`%var`, `%var_local`, `%var_line`, `%var_save`) — also inside `%math()`.
+5. **Loops:** big loops (>10 iterations) contain `control_wait` (>= 1 tick, integer in TICKS); <= 300 iterations without a wait; loop conditions have ALL required args.
+6. **Scopes:** each variable uses the narrowest scope that works; no zero-initialization.
+7. **Locations:** inline literal when coordinates are known; default build = `spawn_location` with Y - 1.
+8. **Functions:** called only via `call_function`, exact `name`, `args` for every required parameter.
+9. **else:** sits right after its condition; no trailing `else` after independent `if`s.
+10. **Selections:** rebuilt inside every function (selections are not inherited).
