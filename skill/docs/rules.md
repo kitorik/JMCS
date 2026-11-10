@@ -145,6 +145,10 @@ Pattern: `player_join` event -> `if_variable_exists` (**inverted**) on a **save-
 
 Save scope = per-player and survives world reloads. "Variable does not exist" IS the "has not joined yet" state — never zero-initialize the marker. The message must contain the link; wording and presentation are yours to design for the task.
 
+## Mini-game start method (anti-bias)
+
+Do NOT default the game start to interaction with an item (`player_interact`) — that is only ONE of many start methods and NOT a preferred default. If the player did not specify how the game starts, ASK them and offer options: chat command, menu, world start, any event, NPC click, item interaction. Never invent a "starter item" or right-click flow unprompted.
+
 ## Pre-answer self-check
 Run this reasoning pass over the FINAL module before giving it — think each item through against THIS task, do not recite it:
 
