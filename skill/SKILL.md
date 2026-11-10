@@ -1,7 +1,7 @@
 ---
 name: JAI
 description: JustMc AI (JAI) — skill for coding on the JustMc Minecraft server (Creative+ mini-game). References for actions, game values, events, value types (text, number, item, location, vector, enum, array, map, variable, game_value, sound, particle), JSON module examples (EditSession, Essentials, Economy), cheatsheet, variable functions and %math() expressions.
-version: 1.0.0
+version: 1.0.1
 tags:
   - minecraft
   - justmc
@@ -30,7 +30,7 @@ Before writing or editing a module, check `docs/rules.md` and the relevant refer
 ### Rules
 | File | Contents |
 |------|-----------|
-| `docs/rules.md` | Module rules: line limits (≤33 conditions, ≤67 actions, ≤67 total content units; 1 condition = 2 actions), JSON structure, placeholder syntax, loop delays, function calls, critical server limits |
+| `docs/rules.md` | Module rules: line limits (≤33 conditions, ≤67 actions, ≤67 total content units; 1 condition = 2 actions), JSON structure, placeholder syntax, delays & world-load safety, function calls & parameters, variable scopes, critical server limits |
 
 ### Actions (`docs/actions/`)
 | File | Contents |
@@ -63,7 +63,7 @@ Before writing or editing a module, check `docs/rules.md` and the relevant refer
 | `economy.json` | Economy: `pay`, `balance` (set/take/add/show), `Eco.take` function; save-vars `%player%_balance`, balance boss bar, MAPI (`Mapi.commandConstructor`) |
 | `cheatsheet.md` | Cheatsheet: value formats (item is NBT!), common errors + fixes, ready patterns (timer with boss bar, tokens, leaderboard, zone selection, chat commands, block corners, unique names, random pick) |
 
-> ⚠️ **Examples disclaimer:** examples show syntax, not design. Chat commands in examples are syntax demos only, **not a game-start template**. Start mini-games via interaction events (item RMB/LMB click, pressure plate, menu) or other game events — never chat.
+> ℹ️ **Examples show syntax, not design.** The mini-game start method (chat command, interaction event, menu, any event) is ALWAYS the player's choice — never impose one.
 
 Examples show the real JSON syntax of JustMc modules: `handlers` → `operations`, value types (`variable`, `game_value`, `text`, `number`, `map`, `array`), variable scopes (`line`/`local`/`game`/`save`), function parameters, conditions (`conditional`, `is_inverted`), nested `else` blocks, function calls (`call_function`).
 
@@ -243,6 +243,10 @@ Now: %time%    Online: %online% of %player_amount%
 3. Validate inputs before computing.
 4. Use %empty% and %space% for output formatting.
 5. Remember variable resolution order (line → local → game → save).
+6. **Call functions ONLY via `call_function`** (exact function `name` + `args` for every required parameter). `start_process` starts a process code line — NEVER use it to call a function.
+7. **Prefer the inline `location` value literal** over the "Create location" action when coordinates are known — see `docs/value-types/location.md`.
+8. **Use the narrowest variable scope that works** (`line` → `local` → `game` → `save`) — do not default everything to `game`. Function parameters are read as `%var_line(name)`.
+9. **Delays:** `control_wait` minimum is 1 tick, integers only in TICKS mode. Under heavy world load use the CPU-wait pattern (`rules.md` → Delays and world load) — the world must never reach the critical error caused by sustained 100%+ load.
 
 ---
 

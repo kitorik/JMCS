@@ -1,6 +1,6 @@
 # JAI skill version
 
-**Current version: 1.0.0**
+**Current version: 1.0.1**
 
 *Last updated: 2026-11-10*
 
@@ -14,12 +14,19 @@ Before answering a user question about JustMc:
    > ⚠️ My JAI skill version in SKILL.md is **X**, but VERSION.md says **Y**. Files are out of sync: the skill is outdated or corrupted. Download a fresh `JAI.zip` from https://github.com/kitorik/JMCS.
 4. If the versions match — proceed as usual.
 
+## 1.0.1 (2026-11-10)
+- **Fixed:** the skill no longer imposes a mini-game start method (was: "start via interaction/items") — the start method is always the player's choice.
+- **Fixed:** function parameters surfaced in SKILL.md (docs map + best practices → `docs/value-types/parameter.md`, `docs/rules.md` → Function parameters).
+- **Rule:** functions are called ONLY via `call_function`; `start_process` is for processes — never for calling functions.
+- **Rule:** delays — `control_wait` minimum 1 tick, integers only in TICKS mode; high-load CPU-wait pattern added (rules.md → Delays and world load) so the world never enters the critical error caused by sustained 100%+ load.
+- **Rule:** prefer the inline `location` value over the "Create location" action; use the narrowest variable scope (line → local → game → save), not only `game`.
+
 ## 1.0.0 (2026-11-10)
-- **Initial release — complete starter set:**
-  - `SKILL.md` — placeholders, %math() expressions, docs map, version check, mode check ("Сжатый"/"Полный", default "Полный"), chat shorthand legend (explanations only).
-  - `docs/rules.md` — module rules, line limits, critical server limits.
-  - `docs/actions/` (8 files), `docs/events/events.md`, `docs/values/values.md` — full reference tables with enum macros (`{TF}`, `{ITEM_MATCH}`, …).
-  - `docs/value-types/` — 13 types including `parameter`.
-  - `docs/examples/` — official in-game exports (EditSession, Essentials, Economy) + cheatsheet.
+- **Initial release — complete starter set:** SKILL.md, `docs/rules.md`, 8 action references, events, values, 13 value-types (incl. `parameter`), cheatsheet, official examples (EditSession, Essentials, Economy).
+
+## Versioning scheme
+- **Поколение (+1.0.0):** only when the update improves performance, answer quality, or cuts the cost per request by 45% or more.
+- **Десятилетие (+0.1.0):** when the skill's knowledge changes — new, removed or updated knowledge about actions, events, values, types.
+- **Год (+0.0.1):** instruction updates that change no knowledge and do not reach the 45% threshold.
 
 The version changes with every skill update: new rules, value types, examples and fixes. An outdated copy may generate broken modules (banned actions, wrong value formats).

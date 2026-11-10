@@ -28,8 +28,10 @@ A **line** is one linear code flow (line-scope), without function branches.
 - Nested `operations` inside conditions count toward the parent line's total.
 - Near the limit → move repeating blocks into **functions** (`call_function`).
 
-## Loop delays
+## Delays and world load
+- **`control_wait` minimum is 1 tick; in TICKS mode the `duration` must be a whole integer** — no zero, fractional or "magic" values.
 - Every **big loop** (>10 iterations: `repeat_while`, `repeat_forever`, long `repeat_multi_times`/`repeat_for_each_in_list`) must contain `control_wait` with `duration: 1`, `time_unit: TICKS` inside the body. Without it the loop monopolizes the server thread and causes lag (CPU load).
+- **High-load wait pattern (world safety):** sustained 100%+ load causes a critical error and freezes the world. Check the world load and pause while it is high: `repeat_while` on `if_variable_greater_or_equals` over the `cpu_usage` game value (e.g. ≥ 50) with `control_wait` (1 second) in the body — see the `wait` function in `docs/examples/editsession.json`. A custom delay is allowed too; the hard requirement is that the world never sits at 100%+ load long enough to trigger the critical error.
 
 ## Critical server limits
 - **≤ 300 iterations without a wait per run.** Exceeding = **critical error + full world freeze**. If a loop can exceed 300 iterations, insert `control_wait` (≥1 tick) every ~250–290 iterations.
@@ -67,6 +69,7 @@ A **line** is one linear code flow (line-scope), without function branches.
 ## Function calls
 - `call_function`: `{"name":"function_name","value":{"type":"text","text":"<Name>","parsing":"plain"}}` + `args` of type `map`, where **keys are the stringified JSON of the parameter name**: `"{\\"type\\":\\"text\\",\\"text\\":\\"loc\\",\\"parsing\\":\\"plain\\"}": { ...value... }`.
 - The name must exactly match the function's `"name"`.
+- **NEVER call a function via `start_process`.** `start_process` starts a process code line (parallel/reusable lines); functions are called ONLY via `call_function`.
 
 ## Function parameters (the `"Parameter"` value)
 A function handler declares its parameters in `values`: a single entry named `parameters` of type `array`, where each element is a value of type `parameter`:
@@ -101,6 +104,9 @@ A function handler declares its parameters in `values`: a single entry named `pa
 - In the function body the parameter is read as a variable: `%var_line(name)` (or `%var_local(name)`, depending on the call).
 - Each `call_function` must pass `args` (a `map`) for every required parameter — see Function calls above; the game injects the values into the parameters before running the function code.
 
+## Variable scopes
+- **Use the narrowest scope that works — not only `game`:** `line` — temporaries within one line/loop iteration; `local` — per-handler temporaries (also used for function parameters); `game` — state shared across the whole game run; `save` — data that must persist after the game stops. Do not promote variables to `game`/`save` "just in case".
+
 ## Key patterns
 - **Default value is 0.** Any value type (argument, placeholder, variable, text, number, game element) that finds no content (missing variable/list/map, missing key, empty selection, ...) returns **0**. Always create lists and maps before first use and check keys (`if_variable_map_has_key`); a nonexistent variable in a Location/List slot becomes the number 0 and breaks the action.
 - **No zero-initialization needed.** Variables are 0 by default — do NOT add actions setting a variable to 0 before its first use. Set an initial value only when it must differ from 0. Lists and maps still must be created before first use.
@@ -112,5 +118,5 @@ A function handler declares its parameters in `values`: a single entry named `pa
 - `%random_uuid%` — valid placeholder for unique names.
 - `game_spawn_block_display` + `entity_set_display_teleport_duration` — moving structures visualization; `entity_teleport` to move, `entity_remove` to delete.
 - **Event values** are read via `game_value` with `selection: "null"`: `event_block_location` (event block), `event_interaction` (click type: `left_click_block`/`right_click_block`), `event_from_location`/`event_new_location` (old/new player location). Full list in `docs/values/values.md`.
-- **Mini-game start — not via chat.** Enter games via interaction events (item RMB/LMB with `if_game_event_item_equals`, pressure plate, menu) or other game events. Chat commands in the examples are syntax demos only.
+- **Mini-game start method is ALWAYS the player's choice** — chat command, interaction event, menu or any other event. Never impose a start method; follow the player's request.
 - Animation speed: `control_wait` with `time_unit: TICKS` (integers only, ≥1 tick).
