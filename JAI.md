@@ -79,7 +79,7 @@ Skill for the **JustMc AI** system — Minecraft server with the **Creative+** m
 | `docs/values/values.md` | All game values with return types |
 | `docs/value-types/<type>.md` | Per-type format and rules: text, number, variable, item (**always NBT**), location, vector, enum, array, map, game_value, sound, particle, parameter |
 | `docs/events/events.md` | All events: ID, category, cancellable, compatibility, status |
-| `docs/examples/cheatsheet.md` | Ready patterns (one-time first-join action with the Discord invite) + handler notes: verified syntax facts distilled from community handlers |
+| `docs/examples/cheatsheet.md` | Ready patterns (one-time first-join action) + handler notes: verified syntax facts distilled from community handlers (notes, not style) |
 
 > ℹ️ Every reference table row contains: ID, name, description, category, arguments with types and enum values (enum sets replaced with macros — see each file's legend), compatibility, extra info and status.
 
@@ -220,7 +220,7 @@ A **line** is one linear code flow (line-scope), without function branches.
 ## Delays and world load
 - **`control_wait` minimum is 1 tick; in TICKS mode the `duration` must be a whole integer** — no zero, fractional or "magic" values.
 - Every **big loop** (>10 iterations: `repeat_while`, `repeat_forever`, long `repeat_multi_times`/`repeat_for_each_in_list`) must contain `control_wait` with `duration: 1`, `time_unit: TICKS` inside the body. Without it the loop monopolizes the server thread and causes lag (CPU load).
-- **High-load wait pattern (world safety):** sustained 100%+ load causes a critical error and freezes the world. Check the world load and pause while it is high: `repeat_while` on `if_variable_greater_or_equals` over the `cpu_usage` game value (e.g. ≥ 50) with `control_wait` (1 second) in the body — see the `wait` function in `docs/examples/editsession.json`. A custom delay is allowed too; the hard requirement is that the world never sits at 100%+ load long enough to trigger the critical error.
+- **High-load wait pattern (world safety):** sustained 100%+ load causes a critical error and freezes the world. Check the world load and pause while it is high: `repeat_while` on `if_variable_greater_or_equals` over the `cpu_usage` game value (e.g. ≥ 50) with `control_wait` (1 second) in the body. A custom delay is allowed too; the hard requirement is that the world never sits at 100%+ load long enough to trigger the critical error.
 
 ## Critical server limits
 - **≤ 300 iterations without a wait per run.** Exceeding = **critical error + full world freeze**. If a loop can exceed 300 iterations, insert `control_wait` (≥1 tick) every ~250–290 iterations.
