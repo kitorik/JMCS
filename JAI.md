@@ -23,7 +23,7 @@ tags:
 
 Skill for the **JustMc AI** system — Minecraft server with the **Creative+** mini-game: actions, events, game values, variables, %math() and JSON modules. This file is a ROUTER: hard rules + where to find what. Details live in the docs — read them on demand, not upfront.
 
-> 🔍 **Version check (run before your first JustMc answer):** read `VERSION.md` next to this SKILL.md and compare with `version:` above. If they differ — tell the user FIRST ("skill files out of sync: SKILL.md = X, VERSION.md = Y; fresh version: JAI.zip from github.com/kitorik/JMCS"), ask about updating, then answer. If equal — answer without a warning.
+> 🔍 **Version check (run before your first JustMc answer):** read `VERSION.md` next to this SKILL.md and compare with `version:` above. If they differ in ANY direction — the frontmatter version HIGHER or LOWER than VERSION.md — the skill files are out of sync (outdated or partially installed). Tell the user FIRST ("skill files out of sync: SKILL.md = X, VERSION.md = Y — the skill is outdated or corrupted; fresh version: JAI.zip from github.com/kitorik/JMCS") and ASK THEM TO UPDATE (reinstall JAI.zip) — in both directions, even if the numbers look "newer". Only after that continue with the answer. If equal — answer without a warning.
 
 > 🎛️ **Mode check (before the first substantive JAI work):** ask which mode the player prefers — **"Сжатый" (Compressed)**: shorthand in explanations and sketches (see Chat shorthand in `docs/syntax.md`), compact answers — or **"Полный" (Full)**: full official syntax everywhere, detailed answers. **Default if not chosen: "Полный".** In BOTH modes the final JSON module always uses the full official syntax.
 
@@ -35,7 +35,7 @@ Skill for the **JustMc AI** system — Minecraft server with the **Creative+** m
 - If the tables don't cover the case, **say so** and reason from the rules — do NOT invent action/event/value IDs or arguments.
 
 ## ⚡ Hard rules (always apply — details in docs/rules.md)
-1. **Fill EVERY argument slot** of every action from the reference table; an empty `{}` slot only after re-checking the row. Empty item/block/sound slots are almost always a bug ("missing items").
+1. **Fill EVERY argument slot** of every action from the reference table; an empty `{}` slot only after re-checking the row. Empty item/block/sound slots are almost always a bug ("missing items"). **Exception — actions that store nothing:** for transient output actions (messages, action bars, sounds, particles, titles, effects) REASON about every slot: fill what the task needs, leave `{}` only where you decide the effect genuinely does not need that value (e.g. no sound, no particle).
 2. **Items are ALWAYS NBT strings** — `docs/value-types/item.md`.
 3. **Read variable values ONLY via the `%var` family** (`%var`, `%var_local`, `%var_line`, `%var_save`) — also inside `%math()`. Bare names are plain text.
 4. **Big loops (>10 iterations) must contain `control_wait`** (>= 1 tick, integer in TICKS); **<= 300 iterations without a wait** per run.
@@ -235,6 +235,8 @@ A **line** is one linear code flow (line-scope), without function branches.
 - **Fill EVERY argument slot of every action.** An empty `{}` slot is allowed ONLY after you have deliberately re-checked the action's row in the reference table and are sure (≥90% confidence, re-verified) that this slot must remain empty. When unsure — fill the slot with a value of the required type. The most frequent breakage is items left empty (`{}` in an `items`/`item` slot).
 - Conditions take `"is_inverted"` and nested `"operations"`; `else` is a separate action `{ "action": "else", "values": [], "operations": [...] }` right after the condition.
 
+**Exception — actions that store nothing:** for transient output actions (player messages, action bars, sounds, particles, titles, effects — nothing is saved anywhere) REASON about every slot: fill the slots the task needs; leave a slot `{}` only where you decide this effect genuinely does not need that value (e.g. no sound, no particle). Never use the exception to skip item/block content the task clearly expects.
+
 ## Value types
 - Math is ALWAYS a `number` with a `%math(...)` **string**: `{"type":"number","number":"%math(a + 1)"}`. Never wrap math in `text`.
 - Numeric slot with a placeholder: wrap in `%math()` — e.g. a weight from a map: `%math(%entry(dict, key))` as a number string.
@@ -344,7 +346,7 @@ Do NOT default the game start to interaction with an item (`player_interact`) �
 Run this reasoning pass over the FINAL module before giving it — think each item through against THIS task, do not recite it:
 
 1. **IDs:** every action/event/value ID exists in the reference tables (not invented, not deprecated).
-2. **Slots:** every argument slot is filled per the action row; item/block/sound slots hold NBT item values, not text.
+2. **Slots:** every argument slot is filled per the action row; item/block/sound slots hold NBT item values, not text. For actions that store nothing (player feedback) — reasoned per slot, `{}` only where genuinely not needed.
 3. **Numbers:** numeric slots hold numbers only, or a single `%math(...)` covering the whole slot.
 4. **Variables:** every read goes through the `%var` family (`%var`, `%var_local`, `%var_line`, `%var_save`) — also inside `%math()`.
 5. **Loops:** big loops (>10 iterations) contain `control_wait` (>= 1 tick, integer in TICKS); <= 300 iterations without a wait; loop conditions have ALL required args.
