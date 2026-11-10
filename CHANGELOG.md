@@ -2,6 +2,14 @@
 
 All notable changes to the JAI skill. The current version lives in `skill/SKILL.md` and `skill/VERSION.md` (kept in sync).
 
+## [1.2.0] — 2026-11-10
+
+### New knowledge & rules
+
+- %math(): raw variable names auto-resolve scope (line → local → game → save); disambiguate same names with `%var_line()` / `%var_local()` / `%var_save()`; there is no `%var_game()` — game scope is the bare `%var()`.
+- A trailing `else` after a chain of independent `if`s fires whenever only the last `if` fails — never use it as a fallback.
+- Mid-air jump key: poll input (`if_player_has_input` JUMP / `player_input_event`); `player_jump` is not guaranteed to fire while airborne.
+
 ## [1.1.0] — 2026-11-10
 
 ### New knowledge

@@ -1,6 +1,6 @@
 # JAI skill version
 
-**Current version: 1.1.0**
+**Current version: 1.2.0**
 
 *Last updated: 2026-11-10*
 
@@ -13,6 +13,11 @@ Before answering a user question about JustMc:
 3. **If the versions differ (lower or higher) — tell the user FIRST**, then answer:
    > ⚠️ My JAI skill version in SKILL.md is **X**, but VERSION.md says **Y**. Files are out of sync: the skill is outdated or corrupted. Download a fresh `JAI.zip` from https://github.com/kitorik/JMCS.
 4. If the versions match — proceed as usual.
+
+## 1.2.0 (2026-11-10)
+- **New knowledge (rules.md, SKILL.md):** raw variable names in `%math()` auto-resolve the scope (line → local → game → save); same-name variables are disambiguated with `%var_line()` / `%var_local()` / `%var_save()` placeholders; there is **no `%var_game()`** — game scope is the bare `%var()`.
+- **Rule (rules.md → Key patterns):** a trailing `else` after a chain of independent `if`s fires whenever only the LAST `if` fails — never use it as a "fallback / unknown case".
+- **New pattern:** to catch the jump key mid-air (double jump), poll input (`if_player_has_input` JUMP / `player_input_event`) — `player_jump` is not guaranteed to fire while airborne.
 
 ## 1.1.0 (2026-11-10)
 - **New rule (rules.md → Default build location):** if the player did not give coordinates where to build the map, build by default at the world spawn — the point where players spawn. Use the `spawn_location` game value (`selection: "null"`) and lower the Y coordinate by 1, so the build sits on the ground under the spawn point.

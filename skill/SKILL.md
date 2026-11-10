@@ -1,7 +1,7 @@
 ---
 name: JAI
 description: JustMc AI (JAI) — skill for coding on the JustMc Minecraft server (Creative+ mini-game). References for actions, game values, events, value types (text, number, item, location, vector, enum, array, map, variable, game_value, sound, particle), JSON module examples (EditSession, Essentials, Economy), cheatsheet, variable functions and %math() expressions.
-version: 1.1.0
+version: 1.2.0
 tags:
   - minecraft
   - justmc
@@ -154,7 +154,8 @@ Examples show the real JSON syntax of JustMc modules: `handlers` → `operations
 ### Variables in expressions
 - Naming: letters, digits (not first), `_`, `$` (Java-style).
 - Variable scope is auto-resolved by locality: 1) line → 2) local → 3) game → 4) save.
-- `%math(a + b)` adds variables `a` and `b`, picking the most local available.
+- `%math(a + b)` adds variables `a` and `b`, picking the most available local.
+- Same name in several scopes → disambiguate with `%var_line(a)` / `%var_local(a)` / `%var_save(a)` inside the expression. There is **no `%var_game()`** — game scope is the bare `%var()`.
 
 > ⚠️ %var() inside %math() is substituted as raw text. Wrap for correctness: `%math(%var(x) + 1)`
 
@@ -252,6 +253,7 @@ Now: %time%    Online: %online% of %player_amount%
 ---
 
 ## 📝 Versions
+- **1.2.0** — %math() scope disambiguation (no `%var_game()`); `else`-fallback warning (trailing `else` after independent `if`s); mid-air jump-key pattern (`player_input_event` / `if_player_has_input`).
 - **1.1.0** — New rule: when the player gives no build coordinates, build by default at the world spawn (`spawn_location` game value) with Y lowered by 1.
 - **1.0.3** — New variable rules: never zero-initialize or "declare" variables (unset = 0); clear variables only via `set_variable_remove` / `set_variable_purge`; check game start with `if_variable_exists`, not marker variables.
 - **1.0.2** — Added the missing `parameter` value-type reference (`docs/value-types/parameter.md`); removed dead references to deleted example files in cheatsheet.md.
