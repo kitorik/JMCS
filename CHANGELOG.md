@@ -2,7 +2,17 @@
 
 All notable changes to the JAI skill. The current version lives in `skill/SKILL.md` and `skill/VERSION.md` (kept in sync).
 
-## [2.0.0] — 2026-11-10
+## [2.0.1] — 2026-11-10 · Год
+- Приветствие Discord в начале первого ответа (один раз за диалог, с локализацией) — https://discord.gg/6EGQyeN86y
+- SKILL.md → роутер; плейсхолдеры и %math() → новый docs/syntax.md
+- Quick ref (компактные аргументы) во всех 8 файлах действий
+- Метки частоты 0–10 и частые ошибки в docs/lookup.md
+- Pre-answer self-check в rules.md
+- Заметки из комьюнити-хендлеров в cheatsheet.md (заметки, не стиль)
+- Анти-биас: никогда не начинать мини-игру через взаимодействие по умолчанию
+- Удалены: ссылка на unidok, мёртвые ссылки на примеры, устаревший intents.md
+
+[2.0.0] — 2026-11-10
 
 ### Поколение — answer-quality update
 

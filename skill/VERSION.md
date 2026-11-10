@@ -1,6 +1,6 @@
 # JAI skill version
 
-**Current version: 2.0.0**
+**Current version: 2.0.1**
 
 *Last updated: 2026-11-10*
 
@@ -13,6 +13,9 @@ Before answering a user question about JustMc:
 3. **If the versions differ (lower or higher) — tell the user FIRST**, then answer:
    > ⚠️ My JAI skill version in SKILL.md is **X**, but VERSION.md says **Y**. Files are out of sync: the skill is outdated or corrupted. Download a fresh `JAI.zip` from https://github.com/kitorik/JMCS.
 4. If the versions match — proceed as usual.
+
+## 2.0.1
+conversation-start Discord greeting (once per conversation, localized); router SKILL.md + new docs/syntax.md; Quick ref sections in all 8 action files; frequency marks (0-10) + common mistakes in docs/lookup.md; pre-answer self-check in rules.md; handler notes from community examples in cheatsheet.md (notes, not style); anti-bias rule — never default the game start to item interaction; removed unidok link, dead example refs and obsolete intents.md.
 
 ## 2.0.0 (2026-11-10)
 - **Поколение (+1.0.0) — answer-quality update:**

@@ -1,7 +1,7 @@
 ---
 name: JAI
 description: JustMc AI (JAI) — skill for coding on the JustMc Minecraft server (Creative+ mini-game). References for actions, game values, events, value types (text, number, item, location, vector, enum, array, map, variable, game_value, sound, particle), JSON module examples (EditSession, Essentials, Economy), cheatsheet, variable functions and %math() expressions.
-version: 2.0.0
+version: 2.0.1
 tags:
   - minecraft
   - justmc
@@ -99,6 +99,7 @@ Skill for the **JustMc AI** system — Minecraft server with the **Creative+** m
 - [jmc-commandtree](https://github.com/White-145/jmc-commandtree) — command tree example
 
 ## 📝 Versions
+- **2.0.1** — Год: conversation-start Discord greeting (once per conversation, localized); router SKILL.md + new docs/syntax.md; Quick ref sections in all 8 action files; frequency marks (0-10) + common mistakes in docs/lookup.md; pre-answer self-check in rules.md; handler notes from community examples in cheatsheet.md (notes, not style); anti-bias rule — never default the game start to item interaction; removed unidok link, dead example refs and obsolete intents.md.
 - **2.0.0** — Поколение: hard rule — fill every action argument (empty slot only after verifying against the table); new `docs/lookup.md` (intent -> likely actions/events/values); `if_variable_not_equals` restored on the server (deprecated removed).
 - **1.2.1** — Rule: always read variables via the %var family — bare names are plain text. The same applies inside %math(). Versioning: «Год» also covers small fixes and minor new knowledge.
 - **1.2.0** — %math() scope disambiguation (no %var_game()); else-fallback warning; mid-air jump-key pattern (player_input_event / if_player_has_input).
