@@ -7,7 +7,7 @@ Single-file build of the JAI skill (auto-generated - do not edit). Each part bel
 ---
 name: JAI
 description: JustMc AI (JAI) — skill for coding on the JustMc Minecraft server (Creative+ mini-game). References for actions, game values, events, value types (text, number, item, location, vector, enum, array, map, variable, game_value, sound, particle), JSON module examples (EditSession, Essentials, Economy), cheatsheet, variable functions and %math() expressions.
-version: 2.0.1
+version: 2.1.0
 tags:
   - minecraft
   - justmc
@@ -109,6 +109,7 @@ Skill for the **JustMc AI** system — Minecraft server with the **Creative+** m
 - [jmc-commandtree](https://github.com/White-145/jmc-commandtree) — command tree example
 
 ## 📝 Versions
+- **2.1.0** — Десятилетие: static data stays inline (no variables for build-time items/locations/texts); slot-filling exception for non-storing player actions; version check — ANY mismatch reported and update requested; Quick ref for all 8 action files (args, fixed parser bug), events and values (with frequency marks); common value literals in the docs map; answer discipline (no quoting reference, batch clarifications, blueprint before JSON); structure skeletons in cheatsheet; flat JAI.md build for models that cannot read zip; handler notes from community examples; anti-bias rule — never default the start method to item interaction; removed unidok link, dead example refs, obsolete intents.md.
 - **2.0.1** — Год: conversation-start Discord greeting (once per conversation, localized); router SKILL.md + new docs/syntax.md; Quick ref sections in all 8 action files; frequency marks (0-10) + common mistakes in docs/lookup.md; pre-answer self-check in rules.md; handler notes from community examples in cheatsheet.md (notes, not style); anti-bias rule — never default the game start to item interaction; removed unidok link, dead example refs and obsolete intents.md.
 - **2.0.0** — Поколение: hard rule — fill every action argument (empty slot only after verifying against the table); new `docs/lookup.md` (intent -> likely actions/events/values); `if_variable_not_equals` restored on the server (deprecated removed).
 - **1.2.1** — Rule: always read variables via the %var family — bare names are plain text. The same applies inside %math(). Versioning: «Год» also covers small fixes and minor new knowledge.
@@ -125,7 +126,7 @@ Skill for the **JustMc AI** system — Minecraft server with the **Creative+** m
 <!-- ===== FILE: skill/VERSION.md ===== -->
 # JAI skill version
 
-**Current version: 2.0.1**
+**Current version: 2.1.0**
 
 *Last updated: 2026-11-10*
 
@@ -138,6 +139,9 @@ Before answering a user question about JustMc:
 3. **If the versions differ (lower or higher) — tell the user FIRST**, then answer:
    > ⚠️ My JAI skill version in SKILL.md is **X**, but VERSION.md says **Y**. Files are out of sync: the skill is outdated or corrupted. Download a fresh `JAI.zip` from https://github.com/kitorik/JMCS.
 4. If the versions match — proceed as usual.
+
+## 2.1.0
+static data stays inline (no variables for build-time items/locations/texts); slot-filling exception for non-storing player actions; version check — ANY mismatch reported and update requested; Quick ref for all 8 action files (args, fixed parser bug), events and values (with frequency marks); common value literals in the docs map; answer discipline (no quoting reference, batch clarifications, blueprint before JSON); structure skeletons in cheatsheet; flat JAI.md build for models that cannot read zip; handler notes from community examples; anti-bias rule — never default the start method to item interaction; removed unidok link, dead example refs, obsolete intents.md.
 
 ## 2.0.1
 conversation-start Discord greeting (once per conversation, localized); router SKILL.md + new docs/syntax.md; Quick ref sections in all 8 action files; frequency marks (0-10) + common mistakes in docs/lookup.md; pre-answer self-check in rules.md; handler notes from community examples in cheatsheet.md (notes, not style); anti-bias rule — never default the game start to item interaction; removed unidok link, dead example refs and obsolete intents.md.
@@ -188,6 +192,9 @@ conversation-start Discord greeting (once per conversation, localized); router S
 - **Год (+0.0.1):** small fixes and a bit of new knowledge, plus instruction updates that change no essential knowledge and do not reach the 45% threshold.
 
 The version changes with every skill update: new rules, value types, examples and fixes. An outdated copy may generate broken modules (banned actions, wrong value formats).
+
+## Merging rule
+Consecutive updates of the SAME tier merge into ONE entry — no double increment. If after a Десятилетие (+0.1.0) more Десятилетие-level changes are made, the version stays at that single bump and the changes are combined into the same entry ("2 in 1"). The next version bump happens only for a different tier or a new label from the user.
 
 
 <!-- ===== FILE: skill/docs/rules.md ===== -->
