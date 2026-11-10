@@ -9,6 +9,8 @@ All notable changes to the JAI skill. The current version lives in `skill/SKILL.
 - Always read variable values via the `%var` family (`%var`, `%var_local`, `%var_line`, `%var_save`) — a bare variable name in a text/message/argument slot is plain text, not a reference (only `%math()` allows bare names).
 - Versioning: «Год» (+0.0.1) also covers small fixes and minor new knowledge.
 
+- Addendum: the same applies inside `%math()` — wrap variables in the `%var` family there too; bare names are not valid inside `%math()`.
+
 ## [1.2.0] — 2026-11-10
 
 ### New knowledge & rules

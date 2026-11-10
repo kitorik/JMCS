@@ -18,6 +18,8 @@ Before answering a user question about JustMc:
 - **Rule:** always read a variable's value through the `%var` family — `%var(name)`, `%var_local(name)`, `%var_line(name)`, `%var_save(name)`. A bare variable name in a text/message/argument slot is plain text, not a reference; only inside `%math()` bare names are allowed.
 - **Versioning:** «Год» (+0.0.1) now also covers small fixes and a bit of new knowledge.
 
+- **Addendum:** the same applies inside `%math()` — wrap variables in the `%var` family there; bare names are not valid inside `%math()` either.
+
 ## 1.2.0 (2026-11-10)
 - **New knowledge (rules.md, SKILL.md):** raw variable names in `%math()` auto-resolve the scope (line → local → game → save); same-name variables are disambiguated with `%var_line()` / `%var_local()` / `%var_save()` placeholders; there is **no `%var_game()`** — game scope is the bare `%var()`.
 - **Rule (rules.md → Key patterns):** a trailing `else` after a chain of independent `if`s fires whenever only the LAST `if` fails — never use it as a "fallback / unknown case".
