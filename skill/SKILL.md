@@ -1,7 +1,7 @@
 ---
 name: JAI
 description: JustMc AI (JAI) — skill for coding on the JustMc Minecraft server (Creative+ mini-game). References for actions, game values, events, value types (text, number, item, location, vector, enum, array, map, variable, game_value, sound, particle), JSON module examples (EditSession, Essentials, Economy), cheatsheet, variable functions and %math() expressions.
-version: 1.2.0
+version: 1.2.1
 tags:
   - minecraft
   - justmc
@@ -104,6 +104,8 @@ Examples show the real JSON syntax of JustMc modules: `handlers` → `operations
 | `%val(id)` | Game value with ID `id` |
 
 > ℹ️ **Scope suffixes:** every variable function (`%var`, `%length`, `%index`, `%entry`) exists in all 4 scopes: game (bare, e.g. `%var(name)`), local (`%var_local(name)`), save (`%var_save(name)`), line (`%var_line(name)`) — likewise `%length_*`, `%index_*`, `%entry_*`.
+
+> ⚠️ **Always read variable values via `%var()` / `%var_local()` / `%var_line()` / `%var_save()`.** A bare variable name in a text, message or argument slot is plain text, NOT a value reference. Only inside `%math()` bare names are allowed (auto-resolved by locality).
 
 ### Chat shorthand (explanations only!)
 
@@ -253,6 +255,7 @@ Now: %time%    Online: %online% of %player_amount%
 ---
 
 ## 📝 Versions
+- **1.2.1** — Rule: always read variables via the `%var` family (`%var`, `%var_local`, `%var_line`, `%var_save`) — bare names are plain text outside `%math()`. Versioning: «Год» also covers small fixes and minor new knowledge.
 - **1.2.0** — %math() scope disambiguation (no `%var_game()`); `else`-fallback warning (trailing `else` after independent `if`s); mid-air jump-key pattern (`player_input_event` / `if_player_has_input`).
 - **1.1.0** — New rule: when the player gives no build coordinates, build by default at the world spawn (`spawn_location` game value) with Y lowered by 1.
 - **1.0.3** — New variable rules: never zero-initialize or "declare" variables (unset = 0); clear variables only via `set_variable_remove` / `set_variable_purge`; check game start with `if_variable_exists`, not marker variables.

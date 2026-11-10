@@ -2,6 +2,13 @@
 
 All notable changes to the JAI skill. The current version lives in `skill/SKILL.md` and `skill/VERSION.md` (kept in sync).
 
+## [1.2.1] — 2026-11-10
+
+### Rules
+
+- Always read variable values via the `%var` family (`%var`, `%var_local`, `%var_line`, `%var_save`) — a bare variable name in a text/message/argument slot is plain text, not a reference (only `%math()` allows bare names).
+- Versioning: «Год» (+0.0.1) also covers small fixes and minor new knowledge.
+
 ## [1.2.0] — 2026-11-10
 
 ### New knowledge & rules
@@ -51,4 +58,4 @@ Complete starter set: `SKILL.md`, `docs/rules.md`, 8 action references (`docs/ac
 
 - **Поколение (+1.0.0):** the update improves performance, answer quality, or cuts the cost per request by 45% or more.
 - **Десятилетие (+0.1.0):** the skill's knowledge changes — new, removed or updated knowledge about actions, events, values, types.
-- **Год (+0.0.1):** instruction updates that change no knowledge and do not reach the 45% threshold.
+- **Год (+0.0.1):** small fixes and a bit of new knowledge, plus instruction updates that change no essential knowledge and do not reach the 45% threshold.

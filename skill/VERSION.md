@@ -1,6 +1,6 @@
 # JAI skill version
 
-**Current version: 1.2.0**
+**Current version: 1.2.1**
 
 *Last updated: 2026-11-10*
 
@@ -13,6 +13,10 @@ Before answering a user question about JustMc:
 3. **If the versions differ (lower or higher) — tell the user FIRST**, then answer:
    > ⚠️ My JAI skill version in SKILL.md is **X**, but VERSION.md says **Y**. Files are out of sync: the skill is outdated or corrupted. Download a fresh `JAI.zip` from https://github.com/kitorik/JMCS.
 4. If the versions match — proceed as usual.
+
+## 1.2.1 (2026-11-10)
+- **Rule:** always read a variable's value through the `%var` family — `%var(name)`, `%var_local(name)`, `%var_line(name)`, `%var_save(name)`. A bare variable name in a text/message/argument slot is plain text, not a reference; only inside `%math()` bare names are allowed.
+- **Versioning:** «Год» (+0.0.1) now also covers small fixes and a bit of new knowledge.
 
 ## 1.2.0 (2026-11-10)
 - **New knowledge (rules.md, SKILL.md):** raw variable names in `%math()` auto-resolve the scope (line → local → game → save); same-name variables are disambiguated with `%var_line()` / `%var_local()` / `%var_save()` placeholders; there is **no `%var_game()`** — game scope is the bare `%var()`.
@@ -45,6 +49,6 @@ Before answering a user question about JustMc:
 ## Versioning scheme
 - **Поколение (+1.0.0):** only when the update improves performance, answer quality, or cuts the cost per request by 45% or more.
 - **Десятилетие (+0.1.0):** when the skill's knowledge changes — new, removed or updated knowledge about actions, events, values, types.
-- **Год (+0.0.1):** instruction updates that change no knowledge and do not reach the 45% threshold.
+- **Год (+0.0.1):** small fixes and a bit of new knowledge, plus instruction updates that change no essential knowledge and do not reach the 45% threshold.
 
 The version changes with every skill update: new rules, value types, examples and fixes. An outdated copy may generate broken modules (banned actions, wrong value formats).
