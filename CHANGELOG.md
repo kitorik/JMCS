@@ -2,6 +2,14 @@
 
 All notable changes to the JAI skill. The current version lives in `skill/SKILL.md` and `skill/VERSION.md` (kept in sync).
 
+## [2.0.0] — 2026-11-10
+
+### Поколение — answer-quality update
+
+- Hard rule: fill every action argument from the reference table; an empty slot only after verifying against the table (empty item/block/sound slots are almost always a bug — "missing items").
+- New `docs/lookup.md`: intent → most likely actions/events/conditions/values, then confirm exact arguments in the tables.
+- `if_variable_not_equals` restored on the server — deprecated mark removed; alternative `if_variable_equals` + `is_inverted: true`.
+
 ## [1.2.1] — 2026-11-10
 
 ### Rules

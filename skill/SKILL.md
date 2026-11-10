@@ -1,7 +1,7 @@
 ---
 name: JAI
 description: JustMc AI (JAI) — skill for coding on the JustMc Minecraft server (Creative+ mini-game). References for actions, game values, events, value types (text, number, item, location, vector, enum, array, map, variable, game_value, sound, particle), JSON module examples (EditSession, Essentials, Economy), cheatsheet, variable functions and %math() expressions.
-version: 1.2.1
+version: 2.0.0
 tags:
   - minecraft
   - justmc
@@ -50,6 +50,11 @@ Before writing or editing a module, check `docs/rules.md` and the relevant refer
 |------|-----------|
 | `docs/values/values.md` | All game values: stats, events, entity/world info — with return types |
 | `docs/value-types/<type>.md` | One file per type — format, examples, rules: text, number, variable, item (**always NBT-encoded**), location, vector, enum, array, map, game_value, sound, particle, parameter (function parameter declaration) |
+
+### Lookup
+| File | Contents |
+|------|----------|
+| `docs/lookup.md` | Intent → most likely actions/events/conditions/values: pick candidates there, then check the exact arguments in the reference tables |
 
 ### Events (`docs/events/`)
 | File | Contents |
@@ -250,11 +255,14 @@ Now: %time%    Online: %online% of %player_amount%
 8. **Use the narrowest variable scope that works** (`line` → `local` → `game` → `save`) — do not default everything to `game`. Function parameters are read as `%var_line(name)`.
 9. **Delays:** `control_wait` minimum is 1 tick, integers only in TICKS mode. Under heavy world load use the CPU-wait pattern (`rules.md` → Delays and world load) — the world must never reach the critical error caused by sustained 100%+ load.
 11. **Fill EVERY argument slot of every action** — an empty `{}` slot only after re-checking the reference row and being sure it must be empty; items especially must never be left empty. See rules.md → Value types.
+11. **Fill every action argument** from the reference table. Leave a slot empty ONLY after verifying against the table that nothing belongs there — when in doubt, FILL it. Empty item/block/sound slots are almost always a bug ("missing items").
+12. **Choosing what to use:** start from `docs/lookup.md` (intent → likely actions/events/values), then confirm the exact arguments in the reference tables.
 10. **Default build location:** if the player gave no coordinates, build at the world spawn (`spawn_location` game value) with Y lowered by 1 (`rules.md` → Default build location).
 
 ---
 
 ## 📝 Versions
+- **2.0.0** — Поколение: hard rule — fill every action argument (empty slot only after verifying against the table); new `docs/lookup.md` (intent → likely actions/events/values); `if_variable_not_equals` restored on the server (deprecated removed).
 - **1.2.1** — Rule: always read variables via the `%var` family (`%var`, `%var_local`, `%var_line`, `%var_save`) — bare names are plain text. The same applies inside `%math()` (addendum): wrap variables in the `%var` family everywhere. Versioning: «Год» also covers small fixes and minor new knowledge.
 - **1.2.0** — %math() scope disambiguation (no `%var_game()`); `else`-fallback warning (trailing `else` after independent `if`s); mid-air jump-key pattern (`player_input_event` / `if_player_has_input`).
 - **1.1.0** — New rule: when the player gives no build coordinates, build by default at the world spawn (`spawn_location` game value) with Y lowered by 1.

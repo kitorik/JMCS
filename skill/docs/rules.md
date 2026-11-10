@@ -42,6 +42,7 @@ A **line** is one linear code flow (line-scope), without function branches.
 - Action: `{ "action": "<ID>", "values": [ { "name": "<arg>", "value": { "type": ... } } ], "operations": [...] }`.
 - No-argument actions: `"values": []` (e.g. `select_reset`, `entity_remove`, `else`).
 - Empty value slot: `{}`.
+- **Fill EVERY argument the reference table lists for the action.** An empty slot (`{}` or a missing value) is allowed ONLY after checking the table and confirming that nothing belongs there — when in doubt, FILL the slot with the correct value type. Empty `item`/`block`/`sound`-type slots are almost always a bug: the module imports but silently does nothing (the "missing items" failure). Re-check the table before leaving any slot empty.
 - **Fill EVERY argument slot of every action.** An empty `{}` slot is allowed ONLY after you have deliberately re-checked the action's row in the reference table and are sure (≥90% confidence, re-verified) that this slot must remain empty. When unsure — fill the slot with a value of the required type. The most frequent breakage is items left empty (`{}` in an `items`/`item` slot).
 - Conditions take `"is_inverted"` and nested `"operations"`; `else` is a separate action `{ "action": "else", "values": [], "operations": [...] }` right after the condition.
 
@@ -57,7 +58,7 @@ A **line** is one linear code flow (line-scope), without function branches.
 ## Placeholder syntax
 - Variable functions take **no closing percent**: `%var(name)`, `%var_local(name)`, `%var_save(name)`, `%var_line(name)`, `%length(name)`, `%length_local(name)`, `%length_save(name)`, `%length_line(name)`, `%index(list, i)`, `%index_local(list, i)`, `%index_save(...)`, `%index_line(...)`, `%entry(dict, key)`, `%entry_local(...)`, `%entry_save(...)`, `%entry_line(...)`, `%val(id)`.
 - **Inside `%math()` any placeholder, text and numbers are allowed**, in any combination.
-- **- **Always read a variable's value through the `%var` family** — `%var(name)` (game), `%var_local(name)`, `%var_line(name)`, `%var_save(name)`. Writing just the bare variable name in a text, message or argument slot is NOT a reference — it is plain text. The same applies inside `%math()` — wrap variables in the `%var` family there too.
+- **Always read a variable's value through the `%var` family** — `%var(name)` (game), `%var_local(name)`, `%var_line(name)`, `%var_save(name)`. Writing just the bare variable name in a text, message or argument slot is NOT a reference — it is plain text. The same applies inside `%math()` — wrap variables in the `%var` family there too.
 - **Inside `%math()` the syntax is the same as without it** — wrap variables in `%var()` / `%var_local()` / `%var_line()` / `%var_save()`: `%math(%var_line(a) + %var_local(b))`. Bare names are NOT valid inside `%math()`. There is **no `%var_game()`** — game scope is the bare `%var()`.
 - **Outside `%math()`, numeric slots accept nothing but numbers.** No `%` placeholders in number slots — pass variables as `variable` type values, computations via `%math()`.
 - A numeric slot using `%math()` consists **only** of the `%math(...)`: no text or numbers before/after it. `1 + %math(a)` or `%math(a) * 2` in one slot is invalid — move everything inside: `%math(1 + a)`, `%math(a * 2)`.
@@ -133,4 +134,5 @@ A function handler declares its parameters in `values`: a single entry named `pa
 - **Event values** are read via `game_value` with `selection: "null"`: `event_block_location` (event block), `event_interaction` (click type: `left_click_block`/`right_click_block`), `event_from_location`/`event_new_location` (old/new player location). Full list in `docs/values/values.md`.
 - **Mini-game start method is ALWAYS the player's choice** — chat command, interaction event, menu or any other event. Never impose a start method; follow the player's request.
 - **Catching the jump key mid-air** (double jump etc.): `player_jump` is not guaranteed to fire for a key press while the player is already airborne — poll the movement input instead: `if_player_has_input` (`input_type: JUMP`) in a tick process, or the `player_input_event` event (fires when the pressed movement keys change; Space = jump).
+- **`if_variable_not_equals` (Not equal)** — restored on the server (the deprecated mark is removed from the tables). Also expressible as `if_variable_equals` with `is_inverted: true`; prefer the dedicated action.
 - Animation speed: `control_wait` with `time_unit: TICKS` (integers only, ≥1 tick).

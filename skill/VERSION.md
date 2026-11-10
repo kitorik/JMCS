@@ -1,6 +1,6 @@
 # JAI skill version
 
-**Current version: 1.2.1**
+**Current version: 2.0.0**
 
 *Last updated: 2026-11-10*
 
@@ -13,6 +13,12 @@ Before answering a user question about JustMc:
 3. **If the versions differ (lower or higher) — tell the user FIRST**, then answer:
    > ⚠️ My JAI skill version in SKILL.md is **X**, but VERSION.md says **Y**. Files are out of sync: the skill is outdated or corrupted. Download a fresh `JAI.zip` from https://github.com/kitorik/JMCS.
 4. If the versions match — proceed as usual.
+
+## 2.0.0 (2026-11-10)
+- **Поколение (+1.0.0) — answer-quality update:**
+- **Hard rule:** fill EVERY argument the reference table lists for an action. An empty slot is allowed only after verifying against the table that nothing belongs there — when in doubt, fill it. Empty item/block/sound slots are almost always a bug (the "missing items" failure).
+- **New `docs/lookup.md`** — intent → most likely actions/events/conditions/values index for choosing what to use; linked from the docs map and best practices.
+- **`if_variable_not_equals` restored on the server** — deprecated mark removed from `docs/actions/variable.md`; alternative: `if_variable_equals` + `is_inverted: true`.
 
 ## 1.2.1 (2026-11-10)
 - **Rule:** always read a variable's value through the `%var` family — `%var(name)`, `%var_local(name)`, `%var_line(name)`, `%var_save(name)`. A bare variable name in a text/message/argument slot is plain text, not a reference; only inside `%math()` bare names are allowed.
