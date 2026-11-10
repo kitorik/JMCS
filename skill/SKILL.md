@@ -247,14 +247,7 @@ Now: %time%    Online: %online% of %player_amount%
 ---
 
 ## 📝 Versions
-- **3.2.1** — Removed the authored examples `breakblock.json` and `randombox.json`; only official in-game exports remain (EditSession, Essentials, Economy).
-- **3.2.0** — Compact reference tables: Icon column and empty columns removed, repeated enum sets replaced with macros (`{TF}`, `{TFN}`, `{ANY_ALL}`, `{ITEM_MATCH}`, `{DEG_RAD}`, `{CMP}`). Scope-suffix rule for variable functions. Chat shorthand legend (explanations only; JSON always uses full official syntax). Mode check: ask the player for "Сжатый" (Compressed) or "Полный" (Full) mode, default "Полный".
-- **3.1.0** — `parameter` type expanded: singular/plural (`slots`/`description_slots` strings), strict `value_type`, `default_value` as escaped JSON, grid 0–54, `%var_line(name)` access, call-time injection via `args`.
-- **3.0.2** — New value type `parameter` (`docs/value-types/parameter.md`); "Function parameters" section in `docs/rules.md`.
-- **3.0.0** — Skill renamed justmc-ai → **JAI** (archive is now `JAI.zip`). Skill core rewritten in compact English for faster model reading. **Items are always encoded as NBT strings.** **Variables need no zero-initialization** (unset = 0).
-- **2.9.0–2.9.2** — Added VERSION.md + mandatory version check; server limits (300 iterations without a wait, 125,000 blocks per `game_set_region`) duplicated into rules.md and the cheatsheet.
-- **2.0.0–2.8.x** — Reference docs moved into `docs/`; examples folder (EditSession, Essentials, Economy) + cheatsheet; rules.md (line limits, default-0 rule, else placement, boss bar 0–100, no `controller_async_run`); value-types folder (one file per type); vector and particle types; game start via interaction events rule.
-- **1.x** — Initial versions: %math() documentation and JSON syntax examples.
+- **1.0.0** — Initial release: complete starter set (SKILL.md, rules, 8 action references, events, values, 13 value-types incl. `parameter`, cheatsheet, official examples EditSession/Essentials/Economy).
 
 ---
 

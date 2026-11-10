@@ -19,15 +19,4 @@ A skill for AI agents that helps them understand coding on the **JustMc** Minecr
 
 ## v1.0.0 (2026-11-10)
 
-- **Version numbering reset to 1.0.0** (stable release).
-- Synced with the skill sources: compact reference tables, `parameter` value type, chat shorthand legend, mode check ("Сжатый"/"Полный", default "Полный").
-- Strict-semver CI machinery removed (repo is now Markdown-only).
-
-<details><summary>History: v3.0.0 (2026-11-08)</summary>
-
-</details>
-
-- Skill renamed **justmc-ai → JAI**; the archive is now `JAI.zip` (internal folder `JAI/`).
-- Skill core rewritten in compact English for faster model reading (doc structure unchanged).
-- **Items are always encoded as NBT strings** (`{Count:1b,id:"minecraft:..."}`).
-- **New rule: variables need no zero-initialization** — an unset variable already reads as 0.
+Initial release of the JAI skill: SKILL.md, VERSION.md, full reference docs (actions, events, values, 13 value-types incl. `parameter`), rules, cheatsheet and official example modules (EditSession, Essentials, Economy).
