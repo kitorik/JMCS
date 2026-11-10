@@ -31,6 +31,7 @@ Before writing or editing a module, check `docs/rules.md` and the relevant refer
 | File | Contents |
 |------|-----------|
 | `docs/rules.md` | Module rules: line limits (≤33 conditions, ≤67 actions, ≤67 total content units; 1 condition = 2 actions), JSON structure, placeholder syntax, delays & world-load safety, function calls & parameters, variable scopes, critical server limits |
+| `docs/intents.md` | Intent lookup (mini-AI): what the player asks → the most probable actions/events/conditions |
 
 ### Actions (`docs/actions/`)
 | File | Contents |
@@ -248,6 +249,7 @@ Now: %time%    Online: %online% of %player_amount%
 7. **Prefer the inline `location` value literal** over the "Create location" action when coordinates are known — see `docs/value-types/location.md`.
 8. **Use the narrowest variable scope that works** (`line` → `local` → `game` → `save`) — do not default everything to `game`. Function parameters are read as `%var_line(name)`.
 9. **Delays:** `control_wait` minimum is 1 tick, integers only in TICKS mode. Under heavy world load use the CPU-wait pattern (`rules.md` → Delays and world load) — the world must never reach the critical error caused by sustained 100%+ load.
+11. **Fill EVERY argument slot of every action** — an empty `{}` slot only after re-checking the reference row and being sure it must be empty; items especially must never be left empty. See rules.md → Value types.
 10. **Default build location:** if the player gave no coordinates, build at the world spawn (`spawn_location` game value) with Y lowered by 1 (`rules.md` → Default build location).
 
 ---

@@ -42,6 +42,7 @@ A **line** is one linear code flow (line-scope), without function branches.
 - Action: `{ "action": "<ID>", "values": [ { "name": "<arg>", "value": { "type": ... } } ], "operations": [...] }`.
 - No-argument actions: `"values": []` (e.g. `select_reset`, `entity_remove`, `else`).
 - Empty value slot: `{}`.
+- **Fill EVERY argument slot of every action.** An empty `{}` slot is allowed ONLY after you have deliberately re-checked the action's row in the reference table and are sure (≥90% confidence, re-verified) that this slot must remain empty. When unsure — fill the slot with a value of the required type. The most frequent breakage is items left empty (`{}` in an `items`/`item` slot).
 - Conditions take `"is_inverted"` and nested `"operations"`; `else` is a separate action `{ "action": "else", "values": [], "operations": [...] }` right after the condition.
 
 ## Value types
@@ -123,6 +124,7 @@ A function handler declares its parameters in `values`: a single entry named `pa
 - **No zero-initialization needed.** Variables are 0 by default — do NOT add actions setting a variable to 0 before its first use. Set an initial value only when it must differ from 0. Lists and maps still must be created before first use.
 - **`else` only on the closing bracket of an invertible condition** — right after the `{ "action": "if_...", ... }` block. Never after a plain action, after another `else` without a condition between, or at the start of an operations list. Nested `else` binds to the nearest parent condition. A trailing `else` after a chain of sequential independent `if`s fires whenever the **last** `if` fails — even if an earlier `if` already matched. Never use a trailing `else` as a "fallback / unknown case" after several independent `if`s — put the fallback inside each branch or restructure.
 - **The `block` slot takes an item value (always NBT-encoded)** — `{"type":"item","item":"{Count:1b,id:\\"minecraft:iron_block\\"}"}` or a variable holding an item. Each slot has its own value type (item, sound, particle...) — never put text in such slots.
+- **Negated equality exists: `if_variable_not_equals`** ("Переменная не равна") — use it directly instead of `if_variable_equals` + `is_inverted`.
 - **`player_set_boss_bar` progress is 0–100, not 0–1.** Timer: `progress = %math(%var(t)*100/%var(maxt))`.
 - **`controller_async_run` does NOT exist on the server — never use it.** For parallel lines use processes: handler `"type": "process"` with `"name"` + the `start_process` action (process_name, target_mode, local_variables_mode, args).
 - `repeat_adjacently` with `pattern: CARDINAL` iterates only the 6 orthogonal neighbors (no diagonals); `SQUARE`/`ADJACENT`/`CUBE` include diagonals.
