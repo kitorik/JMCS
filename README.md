@@ -20,3 +20,12 @@ A skill for AI agents that helps them understand coding on the **JustMc** Minecr
 ## v1.0.0 (2026-11-10)
 
 Initial release of the JAI skill: SKILL.md, VERSION.md, full reference docs (actions, events, values, 13 value-types incl. `parameter`), rules, cheatsheet and official example modules (EditSession, Essentials, Economy).
+
+---
+
+## Плоский читаемый формат — JAI.md
+
+Если инструмент или модель не может распаковать `JAI.zip`, используйте **`JAI.md`** в корне репозитория: все файлы навыка слиты в один текстовый файл (сборка автоматическая, тем же воркфлоу).
+
+- Читать на GitHub: https://github.com/kitorik/JMCS/blob/main/JAI.md
+- Raw: https://raw.githubusercontent.com/kitorik/JMCS/main/JAI.md
