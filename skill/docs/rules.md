@@ -170,13 +170,22 @@ Do NOT store static values in variables. A fixed item, location, vector, text or
 - A variable is justified ONLY when the value: changes at runtime, is computed (`%math(...)`, game values, player input), is read many times where a literal cannot express it, or must persist between runs (save/local scopes).
 - Same principle: prefer the inline `location` literal over the "Create location" action (`docs/value-types/location.md`).
 
+## Variables exist only if created
+
+A variable has NO value until an action in THIS module creates it (`set_variable_value`, `set_variable_increment`, a game-value getter, ...). Reading a never-created variable silently gives 0 / empty — the module will "work" but be wrong.
+
+- **Never invent variables**: every `%var(...)` / `%var_local(...)` / `%var_line(...)` / `%var_save(...)` read must have a matching creation action in the module (or be a save-scope variable from earlier runs of the SAME module).
+- Need a starting value? Compute it (`%math(...)`, game value getter) or set it explicitly — do not assume it already exists.
+- Check existence with `if_variable_exists` when the variable may genuinely be missing (e.g. first run).
+- Function parameters are the exception: they are created by the call — read them as `%var_line(name)`, name must match a declared parameter.
+
 ## Pre-answer self-check
 Run this reasoning pass over the FINAL module before giving it — think each item through against THIS task, do not recite it:
 
 1. **IDs:** every action/event/value ID exists in the reference tables (not invented, not deprecated).
 2. **Slots:** every argument slot is filled per the action row; item/block/sound slots hold NBT item values, not text. For actions that store nothing (player feedback) — reasoned per slot, `{}` only where genuinely not needed.
 3. **Numbers:** numeric slots hold numbers only, or a single `%math(...)` covering the whole slot.
-4. **Variables:** every read goes through the `%var` family (`%var`, `%var_local`, `%var_line`, `%var_save`) — also inside `%math()`.
+4. **Variables:** every read goes through the `%var` family (`%var`, `%var_local`, `%var_line`, `%var_save`) — also inside `%math()`; every read has a creation action in the module (or save-scope from earlier runs of the same module).
 5. **Loops:** big loops (>10 iterations) contain `control_wait` (>= 1 tick, integer in TICKS); <= 300 iterations without a wait; loop conditions have ALL required args.
 6. **Scopes & statics:** each variable uses the narrowest scope that works; no zero-initialization; no variables for static build-time values (inline literals instead).
 7. **Locations:** inline literal when coordinates are known; default build = `spawn_location` with Y - 1.

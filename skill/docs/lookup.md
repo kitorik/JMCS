@@ -81,6 +81,7 @@ Pick candidates here, then check the EXACT arguments in `docs/actions/*.md`, `do
 | Empty selection inside a function | selections are NOT inherited -> rebuild the selection inside the function |
 | Location becomes 0 / action breaks | nonexistent variable in a Location slot -> create the variable first; prefer the inline location literal when coordinates are known |
 | Boss bar never fills / overflows | progress is 0-100, not 0-1 -> `%math(%var(t)*100/%var(maxt))` |
+| Value is 0 / empty unexpectedly | variable was never created in this module -> create it (`set_variable_*` or a game-value getter) BEFORE reading; never invent variables |
 | Condition breaks the module on import | missing required args (e.g. `compare_type` in `if_variable_list_is_empty`) -> fill ALL arguments of the condition |
 
 > The lookup only POINTS at likely IDs — always confirm the exact arguments and enum values in the reference tables before writing JSON.
