@@ -8,161 +8,47 @@
         {
           "action": "set_variable_create_map",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "e8cycle",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "keys",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "text",
-                    "text": "_",
-                    "parsing": "plain"
-                  }
-                ]
-              }
-            },
-            {
-              "name": "values",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "number",
-                    "number": 0
-                  }
-                ]
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "e8cycle", "scope": "game" } },
+            { "name": "keys", "value": { "type": "array", "values": [ { "type": "text", "text": "_", "parsing": "plain" } ] } },
+            { "name": "values", "value": { "type": "array", "values": [ { "type": "number", "number": 0 } ] } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_create_map",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "e8anomaly",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "keys",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "text",
-                    "text": "_",
-                    "parsing": "plain"
-                  }
-                ]
-              }
-            },
-            {
-              "name": "values",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "number",
-                    "number": 0
-                  }
-                ]
-              }
-            }
-          ],
-          "operations": []
-        },
-        {
-          "action": "set_variable_create_map",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "e8zone",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "keys",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "text",
-                    "text": "_",
-                    "parsing": "plain"
-                  }
-                ]
-              }
-            },
-            {
-              "name": "values",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "number",
-                    "number": 0
-                  }
-                ]
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "e8anomaly", "scope": "game" } },
+            { "name": "keys", "value": { "type": "array", "values": [ { "type": "text", "text": "_", "parsing": "plain" } ] } },
+            { "name": "values", "value": { "type": "array", "values": [ { "type": "number", "number": 0 } ] } }
           ],
           "operations": []
         },
         {
           "action": "call_function",
           "values": [
-            {
-              "name": "function_name",
-              "value": {
-                "type": "text",
-                "text": "build_lobby",
-                "parsing": "plain"
-              }
-            },
-            {
-              "name": "args",
-              "value": {
-                "type": "map",
-                "values": {}
-              }
-            }
+            { "name": "function_name", "value": { "type": "text", "text": "build_lobby", "parsing": "plain" } },
+            { "name": "args", "value": { "type": "map", "values": {} } }
           ],
           "operations": []
         },
         {
           "action": "call_function",
           "values": [
-            {
-              "name": "function_name",
-              "value": {
-                "type": "text",
-                "text": "build_corridor",
-                "parsing": "plain"
-              }
-            },
+            { "name": "function_name", "value": { "type": "text", "text": "build_game_room", "parsing": "plain" } },
+            { "name": "args", "value": { "type": "map", "values": {} } }
+          ],
+          "operations": []
+        },
+        {
+          "action": "call_function",
+          "values": [
+            { "name": "function_name", "value": { "type": "text", "text": "build_corridor", "parsing": "plain" } },
             {
               "name": "args",
               "value": {
                 "type": "map",
                 "values": {
-                  "{\"type\":\"text\",\"text\":\"x0\",\"parsing\":\"plain\"}": {
-                    "type": "number",
-                    "number": 60
-                  }
+                  "{\"type\":\"text\",\"text\":\"x0\",\"parsing\":\"plain\"}": { "type": "number", "number": 60 }
                 }
               }
             }
@@ -172,23 +58,13 @@
         {
           "action": "call_function",
           "values": [
-            {
-              "name": "function_name",
-              "value": {
-                "type": "text",
-                "text": "build_corridor",
-                "parsing": "plain"
-              }
-            },
+            { "name": "function_name", "value": { "type": "text", "text": "build_corridor", "parsing": "plain" } },
             {
               "name": "args",
               "value": {
                 "type": "map",
                 "values": {
-                  "{\"type\":\"text\",\"text\":\"x0\",\"parsing\":\"plain\"}": {
-                    "type": "number",
-                    "number": 100
-                  }
+                  "{\"type\":\"text\",\"text\":\"x0\",\"parsing\":\"plain\"}": { "type": "number", "number": 100 }
                 }
               }
             }
@@ -198,23 +74,13 @@
         {
           "action": "call_function",
           "values": [
-            {
-              "name": "function_name",
-              "value": {
-                "type": "text",
-                "text": "build_corridor",
-                "parsing": "plain"
-              }
-            },
+            { "name": "function_name", "value": { "type": "text", "text": "build_corridor", "parsing": "plain" } },
             {
               "name": "args",
               "value": {
                 "type": "map",
                 "values": {
-                  "{\"type\":\"text\",\"text\":\"x0\",\"parsing\":\"plain\"}": {
-                    "type": "number",
-                    "number": 140
-                  }
+                  "{\"type\":\"text\",\"text\":\"x0\",\"parsing\":\"plain\"}": { "type": "number", "number": 140 }
                 }
               }
             }
@@ -229,378 +95,53 @@
       "position": 1,
       "operations": [
         {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "zx",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "game_value",
-                "game_value": "x_coordinate",
-                "selection": "null"
-              }
-            }
-          ],
-          "operations": []
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "zone",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "number",
-                "number": "%math(floor(%var_line(zx) / 20))"
-              }
-            }
-          ],
-          "operations": []
-        },
-        {
-          "action": "set_variable_get_map_value",
-          "values": [
-            {
-              "name": "map",
-              "value": {
-                "type": "variable",
-                "variable": "e8zone",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pz",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "key",
-              "value": {
-                "type": "text",
-                "text": "%uuid%",
-                "parsing": "plain"
-              }
-            },
-            {
-              "name": "default_value",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
-          ],
-          "operations": []
-        },
-        {
-          "action": "if_variable_not_equals",
-          "is_inverted": false,
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "zone",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "compare",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "number",
-                    "number": "%math(%var_line(pz))"
-                  }
-                ]
-              }
-            }
-          ],
-          "operations": [
-            {
-              "action": "if_variable_equals",
-              "is_inverted": false,
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "zone",
-                    "scope": "line"
-                  }
-                },
-                {
-                  "name": "compare",
-                  "value": {
-                    "type": "array",
-                    "values": [
-                      {
-                        "type": "number",
-                        "number": 2
-                      }
-                    ]
-                  }
-                }
-              ],
-              "operations": [
-                {
-                  "action": "set_variable_random_number",
-                  "values": [
-                    {
-                      "name": "variable",
-                      "value": {
-                        "type": "variable",
-                        "variable": "roll",
-                        "scope": "line"
-                      }
-                    },
-                    {
-                      "name": "min",
-                      "value": {
-                        "type": "number",
-                        "number": 0
-                      }
-                    },
-                    {
-                      "name": "max",
-                      "value": {
-                        "type": "number",
-                        "number": 1
-                      }
-                    },
-                    {
-                      "name": "integer",
-                      "value": {
-                        "type": "enum",
-                        "enum": "TRUE"
-                      }
-                    }
-                  ],
-                  "operations": []
-                },
-                {
-                  "action": "set_variable_set_map_value",
-                  "values": [
-                    {
-                      "name": "variable",
-                      "value": {
-                        "type": "variable",
-                        "variable": "e8cycle",
-                        "scope": "game"
-                      }
-                    },
-                    {
-                      "name": "map",
-                      "value": {
-                        "type": "variable",
-                        "variable": "e8cycle",
-                        "scope": "game"
-                      }
-                    },
-                    {
-                      "name": "key",
-                      "value": {
-                        "type": "text",
-                        "text": "%uuid%",
-                        "parsing": "plain"
-                      }
-                    },
-                    {
-                      "name": "value",
-                      "value": {
-                        "type": "number",
-                        "number": 1
-                      }
-                    }
-                  ],
-                  "operations": []
-                },
-                {
-                  "action": "set_variable_set_map_value",
-                  "values": [
-                    {
-                      "name": "variable",
-                      "value": {
-                        "type": "variable",
-                        "variable": "e8anomaly",
-                        "scope": "game"
-                      }
-                    },
-                    {
-                      "name": "map",
-                      "value": {
-                        "type": "variable",
-                        "variable": "e8anomaly",
-                        "scope": "game"
-                      }
-                    },
-                    {
-                      "name": "key",
-                      "value": {
-                        "type": "text",
-                        "text": "%uuid%",
-                        "parsing": "plain"
-                      }
-                    },
-                    {
-                      "name": "value",
-                      "value": {
-                        "type": "variable",
-                        "variable": "roll",
-                        "scope": "line"
-                      }
-                    }
-                  ],
-                  "operations": []
-                },
-                {
-                  "action": "player_send_title",
-                  "values": [
-                    {
-                      "name": "title",
-                      "value": {
-                        "type": "text",
-                        "text": "&#E8C170Этаж 1",
-                        "parsing": "legacy"
-                      }
-                    },
-                    {
-                      "name": "subtitle",
-                      "value": {
-                        "type": "text",
-                        "text": "&#FFFFFFИтерация: %math(%entry(e8cycle, %uuid%))%  Аномалий замечено: 0",
-                        "parsing": "legacy"
-                      }
-                    },
-                    {
-                      "name": "fade_in",
-                      "value": {
-                        "type": "number",
-                        "number": 5
-                      }
-                    },
-                    {
-                      "name": "stay",
-                      "value": {
-                        "type": "number",
-                        "number": 40
-                      }
-                    },
-                    {
-                      "name": "fade_out",
-                      "value": {
-                        "type": "number",
-                        "number": 10
-                      }
-                    }
-                  ],
-                  "operations": []
-                }
-              ]
-            }
-          ]
-        },
-        {
           "action": "if_player_in_area",
           "is_inverted": false,
           "values": [
-            {
-              "name": "location_1",
-              "value": {
-                "type": "location",
-                "x": 6,
-                "y": 5,
-                "z": -1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "location_2",
-              "value": {
-                "type": "location",
-                "x": 7,
-                "y": 7,
-                "z": 1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "ignore_y_axis",
-              "value": {
-                "type": "enum",
-                "enum": "FALSE"
-              }
-            },
-            {
-              "name": "intersect_type",
-              "value": {
-                "type": "enum",
-                "enum": "POINT"
-              }
-            },
-            {
-              "name": "check_type",
-              "value": {
-                "type": "enum",
-                "enum": "CONTAINS"
-              }
-            }
+            { "name": "location_1", "value": { "type": "location", "x": 6, "y": 5, "z": -1, "yaw": 0, "pitch": 0 } },
+            { "name": "location_2", "value": { "type": "location", "x": 7, "y": 7, "z": 1, "yaw": 0, "pitch": 0 } },
+            { "name": "ignore_y_axis", "value": { "type": "enum", "enum": "FALSE" } },
+            { "name": "intersect_type", "value": { "type": "enum", "enum": "POINT" } },
+            { "name": "check_type", "value": { "type": "enum", "enum": "CONTAINS" } }
           ],
           "operations": [
             {
               "action": "player_teleport",
               "values": [
-                {
-                  "name": "location",
-                  "value": {
-                    "type": "location",
-                    "x": 44.5,
-                    "y": 5,
-                    "z": 0.5,
-                    "yaw": -90,
-                    "pitch": 0
-                  }
-                },
-                {
-                  "name": "keep_rotation",
-                  "value": {
-                    "type": "enum",
-                    "enum": "FALSE"
-                  }
-                },
-                {
-                  "name": "keep_velocity",
-                  "value": {
-                    "type": "enum",
-                    "enum": "FALSE"
-                  }
-                },
-                {
-                  "name": "dismount",
-                  "value": {
-                    "type": "enum",
-                    "enum": "TRUE"
-                  }
-                }
+                { "name": "location", "value": { "type": "location", "x": 44.5, "y": 5, "z": 0.5, "yaw": -90, "pitch": 0 } },
+                { "name": "keep_rotation", "value": { "type": "enum", "enum": "FALSE" } },
+                { "name": "keep_velocity", "value": { "type": "enum", "enum": "FALSE" } },
+                { "name": "dismount", "value": { "type": "enum", "enum": "TRUE" } }
+              ],
+              "operations": []
+            },
+            {
+              "action": "set_variable_random_number",
+              "values": [
+                { "name": "variable", "value": { "type": "variable", "variable": "roll", "scope": "line" } },
+                { "name": "min", "value": { "type": "number", "number": 0 } },
+                { "name": "max", "value": { "type": "number", "number": 1 } },
+                { "name": "integer", "value": { "type": "enum", "enum": "TRUE" } }
+              ],
+              "operations": []
+            },
+            {
+              "action": "set_variable_set_map_value",
+              "values": [
+                { "name": "variable", "value": { "type": "variable", "variable": "e8cycle", "scope": "game" } },
+                { "name": "map", "value": { "type": "variable", "variable": "e8cycle", "scope": "game" } },
+                { "name": "key", "value": { "type": "text", "text": "%uuid%", "parsing": "plain" } },
+                { "name": "value", "value": { "type": "number", "number": 1 } }
+              ],
+              "operations": []
+            },
+            {
+              "action": "set_variable_set_map_value",
+              "values": [
+                { "name": "variable", "value": { "type": "variable", "variable": "e8anomaly", "scope": "game" } },
+                { "name": "map", "value": { "type": "variable", "variable": "e8anomaly", "scope": "game" } },
+                { "name": "key", "value": { "type": "text", "text": "%uuid%", "parsing": "plain" } },
+                { "name": "value", "value": { "type": "variable", "variable": "roll", "scope": "line" } }
               ],
               "operations": []
             }
@@ -610,86 +151,20 @@
           "action": "if_player_in_area",
           "is_inverted": false,
           "values": [
-            {
-              "name": "location_1",
-              "value": {
-                "type": "location",
-                "x": 49,
-                "y": 5,
-                "z": -1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "location_2",
-              "value": {
-                "type": "location",
-                "x": 49,
-                "y": 7,
-                "z": 1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "ignore_y_axis",
-              "value": {
-                "type": "enum",
-                "enum": "FALSE"
-              }
-            },
-            {
-              "name": "intersect_type",
-              "value": {
-                "type": "enum",
-                "enum": "POINT"
-              }
-            },
-            {
-              "name": "check_type",
-              "value": {
-                "type": "enum",
-                "enum": "CONTAINS"
-              }
-            }
+            { "name": "location_1", "value": { "type": "location", "x": 49, "y": 5, "z": -1, "yaw": 0, "pitch": 0 } },
+            { "name": "location_2", "value": { "type": "location", "x": 49, "y": 7, "z": 1, "yaw": 0, "pitch": 0 } },
+            { "name": "ignore_y_axis", "value": { "type": "enum", "enum": "FALSE" } },
+            { "name": "intersect_type", "value": { "type": "enum", "enum": "POINT" } },
+            { "name": "check_type", "value": { "type": "enum", "enum": "CONTAINS" } }
           ],
           "operations": [
             {
               "action": "player_teleport",
               "values": [
-                {
-                  "name": "location",
-                  "value": {
-                    "type": "location",
-                    "x": 60.5,
-                    "y": 5,
-                    "z": 0.5,
-                    "yaw": -90,
-                    "pitch": 0
-                  }
-                },
-                {
-                  "name": "keep_rotation",
-                  "value": {
-                    "type": "enum",
-                    "enum": "FALSE"
-                  }
-                },
-                {
-                  "name": "keep_velocity",
-                  "value": {
-                    "type": "enum",
-                    "enum": "FALSE"
-                  }
-                },
-                {
-                  "name": "dismount",
-                  "value": {
-                    "type": "enum",
-                    "enum": "TRUE"
-                  }
-                }
+                { "name": "location", "value": { "type": "location", "x": 60.5, "y": 5, "z": 0.5, "yaw": -90, "pitch": 0 } },
+                { "name": "keep_rotation", "value": { "type": "enum", "enum": "FALSE" } },
+                { "name": "keep_velocity", "value": { "type": "enum", "enum": "FALSE" } },
+                { "name": "dismount", "value": { "type": "enum", "enum": "TRUE" } }
               ],
               "operations": []
             }
@@ -699,86 +174,20 @@
           "action": "if_player_in_area",
           "is_inverted": false,
           "values": [
-            {
-              "name": "location_1",
-              "value": {
-                "type": "location",
-                "x": 79,
-                "y": 5,
-                "z": -1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "location_2",
-              "value": {
-                "type": "location",
-                "x": 79,
-                "y": 7,
-                "z": 1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "ignore_y_axis",
-              "value": {
-                "type": "enum",
-                "enum": "FALSE"
-              }
-            },
-            {
-              "name": "intersect_type",
-              "value": {
-                "type": "enum",
-                "enum": "POINT"
-              }
-            },
-            {
-              "name": "check_type",
-              "value": {
-                "type": "enum",
-                "enum": "CONTAINS"
-              }
-            }
+            { "name": "location_1", "value": { "type": "location", "x": 79, "y": 5, "z": -1, "yaw": 0, "pitch": 0 } },
+            { "name": "location_2", "value": { "type": "location", "x": 79, "y": 7, "z": 1, "yaw": 0, "pitch": 0 } },
+            { "name": "ignore_y_axis", "value": { "type": "enum", "enum": "FALSE" } },
+            { "name": "intersect_type", "value": { "type": "enum", "enum": "POINT" } },
+            { "name": "check_type", "value": { "type": "enum", "enum": "CONTAINS" } }
           ],
           "operations": [
             {
               "action": "player_teleport",
               "values": [
-                {
-                  "name": "location",
-                  "value": {
-                    "type": "location",
-                    "x": 100.5,
-                    "y": 5,
-                    "z": 0.5,
-                    "yaw": -90,
-                    "pitch": 0
-                  }
-                },
-                {
-                  "name": "keep_rotation",
-                  "value": {
-                    "type": "enum",
-                    "enum": "FALSE"
-                  }
-                },
-                {
-                  "name": "keep_velocity",
-                  "value": {
-                    "type": "enum",
-                    "enum": "FALSE"
-                  }
-                },
-                {
-                  "name": "dismount",
-                  "value": {
-                    "type": "enum",
-                    "enum": "TRUE"
-                  }
-                }
+                { "name": "location", "value": { "type": "location", "x": 100.5, "y": 5, "z": 0.5, "yaw": -90, "pitch": 0 } },
+                { "name": "keep_rotation", "value": { "type": "enum", "enum": "FALSE" } },
+                { "name": "keep_velocity", "value": { "type": "enum", "enum": "FALSE" } },
+                { "name": "dismount", "value": { "type": "enum", "enum": "TRUE" } }
               ],
               "operations": []
             }
@@ -788,86 +197,20 @@
           "action": "if_player_in_area",
           "is_inverted": false,
           "values": [
-            {
-              "name": "location_1",
-              "value": {
-                "type": "location",
-                "x": 119,
-                "y": 5,
-                "z": -1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "location_2",
-              "value": {
-                "type": "location",
-                "x": 119,
-                "y": 7,
-                "z": 1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "ignore_y_axis",
-              "value": {
-                "type": "enum",
-                "enum": "FALSE"
-              }
-            },
-            {
-              "name": "intersect_type",
-              "value": {
-                "type": "enum",
-                "enum": "POINT"
-              }
-            },
-            {
-              "name": "check_type",
-              "value": {
-                "type": "enum",
-                "enum": "CONTAINS"
-              }
-            }
+            { "name": "location_1", "value": { "type": "location", "x": 119, "y": 5, "z": -1, "yaw": 0, "pitch": 0 } },
+            { "name": "location_2", "value": { "type": "location", "x": 119, "y": 7, "z": 1, "yaw": 0, "pitch": 0 } },
+            { "name": "ignore_y_axis", "value": { "type": "enum", "enum": "FALSE" } },
+            { "name": "intersect_type", "value": { "type": "enum", "enum": "POINT" } },
+            { "name": "check_type", "value": { "type": "enum", "enum": "CONTAINS" } }
           ],
           "operations": [
             {
               "action": "player_teleport",
               "values": [
-                {
-                  "name": "location",
-                  "value": {
-                    "type": "location",
-                    "x": 140.5,
-                    "y": 5,
-                    "z": 0.5,
-                    "yaw": -90,
-                    "pitch": 0
-                  }
-                },
-                {
-                  "name": "keep_rotation",
-                  "value": {
-                    "type": "enum",
-                    "enum": "FALSE"
-                  }
-                },
-                {
-                  "name": "keep_velocity",
-                  "value": {
-                    "type": "enum",
-                    "enum": "FALSE"
-                  }
-                },
-                {
-                  "name": "dismount",
-                  "value": {
-                    "type": "enum",
-                    "enum": "TRUE"
-                  }
-                }
+                { "name": "location", "value": { "type": "location", "x": 140.5, "y": 5, "z": 0.5, "yaw": -90, "pitch": 0 } },
+                { "name": "keep_rotation", "value": { "type": "enum", "enum": "FALSE" } },
+                { "name": "keep_velocity", "value": { "type": "enum", "enum": "FALSE" } },
+                { "name": "dismount", "value": { "type": "enum", "enum": "TRUE" } }
               ],
               "operations": []
             }
@@ -877,200 +220,50 @@
           "action": "if_player_in_area",
           "is_inverted": false,
           "values": [
-            {
-              "name": "location_1",
-              "value": {
-                "type": "location",
-                "x": 159,
-                "y": 5,
-                "z": -1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "location_2",
-              "value": {
-                "type": "location",
-                "x": 159,
-                "y": 7,
-                "z": 1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "ignore_y_axis",
-              "value": {
-                "type": "enum",
-                "enum": "FALSE"
-              }
-            },
-            {
-              "name": "intersect_type",
-              "value": {
-                "type": "enum",
-                "enum": "POINT"
-              }
-            },
-            {
-              "name": "check_type",
-              "value": {
-                "type": "enum",
-                "enum": "CONTAINS"
-              }
-            }
+            { "name": "location_1", "value": { "type": "location", "x": 159, "y": 5, "z": -1, "yaw": 0, "pitch": 0 } },
+            { "name": "location_2", "value": { "type": "location", "x": 159, "y": 7, "z": 1, "yaw": 0, "pitch": 0 } },
+            { "name": "ignore_y_axis", "value": { "type": "enum", "enum": "FALSE" } },
+            { "name": "intersect_type", "value": { "type": "enum", "enum": "POINT" } },
+            { "name": "check_type", "value": { "type": "enum", "enum": "CONTAINS" } }
           ],
           "operations": [
             {
               "action": "if_variable_map_value_equals",
               "is_inverted": false,
               "values": [
-                {
-                  "name": "map",
-                  "value": {
-                    "type": "variable",
-                    "variable": "e8anomaly",
-                    "scope": "game"
-                  }
-                },
-                {
-                  "name": "key",
-                  "value": {
-                    "type": "text",
-                    "text": "%uuid%",
-                    "parsing": "plain"
-                  }
-                },
-                {
-                  "name": "values",
-                  "value": {
-                    "type": "array",
-                    "values": [
-                      {
-                        "type": "number",
-                        "number": 1
-                      }
-                    ]
-                  }
-                }
+                { "name": "map", "value": { "type": "variable", "variable": "e8anomaly", "scope": "game" } },
+                { "name": "key", "value": { "type": "text", "text": "%uuid%", "parsing": "plain" } },
+                { "name": "values", "value": { "type": "array", "values": [ { "type": "number", "number": 1 } ] } }
               ],
               "operations": [
                 {
                   "action": "player_teleport",
                   "values": [
-                    {
-                      "name": "location",
-                      "value": {
-                        "type": "location",
-                        "x": 60.5,
-                        "y": 5,
-                        "z": 0.5,
-                        "yaw": -90,
-                        "pitch": 0
-                      }
-                    },
-                    {
-                      "name": "keep_rotation",
-                      "value": {
-                        "type": "enum",
-                        "enum": "FALSE"
-                      }
-                    },
-                    {
-                      "name": "keep_velocity",
-                      "value": {
-                        "type": "enum",
-                        "enum": "FALSE"
-                      }
-                    },
-                    {
-                      "name": "dismount",
-                      "value": {
-                        "type": "enum",
-                        "enum": "TRUE"
-                      }
-                    }
+                    { "name": "location", "value": { "type": "location", "x": 60.5, "y": 5, "z": 0.5, "yaw": -90, "pitch": 0 } },
+                    { "name": "keep_rotation", "value": { "type": "enum", "enum": "FALSE" } },
+                    { "name": "keep_velocity", "value": { "type": "enum", "enum": "FALSE" } },
+                    { "name": "dismount", "value": { "type": "enum", "enum": "TRUE" } }
                   ],
                   "operations": []
                 },
                 {
                   "action": "set_variable_set_map_value",
                   "values": [
-                    {
-                      "name": "variable",
-                      "value": {
-                        "type": "variable",
-                        "variable": "e8cycle",
-                        "scope": "game"
-                      }
-                    },
-                    {
-                      "name": "map",
-                      "value": {
-                        "type": "variable",
-                        "variable": "e8cycle",
-                        "scope": "game"
-                      }
-                    },
-                    {
-                      "name": "key",
-                      "value": {
-                        "type": "text",
-                        "text": "%uuid%",
-                        "parsing": "plain"
-                      }
-                    },
-                    {
-                      "name": "value",
-                      "value": {
-                        "type": "number",
-                        "number": "%math(%entry(e8cycle, %uuid%) + 1)"
-                      }
-                    }
+                    { "name": "variable", "value": { "type": "variable", "variable": "e8cycle", "scope": "game" } },
+                    { "name": "map", "value": { "type": "variable", "variable": "e8cycle", "scope": "game" } },
+                    { "name": "key", "value": { "type": "text", "text": "%uuid%", "parsing": "plain" } },
+                    { "name": "value", "value": { "type": "number", "number": "%math(%entry(e8cycle, %uuid%) + 1)" } }
                   ],
                   "operations": []
                 },
                 {
                   "action": "player_send_title",
                   "values": [
-                    {
-                      "name": "title",
-                      "value": {
-                        "type": "text",
-                        "text": "&#C0392BЭТО БЫЛА АНОМАЛИЯ",
-                        "parsing": "legacy"
-                      }
-                    },
-                    {
-                      "name": "subtitle",
-                      "value": {
-                        "type": "text",
-                        "text": "&#FFFFFFИтерация: %math(%entry(e8cycle, %uuid%))%",
-                        "parsing": "legacy"
-                      }
-                    },
-                    {
-                      "name": "fade_in",
-                      "value": {
-                        "type": "number",
-                        "number": 5
-                      }
-                    },
-                    {
-                      "name": "stay",
-                      "value": {
-                        "type": "number",
-                        "number": 60
-                      }
-                    },
-                    {
-                      "name": "fade_out",
-                      "value": {
-                        "type": "number",
-                        "number": 10
-                      }
-                    }
+                    { "name": "title", "value": { "type": "text", "text": "&#C0392BЭТО БЫЛА АНОМАЛИЯ", "parsing": "legacy" } },
+                    { "name": "subtitle", "value": { "type": "text", "text": "&#FFFFFFИтерация: %math(%entry(e8cycle, %uuid%))%", "parsing": "legacy" } },
+                    { "name": "fade_in", "value": { "type": "number", "number": 5 } },
+                    { "name": "stay", "value": { "type": "number", "number": 60 } },
+                    { "name": "fade_out", "value": { "type": "number", "number": 10 } }
                   ],
                   "operations": []
                 }
@@ -1083,125 +276,27 @@
                 {
                   "action": "player_teleport",
                   "values": [
-                    {
-                      "name": "location",
-                      "value": {
-                        "type": "location",
-                        "x": 0.5,
-                        "y": 5,
-                        "z": 0.5,
-                        "yaw": 0,
-                        "pitch": 0
-                      }
-                    },
-                    {
-                      "name": "keep_rotation",
-                      "value": {
-                        "type": "enum",
-                        "enum": "FALSE"
-                      }
-                    },
-                    {
-                      "name": "keep_velocity",
-                      "value": {
-                        "type": "enum",
-                        "enum": "FALSE"
-                      }
-                    },
-                    {
-                      "name": "dismount",
-                      "value": {
-                        "type": "enum",
-                        "enum": "TRUE"
-                      }
-                    }
+                    { "name": "location", "value": { "type": "location", "x": 0.5, "y": 5, "z": 0.5, "yaw": 0, "pitch": 0 } },
+                    { "name": "keep_rotation", "value": { "type": "enum", "enum": "FALSE" } },
+                    { "name": "keep_velocity", "value": { "type": "enum", "enum": "FALSE" } },
+                    { "name": "dismount", "value": { "type": "enum", "enum": "TRUE" } }
                   ],
                   "operations": []
                 },
                 {
                   "action": "player_send_title",
                   "values": [
-                    {
-                      "name": "title",
-                      "value": {
-                        "type": "text",
-                        "text": "&#4CAF50ВЫХОД НАЙДЕН",
-                        "parsing": "legacy"
-                      }
-                    },
-                    {
-                      "name": "subtitle",
-                      "value": {
-                        "type": "text",
-                        "text": "&#FFFFFFИтераций пройдено: %math(%entry(e8cycle, %uuid%) - 1)%",
-                        "parsing": "legacy"
-                      }
-                    },
-                    {
-                      "name": "fade_in",
-                      "value": {
-                        "type": "number",
-                        "number": 5
-                      }
-                    },
-                    {
-                      "name": "stay",
-                      "value": {
-                        "type": "number",
-                        "number": 60
-                      }
-                    },
-                    {
-                      "name": "fade_out",
-                      "value": {
-                        "type": "number",
-                        "number": 20
-                      }
-                    }
+                    { "name": "title", "value": { "type": "text", "text": "&#4CAF50ВЫХОД НАЙДЕН", "parsing": "legacy" } },
+                    { "name": "subtitle", "value": { "type": "text", "text": "&#FFFFFFИтераций пройдено: %math(%entry(e8cycle, %uuid%) - 1)%", "parsing": "legacy" } },
+                    { "name": "fade_in", "value": { "type": "number", "number": 5 } },
+                    { "name": "stay", "value": { "type": "number", "number": 60 } },
+                    { "name": "fade_out", "value": { "type": "number", "number": 20 } }
                   ],
                   "operations": []
                 }
               ]
             }
           ]
-        },
-        {
-          "action": "set_variable_set_map_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "e8zone",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "map",
-              "value": {
-                "type": "variable",
-                "variable": "e8zone",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "key",
-              "value": {
-                "type": "text",
-                "text": "%uuid%",
-                "parsing": "plain"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "zone",
-                "scope": "line"
-              }
-            }
-          ],
-          "operations": []
         }
       ]
     },
@@ -1210,292 +305,151 @@
       "name": "build_lobby",
       "position": 2,
       "values": [
-        {
-          "name": "parameters",
-          "value": {
-            "type": "array",
-            "values": []
-          }
-        }
+        { "name": "parameters", "value": { "type": "array", "values": [] } }
       ],
       "operations": [
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:quartz_block\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "location",
-                "x": -5,
-                "y": 4,
-                "z": -5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "location",
-                "x": 5,
-                "y": 4,
-                "z": 5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_block\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": -5, "y": 4, "z": -5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 5, "y": 4, "z": 5, "yaw": 0, "pitch": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:glowstone\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "location",
-                "x": -5,
-                "y": 8,
-                "z": -5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "location",
-                "x": 5,
-                "y": 8,
-                "z": 5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:glowstone\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": -5, "y": 8, "z": -5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 5, "y": 8, "z": 5, "yaw": 0, "pitch": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:quartz_block\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "location",
-                "x": -5,
-                "y": 5,
-                "z": -5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "location",
-                "x": -5,
-                "y": 7,
-                "z": 5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_block\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": -5, "y": 5, "z": -5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": -5, "y": 7, "z": 5, "yaw": 0, "pitch": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:quartz_block\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "location",
-                "x": -5,
-                "y": 5,
-                "z": -5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "location",
-                "x": 5,
-                "y": 7,
-                "z": -5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_block\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": -5, "y": 5, "z": -5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 5, "y": 7, "z": -5, "yaw": 0, "pitch": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:quartz_block\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "location",
-                "x": -5,
-                "y": 5,
-                "z": 5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "location",
-                "x": 5,
-                "y": 7,
-                "z": 5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_block\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": -5, "y": 5, "z": 5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 5, "y": 7, "z": 5, "yaw": 0, "pitch": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:quartz_block\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "location",
-                "x": 5,
-                "y": 5,
-                "z": -5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "location",
-                "x": 5,
-                "y": 7,
-                "z": -2,
-                "yaw": 0,
-                "pitch": 0
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_block\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": 5, "y": 5, "z": -5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 5, "y": 7, "z": -2, "yaw": 0, "pitch": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:quartz_block\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "location",
-                "x": 5,
-                "y": 5,
-                "z": 2,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "location",
-                "x": 5,
-                "y": 7,
-                "z": 5,
-                "yaw": 0,
-                "pitch": 0
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_block\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": 5, "y": 5, "z": 2, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 5, "y": 7, "z": 5, "yaw": 0, "pitch": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:quartz_block\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "location",
-                "x": 6,
-                "y": 4,
-                "z": -1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "location",
-                "x": 7,
-                "y": 4,
-                "z": 1,
-                "yaw": 0,
-                "pitch": 0
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_block\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": 6, "y": 4, "z": -1, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 7, "y": 4, "z": 1, "yaw": 0, "pitch": 0 } }
+          ],
+          "operations": []
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "build_game_room",
+      "position": 3,
+      "values": [
+        { "name": "parameters", "value": { "type": "array", "values": [] } }
+      ],
+      "operations": [
+        {
+          "action": "game_set_region",
+          "values": [
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:smooth_stone\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": 40, "y": 4, "z": -5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 50, "y": 4, "z": 5, "yaw": 0, "pitch": 0 } }
+          ],
+          "operations": []
+        },
+        {
+          "action": "game_set_region",
+          "values": [
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:sea_lantern\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": 40, "y": 8, "z": -5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 50, "y": 8, "z": 5, "yaw": 0, "pitch": 0 } }
+          ],
+          "operations": []
+        },
+        {
+          "action": "game_set_region",
+          "values": [
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_bricks\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": 40, "y": 5, "z": -5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 50, "y": 7, "z": -5, "yaw": 0, "pitch": 0 } }
+          ],
+          "operations": []
+        },
+        {
+          "action": "game_set_region",
+          "values": [
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_bricks\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": 40, "y": 5, "z": 5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 50, "y": 7, "z": 5, "yaw": 0, "pitch": 0 } }
+          ],
+          "operations": []
+        },
+        {
+          "action": "game_set_region",
+          "values": [
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_bricks\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": 40, "y": 5, "z": -5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 40, "y": 7, "z": 5, "yaw": 0, "pitch": 0 } }
+          ],
+          "operations": []
+        },
+        {
+          "action": "game_set_region",
+          "values": [
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_bricks\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": 50, "y": 5, "z": -5, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 50, "y": 7, "z": -2, "yaw": 0, "pitch": 0 } }
+          ],
+          "operations": []
+        },
+        {
+          "action": "game_set_region",
+          "values": [
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_bricks\"}" } },
+            { "name": "pos_1", "value": { "type": "location", "x": 50, "y": 5, "z": 2, "yaw": 0, "pitch": 0 } },
+            { "name": "pos_2", "value": { "type": "location", "x": 50, "y": 7, "z": 5, "yaw": 0, "pitch": 0 } }
           ],
           "operations": []
         }
@@ -1504,7 +458,7 @@
     {
       "type": "function",
       "name": "build_corridor",
-      "position": 3,
+      "position": 4,
       "values": [
         {
           "name": "parameters",
@@ -1530,762 +484,231 @@
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0) - 1)"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 4
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": -2
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0) - 1)" } },
+            { "name": "y", "value": { "type": "number", "number": 4 } },
+            { "name": "z", "value": { "type": "number", "number": -2 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0) + 20)"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 4
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": 2
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc2", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0) + 20)" } },
+            { "name": "y", "value": { "type": "number", "number": 4 } },
+            { "name": "z", "value": { "type": "number", "number": 2 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:quartz_block\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:cut_sandstone\"}" } },
+            { "name": "pos_1", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "pos_2", "value": { "type": "variable", "variable": "pc2", "scope": "line" } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0))"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 5
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": -2
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0))" } },
+            { "name": "y", "value": { "type": "number", "number": 5 } },
+            { "name": "z", "value": { "type": "number", "number": -2 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0) + 19)"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 7
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": -2
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc2", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0) + 19)" } },
+            { "name": "y", "value": { "type": "number", "number": 7 } },
+            { "name": "z", "value": { "type": "number", "number": -2 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:smooth_stone\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_bricks\"}" } },
+            { "name": "pos_1", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "pos_2", "value": { "type": "variable", "variable": "pc2", "scope": "line" } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0))"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 5
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": 2
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0))" } },
+            { "name": "y", "value": { "type": "number", "number": 5 } },
+            { "name": "z", "value": { "type": "number", "number": 2 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0) + 19)"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 7
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": 2
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc2", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0) + 19)" } },
+            { "name": "y", "value": { "type": "number", "number": 7 } },
+            { "name": "z", "value": { "type": "number", "number": 2 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:smooth_stone\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_bricks\"}" } },
+            { "name": "pos_1", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "pos_2", "value": { "type": "variable", "variable": "pc2", "scope": "line" } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0))"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 8
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": -1
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0))" } },
+            { "name": "y", "value": { "type": "number", "number": 8 } },
+            { "name": "z", "value": { "type": "number", "number": -1 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0) + 19)"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 8
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": 1
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc2", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0) + 19)" } },
+            { "name": "y", "value": { "type": "number", "number": 8 } },
+            { "name": "z", "value": { "type": "number", "number": 1 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:sea_lantern\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_block\"}" } },
+            { "name": "pos_1", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "pos_2", "value": { "type": "variable", "variable": "pc2", "scope": "line" } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0) - 1)"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 5
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": -1
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0))" } },
+            { "name": "y", "value": { "type": "number", "number": 8 } },
+            { "name": "z", "value": { "type": "number", "number": 0 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0) - 1)"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 7
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": 1
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc2", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0) + 19)" } },
+            { "name": "y", "value": { "type": "number", "number": 8 } },
+            { "name": "z", "value": { "type": "number", "number": 0 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:smooth_stone\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:sea_lantern\"}" } },
+            { "name": "pos_1", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "pos_2", "value": { "type": "variable", "variable": "pc2", "scope": "line" } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0) + 20)"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 5
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": -1
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0) - 1)" } },
+            { "name": "y", "value": { "type": "number", "number": 5 } },
+            { "name": "z", "value": { "type": "number", "number": -1 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "set_variable_set_all_coordinates",
           "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "x",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_line(x0) + 20)"
-              }
-            },
-            {
-              "name": "y",
-              "value": {
-                "type": "number",
-                "number": 7
-              }
-            },
-            {
-              "name": "z",
-              "value": {
-                "type": "number",
-                "number": 1
-              }
-            },
-            {
-              "name": "yaw",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            },
-            {
-              "name": "pitch",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
+            { "name": "variable", "value": { "type": "variable", "variable": "pc2", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0) - 1)" } },
+            { "name": "y", "value": { "type": "number", "number": 7 } },
+            { "name": "z", "value": { "type": "number", "number": 1 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
           ],
           "operations": []
         },
         {
           "action": "game_set_region",
           "values": [
-            {
-              "name": "block",
-              "value": {
-                "type": "item",
-                "item": "{Count:1b,id:\"minecraft:smooth_stone\"}"
-              }
-            },
-            {
-              "name": "pos_1",
-              "value": {
-                "type": "variable",
-                "variable": "pc1",
-                "scope": "line"
-              }
-            },
-            {
-              "name": "pos_2",
-              "value": {
-                "type": "variable",
-                "variable": "pc2",
-                "scope": "line"
-              }
-            }
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_bricks\"}" } },
+            { "name": "pos_1", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "pos_2", "value": { "type": "variable", "variable": "pc2", "scope": "line" } }
+          ],
+          "operations": []
+        },
+        {
+          "action": "set_variable_set_all_coordinates",
+          "values": [
+            { "name": "variable", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0) + 20)" } },
+            { "name": "y", "value": { "type": "number", "number": 5 } },
+            { "name": "z", "value": { "type": "number", "number": -1 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
+          ],
+          "operations": []
+        },
+        {
+          "action": "set_variable_set_all_coordinates",
+          "values": [
+            { "name": "variable", "value": { "type": "variable", "variable": "pc2", "scope": "line" } },
+            { "name": "x", "value": { "type": "number", "number": "%math(%var_line(x0) + 20)" } },
+            { "name": "y", "value": { "type": "number", "number": 7 } },
+            { "name": "z", "value": { "type": "number", "number": 1 } },
+            { "name": "yaw", "value": { "type": "number", "number": 0 } },
+            { "name": "pitch", "value": { "type": "number", "number": 0 } }
+          ],
+          "operations": []
+        },
+        {
+          "action": "game_set_region",
+          "values": [
+            { "name": "block", "value": { "type": "item", "item": "{Count:1b,id:\"minecraft:quartz_bricks\"}" } },
+            { "name": "pos_1", "value": { "type": "variable", "variable": "pc1", "scope": "line" } },
+            { "name": "pos_2", "value": { "type": "variable", "variable": "pc2", "scope": "line" } }
           ],
           "operations": []
         }
