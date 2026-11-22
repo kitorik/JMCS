@@ -1,454 +1,455 @@
 # Game values
-> **Enum macros:** {TF} = TRUE / FALSE; {TFN} = TRUE / FALSE / NOT_SET; {ANY_ALL} = ANY / ALL; {ITEM_MATCH} = EXACT / IGNORE_NAME_DURABILITY / IGNORE_NAME_DURABILITY_ENCHANTMENTS / CUSTOM_TAGS_CONTAINS / MINECRAFT_TAG / ITEM_TYPE; {DEG_RAD} = DEGREES / RADIANS; {CMP} = EXACTLY / IGNORE_STACK_SIZE / IGNORE_DURABILITY_AND_STACK_SIZE / TYPE_ONLY. Icon column omitted.
+> Source: official JustMc assets (documentation/ru_RU) — updated 2026-11. Icon column references the original repo icons — ignore the links.
 
-
-|  ID  |  Name  |  Description  |  Category  |  Return type  |  Works with  |  Status  |
-|  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |
-|  absorption_health  |  Absorption health  |  Gets the amount of absorption (golden) health of the target.  |  Statistics  |  number  |    |    |
-|  active_item_used_time  |  Item use time  |  Gets the current item use time in hand.  |  Statistics  |  number  |    |    |
-|  age  |  Target age  |  Gets the age of the target in ticks.  |  Statistics  |  number  |    |    |
-|  all_entities_names  |  All entity names  |  Gets the names of all entities in the world.  |  World  |  array<text>  |    |    |
-|  all_entities_uuids  |  All entity UUIDs  |  Gets the UUIDs of all entities in the world.  |  World  |  array<text>  |    |    |
-|  all_players_names  |  All player names  |  Gets the names of all players in the world.  |  World  |  array<text>  |    |    |
-|  all_players_uuids  |  All player UUIDs  |  Gets the UUIDs of all players in the world.  |  World  |  array<text>  |    |    |
-|  anticheat_check  |  Anticheat check  |  Gets the name of the anticheat check that caught the player.  |  Event  |  text  |  The "Anticheat flagged player" event  |    |
-|  anticheat_violations  |  Anticheat triggers  |  Gets the number of the player anticheat check triggers.  |  Event  |  number  |  The "Anticheat flagged player" event  |    |
-|  armor_items  |  Armor items  |  Gets the items in the target armor slots.  |  Item  |  array<item>  |    |    |
-|  armor_points  |  Armor points  |  Gets the amount of the target armor points changeable by items.  |  Statistics  |  number  |    |    |
-|  armor_toughness  |  Armor toughness  |  Gets the amount of the target armor toughness changeable by items.  |  Statistics  |  number  |    |    |
-|  arrows_in_body  |  Arrow count in body  |  Gets the number of arrows in the target body.  |  Statistics  |  number  |    |    |
-|  attached_leads  |  Leashed entities  |  Gets the UUIDs of entities leashed to the target.  |  Info  |  array<text>  |    |    |
-|  attack_cooldown_strength  |  Attack cooldown  |  Gets the target current attack cooldown.  |  Statistics  |  number  |    |    |
-|  attack_cooldown_ticks  |  Attack cooldown in ticks  |  Gets the target current attack cooldown in ticks.  |  Statistics  |  number  |    |    |
-|  attack_damage  |  Attack damage  |  Gets the amount of the target attack damage changeable by items.  |  Statistics  |  number  |    |    |
-|  attack_speed  |  Attack speed  |  Gets the target attack speed changeable by items.  |  Statistics  |  number  |    |    |
-|  block_beneath  |  Block location under target  |  Gets the location of the block under the target.  |  Location  |  location  |    |    |
-|  blocks_beneath  |  Blocks under target  |  Gets the locations of all blocks under the target.  |  Location  |  array<location>  |    |    |
-|  body_yaw  |  Body rotation  |  Gets the target body rotation.  |  Location  |  number  |    |    |
-|  cape_location  |  Cape location  |  Gets the player cloak location.  |  Location  |  location  |  Players  |    |
-|  cardinal_direction  |  Cardinal direction  |  Gets the target cardinal direction (north, west, south, east).  |  Location  |  text  |    |    |
-|  chat_visibility  |  Chat visibility  |  Gets the player chat visibility status.  |  Info  |  text  |  Players  |    |
-|  client_brand_name  |  Player client name  |  Gets the player client name.  |  Info  |  text  |  Players  |    |
-|  client_view_distance  |  Player render distance  |  Gets the player render distance set in the game settings.  |  Statistics  |  number  |  Players  |    |
-|  clientside_locale  |  Player client language  |  Gets the player client language.  |  Info  |  text  |  Players  |    |
-|  cpu_usage  |  CPU usage percentage  |  Gets the percentage of the server CPU load by the world.  |  World  |  number  |    |    |
-|  currency_transaction_amount  |  Emerald amount in transaction  |  Gets the number of emeralds spent in the transaction.  |  Event  |  text  |  The "Player makes transaction" event  |    |
-|  currency_transaction_reason  |  Transaction request reason  |  Gets the reason of the emerald transaction request.  |  Event  |  text  |  The "Player makes transaction" event  |    |
-|  currency_transaction_result  |  Transaction result  |  Gets the result of the completed transaction.  |  Event  |  text  |  The "Player makes transaction" event  |    |
-|  current_health  |  Current health  |  Gets the remaining amount of the target health.  |  Statistics  |  number  |    |    |
-|  current_input_list  |  Currently pressed movement keys  |  Gets the currently pressed movement keys.  |  Info  |  array<text>  |  Players  |    |
-|  cursor_item  |  Cursor item  |  Gets the item on the target cursor (used when moving items in the inventory).  |  Item  |  item  |    |    |
-|  custom_inventory_items  |  Item list in open inventory  |  Returns the list containing the items in the currently open inventory menu.  |  Item  |  array<item>  |    |    |
-|  death_screen_score  |  Score amount  |  Gets the score amount shown on the death screen.  |  Statistics  |  number  |  Players  |    |
-|  delay_reload_count  |  World freeze duration  |  Gets the current time the world is frozen for.  |  World  |  number  |    |    |
-|  direction_of_view  |  Direction of view  |  Gets the target look direction vector.  |  Location  |  vector  |    |    |
-|  display_entity_left_rotation  |  Display left rotation  |  Gets the display left rotation as a vector.  |  Info  |  vector  |  Displays  |    |
-|  display_entity_right_rotation  |  Display right rotation  |  Gets the display right rotation as a vector.  |  Info  |  vector  |  Displays  |    |
-|  display_entity_scale  |  Display scale  |  Gets the display scale as a vector.  |  Info  |  vector  |  Displays  |    |
-|  display_entity_translation  |  Display offset  |  Gets the display translation as a vector.  |  Info  |  vector  |  Displays  |    |
-|  display_name  |  Display name  |  Gets the target display name.  |  Info  |  text  |    |    |
-|  enchantment_seed  |  Current enchantment seed  |  Gets the player current enchantment seed.  |  Statistics  |  number  |    |    |
-|  entity_fuse_ticks  |  Fuse time  |  Gets the entity time until explosion.  |  Statistics  |  number  |  Creepers<br/>TNT<br/>Firework rockets  |    |
-|  entity_height  |  Hitbox height  |  Gets the target hitbox size on the Y axis.  |  Statistics  |  number  |    |    |
-|  entity_item  |  Entity item  |  Gets the target item form.  |  Item  |  item  |    |    |
-|  entity_pathfinder_point_index  |  Path point index  |  Gets the mob current path point index it is walking along.  |  Statistics  |  number  |    |    |
-|  entity_pathfinder_points  |  Current path  |  Gets the list of all points making up the mob current path.  |  Info  |  array<location>  |    |    |
-|  entity_pick_item_stack  |  Entity received item  |  Gets the item obtained by middle-clicking (MMB) an entity.  |  Item  |  item  |    |    |
-|  entity_ticks_lived  |  Target lifetime  |  Gets the number of ticks the target has existed.  |  Statistics  |  number  |    |    |
-|  entity_type  |  Entity type  |  Gets the target entity type.  |  Info  |  text  |    |    |
-|  entity_width_x  |  Hitbox width  |  Gets the target hitbox size on the X axis.  |  Statistics  |  number  |    |    |
-|  entity_width_z  |  Hitbox length  |  Gets the target hitbox size on the Z axis.  |  Statistics  |  number  |    |    |
-|  event_added_items  |  Distributed items  |  Yields the map of items distributed into slots via LMB/RMB or duplicated via the mouse wheel.  |  Event  |  map<number, item>  |  The "Player drags item in inventory" event  |    |
-|  event_advancement_tab_name  |  Achievement tab name  |  Gets the event current advancements tab name.  |  Event  |  text  |  The "Player switched achievements menu tab" event  |  deprecated  |
-|  event_anvil_damage_state  |  New anvil damage state  |  Gets the new anvil break state.  |  Event  |  text  |  The "Player damages anvil" event  |    |
-|  event_anvil_rename_input  |  New item name  |  Gets the new item name in the anvil.  |  Event  |  text  |  The "Player renames item" event  |    |
-|  event_block  |  Event block  |  Gets the ID of the block associated with the event.  |  Event  |  text  |    |    |
-|  event_block_break_progress  |  Block breaking progress  |  Gets the break progress of the block associated with the event.  |  Event  |  number  |  Player block breaking update<br/>Entity block breaking update  |    |
-|  event_block_face  |  Event block face  |  Gets the block face affected in the event as a direction.  |  Event  |  text  |  Interaction events<br/>Block place or break events<br/>The "Player projectile hits" event<br/>Piston events  |    |
-|  event_block_location  |  Event block location  |  Gets the block location in the event.  |  Event  |  location  |    |    |
-|  event_blocks_involved  |  Event affected blocks  |  Gets the list of locations of all blocks involved in the event.  |  Event  |  array<location>  |  Explosion events<br/>Piston events  |    |
-|  event_chat_message  |  Chat message  |  Gets the message sent by the target in the event.  |  Event  |  text  |  The "Player writes chat message" event  |    |
-|  event_close_inventory_cause  |  Inventory close reason  |  Gets the reason the target open inventory was closed in the event.  |  Event  |  text  |  The "Player closes inventory" event  |    |
-|  event_combust_duration  |  Entity burn duration  |  Gets the entity burn duration from the event.  |  Event  |  number  |  The "Player ignites" event<br/>The "Entity ignites" event  |    |
-|  event_combust_reason  |  Entity burn reason  |  Gets the entity burn reason from the event.  |  Event  |  text  |  The "Player ignites" event<br/>The "Entity ignites" event  |    |
-|  event_custom_click_dialog_view_data  |  Dialog data  |  Gets the data entered by the player in the dialog window.  |  Event  |  any  |  The "Player triggers custom click" event  |    |
-|  event_custom_click_key  |  Custom click ID  |  Gets the custom click ID in the dialog window or chat.  |  Event  |  text  |  The "Player triggers custom click" event  |    |
-|  event_damage  |  Damage dealt  |  Gets the amount of damage dealt in the event.  |  Event  |  number  |    |    |
-|  event_damage_cause  |  Damage received reason  |  Gets the reason or type of damage received in the event.  |  Event  |  text  |    |    |
-|  event_death_screen_message  |  Death message  |  Gets the message shown on the death screen.  |  Event  |  text  |  The "Player dies" event  |    |
-|  event_drag_type  |  Inventory drag type  |  Gets the drag type of items across the target open inventory in the event.  |  Event  |  text  |  The "Player drags item in inventory" event  |    |
-|  event_enchantment_bonus  |  Bookshelf count  |  Gets the number of bookshelves associated with the event.  |  Event  |  number  |  The "Player chooses enchantment" event  |    |
-|  event_enchantment_hint  |  Suggested enchantment  |  Gets the name of the offered enchantment in the enchanting table.  |  Event  |  text  |  The "Player enchants item" event  |    |
-|  event_enchantment_level_hint  |  Required enchantment experience level  |  Gets the required experience level for the chosen enchantment.  |  Event  |  number  |  The "Player enchants item" event  |    |
-|  event_enchantment_offers  |  Event suggested enchantments  |  Gets the list of enchantments offered to the player, associated with the event.  |  Event  |  array<text>  |  The "Player chooses enchantment" event  |    |
-|  event_enchantments_to_add  |  Received enchantments  |  Gets the map of the item received enchantments.  |  Event  |  map<text, number>  |  The "Player enchants item" event  |    |
-|  event_entity_unleash_reason  |  Entity untie reason  |  Gets the reason the entity was untied.  |  Event  |  text  |  Untie events  |    |
-|  event_equipment_slot  |  Affected slot type  |  Gets the type of the target slot involved in the event.  |  Event  |  text  |    |    |
-|  event_exhaustion_amount  |  Event exhaustion  |  Gets the amount of exhaustion received.  |  Event  |  number  |  The "Player exhausts" event  |    |
-|  event_exhaustion_reason  |  Exhaustion reason  |  Gets the reason of exhaustion.  |  Event  |  text  |  The "Player exhausts" event  |    |
-|  event_experience  |  Event experience amount  |  Gets the amount of experience in the event.  |  Event  |  number  |    |    |
-|  event_fail_move_reason  |  Failed movement reason  |  Gets the reason of a failed movement.  |  Event  |  text  |  The "Player failed to move" event  |    |
-|  event_final_damage  |  Final damage  |  Gets the final amount of damage dealt in the event.  |  Event  |  number  |    |    |
-|  event_fish_state  |  Fishing event reason  |  Gets the fishing event reason.  |  Event  |  text  |  The "Player fishes" event  |    |
-|  event_food_level  |  Event hunger restored  |  Gets the amount of hunger restored.  |  Event  |  number  |  The "Player hunger level change" event  |    |
-|  event_from_location  |  Old player location  |  Gets the player old location.  |  Event  |  location  |    |    |
-|  event_gamemode  |  Event game mode  |  Gets the game mode associated with the event.  |  Event  |  text  |  The "Player requested game mode menu" event  |    |
-|  event_hanging_break_cause  |  Hanging entity removal reason  |  Gets the reason the hanging entity (painting, frame) was removed.  |  Event  |  text  |  The "Hanging entity broken" event  |    |
-|  event_heal_amount  |  Health restored amount  |  Gets the amount of health restored in the event.  |  Event  |  number  |  The "Player regains health" event<br/>The "Entity regains health" event  |    |
-|  event_heal_cause  |  Healing reason  |  Gets the reason of health restoration in the event.  |  Event  |  text  |  The "Player regains health" event<br/>The "Entity regains health" event  |    |
-|  event_hotbar_slot  |  Event hotbar slot  |  Gets the current hotbar slot number in the event.  |  Event  |  number  |    |    |
-|  event_input_list  |  Pressed movement key list  |  Gets the list of pressed movement keys of the event.  |  Event  |  array<text>  |  The "Player changes movement keys" event<br/>The "Player moves on vehicle" event<br/>The "Player jumps on vehicle" event  |    |
-|  event_interaction  |  Event interaction type  |  Gets the target interaction type in the event.  |  Event  |  text  |  The "Player right-clicks" event<br/>The "Player left-clicks" event<br/>The "Player interacts with world" event  |    |
-|  event_inventory_action  |  Inventory click action  |  Gets the current action in the inventory menu when clicking it.  |  Event  |  text  |    |    |
-|  event_inventory_click_type  |  Inventory click type  |  Gets the click type on the target open inventory in the event.  |  Event  |  text  |    |    |
-|  event_item  |  Event item  |  Gets the item in the event.  |  Event  |  item  |    |    |
-|  event_item_cooldown  |  Event item cooldown  |  Gets the event item cooldown.  |  Event  |  number  |  The "Player uses item with cooldown" event<br/>The "Player gets item group cooldown" event  |    |
-|  event_item_cooldown_group  |  Item group on cooldown  |  Gets the item group the event cooldown applies to.  |  Event  |  text  |  The "Player uses item with cooldown" event<br/>The "Player gets item group cooldown" event  |    |
-|  event_item_damage  |  Item damage dealt  |  Gets the amount of damage dealt to the item.  |  Event  |  number  |  The "Player damages item" event  |    |
-|  event_items  |  Event items  |  Gets all items in the event.  |  Event  |  array<item>  |    |    |
-|  event_knockback_cause  |  Knockback reason  |  Gets the knockback reason in the event.  |  Event  |  text  |  The "Player is knocked back" event<br/>The "Entity is knocked back" event  |    |
-|  event_knockback_event_type  |  Knockback type  |  Gets the knockback type in the event.  |  Event  |  text  |  The "Player is knocked back" event<br/>The "Entity is knocked back" event  |    |
-|  event_knockback_vector  |  Knockback vector  |  Gets the knockback vector in the event.  |  Event  |  vector  |  The "Player is knocked back" event<br/>The "Entity is knocked back" event  |    |
-|  event_message  |  Event message  |  Gets the system message sent in the event.  |  Event  |  text  |    |    |
-|  event_new_equipments  |  Equipment  |  Gets the equipment from the event.  |  Event  |  map<text, item>  |  The "Player changes equipment" event<br/>The "Entity changes equipment" event  |    |
-|  event_new_fishing_hook_state  |  New bobber state  |  Gets the bobber new state.  |  Event  |  text  |  The "Fishing bobber changes state" event  |    |
-|  event_new_location  |  New player location  |  Gets the player new location.  |  Event  |  location  |    |    |
-|  event_new_potion_effect  |  New effect  |  Gets the event new effect.  |  Event  |  potion  |  The "Player gets splash potion effect" event  |    |
-|  event_new_vault_state  |  New vault state  |  Gets the vault new state.  |  Event  |  text  |  The "Vault changes state" event<br/>The "Player changes vault state" event  |    |
-|  event_old_equipments  |  Previous event equipment  |  Gets the event previous equipment.  |  Event  |  map<text, item>  |  The "Player changes equipment" event<br/>The "Entity changes equipment" event  |    |
-|  event_old_item  |  Old event item  |  Gets the old item in the event.  |  Event  |  item  |  The "Player inventory slot updates" event  |    |
-|  event_old_vault_state  |  Previous vault state  |  Gets the vault previous state.  |  Event  |  text  |  The "Vault changes state" event<br/>The "Player changes vault state" event  |    |
-|  event_power  |  Draw power percentage  |  Gets the event execution power percentage (bow tension, horse jump).  |  Event  |  number  |  The "Player shoots" event<br/>The "Player jumps on horse" event  |    |
-|  event_projectile_item  |  Event projectile item  |  Gets the event projectile item.  |  Event  |  item  |  The "Player shoots" event  |    |
-|  event_query_info  |  Debug info  |  Gets the debug information of the target block or entity.  |  Event  |  text  |  The "Player receives block info" event<br/>The "Player receives entity info" event  |    |
-|  event_replaced_block  |  Replaced block  |  Gets the event replaced block ID.  |  Event  |  text  |  The "Player places block" event  |    |
-|  event_sign_lines  |  Sign lines  |  Gets the sign lines as a list.  |  Event  |  array<text>  |  The "Player edits sign" event  |    |
-|  event_sign_side  |  Sign side  |  Gets the sign face as text.  |  Event  |  text  |  The "Player edits sign" event  |    |
-|  event_slot  |  Event slot  |  Yields the slot number in the event.  |  Event  |  number  |    |    |
-|  event_slot_type  |  Click slot type  |  Gets the current inventory menu slot type when clicking it.  |  Event  |  text  |    |    |
-|  event_slots_involved  |  Affected slots  |  Gets the list of all involved slots of the target open inventory in the event.  |  Event  |  array<number>  |  The "Player drags item in inventory" event  |    |
-|  event_teleport_cause  |  Teleport reason  |  Gets the teleportation reason in the event.  |  Event  |  text  |  The "Player teleported" event<br/>The "Enderman escapes" event  |    |
-|  event_ticks_held_for  |  Item use tick count  |  Gets the number of item use ticks.  |  Event  |  number  |  The "Player stops using item" event  |    |
-|  event_time_skip_amount  |  Time skip tick count  |  Gets the number of world time skip ticks.  |  Event  |  number  |  The "Time skip" event  |    |
-|  event_time_skip_reason  |  Time skip reason  |  Gets the reason of the world time skip.  |  Event  |  text  |  The "Time skip" event  |    |
-|  event_transform_reason  |  Entity replacement reason  |  Gets the event entity replacement reason.  |  Event  |  text  |  The "Entity replaced by another entity" event  |    |
-|  event_transformed_entities  |  Event replaced entities  |  Gets the event replaced entities.  |  Event  |  array<text>  |  The "Entity replaced by another entity" event  |    |
-|  event_tree_type  |  Tree type  |  Gets the tree type in the event.  |  Event  |  text  |  The "Player grows tree" event<br/>The "Tree grows" event  |    |
-|  event_velocity  |  Velocity vector  |  Gets the velocity vector in the event.  |  Event  |  vector  |  The "Player changed velocity vector" event  |    |
-|  experience_level  |  Experience level  |  Gets the number of the target experience levels.  |  Statistics  |  number  |    |    |
-|  experience_progress  |  Experience progress  |  Gets the percentage progress of the target current experience level.  |  Statistics  |  number  |    |    |
-|  eye_location  |  Eye location  |  Gets the target location at eye height.  |  Location  |  location  |    |    |
-|  fall_distance  |  Fall distance  |  Gets the target fall distance in blocks.  |  Statistics  |  number  |    |    |
-|  fire_ticks  |  Burn time  |  Gets the remaining target burn ticks.  |  Statistics  |  number  |    |    |
-|  flying_speed  |  Flight speed  |  Gets the target current flying speed (attribute).  |  Statistics  |  number  |    |    |
-|  food_exhaustion  |  Exhaustion level  |  Gets the target exhaustion level, which grows from the player performed actions.  |  Statistics  |  number  |    |    |
-|  food_level  |  Hunger level  |  Gets the remaining amount of the target food points.  |  Statistics  |  number  |    |    |
-|  food_saturation  |  Saturation level  |  Gets the amount of the target food saturation, depending on the kinds of food eaten.  |  Statistics  |  number  |    |    |
-|  freeze_ticks  |  Freeze time  |  Gets the target current freeze time.  |  Statistics  |  number  |    |    |
-|  gamemode  |  Game mode  |  Gets the player current game mode.  |  Info  |  text  |  Players  |    |
-|  held_slot  |  Selected hotbar slot  |  Gets the target selected hotbar slot.  |  Statistics  |  number  |    |    |
-|  hitbox_midpoint_location  |  Hitbox center  |  Gets the target hitbox center location.  |  Location  |  location  |    |    |
-|  hotbar_items  |  Hotbar items  |  Gets the items in the target hotbar.  |  Item  |  array<item>  |    |    |
-|  idle_duration  |  Idle duration  |  Gets the player current idle duration.  |  Statistics  |  number  |    |    |
-|  inventory_items  |  Inventory items  |  Gets the items in the target inventory (including the hotbar).  |  Item  |  array<item>  |    |    |
-|  invulnerability_ticks  |  Invulnerability time  |  Gets the remaining target invulnerability ticks.  |  Statistics  |  number  |    |    |
-|  item_usage_progress  |  Item use progress  |  Gets the percentage progress of the target using the item in hand, e.g. food.  |  Statistics  |  number  |    |    |
-|  last_damage_cause  |  Last damage reason  |  Gets the target last damage reason.  |  Info  |  text  |    |    |
-|  last_death_location  |  Last death location  |  Gets the player last death location.  |  Location  |  location  |    |    |
-|  lead_holder  |  Guide  |  Gets the UUID of the entity leading the target on a leash.  |  Info  |  text  |    |    |
-|  location  |  Location  |  Gets the target location.  |  Location  |  location  |    |    |
-|  main_hand  |  Main hand  |  Gets the player main hand.  |  Info  |  text  |  Players  |    |
-|  main_hand_item  |  Main hand item  |  Gets the item in the target main hand.  |  Item  |  item  |    |    |
-|  max_health  |  Max health  |  Gets the maximum amount of the target health.  |  Statistics  |  number  |    |    |
-|  max_invulnerability_ticks  |  Total invulnerability time  |  Gets the number of ticks the target invulnerability was granted for.  |  Statistics  |  number  |    |    |
-|  merchant_recipe_count  |  Villager trade count  |  Gets the number of the Villager trades.  |  Statistics  |  number  |    |    |
-|  name  |  Name  |  Gets the target name.  |  Info  |  text  |    |    |
-|  off_hand_item  |  Off-hand item  |  Gets the item in the target offhand.  |  Item  |  item  |    |    |
-|  open_inventory_custom_id  |  Open inventory custom ID  |  Gets the custom ID of the target open inventory.  |  Info  |  text  |  Players  |    |
-|  open_inventory_size  |  Open inventory size  |  Gets the size of the currently open inventory.  |  Statistics  |  number  |  Players  |    |
-|  open_inventory_title  |  Open inventory title  |  Gets the title of the target open inventory.  |  Info  |  text  |  Players  |    |
-|  open_inventory_type  |  Open inventory type  |  Gets the type of the target open inventory.  |  Info  |  text  |  Players  |    |
-|  origin  |  First spawn location  |  Gets the target first spawn location.  |  Location  |  location  |    |    |
-|  owner_uuid  |  World owner UUID  |  Gets the world owner UUID.  |  World  |  text  |    |    |
-|  particle_cpu_usage  |  Particle CPU usage percentage  |  Gets the percentage of the server CPU load by particle creation.  |  World  |  number  |    |    |
-|  particle_visibility  |  Particle visibility  |  Gets the player particle visibility setting value.  |  Info  |  text  |  Players  |    |
-|  passengers  |  Passengers  |  Gets the UUIDs of the entities riding the target.  |  Info  |  array<text>  |    |    |
-|  ping  |  Player ping  |  Gets the player-server latency in milliseconds.  |  Statistics  |  number  |    |    |
-|  pitch  |  Vertical rotation  |  Gets the target vertical (up/down) rotation (pitch).  |  Location  |  number  |    |    |
-|  player_count  |  Player count in world  |  Gets the number of players in the world.  |  World  |  number  |    |    |
-|  player_ender_pearls  |  Ender pearl list  |  Gets the list of the player unlanded ender pearls.  |  Info  |  array<text>  |  Players  |    |
-|  player_enderchest_items  |  Ender chest items  |  Gets the items in the target ender chest.  |  Item  |  array<item>  |  Players  |    |
-|  pose  |  Entity pose  |  Gets the entity pose.  |  Info  |  text  |    |    |
-|  potion_effects  |  Potion effects  |  Gets the target active potion effects.  |  Info  |  array<potion>  |    |    |
-|  projectile_owner_uuid  |  Projectile owner UUID  |  Gets the projectile owner UUID.  |  Info  |  text  |  Any projectiles  |    |
-|  projectile_power  |  Projectile motion vector  |  Gets the projectile motion vector.  |  Statistics  |  vector  |  Fireballs<br/>Dragon charges<br/>Wither skulls  |    |
-|  protocol_version  |  Client protocol version  |  Gets the player client protocol version.  |  Statistics  |  number  |    |    |
-|  remaining_air  |  Remaining air  |  Gets the remaining target air ticks.  |  Statistics  |  number  |    |    |
-|  response_headers  |  Web response headers  |  Gets the response headers of the sent web request.  |  Event  |  map<text, any>  |  The "Server response" event  |    |
-|  saddle_item  |  Saddle item  |  Gets the saddle or carpet equipped on the target.  |  Item  |  item  |  Pigs<br/>Horses<br/>Llamas  |    |
-|  saturated_regen_rate  |  Saturation regeneration speed  |  Gets the player saturated regeneration rate.  |  Statistics  |  number  |    |    |
-|  selection_size  |  Selected target count  |  Gets the number of targets in the selection.  |  World  |  number  |    |    |
-|  selection_target_names  |  Selected target names  |  Gets the name of each target in the selection.  |  World  |  array<text>  |    |    |
-|  selection_target_uuids  |  Selected target UUIDs  |  Gets the UUID of each target in the selection.  |  World  |  array<text>  |    |    |
-|  server_current_tick  |  Current server time  |  Gets the current server time in ticks.  |  World  |  number  |    |    |
-|  server_tps  |  Server TPS  |  Gets the Ticks Per Second (TPS) the server can process.  |  World  |  number  |    |    |
-|  spawn_location  |  World spawn location  |  Gets the world spawn point location.  |  Location  |  location  |    |    |
-|  spawn_reason  |  Spawn reason  |  Gets the target spawn reason.  |  Info  |  text  |    |    |
-|  start_reload_tick  |  World freeze start time  |  Gets the world freeze start time in ticks.  |  World  |  number  |    |    |
-|  starvation_rate  |  Starvation speed  |  Gets the target starvation rate.  |  Statistics  |  number  |    |    |
-|  steer_forward  |  Vehicle forward speed  |  Gets the vehicle forward or backward movement value.  |  Statistics  |  number  |    |    |
-|  steer_sideways  |  Vehicle sideways speed  |  Gets the vehicle left or right movement value.  |  Statistics  |  number  |    |    |
-|  target_block_face  |  Target block face  |  Gets the direction of the block face the target is looking at.  |  Location  |  text  |    |    |
-|  target_block_location  |  Target block location  |  Gets the location of the block the target is looking at.  |  Location  |  location  |    |    |
-|  target_fluid_location  |  Target fluid location  |  Gets the location of the fluid the target is looking at.  |  Location  |  location  |    |    |
-|  targeted_entity  |  Attack target  |  Gets the mob current attack target.  |  Info  |  text  |    |    |
-|  timestamp  |  UNIX time  |  Gets the current time as a single number in milliseconds.  |  World  |  number  |    |    |
-|  unsaturated_regen_rate  |  Regeneration speed without saturation  |  Gets the player unsaturated regeneration rate.  |  Statistics  |  number  |    |    |
-|  url  |  Web request URL  |  Gets the web request URL.  |  Event  |  text  |  The "Server response" event  |    |
-|  url_response  |  Web request response  |  Gets the response to the sent web request.  |  Event  |  text  |  The "Server response" event  |    |
-|  url_response_code  |  Web response code  |  Gets the response code of the sent web request.  |  Event  |  number  |  The "Server response" event  |    |
-|  user_locale  |  Player server language  |  Gets the player current server language.  |  Info  |  text  |  Players  |    |
-|  uuid  |  UUID  |  Gets the target universally unique identifier (UUID).  |  Info  |  text  |    |    |
-|  vehicle  |  Vehicle  |  Gets the UUID of the entity the target is riding.  |  Info  |  text  |    |    |
-|  velocity  |  Velocity vector  |  Gets the target velocity motion vector (not walking, but external forces).  |  Info  |  vector  |    |    |
-|  walking_speed  |  Walk speed  |  Gets the target current walking speed (attribute).  |  Statistics  |  number  |    |    |
-|  world_clear_weather_duration  |  World clear weather duration  |  Gets the current clear weather duration in the world.  |  World  |  number  |    |    |
-|  world_game_time  |  World age  |  Gets the world existence time in ticks.  |  World  |  number  |    |    |
-|  world_id  |  World ID  |  Gets the world identifier.  |  World  |  text  |    |    |
-|  world_moon_phase  |  Current moon phase  |  Gets the current moon phase in the world.  |  World  |  text  |    |    |
-|  world_size  |  World size  |  Gets the current world size in chunks.  |  World  |  number  |    |    |
-|  world_thunder_duration  |  Rain duration in the world  |  Gets the current rain duration in the world.  |  World  |  number  |    |    |
-|  world_time  |  Current world time  |  Gets the current world time in ticks.  |  World  |  number  |    |    |
-|  world_weather  |  Current world weather  |  Gets the current world weather type.  |  World  |  text  |    |    |
-|  world_weather_duration  |  Duration of the current world weather  |  Gets the current world weather duration.  |  World  |  number  |    |    |
-|  x_coordinate  |  Coordinate X  |  Gets the target location X coordinate.  |  Location  |  number  |    |    |
-|  y_coordinate  |  Coordinate Y  |  Gets the target location Y coordinate.  |  Location  |  number  |    |    |
-|  yaw  |  Horizontal rotation  |  Gets the target horizontal (left/right) rotation (yaw).  |  Location  |  number  |    |    |
-|  z_coordinate  |  Coordinate Z  |  Gets the target location Z coordinate.  |  Location  |  number  |    |    |
-
+| Icon | ID | Name | Description | Category | Return type | Works with | Additional info | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ![absorption_health](../../icons/game_values/absorption_health.png) | absorption_health | Дополнительное здоровье | Получает количество единиц поглощательного (золотого) здоровья цели. | Статистика | number |  |  |  |
+| ![active_item_used_time](../../icons/game_values/active_item_used_time.png) | active_item_used_time | Время использования предмета | Получает текущее время использования предмета в руке. | Статистика | number |  |  |  |
+| ![age](../../icons/game_values/age.png) | age | Возраст цели | Получает возраст цели в тиках. | Статистика | number |  |  |  |
+| ![all_entities_names](../../icons/game_values/all_entities_names.png) | all_entities_names | Имена всех сущностей | Получает имена всех сущностей, находящихся в мире. | Мир | array<text> |  |  |  |
+| ![all_entities_uuids](../../icons/game_values/all_entities_uuids.png) | all_entities_uuids | UUID всех сущностей | Получает UUID всех сущностей, находящихся в мире. | Мир | array<text> |  |  |  |
+| ![all_players_names](../../icons/game_values/all_players_names.png) | all_players_names | Имена всех игроков | Получает имена всех игроков, находящихся в мире. | Мир | array<text> |  |  |  |
+| ![all_players_uuids](../../icons/game_values/all_players_uuids.png) | all_players_uuids | UUID всех игроков | Получает UUID всех игроков, находящихся в мире. | Мир | array<text> |  |  |  |
+| ![anticheat_check](../../icons/game_values/event_anticheat_check.png) | anticheat_check | Проверка античита | Получает название проверки античита, на которой засекли игрока. | Событие | text | Событием "Античит засёк игрока" |  |  |
+| ![anticheat_violations](../../icons/game_values/event_anticheat_violations.png) | anticheat_violations | Срабатываний античита | Получает количество срабатываний проверки античита у игрока. | Событие | number | Событием "Античит засёк игрока" |  |  |
+| ![armor_items](../../icons/game_values/armor_items.png) | armor_items | Предметы брони | Получает предметы в слотах брони цели. | Предмет | array<item> |  |  |  |
+| ![armor_points](../../icons/game_values/armor_points.png) | armor_points | Очки защиты | Получает количество единиц брони цели, которое можно изменить предметами. | Статистика | number |  |  |  |
+| ![armor_toughness](../../icons/game_values/armor_toughness.png) | armor_toughness | Твёрдость брони | Получает количество единиц твёрдости брони цели, которое можно изменить предметами. | Статистика | number |  |  |  |
+| ![arrows_in_body](../../icons/game_values/arrows_in_body.png) | arrows_in_body | Количество стрел в теле | Получает количество стрел в теле цели. | Статистика | number |  |  |  |
+| ![attached_leads](../../icons/game_values/attached_leads.png) | attached_leads | Привязанные сущности | Получает UUID сущностей, которые привязаны поводком к цели. | Информация | array<text> |  |  |  |
+| ![attack_cooldown_strength](../../icons/game_values/attack_cooldown_strength.png) | attack_cooldown_strength | Кулдаун атаки | Получает текущий кулдаун атаки цели. | Статистика | number |  |  |  |
+| ![attack_cooldown_ticks](../../icons/game_values/attack_cooldown_ticks.png) | attack_cooldown_ticks | Кулдаун атаки в тиках | Получает текущий кулдаун атаки цели в тиках. | Статистика | number |  |  |  |
+| ![attack_damage](../../icons/game_values/attack_damage.png) | attack_damage | Урон от атаки | Получает количество единиц урона от атак цели, которое можно изменить предметами. | Статистика | number |  |  |  |
+| ![attack_speed](../../icons/game_values/attack_speed.png) | attack_speed | Скорость атаки | Получает скорость атаки цели, которую можно изменить предметами. | Статистика | number |  |  |  |
+| ![block_beneath](../../icons/game_values/block_beneath.png) | block_beneath | Местоположение блока под целью | Получает местоположение блока под целью. | Местоположение | location |  |  |  |
+| ![blocks_beneath](../../icons/game_values/blocks_beneath.png) | blocks_beneath | Блоки под целью | Получает местоположения всех блоков, находящихся под целью. | Местоположение | array<location> |  |  |  |
+| ![body_yaw](../../icons/game_values/body_yaw.png) | body_yaw | Поворот тела | Получает поворот тела цели. | Местоположение | number |  |  |  |
+| ![cape_location](../../icons/game_values/cape_location.png) | cape_location | Местоположение плаща | Получает местоположение плаща игрока. | Местоположение | location | Игроками |  |  |
+| ![cardinal_direction](../../icons/game_values/cardinal_direction.png) | cardinal_direction | Кардинальное направление | Получает кардинальное направление (север, запад, юг, восток) цели. | Местоположение | text |  |  |  |
+| ![chat_visibility](../../icons/game_values/chat_visibility.png) | chat_visibility | Видимость чата | Получает статус видимости чата игрока. | Информация | text | Игроками |  |  |
+| ![client_brand_name](../../icons/game_values/client_brand_name.png) | client_brand_name | Название клиента игрока | Получает название клиента игрока. | Информация | text | Игроками |  |  |
+| ![client_view_distance](../../icons/game_values/client_view_distance.png) | client_view_distance | Дальность прорисовки игрока | Получает дальность прорисовки игрока, установленную в настройках игры. | Статистика | number | Игроками |  |  |
+| ![clientside_locale](../../icons/game_values/clientside_locale.png) | clientside_locale | Язык клиента игрока | Получает язык клиента игрока. | Информация | text | Игроками |  |  |
+| ![cpu_usage](../../icons/game_values/cpu_usage.png) | cpu_usage | Процент использования процессора | Получает процент нагрузки миром процессора сервера. | Мир | number |  |  |  |
+| ![currency_transaction_amount](../../icons/game_values/event_currency_transaction_amount.png) | currency_transaction_amount | Количество изумрудов в транзакции | Получает количество потраченных изумрудов в транзакции. | Событие | text | Событием "Игрок совершает транзакцию" |  |  |
+| ![currency_transaction_reason](../../icons/game_values/event_currency_transaction_reason.png) | currency_transaction_reason | Причина запроса транзакции | Получает причину запроса транзакции в изумрудах. | Событие | text | Событием "Игрок совершает транзакцию" |  |  |
+| ![currency_transaction_result](../../icons/game_values/event_currency_transaction_result.png) | currency_transaction_result | Результат транзакции | Получает результат совершённой транзакции. | Событие | text | Событием "Игрок совершает транзакцию" |  |  |
+| ![current_health](../../icons/game_values/current_health.png) | current_health | Текущее здоровье | Получает оставшееся количество единиц здоровья цели. | Статистика | number |  |  |  |
+| ![current_input_list](../../icons/game_values/current_input_list.png) | current_input_list | Текущие нажатые клавиши передвижения | Получает нажатые в данный момент клавиши передвижения. | Информация | array<text> | Игроками |  |  |
+| ![cursor_item](../../icons/game_values/cursor_item.png) | cursor_item | Предмет на курсоре | Получает предмет на курсоре цели (используется при переносе предметов в инвентаре). | Предмет | item |  |  |  |
+| ![custom_inventory_items](../../icons/game_values/custom_inventory_items.png) | custom_inventory_items | Список предметов в открытом инвентаре | Возвращает список, содержащий предметы, которые находятся в текущем открытом инвентарном меню. | Предмет | array<item> |  |  |  |
+| ![death_screen_score](../../icons/game_values/death_screen_score.png) | death_screen_score | Количество очков | Получает количество очков, отображаемых на экране смерти. | Статистика | number | Игроками |  |  |
+| ![delay_reload_count](../../icons/game_values/delay_reload_count.png) | delay_reload_count | Длительность заморозки мира | Получает текущее время, на которое мир заморожен. | Мир | number |  |  |  |
+| ![direction_of_view](../../icons/game_values/direction_of_view.png) | direction_of_view | Направление взгляда | Получает вектор направления взгляда цели. | Местоположение | vector |  |  |  |
+| ![display_entity_left_rotation](../../icons/game_values/display_entity_left_rotation.png) | display_entity_left_rotation | Левый поворот визуализатора | Получает левый поворот визуализатора в виде вектора. | Информация | vector | Визуализаторами |  |  |
+| ![display_entity_right_rotation](../../icons/game_values/display_entity_right_rotation.png) | display_entity_right_rotation | Правый поворот визуализатора | Получает правый поворот визуализатора в виде вектора. | Информация | vector | Визуализаторами |  |  |
+| ![display_entity_scale](../../icons/game_values/display_entity_scale.png) | display_entity_scale | Масштаб визуализатора | Получает масштаб визуализатора в виде вектора. | Информация | vector | Визуализаторами |  |  |
+| ![display_entity_translation](../../icons/game_values/display_entity_translation.png) | display_entity_translation | Смещение визуализатора | Получает смещение визуализатора в виде вектора. | Информация | vector | Визуализаторами |  |  |
+| ![display_name](../../icons/game_values/display_name.png) | display_name | Отображаемое имя | Получает отображаемое имя цели. | Информация | text |  |  |  |
+| ![enchantment_seed](../../icons/game_values/enchantment_seed.png) | enchantment_seed | Текущий сид зачарований | Получает текущий сид зачарований игрока. | Статистика | number |  |  |  |
+| ![entity_fuse_ticks](../../icons/game_values/entity_fuse_ticks.png) | entity_fuse_ticks | Время до взрыва | Получает время до взрыва сущности. | Статистика | number | Крипером<br/>Динамитом<br/>Фейерверками |  |  |
+| ![entity_height](../../icons/game_values/entity_height.png) | entity_height | Высота хитбокса | Получает размер хитбокса цели по оси Y. | Статистика | number |  |  |  |
+| ![entity_item](../../icons/game_values/entity_item.png) | entity_item | Предмет сущности | Получает предметную форму цели. | Предмет | item |  |  |  |
+| ![entity_pathfinder_point_index](../../icons/game_values/entity_pathfinder_point_index.png) | entity_pathfinder_point_index | Индекс точки на пути | Получает текущий индекс точки пути моба, по которому он идет. | Статистика | number |  |  |  |
+| ![entity_pathfinder_points](../../icons/game_values/entity_pathfinder_points.png) | entity_pathfinder_points | Текущий маршрут | Получает список всех точек, которые составляют текущий путь моба. | Информация | array<location> |  |  |  |
+| ![entity_pick_item_stack](../../icons/game_values/entity_pick_item_stack.png) | entity_pick_item_stack | Получаемый предмет сущности | Получает предмет, получаемый при нажатии колесиком (СКМ) по сущности. | Предмет | item |  |  |  |
+| ![entity_ticks_lived](../../icons/game_values/entity_ticks_lived.png) | entity_ticks_lived | Время жизни цели | Получает количество тиков существования цели. | Статистика | number |  |  |  |
+| ![entity_type](../../icons/game_values/entity_type.png) | entity_type | Тип сущности | Получает тип сущности цели. | Информация | text |  |  |  |
+| ![entity_width_x](../../icons/game_values/entity_width_x.png) | entity_width_x | Ширина хитбокса | Получает размер хитбокса цели по оси X. | Статистика | number |  |  |  |
+| ![entity_width_z](../../icons/game_values/entity_width_z.png) | entity_width_z | Длина хитбокса | Получает размер хитбокса цели по оси Z. | Статистика | number |  |  |  |
+| ![event_added_items](../../icons/game_values/event_added_items.png) | event_added_items | Распределённые предметы | Выдаёт словарь распределённых по слотам предметов с помощью ЛКМ/ПКМ или дублирования с помощью колёсика мыши. | Событие | map<number, item> | Событием "Игрок перетягивает предмет в инвентаре" |  |  |
+| ![event_advancement_tab_name](../../icons/game_values/event_advancement_tab_name.png) | event_advancement_tab_name | Имя вкладки достижений | Получает имя текущей вкладки достижений события. | Событие | text | Событием "Игрок сменил вкладку в меню достижений" |  | deprecated |
+| ![event_anvil_damage_state](../../icons/game_values/event_anvil_damage_state.png) | event_anvil_damage_state | Новое состояние поломки наковальни | Получает новое состояние поломки наковальни. | Событие | text | Событием "Игрок повреждает наковальню" |  |  |
+| ![event_anvil_rename_input](../../icons/game_values/event_anvil_rename_input.png) | event_anvil_rename_input | Новое имя предмета | Получает новое имя предмета в наковальне. | Событие | text | Событием "Игрок переименовывает предмет" |  |  |
+| ![event_block](../../icons/game_values/event_block.png) | event_block | Блок события | Получает ID блока, связанного с событием. | Событие | text |  |  |  |
+| ![event_block_break_progress](../../icons/game_values/event_block_break_progress.png) | event_block_break_progress | Прогресс поломки блока | Получает прогресс поломки блока, связанного с событием. | Событие | number | Обновлением поломки блока игроком<br/>Обновлением поломки блока сущностью |  |  |
+| ![event_block_face](../../icons/game_values/event_block_face.png) | event_block_face | Сторона блока события | Получает как направления сторону блока, задетую в событии. | Событие | text | Событиями взаимодействия<br/>Событиями установки или поломки блоков<br/>Событием "Попадание снаряда игрока"<br/>Событиями поршней |  |  |
+| ![event_block_location](../../icons/game_values/event_block_location.png) | event_block_location | Местоположение блока события | Получает местоположение блока в событии. | Событие | location |  |  |  |
+| ![event_blocks_involved](../../icons/game_values/event_blocks_involved.png) | event_blocks_involved | Задействованные блоки события | Получает список местоположений всех задействованных блоков в событии. | Событие | array<location> | Событиями взрывов<br/>Событиями поршней |  |  |
+| ![event_chat_message](../../icons/game_values/event_chat_message.png) | event_chat_message | Сообщение чата | Получает сообщение, отправленное целью в событии. | Событие | text | Событием "Игрок пишет сообщение в чат" |  |  |
+| ![event_close_inventory_cause](../../icons/game_values/event_close_inventory_cause.png) | event_close_inventory_cause | Причина закрытия инвентаря | Получает причину закрытия открытого инвентаря цели в событии. | Событие | text | Событием "Игрок закрывает инвентарь" |  |  |
+| ![event_combust_duration](../../icons/game_values/event_combust_duration.png) | event_combust_duration | Длительность сгорания сущности | Получает длительность сгорания сущности из события. | Событие | number | Событием "Игрок загорелся"<br/>Событием "Сущность загорелась" |  |  |
+| ![event_combust_reason](../../icons/game_values/event_combust_reason.png) | event_combust_reason | Причина сгорания сущности | Получает причину сгорания сущности из события. | Событие | text | Событием "Игрок загорелся"<br/>Событием "Сущность загорелась" |  |  |
+| ![event_custom_click_dialog_view_data](../../icons/game_values/event_custom_click_dialog_view_data.png) | event_custom_click_dialog_view_data | Данные диалогового окна | Получает данные, введённые игроком в диалоговое окно. | Событие | any | Событием "Игрок вызывает кастомный клик" |  |  |
+| ![event_custom_click_key](../../icons/game_values/event_custom_click_key.png) | event_custom_click_key | ID кастомного клика | Получает идентификатор кастомного клика в диалоговом окне или чате. | Событие | text | Событием "Игрок вызывает кастомный клик" |  |  |
+| ![event_damage](../../icons/game_values/event_damage.png) | event_damage | Нанесённый урон | Получает количество единиц нанесённого урона в событии. | Событие | number |  |  |  |
+| ![event_damage_cause](../../icons/game_values/event_damage_cause.png) | event_damage_cause | Причина полученного урона | Получает причину или тип полученного урона в событии. | Событие | text |  |  |  |
+| ![event_death_screen_message](../../icons/game_values/event_death_screen_message.png) | event_death_screen_message | Сообщение при смерти | Получает сообщение, отображаемое на экране смерти. | Событие | text | Событием "Игрок умирает" |  |  |
+| ![event_dialog_button_id](../../icons/game_values/event_dialog_button_id.png) | event_dialog_button_id | ID кнопки диалогового окна | Получает ID кнопки диалогового окна, которую нажал игрок. | Событие | text | Событием "Игрок вызывает кастомный клик" |  |  |
+| ![event_dialog_id](../../icons/game_values/event_dialog_id.png) | event_dialog_id | ID диалогового окна | Получает ID диалогового окна, в котором игрок нажал кнопку. | Событие | text | Событием "Игрок вызывает кастомный клик" |  |  |
+| ![event_drag_type](../../icons/game_values/event_drag_type.png) | event_drag_type | Тип перетягивания по инвентарю | Получает тип перетягивания предметов по открытому инвентарю цели в событии. | Событие | text | Событием "Игрок перетягивает предмет в инвентаре" |  |  |
+| ![event_enchantment_bonus](../../icons/game_values/event_enchantment_bonus.png) | event_enchantment_bonus | Количество книжных полок | Получает количество книжных полок, связанных с событием. | Событие | number | Событием "Игрок выбирает зачарование" |  |  |
+| ![event_enchantment_hint](../../icons/game_values/event_enchantment_hint.png) | event_enchantment_hint | Предложенное зачарование | Получает название предложенного зачарования в столе зачарований. | Событие | text | Событием "Игрок зачаровывает предмет" |  |  |
+| ![event_enchantment_level_hint](../../icons/game_values/event_enchantment_level_hint.png) | event_enchantment_level_hint | Требуемый уровень опыта зачарования | Получает требуемый уровень опыта для выбранного зачарования. | Событие | number | Событием "Игрок зачаровывает предмет" |  |  |
+| ![event_enchantment_offers](../../icons/game_values/event_enchantment_offers.png) | event_enchantment_offers | Предлагаемые зачарования события | Получает список предлагаемых игроку зачарований, связанных с событием. | Событие | array<text> | Событием "Игрок выбирает зачарование" |  |  |
+| ![event_enchantments_to_add](../../icons/game_values/event_enchantments_to_add.png) | event_enchantments_to_add | Полученные зачарования | Получает словарь полученных зачарований предмета. | Событие | map<text, number> | Событием "Игрок зачаровывает предмет" |  |  |
+| ![event_entity_unleash_reason](../../icons/game_values/event_entity_unleash_reason.png) | event_entity_unleash_reason | Причина отвязывания сущности | Получает причину по которой сущность была отвязана. | Событие | text | Событиями отвязывания |  |  |
+| ![event_equipment_slot](../../icons/game_values/event_equipment_slot.png) | event_equipment_slot | Тип задействованного слота | Получает тип задействованного слота цели в событии. | Событие | text |  |  |  |
+| ![event_exhaustion_amount](../../icons/game_values/event_exhaustion_amount.png) | event_exhaustion_amount | Истощение события | Получает количество полученного истощения. | Событие | number | Событием "Игрок истощается" |  |  |
+| ![event_exhaustion_reason](../../icons/game_values/event_exhaustion_reason.png) | event_exhaustion_reason | Причина истощения | Получает причину истощения. | Событие | text | Событием "Игрок истощается" |  |  |
+| ![event_experience](../../icons/game_values/event_experience.png) | event_experience | Количество опыта события | Получает количество единиц опыта в событии. | Событие | number |  |  |  |
+| ![event_fail_move_reason](../../icons/game_values/event_fail_move_reason.png) | event_fail_move_reason | Причина неудачного перемещения | Получает причину неудачного перемещения. | Событие | text | Событием "Игроку не удалось передвинуться" |  |  |
+| ![event_final_damage](../../icons/game_values/event_final_damage.png) | event_final_damage | Конечный урон | Получает конечное количество единиц нанесённого урона в событии. | Событие | number |  |  |  |
+| ![event_fish_state](../../icons/game_values/event_fish_state.png) | event_fish_state | Причина события рыбалки | Получает причину события рыбалки. | Событие | text | Событием "Игрок рыбачит" |  |  |
+| ![event_food_level](../../icons/game_values/event_food_level.png) | event_food_level | Восполненный голод события | Получает количество единиц восполненного голода. | Событие | number | Событием "Изменение уровня голода игрока" |  |  |
+| ![event_from_location](../../icons/game_values/event_from_location.png) | event_from_location | Старое местоположение игрока | Получает старое местоположение игрока. | Событие | location |  |  |  |
+| ![event_gamemode](../../icons/game_values/event_gamemode.png) | event_gamemode | Режим игры события | Получает режим игры, связанный с событием. | Событие | text | Событием "Игрок запросил меню смены режима игры" |  |  |
+| ![event_hanging_break_cause](../../icons/game_values/event_hanging_break_cause.png) | event_hanging_break_cause | Причина удаления висящей сущности | Получает причину удаления висящей сущности (картины, рамки). | Событие | text | Событием "Ломание висящего существа" |  |  |
+| ![event_heal_amount](../../icons/game_values/event_heal_amount.png) | event_heal_amount | Количество восстановленного здоровья | Получает количество единиц восстановленного здоровья в событии. | Событие | number | Событием "Игрок восстанавливает здоровье"<br/>Событием "Сущность восстанавливает здоровье" |  |  |
+| ![event_heal_cause](../../icons/game_values/event_heal_cause.png) | event_heal_cause | Причина исцеления | Получает причину восстановления здоровья в событии. | Событие | text | Событием "Игрок восстанавливает здоровье"<br/>Событием "Сущность восстанавливает здоровье" |  |  |
+| ![event_hotbar_slot](../../icons/game_values/event_hotbar_slot.png) | event_hotbar_slot | Слот хот-бара в событии | Получает текущий номер слота хот-бара в событии. | Событие | number |  |  |  |
+| ![event_input_list](../../icons/game_values/event_input_list.png) | event_input_list | Список нажатых клавиш передвижения | Получает список нажатых клавиш передвижения события. | Событие | array<text> | Событием "Игрок меняет нажатые клавиши передвижения"<br/>Событием "Игрок передвигается на транспорте"<br/>Событием "Игрок прыгает на транспорте" |  |  |
+| ![event_interaction](../../icons/game_values/event_block_interact_action.png) | event_interaction | Тип взаимодействия события | Получает тип взаимодействия цели в событии. | Событие | text | Событием "Игрок кликает правой кнопкой"<br/>Событием "Игрок кликает левой кнопкой"<br/>Событием "Игрок взаимодействует с миром" |  |  |
+| ![event_inventory_action](../../icons/game_values/event_inventory_action.png) | event_inventory_action | Действие в инвентаре при клике | Получает текущее действие в инвентарном меню при клике по нему. | Событие | text |  |  |  |
+| ![event_inventory_click_type](../../icons/game_values/event_inventory_click_type.png) | event_inventory_click_type | Тип клика по инвентарю | Получает тип клика по открытому инвентарю цели в событии. | Событие | text |  |  |  |
+| ![event_item](../../icons/game_values/event_item.png) | event_item | Предмет события | Получает предмет в событии. | Событие | item |  |  |  |
+| ![event_item_cooldown](../../icons/game_values/event_item_cooldown.png) | event_item_cooldown | Задержка предмета события | Получает задержку предметы события. | Событие | number | Событием "Игрок использует предмет с задержкой"<br/>Событием "Игрок получает задержку для группы предметов" |  |  |
+| ![event_item_cooldown_group](../../icons/game_values/event_item_cooldown_group.png) | event_item_cooldown_group | Группа предмета с задержкой | Получает группу предмета, на который распостраняется задержка из события. | Событие | text | Событием "Игрок использует предмет с задержкой"<br/>Событием "Игрок получает задержку для группы предметов" |  |  |
+| ![event_item_damage](../../icons/game_values/event_item_damage.png) | event_item_damage | Нанесённый урон предмету | Получает количество единиц нанесённого урона предмету. | Событие | number | Событием "Игрок повреждает предмет" |  |  |
+| ![event_items](../../icons/game_values/event_items.png) | event_items | Предметы события | Получает все предметы в событии. | Событие | array<item> |  |  |  |
+| ![event_knockback_cause](../../icons/game_values/event_knockback_cause.png) | event_knockback_cause | Причина отталкивания | Получает причину отталкивания в событии. | Событие | text | Событием "Игрок отталкивается"<br/>Событием "Сущность отталкивается" |  |  |
+| ![event_knockback_event_type](../../icons/game_values/event_knockback_event_type.png) | event_knockback_event_type | Тип отталкивания | Получает тип отталкивания в событии. | Событие | text | Событием "Игрок отталкивается"<br/>Событием "Сущность отталкивается" |  |  |
+| ![event_knockback_vector](../../icons/game_values/event_knockback_vector.png) | event_knockback_vector | Вектор отталкивания | Получает вектор отталкивания в событии. | Событие | vector | Событием "Игрок отталкивается"<br/>Событием "Сущность отталкивается" |  |  |
+| ![event_message](../../icons/game_values/event_message.png) | event_message | Сообщение события | Получает системное сообщение, отправленное в событии. | Событие | text |  |  |  |
+| ![event_new_equipments](../../icons/game_values/event_new_equipments.png) | event_new_equipments | Экипировка | Получает экипировку из события. | Событие | map<text, item> | Событием "Игрок меняет экипировку"<br/>Событием "Сущность меняет экипировку" |  |  |
+| ![event_new_fishing_hook_state](../../icons/game_values/event_new_fishing_hook_state.png) | event_new_fishing_hook_state | Новое состояние поплавка | Получает новое состояние поплавка. | Событие | text | Событием "Поплавок удочки изменяет состояние" |  |  |
+| ![event_new_location](../../icons/game_values/event_new_location.png) | event_new_location | Новое местоположение игрока | Получает новое местоположение игрока. | Событие | location |  |  |  |
+| ![event_new_potion_effect](../../icons/game_values/event_new_potion_effect.png) | event_new_potion_effect | Новый эффект | Получает новый эффект события. | Событие | potion | Событием "Игрок получает эффект от взрывного зелья" |  |  |
+| ![event_new_vault_state](../../icons/game_values/event_new_vault_state.png) | event_new_vault_state | Новое состояние сокровищницы | Получает новое состояние сокровищницы. | Событие | text | Событием "Сокровищница меняет состояние"<br/>Событием "Игрок меняет состояние сокровищницы" |  |  |
+| ![event_old_equipments](../../icons/game_values/event_old_equipments.png) | event_old_equipments | Прошлая экипировка события | Получает прошлую экипировку события. | Событие | map<text, item> | Событием "Игрок меняет экипировку"<br/>Событием "Сущность меняет экипировку" |  |  |
+| ![event_old_item](../../icons/game_values/event_old_item.png) | event_old_item | Старый предмет события | Получает старый предмет в событии. | Событие | item | Событием "Слот инвентаря игрока обновляется" |  |  |
+| ![event_old_vault_state](../../icons/game_values/event_old_vault_state.png) | event_old_vault_state | Прошлое состояние сокровищницы | Получает прошлое состояние сокровищницы. | Событие | text | Событием "Сокровищница меняет состояние"<br/>Событием "Игрок меняет состояние сокровищницы" |  |  |
+| ![event_power](../../icons/game_values/event_power.png) | event_power | Процент силы выполнения | Получает процент силы выполнения (натяжения лука, прыжка на коне) события. | Событие | number | Событием "Игрок стреляет"<br/>Событием "Игрок прыгает на лошади" |  |  |
+| ![event_projectile_item](../../icons/game_values/event_projectile_item.png) | event_projectile_item | Предмет снаряда события | Получает предмет снаряда события. | Событие | item | Событием "Игрок стреляет" |  |  |
+| ![event_query_info](../../icons/game_values/event_query_info.png) | event_query_info | Отладочная информация | Получает отладочную информацию целевого блока или сущности. | Событие | text | Событием "Игрок получает информацию о блоке"<br/>Событием "Игрок получает информацию о сущности" |  |  |
+| ![event_replaced_block](../../icons/game_values/event_replaced_block.png) | event_replaced_block | Заменённый блок | Получает ID заменённого блока события. | Событие | text | Событием "Игрок ставит блок" |  |  |
+| ![event_sign_lines](../../icons/game_values/event_sign_lines.png) | event_sign_lines | Строки таблички | Получает строки таблички в виде списка. | Событие | array<text> | Событием "Игрок изменяет табличку" |  |  |
+| ![event_sign_side](../../icons/game_values/event_sign_side.png) | event_sign_side | Сторона таблички | Получает сторону таблички в виде текста. | Событие | text | Событием "Игрок изменяет табличку" |  |  |
+| ![event_slot](../../icons/game_values/event_slot.png) | event_slot | Слот события | Выдаёт номер слота в событии. | Событие | number |  |  |  |
+| ![event_slot_type](../../icons/game_values/event_slot_type.png) | event_slot_type | Тип слота при клике | Получает текущий тип слота инвентарного меню при клике по нему. | Событие | text |  |  |  |
+| ![event_slots_involved](../../icons/game_values/event_slots_involved.png) | event_slots_involved | Задействованные слоты | Получает список всех задействованных слотов открытого инвентаря цели в событии. | Событие | array<number> | Событием "Игрок перетягивает предмет в инвентаре" |  |  |
+| ![event_teleport_cause](../../icons/game_values/event_teleport_cause.png) | event_teleport_cause | Причина телепортации | Получает причину телепортации в событии. | Событие | text | Событием "Игрок телепортировался"<br/>Событием "Эндермен убегает" |  |  |
+| ![event_ticks_held_for](../../icons/game_values/event_ticks_held_for.png) | event_ticks_held_for | Количество тиков использования предмета | Получает количество тиков использования предмета. | Событие | number | Событием "Игрок перестаёт использовать предмет" |  |  |
+| ![event_time_skip_amount](../../icons/game_values/event_time_skip_amount.png) | event_time_skip_amount | Количество тиков пропуска времени | Получает количество тиков пропуска времени в мире. | Событие | number | Событием "Пропуск времени" |  |  |
+| ![event_time_skip_reason](../../icons/game_values/event_time_skip_reason.png) | event_time_skip_reason | Причина пропуска времени | Получает причину пропуска времени в мире. | Событие | text | Событием "Пропуск времени" |  |  |
+| ![event_transform_reason](../../icons/game_values/event_transform_reason.png) | event_transform_reason | Причина замены сущности | Получает причину замены сущности события. | Событие | text | Событием "Сущность заменяется другой сущностью" |  |  |
+| ![event_transformed_entities](../../icons/game_values/event_transformed_entities.png) | event_transformed_entities | Заменённые сущности события | Получает заменённых сущностей события. | Событие | array<text> | Событием "Сущность заменяется другой сущностью" |  |  |
+| ![event_tree_type](../../icons/game_values/event_tree_type.png) | event_tree_type | Тип дерева | Получает тип дерева в событии. | Событие | text | Событием "Игрок выращивает дерево"<br/>Событием "Дерево вырастает" |  |  |
+| ![event_velocity](../../icons/game_values/event_velocity_vector.png) | event_velocity | Вектор скорости | Получает вектор скорости в событии. | Событие | vector | Событием "Игрок изменил вектор скорости" |  |  |
+| ![experience_level](../../icons/game_values/experience_level.png) | experience_level | Уровень опыта | Получает количество уровней опыта цели. | Статистика | number |  |  |  |
+| ![experience_progress](../../icons/game_values/experience_progress.png) | experience_progress | Прогресс опыта | Получает процентный прогресс текущего уровня опыта цели. | Статистика | number |  |  |  |
+| ![eye_location](../../icons/game_values/eye_location.png) | eye_location | Местоположение глаз | Получает местоположение цели на высоте глаз. | Местоположение | location |  |  |  |
+| ![fall_distance](../../icons/game_values/fall_distance.png) | fall_distance | Дистанция падения | Получает дистанцию падения цели в блоках. | Статистика | number |  |  |  |
+| ![fire_ticks](../../icons/game_values/fire_ticks.png) | fire_ticks | Время горения | Получает оставшееся количество тиков горения цели. | Статистика | number |  |  |  |
+| ![flying_speed](../../icons/game_values/flying_speed.png) | flying_speed | Скорость полёта | Получает текущую скорость полёта цели (атрибут). | Статистика | number |  |  |  |
+| ![food_exhaustion](../../icons/game_values/food_exhaustion.png) | food_exhaustion | Уровень истощения | Получает уровень истощения цели, который увеличивается от выполненных действий игрока. | Статистика | number |  |  |  |
+| ![food_level](../../icons/game_values/food_level.png) | food_level | Уровень голода | Получает оставшееся количество единиц еды цели. | Статистика | number |  |  |  |
+| ![food_saturation](../../icons/game_values/food_saturation.png) | food_saturation | Уровень насыщения | Получает количество единиц насыщения едой цели, которое зависит от видов съеденной еды. | Статистика | number |  |  |  |
+| ![freeze_ticks](../../icons/game_values/freeze_ticks.png) | freeze_ticks | Время заморозки | Получает текущее время заморозки цели. | Статистика | number |  |  |  |
+| ![gamemode](../../icons/game_values/gamemode.png) | gamemode | Режим игры | Получает текущий режим игры игрока. | Информация | text | Игроками |  |  |
+| ![held_slot](../../icons/game_values/held_slot.png) | held_slot | Выбранный слот в хот-баре | Получает выбранный слот хот-бара цели. | Статистика | number |  |  |  |
+| ![hitbox_midpoint_location](../../icons/game_values/hitbox_midpoint_location.png) | hitbox_midpoint_location | Центр хитбокса | Получает местоположение центра хитбокса цели. | Местоположение | location |  |  |  |
+| ![hotbar_items](../../icons/game_values/hotbar_items.png) | hotbar_items | Предметы в хот-баре | Получает предметы в хот-баре цели. | Предмет | array<item> |  |  |  |
+| ![idle_duration](../../icons/game_values/idle_duration.png) | idle_duration | Длительность простоя | Получает текущую длительность простоя игрока. | Статистика | number |  |  |  |
+| ![inventory_items](../../icons/game_values/inventory_items.png) | inventory_items | Предметы в инвентаре | Получает предметы в инвентаре цели (включая хот-бар). | Предмет | array<item> |  |  |  |
+| ![invulnerability_ticks](../../icons/game_values/invulnerability_ticks.png) | invulnerability_ticks | Время бессмертия | Получает оставшееся количество тиков неуязвимости цели. | Статистика | number |  |  |  |
+| ![item_usage_progress](../../icons/game_values/item_usage_progress.png) | item_usage_progress | Прогресс использования предмета | Получает процентный прогресс использования целью предмета в руке, например еды. | Статистика | number |  |  |  |
+| ![last_damage_cause](../../icons/game_values/last_damage_cause.png) | last_damage_cause | Последняя причина урона | Получает последнюю причину урона цели. | Информация | text |  |  |  |
+| ![last_death_location](../../icons/game_values/last_death_location.png) | last_death_location | Местоположение последней смерти | Получает местоположение последней смерти игрока. | Местоположение | location |  |  |  |
+| ![lead_holder](../../icons/game_values/lead_holder.png) | lead_holder | Поводырь | Получает UUID сущности, которая ведёт цель на поводке. | Информация | text |  |  |  |
+| ![location](../../icons/game_values/location.png) | location | Местоположение | Получает местоположение цели. | Местоположение | location |  |  |  |
+| ![main_hand](../../icons/game_values/main_hand.png) | main_hand | Ведущая рука | Получает ведущую руку игрока. | Информация | text | Игроком |  |  |
+| ![main_hand_item](../../icons/game_values/main_hand_item.png) | main_hand_item | Предмет в ведущей руке | Получает предмет в ведущей руке цели. | Предмет | item |  |  |  |
+| ![max_health](../../icons/game_values/max_health.png) | max_health | Максимальное здоровье | Получает максимальное количество единиц здоровья цели. | Статистика | number |  |  |  |
+| ![max_invulnerability_ticks](../../icons/game_values/max_invulnerability_ticks.png) | max_invulnerability_ticks | Общее время бессмертия | Получает количество тиков на которое выдана неуязвимость для цели. | Статистика | number |  |  |  |
+| ![merchant_recipe_count](../../icons/game_values/merchant_recipe_count.png) | merchant_recipe_count | Количество торгов Жителя | Получает количество торгов Жителя. | Статистика | number |  |  |  |
+| ![name](../../icons/game_values/name.png) | name | Имя | Получает имя цели. | Информация | text |  |  |  |
+| ![off_hand_item](../../icons/game_values/off_hand_item.png) | off_hand_item | Предмет во второй руке | Получает предмет во второстепенной руке цели. | Предмет | item |  |  |  |
+| ![open_inventory_custom_id](../../icons/game_values/open_inventory_custom_id.png) | open_inventory_custom_id | Кастомный ID открытого инвентаря | Получает кастомный ID открытого инвентаря цели. | Информация | text | Игроками |  |  |
+| ![open_inventory_size](../../icons/game_values/open_inventory_size.png) | open_inventory_size | Размер открытого инвентаря | Получает размер текущего открытого инвентаря. | Статистика | number | Игроками |  |  |
+| ![open_inventory_title](../../icons/game_values/open_inventory_title.png) | open_inventory_title | Заголовок открытого инвентаря | Получает заголовок открытого инвентаря цели. | Информация | text | Игроками |  |  |
+| ![open_inventory_type](../../icons/game_values/open_inventory_type.png) | open_inventory_type | Тип открытого инвентаря | Получает тип открытого инвентаря цели. | Информация | text | Игроками |  |  |
+| ![origin](../../icons/game_values/origin.png) | origin | Местоположение первого появления | Получает местоположение первого появления цели. | Местоположение | location |  |  |  |
+| ![owner_uuid](../../icons/game_values/owner_uuid.png) | owner_uuid | UUID владельца мира | Получает UUID владельца мира. | Мир | text |  |  |  |
+| ![particle_cpu_usage](../../icons/game_values/particle_cpu_usage.png) | particle_cpu_usage | Процент использования процессора частицами | Получает процент нагрузки процессора сервера созданием частиц. | Мир | number |  |  |  |
+| ![particle_visibility](../../icons/game_values/particle_visibility.png) | particle_visibility | Видимость частиц | Получает значение настроек видимости частиц игрока. | Информация | text | Игроками |  |  |
+| ![passengers](../../icons/game_values/passengers.png) | passengers | Пассажиры | Получает UUID сущностей, которые едут на цели. | Информация | array<text> |  |  |  |
+| ![ping](../../icons/game_values/ping.png) | ping | Пинг игрока | Получает задержку между игроком и сервером в миллисекундах. | Статистика | number |  |  |  |
+| ![pitch](../../icons/game_values/pitch.png) | pitch | Вертикальный поворот | Получает вертикальный (вверх/вниз) поворот (pitch) цели. | Местоположение | number |  |  |  |
+| ![player_count](../../icons/game_values/player_count.png) | player_count | Количество игроков в мире | Получает количество игроков, находящихся в мире. | Мир | number |  |  |  |
+| ![player_ender_pearls](../../icons/game_values/player_ender_pearls.png) | player_ender_pearls | Список эндер-жемчугов | Получает список не приземлившихся эндер-жемчугов игрока. | Информация | array<text> | Игроками |  |  |
+| ![player_enderchest_items](../../icons/game_values/player_enderchest_items.png) | player_enderchest_items | Предметы в эндер-сундуке | Получает предметы в эндер-сундуке цели. | Предмет | array<item> | Игроками |  |  |
+| ![pose](../../icons/game_values/pose.png) | pose | Поза сущности | Получает позу сущности. | Информация | text |  |  |  |
+| ![potion_effects](../../icons/game_values/potion_effects.png) | potion_effects | Эффекты зелий | Получает действующие эффекты зелий цели. | Информация | array<potion> |  |  |  |
+| ![projectile_owner_uuid](../../icons/game_values/projectile_owner_uuid.png) | projectile_owner_uuid | UUID владельца снаряда | Получает UUID владельца снаряда. | Информация | text | Любыми снарядами |  |  |
+| ![projectile_power](../../icons/game_values/projectile_power.png) | projectile_power | Вектор движения снаряда | Получает вектор движения снаряда. | Статистика | vector | Огненными шарами<br/>Зарядами дракона<br/>Головами Иссушителя |  |  |
+| ![protocol_version](../../icons/game_values/protocol_version.png) | protocol_version | Версия протокола клиента | Получает версию протокола клиента игрока. | Статистика | number |  |  |  |
+| ![remaining_air](../../icons/game_values/remaining_air.png) | remaining_air | Оставшийся воздух | Получает оставшееся количество тиков воздуха цели. | Статистика | number |  |  |  |
+| ![response_headers](../../icons/game_values/event_response_headers.png) | response_headers | Заголовки ответа на веб-запрос | Получает заголовки ответа на отправленный веб-запрос. | Событие | map<text, any> | Событием "Ответ от сервера" |  |  |
+| ![saddle_item](../../icons/game_values/saddle_item.png) | saddle_item | Предмет на седле | Получает седло или ковёр, надетые на цель. | Предмет | item | Свиньями<br/>Лошадьми<br/>Ламами |  |  |
+| ![saturated_regen_rate](../../icons/game_values/saturated_regen_rate.png) | saturated_regen_rate | Скорость регенерации от насыщения | Получает скорость регенерации игрока с насыщением. | Статистика | number |  |  |  |
+| ![selection_size](../../icons/game_values/selection_size.png) | selection_size | Количество выбранных целей | Получает количество целей в выборке. | Мир | number |  |  |  |
+| ![selection_target_names](../../icons/game_values/selection_target_names.png) | selection_target_names | Имена выбранных целей | Получает имя каждой цели в выборке. | Мир | array<text> |  |  |  |
+| ![selection_target_uuids](../../icons/game_values/selection_target_uuids.png) | selection_target_uuids | UUID выбранных целей | Получает UUID каждой цели в выборке. | Мир | array<text> |  |  |  |
+| ![server_current_tick](../../icons/game_values/server_current_tick.png) | server_current_tick | Текущее время сервера | Получает текущее время сервера в тиках. | Мир | number |  |  |  |
+| ![server_tps](../../icons/game_values/server_tps.png) | server_tps | TPS сервера | Получает количество Тиков За Секунду (TPS), которое может обработать сервер. | Мир | number |  |  |  |
+| ![spawn_location](../../icons/game_values/spawn_location.png) | spawn_location | Местоположение спавна мира | Получает местоположение точки спавна мира. | Местоположение | location |  |  |  |
+| ![spawn_reason](../../icons/game_values/spawn_reason.png) | spawn_reason | Причина спавна | Получает причину спавна цели. | Информация | text |  |  |  |
+| ![start_reload_tick](../../icons/game_values/start_reload_tick.png) | start_reload_tick | Время начала заморозки мира | Получает время начала заморозки мира в тиках. | Мир | number |  |  |  |
+| ![starvation_rate](../../icons/game_values/starvation_rate.png) | starvation_rate | Скорость голодания | Получает скорость голодания цели. | Статистика | number |  |  |  |
+| ![steer_forward](../../icons/game_values/steer_forward.png) | steer_forward | Прямолинейное движение транспорта | Получает значение движения транспорта вперёд или назад. | Статистика | number |  |  |  |
+| ![steer_sideways](../../icons/game_values/steer_sideways.png) | steer_sideways | Движение транспорта в стороны | Получает значение движения транспорта влево или вправо. | Статистика | number |  |  |  |
+| ![target_block_face](../../icons/game_values/target_block_face.png) | target_block_face | Сторона целевого блока | Получает направление стороны блока, на которую смотрит цель. | Местоположение | text |  |  |  |
+| ![target_block_location](../../icons/game_values/target_block_location.png) | target_block_location | Местоположение целевого блока | Получает местоположение блока, на который смотрит цель. | Местоположение | location |  |  |  |
+| ![target_fluid_location](../../icons/game_values/target_fluid_location.png) | target_fluid_location | Местоположение целевой жидкости | Получает местоположение жидкости, на которую смотрит цель. | Местоположение | location |  |  |  |
+| ![targeted_entity](../../icons/game_values/targeted_entity.png) | targeted_entity | Цель для атаки | Получает текущую цель для атаки мобом. | Информация | text |  |  |  |
+| ![timestamp](../../icons/game_values/timestamp.png) | timestamp | UNIX-время | Получает текущее время как одно число в миллисекундах. | Мир | number |  |  |  |
+| ![unsaturated_regen_rate](../../icons/game_values/unsaturated_regen_rate.png) | unsaturated_regen_rate | Скорость регенерации без насыщения | Получает скорость регенерации игрока без насыщения. | Статистика | number |  |  |  |
+| ![url](../../icons/game_values/event_url.png) | url | Ссылка веб-запроса | Получает ссылку веб-запроса. | Событие | text | Событием "Ответ от сервера" |  |  |
+| ![url_response](../../icons/game_values/event_url_response.png) | url_response | Ответ на веб-запрос | Получает ответ на отправленный веб-запрос. | Событие | text | Событием "Ответ от сервера" |  |  |
+| ![url_response_code](../../icons/game_values/event_url_response_code.png) | url_response_code | Код ответа на веб-запрос | Получает код ответа на отправленный веб-запрос. | Событие | number | Событием "Ответ от сервера" |  |  |
+| ![user_locale](../../icons/game_values/user_locale.png) | user_locale | Серверный язык игрока | Получает текущий серверный язык игрока. | Информация | text | Игроками |  |  |
+| ![uuid](../../icons/game_values/uuid.png) | uuid | UUID | Получает универсальный уникальный идентификатор (UUID) цели. | Информация | text |  |  |  |
+| ![vehicle](../../icons/game_values/vehicle.png) | vehicle | Транспорт | Получает UUID сущности, которую оседлала цель. | Информация | text |  |  |  |
+| ![velocity](../../icons/game_values/velocity.png) | velocity | Вектор скорости | Получает вектор скорости движения цели (не ходьбы, а внешних сил). | Информация | vector |  |  |  |
+| ![walking_speed](../../icons/game_values/walking_speed.png) | walking_speed | Скорость ходьбы | Получает текущую скорость ходьбы цели (атрибут). | Статистика | number |  |  |  |
+| ![world_clear_weather_duration](../../icons/game_values/world_clear_weather_duration.png) | world_clear_weather_duration | Длительность ясной погоды в мире | Получает текущую длительность ясной погоды в мире. | Мир | number |  |  |  |
+| ![world_game_time](../../icons/game_values/world_game_time.png) | world_game_time | Время существования мира | Получает время существования мира в тиках. | Мир | number |  |  |  |
+| ![world_id](../../icons/game_values/world_id.png) | world_id | ID мира | Получает идентификатор мира. | Мир | text |  |  |  |
+| ![world_moon_phase](../../icons/game_values/world_moon_phase.png) | world_moon_phase | Текущая фаза луны | Получает текущую фазу луны в мире. | Мир | text |  |  |  |
+| ![world_size](../../icons/game_values/world_size.png) | world_size | Размер мира | Получает текущий размер мира в чанках. | Мир | number |  |  |  |
+| ![world_thunder_duration](../../icons/game_values/world_thunder_duration.png) | world_thunder_duration | Длительность дождя в мире | Получает текущую длительность дождя в мире. | Мир | number |  |  |  |
+| ![world_time](../../icons/game_values/world_time.png) | world_time | Текущее время мира | Получает текущее время мира в тиках. | Мир | number |  |  |  |
+| ![world_weather](../../icons/game_values/world_weather.png) | world_weather | Текущая погода мира | Получает тип текущей погоды мира. | Мир | text |  |  |  |
+| ![world_weather_duration](../../icons/game_values/world_weather_duration.png) | world_weather_duration | Длительность текущей погоды мира | Получает длительность текущей погоды мира. | Мир | number |  |  |  |
+| ![x_coordinate](../../icons/game_values/x_coordinate.png) | x_coordinate | Координата X | Получает координату X местоположения цели. | Местоположение | number |  |  |  |
+| ![y_coordinate](../../icons/game_values/y_coordinate.png) | y_coordinate | Координата Y | Получает координату Y местоположения цели. | Местоположение | number |  |  |  |
+| ![yaw](../../icons/game_values/yaw.png) | yaw | Горизонтальный поворот | Получает горизонтальный (влево/вправо) поворот (yaw) цели. | Местоположение | number |  |  |  |
+| ![z_coordinate](../../icons/game_values/z_coordinate.png) | z_coordinate | Координата Z | Получает координату Z местоположения цели. | Местоположение | number |  |  |  |
 
 ## Quick ref
-> All game value IDs, one per line — scan this first when picking a value.
-> Frequency marks (N/10): 0 = almost never used, 10 = used most often. Unmarked = normal use. Details and compatibility: see the full table above.
+> Value IDs — what each returns. [N/10] = how often used. Full descriptions and types: see the table above.
 
-- `absorption_health`
-- `active_item_used_time`
-- `age`
-- `all_entities_names`
-- `all_entities_uuids`
-- `all_players_names`
-- `all_players_uuids`
-- `anticheat_check`
-- `anticheat_violations`
-- `armor_items`
-- `armor_points`
-- `armor_toughness`
-- `arrows_in_body`
-- `attached_leads`
-- `attack_cooldown_strength`
-- `attack_cooldown_ticks`
-- `attack_damage`
-- `attack_speed`
-- `block_beneath`
-- `blocks_beneath`
-- `body_yaw`
-- `cape_location`
-- `cardinal_direction`
-- `chat_visibility`
-- `client_brand_name`
-- `client_view_distance`
-- `clientside_locale`
-- `cpu_usage` (5/10)
-- `currency_transaction_amount`
-- `currency_transaction_reason`
-- `currency_transaction_result`
-- `current_health`
-- `current_input_list`
-- `cursor_item`
-- `custom_inventory_items`
-- `death_screen_score`
-- `delay_reload_count`
-- `direction_of_view`
-- `display_entity_left_rotation`
-- `display_entity_right_rotation`
-- `display_entity_scale`
-- `display_entity_translation`
-- `display_name`
-- `enchantment_seed`
-- `entity_fuse_ticks`
-- `entity_height`
-- `entity_item`
-- `entity_pathfinder_point_index`
-- `entity_pathfinder_points`
-- `entity_pick_item_stack`
-- `entity_ticks_lived`
-- `entity_type`
-- `entity_width_x`
-- `entity_width_z`
-- `event_added_items`
-- `event_advancement_tab_name` ⚠ deprecated
-- `event_anvil_damage_state`
-- `event_anvil_rename_input`
-- `event_block`
-- `event_block_break_progress`
-- `event_block_face`
-- `event_block_location` (7/10)
-- `event_blocks_involved`
-- `event_chat_message`
-- `event_close_inventory_cause`
-- `event_combust_duration`
-- `event_combust_reason`
-- `event_custom_click_dialog_view_data`
-- `event_custom_click_key`
-- `event_damage`
-- `event_damage_cause`
-- `event_death_screen_message`
-- `event_drag_type`
-- `event_enchantment_bonus`
-- `event_enchantment_hint`
-- `event_enchantment_level_hint`
-- `event_enchantment_offers`
-- `event_enchantments_to_add`
-- `event_entity_unleash_reason`
-- `event_equipment_slot`
-- `event_exhaustion_amount`
-- `event_exhaustion_reason`
-- `event_experience`
-- `event_fail_move_reason`
-- `event_final_damage`
-- `event_fish_state`
-- `event_food_level`
-- `event_from_location` (4/10)
-- `event_gamemode`
-- `event_hanging_break_cause`
-- `event_heal_amount`
-- `event_heal_cause`
-- `event_hotbar_slot`
-- `event_input_list`
-- `event_interaction` (6/10)
-- `event_inventory_action`
-- `event_inventory_click_type`
-- `event_item`
-- `event_item_cooldown`
-- `event_item_cooldown_group`
-- `event_item_damage`
-- `event_items`
-- `event_knockback_cause`
-- `event_knockback_event_type`
-- `event_knockback_vector`
-- `event_message`
-- `event_new_equipments`
-- `event_new_fishing_hook_state`
-- `event_new_location` (4/10)
-- `event_new_potion_effect`
-- `event_new_vault_state`
-- `event_old_equipments`
-- `event_old_item`
-- `event_old_vault_state`
-- `event_power`
-- `event_projectile_item`
-- `event_query_info`
-- `event_replaced_block`
-- `event_sign_lines`
-- `event_sign_side`
-- `event_slot`
-- `event_slot_type`
-- `event_slots_involved`
-- `event_teleport_cause`
-- `event_ticks_held_for`
-- `event_time_skip_amount`
-- `event_time_skip_reason`
-- `event_transform_reason`
-- `event_transformed_entities`
-- `event_tree_type`
-- `event_velocity`
-- `experience_level`
-- `experience_progress`
-- `eye_location`
-- `fall_distance`
-- `fire_ticks`
-- `flying_speed`
-- `food_exhaustion`
-- `food_level`
-- `food_saturation`
-- `freeze_ticks`
-- `gamemode`
-- `held_slot`
-- `hitbox_midpoint_location`
-- `hotbar_items`
-- `idle_duration`
-- `inventory_items`
-- `invulnerability_ticks`
-- `item_usage_progress`
-- `last_damage_cause`
-- `last_death_location`
-- `lead_holder`
-- `location` (5/10)
-- `main_hand`
-- `main_hand_item`
-- `max_health`
-- `max_invulnerability_ticks`
-- `merchant_recipe_count`
-- `name`
-- `off_hand_item`
-- `open_inventory_custom_id`
-- `open_inventory_size`
-- `open_inventory_title`
-- `open_inventory_type`
-- `origin`
-- `owner_uuid`
-- `particle_cpu_usage`
-- `particle_visibility`
-- `passengers`
-- `ping`
-- `pitch`
-- `player_count`
-- `player_ender_pearls`
-- `player_enderchest_items`
-- `pose`
-- `potion_effects`
-- `projectile_owner_uuid`
-- `projectile_power`
-- `protocol_version`
-- `remaining_air`
-- `response_headers`
-- `saddle_item`
-- `saturated_regen_rate`
-- `selection_size`
-- `selection_target_names`
-- `selection_target_uuids` (5/10)
-- `server_current_tick`
-- `server_tps`
-- `spawn_location` (6/10)
-- `spawn_reason`
-- `start_reload_tick`
-- `starvation_rate`
-- `steer_forward`
-- `steer_sideways`
-- `target_block_face`
-- `target_block_location`
-- `target_fluid_location`
-- `targeted_entity`
-- `timestamp`
-- `unsaturated_regen_rate`
-- `url`
-- `url_response`
-- `url_response_code`
-- `user_locale`
-- `uuid`
-- `vehicle`
-- `velocity`
-- `walking_speed`
-- `world_clear_weather_duration`
-- `world_game_time`
-- `world_id`
-- `world_moon_phase`
-- `world_size`
-- `world_thunder_duration`
-- `world_time`
-- `world_weather`
-- `world_weather_duration`
-- `x_coordinate`
-- `y_coordinate`
-- `yaw`
-- `z_coordinate`
+- `absorption_health` — (no arguments)
+- `active_item_used_time` — (no arguments)
+- `age` — (no arguments)
+- `all_entities_names` — (no arguments)
+- `all_entities_uuids` — (no arguments)
+- `all_players_names` — (no arguments)
+- `all_players_uuids` — (no arguments)
+- `anticheat_check` — (no arguments)
+- `anticheat_violations` — (no arguments)
+- `armor_items` — (no arguments)
+- `armor_points` — (no arguments)
+- `armor_toughness` — (no arguments)
+- `arrows_in_body` — (no arguments)
+- `attached_leads` — (no arguments)
+- `attack_cooldown_strength` — (no arguments)
+- `attack_cooldown_ticks` — (no arguments)
+- `attack_damage` — (no arguments)
+- `attack_speed` — (no arguments)
+- `block_beneath` — (no arguments)
+- `blocks_beneath` — (no arguments)
+- `body_yaw` — (no arguments)
+- `cape_location` — (no arguments)
+- `cardinal_direction` — (no arguments)
+- `chat_visibility` — (no arguments)
+- `client_brand_name` — (no arguments)
+- `client_view_distance` — (no arguments)
+- `clientside_locale` — (no arguments)
+- `cpu_usage` — (no arguments) [5/10]
+- `currency_transaction_amount` — (no arguments)
+- `currency_transaction_reason` — (no arguments)
+- `currency_transaction_result` — (no arguments)
+- `current_health` — (no arguments)
+- `current_input_list` — (no arguments)
+- `cursor_item` — (no arguments)
+- `custom_inventory_items` — (no arguments)
+- `death_screen_score` — (no arguments)
+- `delay_reload_count` — (no arguments)
+- `direction_of_view` — (no arguments)
+- `display_entity_left_rotation` — (no arguments)
+- `display_entity_right_rotation` — (no arguments)
+- `display_entity_scale` — (no arguments)
+- `display_entity_translation` — (no arguments)
+- `display_name` — (no arguments)
+- `enchantment_seed` — (no arguments)
+- `entity_fuse_ticks` — (no arguments)
+- `entity_height` — (no arguments)
+- `entity_item` — (no arguments)
+- `entity_pathfinder_point_index` — (no arguments)
+- `entity_pathfinder_points` — (no arguments)
+- `entity_pick_item_stack` — (no arguments)
+- `entity_ticks_lived` — (no arguments)
+- `entity_type` — (no arguments)
+- `entity_width_x` — (no arguments)
+- `entity_width_z` — (no arguments)
+- `event_added_items` — (no arguments)
+- `event_advancement_tab_name` — (no arguments) ⚠ deprecated
+- `event_anvil_damage_state` — (no arguments)
+- `event_anvil_rename_input` — (no arguments)
+- `event_block` — (no arguments)
+- `event_block_break_progress` — (no arguments)
+- `event_block_face` — (no arguments)
+- `event_block_location` — (no arguments) [7/10]
+- `event_blocks_involved` — (no arguments)
+- `event_chat_message` — (no arguments)
+- `event_close_inventory_cause` — (no arguments)
+- `event_combust_duration` — (no arguments)
+- `event_combust_reason` — (no arguments)
+- `event_custom_click_dialog_view_data` — (no arguments)
+- `event_custom_click_key` — (no arguments)
+- `event_damage` — (no arguments)
+- `event_damage_cause` — (no arguments)
+- `event_death_screen_message` — (no arguments)
+- `event_dialog_button_id` — (no arguments)
+- `event_dialog_id` — (no arguments)
+- `event_drag_type` — (no arguments)
+- `event_enchantment_bonus` — (no arguments)
+- `event_enchantment_hint` — (no arguments)
+- `event_enchantment_level_hint` — (no arguments)
+- `event_enchantment_offers` — (no arguments)
+- `event_enchantments_to_add` — (no arguments)
+- `event_entity_unleash_reason` — (no arguments)
+- `event_equipment_slot` — (no arguments)
+- `event_exhaustion_amount` — (no arguments)
+- `event_exhaustion_reason` — (no arguments)
+- `event_experience` — (no arguments)
+- `event_fail_move_reason` — (no arguments)
+- `event_final_damage` — (no arguments)
+- `event_fish_state` — (no arguments)
+- `event_food_level` — (no arguments)
+- `event_from_location` — (no arguments) [4/10]
+- `event_gamemode` — (no arguments)
+- `event_hanging_break_cause` — (no arguments)
+- `event_heal_amount` — (no arguments)
+- `event_heal_cause` — (no arguments)
+- `event_hotbar_slot` — (no arguments)
+- `event_input_list` — (no arguments)
+- `event_interaction` — (no arguments) [6/10]
+- `event_inventory_action` — (no arguments)
+- `event_inventory_click_type` — (no arguments)
+- `event_item` — (no arguments)
+- `event_item_cooldown` — (no arguments)
+- `event_item_cooldown_group` — (no arguments)
+- `event_item_damage` — (no arguments)
+- `event_items` — (no arguments)
+- `event_knockback_cause` — (no arguments)
+- `event_knockback_event_type` — (no arguments)
+- `event_knockback_vector` — (no arguments)
+- `event_message` — (no arguments)
+- `event_new_equipments` — (no arguments)
+- `event_new_fishing_hook_state` — (no arguments)
+- `event_new_location` — (no arguments) [4/10]
+- `event_new_potion_effect` — (no arguments)
+- `event_new_vault_state` — (no arguments)
+- `event_old_equipments` — (no arguments)
+- `event_old_item` — (no arguments)
+- `event_old_vault_state` — (no arguments)
+- `event_power` — (no arguments)
+- `event_projectile_item` — (no arguments)
+- `event_query_info` — (no arguments)
+- `event_replaced_block` — (no arguments)
+- `event_sign_lines` — (no arguments)
+- `event_sign_side` — (no arguments)
+- `event_slot` — (no arguments)
+- `event_slot_type` — (no arguments)
+- `event_slots_involved` — (no arguments)
+- `event_teleport_cause` — (no arguments)
+- `event_ticks_held_for` — (no arguments)
+- `event_time_skip_amount` — (no arguments)
+- `event_time_skip_reason` — (no arguments)
+- `event_transform_reason` — (no arguments)
+- `event_transformed_entities` — (no arguments)
+- `event_tree_type` — (no arguments)
+- `event_velocity` — (no arguments)
+- `experience_level` — (no arguments)
+- `experience_progress` — (no arguments)
+- `eye_location` — (no arguments)
+- `fall_distance` — (no arguments)
+- `fire_ticks` — (no arguments)
+- `flying_speed` — (no arguments)
+- `food_exhaustion` — (no arguments)
+- `food_level` — (no arguments)
+- `food_saturation` — (no arguments)
+- `freeze_ticks` — (no arguments)
+- `gamemode` — (no arguments)
+- `held_slot` — (no arguments)
+- `hitbox_midpoint_location` — (no arguments)
+- `hotbar_items` — (no arguments)
+- `idle_duration` — (no arguments)
+- `inventory_items` — (no arguments)
+- `invulnerability_ticks` — (no arguments)
+- `item_usage_progress` — (no arguments)
+- `last_damage_cause` — (no arguments)
+- `last_death_location` — (no arguments)
+- `lead_holder` — (no arguments)
+- `location` — (no arguments)
+- `main_hand` — (no arguments)
+- `main_hand_item` — (no arguments)
+- `max_health` — (no arguments)
+- `max_invulnerability_ticks` — (no arguments)
+- `merchant_recipe_count` — (no arguments)
+- `name` — (no arguments)
+- `off_hand_item` — (no arguments)
+- `open_inventory_custom_id` — (no arguments)
+- `open_inventory_size` — (no arguments)
+- `open_inventory_title` — (no arguments)
+- `open_inventory_type` — (no arguments)
+- `origin` — (no arguments)
+- `owner_uuid` — (no arguments)
+- `particle_cpu_usage` — (no arguments)
+- `particle_visibility` — (no arguments)
+- `passengers` — (no arguments)
+- `ping` — (no arguments)
+- `pitch` — (no arguments)
+- `player_count` — (no arguments)
+- `player_ender_pearls` — (no arguments)
+- `player_enderchest_items` — (no arguments)
+- `pose` — (no arguments)
+- `potion_effects` — (no arguments)
+- `projectile_owner_uuid` — (no arguments)
+- `projectile_power` — (no arguments)
+- `protocol_version` — (no arguments)
+- `remaining_air` — (no arguments)
+- `response_headers` — (no arguments)
+- `saddle_item` — (no arguments)
+- `saturated_regen_rate` — (no arguments)
+- `selection_size` — (no arguments)
+- `selection_target_names` — (no arguments)
+- `selection_target_uuids` — (no arguments)
+- `server_current_tick` — (no arguments)
+- `server_tps` — (no arguments)
+- `spawn_location` — (no arguments) [6/10]
+- `spawn_reason` — (no arguments)
+- `start_reload_tick` — (no arguments)
+- `starvation_rate` — (no arguments)
+- `steer_forward` — (no arguments)
+- `steer_sideways` — (no arguments)
+- `target_block_face` — (no arguments)
+- `target_block_location` — (no arguments)
+- `target_fluid_location` — (no arguments)
+- `targeted_entity` — (no arguments)
+- `timestamp` — (no arguments)
+- `unsaturated_regen_rate` — (no arguments)
+- `url` — (no arguments)
+- `url_response` — (no arguments)
+- `url_response_code` — (no arguments)
+- `user_locale` — (no arguments)
+- `uuid` — (no arguments)
+- `vehicle` — (no arguments)
+- `velocity` — (no arguments)
+- `walking_speed` — (no arguments)
+- `world_clear_weather_duration` — (no arguments)
+- `world_game_time` — (no arguments)
+- `world_id` — (no arguments)
+- `world_moon_phase` — (no arguments)
+- `world_size` — (no arguments)
+- `world_thunder_duration` — (no arguments)
+- `world_time` — (no arguments)
+- `world_weather` — (no arguments)
+- `world_weather_duration` — (no arguments)
+- `x_coordinate` — (no arguments)
+- `y_coordinate` — (no arguments)
+- `yaw` — (no arguments)
+- `z_coordinate` — (no arguments)
