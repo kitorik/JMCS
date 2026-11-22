@@ -1,46 +1,45 @@
 # Select actions
-> **Enum macros:** {TF} = TRUE / FALSE; {TFN} = TRUE / FALSE / NOT_SET; {ANY_ALL} = ANY / ALL; {ITEM_MATCH} = EXACT / IGNORE_NAME_DURABILITY / IGNORE_NAME_DURABILITY_ENCHANTMENTS / CUSTOM_TAGS_CONTAINS / MINECRAFT_TAG / ITEM_TYPE; {DEG_RAD} = DEGREES / RADIANS; {CMP} = EXACTLY / IGNORE_STACK_SIZE / IGNORE_DURABILITY_AND_STACK_SIZE / TYPE_ONLY. Icon column omitted.
+> Source: official JustMc assets (documentation/ru_RU) — updated 2026-11. Icon column references the original repo icons — ignore the links.
 
-
-|  ID  |  Name  |  Description  |  Category/Subcategory  |  Arguments  |
-|  ---  |  ---  |  ---  |  ---  |  ---  |
-|  select_add_all_entities  |  Add all entities  |  Adds all entities in the world to the selection.  |  select/add  |    |
-|  select_add_all_mobs  |  Add all mobs  |  Adds all mobs in the world to the selection.  |  select/add  |    |
-|  select_add_all_players  |  Add all players  |  Adds all players in the world to the selection.  |  select/add  |    |
-|  select_add_entity_by_conditional  |  Add entity by condition  |  Adds entities matching the given condition.  |  select/add  |    |
-|  select_add_entity_by_name  |  Add entity by name/UUID  |  Adds the entity with the given name/UUID to the selection.  |  select/add  |  name_or_uuid: text  |
-|  select_add_event_target  |  Add event target  |  Adds the target that triggered the event to the selection.  |  select/add  |  selection_type: enum<br/>&nbsp;&nbsp;- DEFAULT<br/>&nbsp;&nbsp;- KILLER<br/>&nbsp;&nbsp;- DAMAGER<br/>&nbsp;&nbsp;- VICTIM<br/>&nbsp;&nbsp;- SHOOTER<br/>&nbsp;&nbsp;- PROJECTILE  |
-|  select_add_last_entity  |  Add last spawned entity  |  Adds the last spawned entity in the world to the selection.  |  select/add  |    |
-|  select_add_last_mob  |  Add last spawned mob  |  Adds the last spawned mob in the world to the selection.  |  select/add  |    |
-|  select_add_mob_by_name  |  Add mob by name/UUID  |  Adds the mob with the given name/UUID to the selection.  |  select/add  |  name_or_uuid: text  |
-|  select_add_player_by_conditional  |  Add player by condition  |  Adds players matching the given condition.  |  select/add  |    |
-|  select_add_player_by_name  |  Add player by name/UUID  |  Adds the player with the given name/UUID to the selection.  |  select/add  |  name_or_uuid: text  |
-|  select_add_random_entity  |  Add random entity  |  Adds a random entity from the world to the selection.  |  select/add  |    |
-|  select_add_random_mob  |  Add random mob  |  Adds a random mob from the world to the selection.  |  select/add  |    |
-|  select_add_random_player  |  Add random player  |  Adds a random player from the world to the selection.  |  select/add  |    |
-|  select_all_entities  |  Select all entities  |  Selects all entities in the world.  |  select/creation  |    |
-|  select_all_mobs  |  Select all mobs  |  Selects all mobs in the world.  |  select/creation  |    |
-|  select_all_players  |  Select all players  |  Selects all players in the world.  |  select/creation  |    |
-|  select_entity_by_conditional  |  Select entity by condition  |  Selects entities matching the given condition.  |  select/creation  |    |
-|  select_entity_by_name  |  Select entity by name  |  Selects the entity or entities by name or UUID.  |  select/creation  |  name_or_uuid: text  |
-|  select_event_target  |  Select event target  |  Selects the target that triggered the event.  |  select/creation  |  selection_type: enum<br/>&nbsp;&nbsp;- DEFAULT<br/>&nbsp;&nbsp;- KILLER<br/>&nbsp;&nbsp;- DAMAGER<br/>&nbsp;&nbsp;- VICTIM<br/>&nbsp;&nbsp;- SHOOTER<br/>&nbsp;&nbsp;- PROJECTILE  |
-|  select_filter_by_conditional  |  Filter selection by condition  |  Keeps in the selection only the targets matching the chosen condition.  |  select/filter  |    |
-|  select_filter_by_distance  |  Filter selection by distance  |  Keeps in the selection only the targets within a distance of the location.  |  select/filter  |  location: location<br/>selection_size: number<br/>ignore_y_axis: enum<br/>{TF}<br/>compare_mode: enum<br/>&nbsp;&nbsp;- NEAREST<br/>&nbsp;&nbsp;- FARTHEST  |
-|  select_filter_by_raycast  |  Raycast filter  |  Keeps only the targets hit by a raycast. The beam width only affects entities (grows or shrinks their hitboxes).  |  select/filter  |  variable: variable<br/>origin: location<br/>max_distance: number<br/>ray_size: number<br/>selection_size: number<br/>consider_blocks: enum<br/>{TF}<br/>ignore_passable_blocks: enum<br/>{TF}<br/>fluid_collision_mode: enum<br/>&nbsp;&nbsp;- NEVER<br/>&nbsp;&nbsp;- SOURCE_ONLY<br/>&nbsp;&nbsp;- ALWAYS  |
-|  select_filter_randomly  |  Filter selection randomly  |  Keeps the given number of random targets in the selection.  |  select/filter  |  size: number  |
-|  select_invert  |  Invert selection  |  Creates a new selection containing all entities except the selected ones.  |  select/creation  |    |
-|  select_last_entity  |  Select last spawned entity  |  Selects the last spawned entity in the world.  |  select/creation  |    |
-|  select_last_mob  |  Select last spawned mob  |  Selects the last spawned mob in the world.  |  select/creation  |    |
-|  select_mob_by_name  |  Select mob by name  |  Selects the mob or mobs by name or UUID.  |  select/creation  |  name_or_uuid: text  |
-|  select_player_by_conditional  |  Select player by condition  |  Selects players matching the given condition.  |  select/creation  |    |
-|  select_player_by_name  |  Select player by name  |  Selects the player or players by name or UUID.  |  select/creation  |  name_or_uuid: text  |
-|  select_random_entity  |  Select random entity  |  Selects a random entity in the world.  |  select/creation  |    |
-|  select_random_mob  |  Select random mob  |  Selects a random mob in the world.  |  select/creation  |    |
-|  select_random_player  |  Select random player  |  Selects a random player in the world.  |  select/creation  |    |
-|  select_reset  |  Reset selection  |  Resets the whole selection.  |  select/creation  |    |
+| Icon | ID | Name | Description | Category/Subcategory | Arguments | Works with | Additional info | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ![select_add_all_entities](../../../icons/actions/select_add_all_entities.png) | select_add_all_entities | Добавить всех сущностей | Добавляет в выборку всех сущностей из мира. | select/add |  |  |  |  |
+| ![select_add_all_mobs](../../../icons/actions/select_add_all_mobs.png) | select_add_all_mobs | Добавить всех мобов | Добавляет в выборку всех мобов из мира. | select/add |  |  |  |  |
+| ![select_add_all_players](../../../icons/actions/select_add_all_players.png) | select_add_all_players | Добавить всех игроков | Добавляет в выборку всех игроков из мира. | select/add |  |  |  |  |
+| ![select_add_entity_by_conditional](../../../icons/actions/select_add_entity_by_conditional.png) | select_add_entity_by_conditional | Добавить сущность по условию | Добавляет сущностей, если выполняется указанное условие. | select/add |  |  |  |  |
+| ![select_add_entity_by_name](../../../icons/actions/select_add_entity_by_name.png) | select_add_entity_by_name | Добавить сущность по имени/UUID | Добавляет в выборку сущность с указанным именем/UUID. | select/add | name_or_uuid: text |  |  |  |
+| ![select_add_event_target](../../../icons/actions/select_add_event_target.png) | select_add_event_target | Добавить цель события | Добавляет в выборку цель, которая запустила событие. | select/add | selection_type: enum<br/>&nbsp;&nbsp;- DEFAULT<br/>&nbsp;&nbsp;- KILLER<br/>&nbsp;&nbsp;- DAMAGER<br/>&nbsp;&nbsp;- VICTIM<br/>&nbsp;&nbsp;- SHOOTER<br/>&nbsp;&nbsp;- PROJECTILE |  |  |  |
+| ![select_add_last_entity](../../../icons/actions/select_add_last_entity.png) | select_add_last_entity | Добавить последнюю появившуюся сущность | Добавляет в выборку последнюю появившуюся сущность из мира. | select/add |  |  |  |  |
+| ![select_add_last_mob](../../../icons/actions/select_add_last_mob.png) | select_add_last_mob | Добавить последнего появившегося моба | Добавляет в выборку последнего появившегося моба из мира. | select/add |  |  |  |  |
+| ![select_add_mob_by_name](../../../icons/actions/select_add_mob_by_name.png) | select_add_mob_by_name | Добавить моба по имени/UUID | Добавляет в выборку моба с указанным именем/UUID. | select/add | name_or_uuid: text |  |  |  |
+| ![select_add_player_by_conditional](../../../icons/actions/select_add_player_by_conditional.png) | select_add_player_by_conditional | Добавить игрока по условию | Добавляет игроков, если выполняется указанное условие. | select/add |  |  |  |  |
+| ![select_add_player_by_name](../../../icons/actions/select_add_player_by_name.png) | select_add_player_by_name | Добавить игрока по имени/UUID | Добавляет в выборку игрока с указанным именем/UUID. | select/add | name_or_uuid: text |  |  |  |
+| ![select_add_random_entity](../../../icons/actions/select_add_random_entity.png) | select_add_random_entity | Добавить случайную сущность | Добавляет в выборку случайную сущность из мира. | select/add |  |  |  |  |
+| ![select_add_random_mob](../../../icons/actions/select_add_random_mob.png) | select_add_random_mob | Добавить случайного моба | Добавляет в выборку случайного моба из мира. | select/add |  |  |  |  |
+| ![select_add_random_player](../../../icons/actions/select_add_random_player.png) | select_add_random_player | Добавить случайного игрока | Добавляет в выборку случайного игрока из мира. | select/add |  |  |  |  |
+| ![select_all_entities](../../../icons/actions/select_all_entities.png) | select_all_entities | Выбрать всех сущностей | Выбирает всех сущностей в мире. | select/creation |  |  |  |  |
+| ![select_all_mobs](../../../icons/actions/select_all_mobs.png) | select_all_mobs | Выбрать всех мобов | Выбирает всех мобов в мире. | select/creation |  |  |  |  |
+| ![select_all_players](../../../icons/actions/select_all_players.png) | select_all_players | Выбрать всех игроков | Выбирает всех игроков в мире. | select/creation |  |  |  |  |
+| ![select_entity_by_conditional](../../../icons/actions/select_entity_by_conditional.png) | select_entity_by_conditional | Выбрать сущность по условию | Выбирает сущностей, если выполняется указанное условие. | select/creation |  |  |  |  |
+| ![select_entity_by_name](../../../icons/actions/select_entity_by_name.png) | select_entity_by_name | Выбрать сущность по имени | Выбирает сущность или сущностей по имени или UUID. | select/creation | name_or_uuid: text |  |  |  |
+| ![select_event_target](../../../icons/actions/select_event_target.png) | select_event_target | Выбрать цель события | Выбирает цель, которая запустила событие. | select/creation | selection_type: enum<br/>&nbsp;&nbsp;- DEFAULT<br/>&nbsp;&nbsp;- KILLER<br/>&nbsp;&nbsp;- DAMAGER<br/>&nbsp;&nbsp;- VICTIM<br/>&nbsp;&nbsp;- SHOOTER<br/>&nbsp;&nbsp;- PROJECTILE |  |  |  |
+| ![select_filter_by_conditional](../../../icons/actions/select_filter_by_conditional.png) | select_filter_by_conditional | Отфильтровать выборку по условию | Оставляет в выборке те цели, которые подходят под выбранное условие. | select/filter |  |  |  |  |
+| ![select_filter_by_distance](../../../icons/actions/select_filter_by_distance.png) | select_filter_by_distance | Отфильтровать выборку по расстоянию | Оставляет в выборке те цели, которые находятся на расстоянии до местоположения. | select/filter | location: location<br/>selection_size: number<br/>ignore_y_axis: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE<br/>compare_mode: enum<br/>&nbsp;&nbsp;- NEAREST<br/>&nbsp;&nbsp;- FARTHEST |  |  |  |
+| ![select_filter_by_raycast](../../../icons/actions/select_filter_by_raycast.png) | select_filter_by_raycast | Фильтр рейкастом | Оставляет в выборке только те цели, в которые попал запущенный луч. Ширина луча работает только на сущностей (увеличивает или уменьшает хитбоксы существ). | select/filter | variable: variable<br/>origin: location<br/>max_distance: number<br/>ray_size: number<br/>selection_size: number<br/>consider_blocks: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE<br/>ignore_passable_blocks: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE<br/>fluid_collision_mode: enum<br/>&nbsp;&nbsp;- NEVER<br/>&nbsp;&nbsp;- SOURCE_ONLY<br/>&nbsp;&nbsp;- ALWAYS |  |  |  |
+| ![select_filter_randomly](../../../icons/actions/select_filter_randomly.png) | select_filter_randomly | Отфильтровать выборку случайно | Оставляет в выборке указанное количество случайных целей. | select/filter | size: number |  |  |  |
+| ![select_invert](../../../icons/actions/select_invert.png) | select_invert | Инвертировать выборку | Создаёт новую выборку, в которую входят все существа, кроме выбранных. | select/creation |  |  |  |  |
+| ![select_last_entity](../../../icons/actions/select_last_entity.png) | select_last_entity | Выбрать последнюю появившуюся сущность | Выбирает последнюю появившуюся сущность в мире. | select/creation |  |  |  |  |
+| ![select_last_mob](../../../icons/actions/select_last_mob.png) | select_last_mob | Выбрать последнего появившегося моба | Выбирает последнего появившегося моба в мире. | select/creation |  |  |  |  |
+| ![select_mob_by_name](../../../icons/actions/select_mob_by_name.png) | select_mob_by_name | Выбрать моба по имени | Выбирает моба или мобов по имени или UUID. | select/creation | name_or_uuid: text |  |  |  |
+| ![select_player_by_conditional](../../../icons/actions/select_player_by_conditional.png) | select_player_by_conditional | Выбрать игрока по условию | Выбирает игроков, если выполняется указанное условие. | select/creation |  |  |  |  |
+| ![select_player_by_name](../../../icons/actions/select_player_by_name.png) | select_player_by_name | Выбрать игрока по имени | Выбирает игрока или игроков по имени или UUID. | select/creation | name_or_uuid: text |  |  |  |
+| ![select_random_entity](../../../icons/actions/select_random_entity.png) | select_random_entity | Выбрать случайную сущность | Выбирает случайную сущность в мире. | select/creation |  |  |  |  |
+| ![select_random_mob](../../../icons/actions/select_random_mob.png) | select_random_mob | Выбрать случайного моба | Выбирает случайного моба в мире. | select/creation |  |  |  |  |
+| ![select_random_player](../../../icons/actions/select_random_player.png) | select_random_player | Выбрать случайного игрока | Выбирает случайного игрока в мире. | select/creation |  |  |  |  |
+| ![select_reset](../../../icons/actions/select_reset.png) | select_reset | Сбросить выборку | Сбрасывает всю выборку. | select/creation |  |  |  |  |
 
 ## Quick ref
-> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values: see the full table row above. ⚠ deprecated = do not use.
 
 - `select_add_all_entities` — (no arguments)
 - `select_add_all_mobs` — (no arguments)
@@ -63,8 +62,8 @@
 - `select_entity_by_name` — name_or_uuid: text
 - `select_event_target` — selection_type: enum
 - `select_filter_by_conditional` — (no arguments)
-- `select_filter_by_distance` — location: location, selection_size: number, ignore_y_axis: enum{TF}, compare_mode: enum
-- `select_filter_by_raycast` — variable: variable, origin: location, max_distance: number, ray_size: number, selection_size: number, consider_blocks: enum{TF}, ignore_passable_blocks: enum{TF}, fluid_collision_mode: enum
+- `select_filter_by_distance` — location: location, selection_size: number, ignore_y_axis: enum, compare_mode: enum
+- `select_filter_by_raycast` — variable: variable, origin: location, max_distance: number, ray_size: number, selection_size: number, consider_blocks: enum, ignore_passable_blocks: enum, fluid_collision_mode: enum
 - `select_filter_randomly` — size: number
 - `select_invert` — (no arguments)
 - `select_last_entity` — (no arguments)

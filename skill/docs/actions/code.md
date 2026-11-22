@@ -1,22 +1,21 @@
 # Code actions
-> **Enum macros:** {TF} = TRUE / FALSE; {TFN} = TRUE / FALSE / NOT_SET; {ANY_ALL} = ANY / ALL; {ITEM_MATCH} = EXACT / IGNORE_NAME_DURABILITY / IGNORE_NAME_DURABILITY_ENCHANTMENTS / CUSTOM_TAGS_CONTAINS / MINECRAFT_TAG / ITEM_TYPE; {DEG_RAD} = DEGREES / RADIANS; {CMP} = EXACTLY / IGNORE_STACK_SIZE / IGNORE_DURABILITY_AND_STACK_SIZE / TYPE_ONLY. Icon column omitted.
+> Source: official JustMc assets (documentation/ru_RU) — updated 2026-11. Icon column references the original repo icons — ignore the links.
 
-
-|  ID  |  Name  |  Description  |  Category/Subcategory  |  Arguments  |  Works with  |  Additional info  |
-|  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |
-|  call_function  |  Call function  |  Calls a function code line.  |  call_function  |  function_name: text<br/>args: map  |    |    |
-|  control_break_label  |  Exit labeled block  |  Interrupts the code marked with the given name.  |  control  |  label: text  |  the "Mark code" action  |    |
-|  control_call_exception  |  Throw error  |  Throws the given error with the given ID and message.  |  control  |  id: text<br/>message: text<br/>type: enum<br/>&nbsp;&nbsp;- WARNING<br/>&nbsp;&nbsp;- ERROR<br/>&nbsp;&nbsp;- FATAL  |    |  Recommended to use inside the "Catch error" action.  |
-|  control_end_thread  |  Stop sequence  |  Stops the current code block sequence. Any code after this block will not run.  |  control  |    |    |  If used inside a function, stops the parent line that called the function.  |
-|  control_return_function  |  Return to call site  |  Stops the current code block sequence inside a function and returns to that function call block.  |  control  |    |    |  Returns to the call block of the current function in the parent line.  |
-|  control_skip_iteration  |  Skip iteration  |  Skips one iteration of the current loop.  |  control  |    |    |    |
-|  control_stop_repeat  |  Stop loop  |  Fully stops the current loop.  |  control  |    |    |    |
-|  control_wait  |  Wait  |  Pauses the current code block sequence for the given time.  |  control  |  duration: number<br/>time_unit: enum<br/>&nbsp;&nbsp;- TICKS<br/>&nbsp;&nbsp;- SECONDS<br/>&nbsp;&nbsp;- MINUTES  |    |  Minimum delay is 1 tick; in Ticks mode only whole numbers are allowed.  |
-|  else  |  Else  |  ...  |  else  |    |    |    |
-|  start_process  |  Start process  |  Starts a process code line.  |  start_process  |  process_name: text<br/>target_mode: enum<br/>&nbsp;&nbsp;- CURRENT_TARGET<br/>&nbsp;&nbsp;- CURRENT_SELECTION<br/>&nbsp;&nbsp;- NO_TARGET<br/>&nbsp;&nbsp;- FOR_EACH_IN_SELECTION<br/>local_variables_mode: enum<br/>&nbsp;&nbsp;- DONT_COPY<br/>&nbsp;&nbsp;- COPY<br/>&nbsp;&nbsp;- SHARE<br/>args: map  |    |    |
+| Icon | ID | Name | Description | Category/Subcategory | Arguments | Works with | Additional info | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ![call_function](../../../icons/actions/call_function.png) | call_function | Вызвать функцию | Вызывает строку кода функции. | call_function | function_name: text<br/>args: map |  |  |  |
+| ![control_break_label](../../../icons/actions/control_break_label.png) | control_break_label | Выйти из блока с меткой | Прерывает код, помеченный указанным именем. | control | label: text | Действием "Пометить код" |  |  |
+| ![control_call_exception](../../../icons/actions/control_call_exception.png) | control_call_exception | Вызвать ошибку | Вызывает определённую ошибку с указанным ID и сообщением. | control | id: text<br/>message: text<br/>type: enum<br/>&nbsp;&nbsp;- WARNING<br/>&nbsp;&nbsp;- ERROR<br/>&nbsp;&nbsp;- FATAL |  | Рекомендуется использовать это в действии "Уловить ошибку". |  |
+| ![control_end_thread](../../../icons/actions/control_end_thread.png) | control_end_thread | Остановить последовательность | Останавливает текущую последовательность блоков кода. Любой код после этого блока не будет выполнен. | control |  |  | Если действие было использовано в функциях, то остановит родительскую строку, в которой вызвали функцию. |  |
+| ![control_return_function](../../../icons/actions/control_return_function.png) | control_return_function | Вернуться до вызова | Останавливает текущую последовательность блоков кода в функции и возвращает к блоку вызова этой самой функции. | control |  |  | Возвращает до блока вызова текущей функции в родительской строке. |  |
+| ![control_skip_iteration](../../../icons/actions/control_skip_iteration.png) | control_skip_iteration | Пропустить повторение | Пропускает одну итерацию в текущем повторении. | control |  |  |  |  |
+| ![control_stop_repeat](../../../icons/actions/control_stop_repeat.png) | control_stop_repeat | Остановить повторение | Полностью останавливает текущее повторение. | control |  |  |  |  |
+| ![control_wait](../../../icons/actions/control_wait.png) | control_wait | Ждать | Приостанавливает текущую последовательность блоков кода на определённое время. | control | duration: number<br/>time_unit: enum<br/>&nbsp;&nbsp;- TICKS<br/>&nbsp;&nbsp;- SECONDS<br/>&nbsp;&nbsp;- MINUTES |  | Минимальная задержка - 1 тик; в режиме Тики можно установить только целые числа. |  |
+| ![else](../../../icons/actions/else.png) | else | Иначе | ... | else |  |  |  |  |
+| ![start_process](../../../icons/actions/start_process.png) | start_process | Запустить процесс | Запускает строку кода процесса. | start_process | process_name: text<br/>target_mode: enum<br/>&nbsp;&nbsp;- CURRENT_TARGET<br/>&nbsp;&nbsp;- CURRENT_SELECTION<br/>&nbsp;&nbsp;- NO_TARGET<br/>&nbsp;&nbsp;- FOR_EACH_IN_SELECTION<br/>local_variables_mode: enum<br/>&nbsp;&nbsp;- DONT_COPY<br/>&nbsp;&nbsp;- COPY<br/>&nbsp;&nbsp;- SHARE<br/>args: map |  |  |  |
 
 ## Quick ref
-> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values: see the full table row above. ⚠ deprecated = do not use.
 
 - `call_function` — function_name: text, args: map
 - `control_break_label` — label: text

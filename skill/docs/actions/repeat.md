@@ -1,32 +1,31 @@
 # Repeat actions
-> **Enum macros:** {TF} = TRUE / FALSE; {TFN} = TRUE / FALSE / NOT_SET; {ANY_ALL} = ANY / ALL; {ITEM_MATCH} = EXACT / IGNORE_NAME_DURABILITY / IGNORE_NAME_DURABILITY_ENCHANTMENTS / CUSTOM_TAGS_CONTAINS / MINECRAFT_TAG / ITEM_TYPE; {DEG_RAD} = DEGREES / RADIANS; {CMP} = EXACTLY / IGNORE_STACK_SIZE / IGNORE_DURABILITY_AND_STACK_SIZE / TYPE_ONLY. Icon column omitted.
+> Source: official JustMc assets (documentation/ru_RU) — updated 2026-11. Icon column references the original repo icons — ignore the links.
 
-
-|  ID  |  Name  |  Description  |  Category/Subcategory  |  Arguments  |
-|  ---  |  ---  |  ---  |  ---  |  ---  |
-|  repeat_adjacently  |  Iterate adjacent blocks  |  Assigns the current location to the given variable among blocks adjacent to the given location.  |  repeat  |  variable: variable<br/>origin: location<br/>change_rotation: enum<br/>{TF}<br/>include_self: enum<br/>{TF}<br/>pattern: enum<br/>&nbsp;&nbsp;- CARDINAL<br/>&nbsp;&nbsp;- SQUARE<br/>&nbsp;&nbsp;- ADJACENT<br/>&nbsp;&nbsp;- CUBE  |
-|  repeat_for_each_in_list  |  Iterate list  |  Iterates each element of the given list, yielding its index and value into the given variables.  |  repeat  |  index_variable: variable<br/>value_variable: variable<br/>list: array  |
-|  repeat_for_each_map_entry  |  Iterate map  |  Iterates each entry of the given map, yielding its key and value into the given variables.  |  repeat  |  key_variable: variable<br/>value_variable: variable<br/>map: map  |
-|  repeat_forever  |  Repeat forever  |  Repeats the code inside the pistons forever.  |  repeat  |    |
-|  repeat_multi_times  |  Counted loop  |  Runs the code the given number of times.  |  repeat  |  variable: variable<br/>amount: number  |
-|  repeat_on_circle  |  Iterate circle  |  Sequentially yields the location of each block of the circle with the given parameters.  |  repeat  |  variable: variable<br/>center: location<br/>radius: number<br/>circle_points: number<br/>perpendicular_to_plane: vector<br/>start_angle: number<br/>angle_unit: enum<br/>{DEG_RAD}  |
-|  repeat_on_grid  |  Iterate region  |  Yields the location of each block in the given region into the given variable.  |  repeat  |  variable: variable<br/>start: location<br/>end: location  |
-|  repeat_on_path  |  Iterate path  |  Walks from one location to another with a given step, assigning the current location to the given variable.  |  repeat  |  variable: variable<br/>step: number<br/>locations: location<br/>rotation: enum<br/>{TF}  |
-|  repeat_on_range  |  Range loop  |  Assigns the current number from the given range with a given step into the given variable.  |  repeat  |  variable: variable<br/>start: number<br/>end: number<br/>interval: number  |
-|  repeat_on_sphere  |  Iterate sphere  |  Sequentially yields the location of each point on the sphere with the given parameters.  |  repeat  |  variable: variable<br/>center: location<br/>radius: number<br/>points: number<br/>rotate_location: enum<br/>&nbsp;&nbsp;- NO_CHANGES<br/>&nbsp;&nbsp;- INWARDS<br/>&nbsp;&nbsp;- OUTWARDS  |
-|  repeat_while  |  While loop  |  Runs the code as long as the chosen condition is true.  |  repeat  |    |
+| Icon | ID | Name | Description | Category/Subcategory | Arguments | Works with | Additional info | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ![repeat_adjacently](../../../icons/actions/repeat_adjacently.png) | repeat_adjacently | Проход по смежным блокам | Присваивает текущее местоположение в указанную переменную среди соседних блоков относительно заданного местоположения. | repeat | variable: variable<br/>origin: location<br/>change_rotation: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE<br/>include_self: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE<br/>pattern: enum<br/>&nbsp;&nbsp;- CARDINAL<br/>&nbsp;&nbsp;- SQUARE<br/>&nbsp;&nbsp;- ADJACENT<br/>&nbsp;&nbsp;- CUBE |  |  |  |
+| ![repeat_for_each_in_list](../../../icons/actions/repeat_for_each_in_list.png) | repeat_for_each_in_list | Проход по списку | Обращается к каждому элементу из указанного списка и выдаёт его индекс и значение в указанные переменные. | repeat | index_variable: variable<br/>value_variable: variable<br/>list: array |  |  |  |
+| ![repeat_for_each_map_entry](../../../icons/actions/repeat_for_each_map_entry.png) | repeat_for_each_map_entry | Проход по словарю | Обращается к каждому элементу из указанного словаря и выдаёт его индекс и значение в указанные переменные. | repeat | key_variable: variable<br/>value_variable: variable<br/>map: map |  |  |  |
+| ![repeat_forever](../../../icons/actions/repeat_forever.png) | repeat_forever | Повторять вечно | Постоянно повторяет код внутри поршней. | repeat |  |  |  |  |
+| ![repeat_multi_times](../../../icons/actions/repeat_multi_times.png) | repeat_multi_times | Цикл со счётчиком | Выполняет код заданное количество раз. | repeat | variable: variable<br/>amount: number |  |  |  |
+| ![repeat_on_circle](../../../icons/actions/repeat_on_circle.png) | repeat_on_circle | Проход по окружности | Последовательно выдаёт местоположение каждого блока окружности с указанными параметрами. | repeat | variable: variable<br/>center: location<br/>radius: number<br/>circle_points: number<br/>perpendicular_to_plane: vector<br/>start_angle: number<br/>angle_unit: enum<br/>&nbsp;&nbsp;- DEGREES<br/>&nbsp;&nbsp;- RADIANS |  |  |  |
+| ![repeat_on_grid](../../../icons/actions/repeat_on_grid.png) | repeat_on_grid | Проход по региону | Выдаёт местоположение каждого блока из заданного региона в указанную переменную. | repeat | variable: variable<br/>start: location<br/>end: location |  |  |  |
+| ![repeat_on_path](../../../icons/actions/repeat_on_path.png) | repeat_on_path | Проход по пути | Проходит от одного местоположения к другому с определённым шагом, присваивая текущее местоположение в указанную переменную. | repeat | variable: variable<br/>step: number<br/>locations: location<br/>rotation: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE |  |  |  |
+| ![repeat_on_range](../../../icons/actions/repeat_on_range.png) | repeat_on_range | Цикл в диапазоне | Присваивает текущее число в указанную переменную из заданного диапазона с определённым шагом. | repeat | variable: variable<br/>start: number<br/>end: number<br/>interval: number |  |  |  |
+| ![repeat_on_sphere](../../../icons/actions/repeat_on_sphere.png) | repeat_on_sphere | Проход по сфере | Последовательно выдаёт местоположение каждой точки на сфере с указанными параметрами. | repeat | variable: variable<br/>center: location<br/>radius: number<br/>points: number<br/>rotate_location: enum<br/>&nbsp;&nbsp;- NO_CHANGES<br/>&nbsp;&nbsp;- INWARDS<br/>&nbsp;&nbsp;- OUTWARDS |  |  |  |
+| ![repeat_while](../../../icons/actions/repeat_while.png) | repeat_while | Цикл с условием | Выполняет код до тех пор, пока выбранное условие является истиной. | repeat |  |  |  |  |
 
 ## Quick ref
-> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values and extra info: see the full table row above. ⚠ deprecated = do not use.
+> Argument **names and types only**, one line per action/condition — scan this first. Exact enum values: see the full table row above. ⚠ deprecated = do not use.
 
-- `repeat_adjacently` — variable: variable, origin: location, change_rotation: enum{TF}, include_self: enum{TF}, pattern: enum
+- `repeat_adjacently` — variable: variable, origin: location, change_rotation: enum, include_self: enum, pattern: enum
 - `repeat_for_each_in_list` — index_variable: variable, value_variable: variable, list: array
 - `repeat_for_each_map_entry` — key_variable: variable, value_variable: variable, map: map
 - `repeat_forever` — (no arguments)
 - `repeat_multi_times` — variable: variable, amount: number
-- `repeat_on_circle` — variable: variable, center: location, radius: number, circle_points: number, perpendicular_to_plane: vector, start_angle: number, angle_unit: enum{DEG_RAD}
+- `repeat_on_circle` — variable: variable, center: location, radius: number, circle_points: number, perpendicular_to_plane: vector, start_angle: number, angle_unit: enum
 - `repeat_on_grid` — variable: variable, start: location, end: location
-- `repeat_on_path` — variable: variable, step: number, locations: location, rotation: enum{TF}
+- `repeat_on_path` — variable: variable, step: number, locations: location, rotation: enum
 - `repeat_on_range` — variable: variable, start: number, end: number, interval: number
 - `repeat_on_sphere` — variable: variable, center: location, radius: number, points: number, rotate_location: enum
 - `repeat_while` — (no arguments)
