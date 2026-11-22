@@ -8,8 +8,7 @@
 
 Trigger: `player_join`. A save-scope marker per player (e.g. `%player%_joined`) — if it does not exist, this is the first join: run the one-time actions and create the marker.
 
-```
-handler: player_join
+```handler: player_join
   conditional:
     condition: if_variable_exists   # is_inverted: true
       variable: %player%_joined     # save scope
@@ -32,8 +31,7 @@ handler: player_join
 - `text` values carry a `parsing` mode: `"plain"` (literal) or `"legacy"` (color codes, hex like `&#A6FF6E`, placeholders). Use legacy for player-facing colored text.
 - Actions can carry a `selection` object directly, no separate select action needed: `{"type":"all_entities"}`, `{"type":"all_players"}`, `{"type":"default_player"}`, `{"type":"victim_entity"}`.
 - In `game_value` values the `selection` field is a STRINGIFIED selection literal: `"selection":"{\"type\":\"default\"}"`.
-- `call_function` `args` map keys are STRINGIFIED value literals of the parameter names: key = `"{\"type\":\"text\",\"text\"
-:\"npcName\",\"parsing\":\"plain\"}"`, value = the passed value literal. Non-obvious but real.
+- `call_function` `args` map keys are STRINGIFIED value literals of the parameter names: key = `"{\"type\":\"text\",\"text\":\"npcName\",\"parsing\":\"plain\"}"`, value = the passed value literal. Non-obvious but real.
 - `if_variable_equals` `compare` may be an ARRAY — the check passes if ANY of the compare values matches.
 
 ### Functions
@@ -58,8 +56,7 @@ handler: player_join
 > Minimal structure skeletons — take the shape, fill with task content. Full JSON syntax: `docs/rules.md`.
 
 ### Event handler with condition + else
-```
-handler: <event>
+```handler: <event>
   conditional:
     condition: <if_...>          # is_inverted where needed
     operations: [ ...actions... ]
@@ -67,8 +64,7 @@ handler: <event>
 ```
 
 ### Function with parameters
-```
-function <name>
+```function <name>
   parameters: [ {parameter: name, value_type, is_required, default_value, slot} ]
   is_hidden: FALSE
   ...actions...                  # read params as %var_line(name)
@@ -76,15 +72,49 @@ function <name>
 ```
 
 ### Loop with wait (safe)
-```
-repeat_forever / repeat_while:
+```repeat_forever / repeat_while:
   ...body actions...
   control_wait  duration: 1  time_unit: TICKS   # every big loop body
 ```
 
 ### Cancel-event handler (block vanilla behavior)
-```
-handler: <event>
+```handler: <event>
   game_cancel_event
   ...then custom logic...
 ```
+
+### Real JSON handler (verified shape)
+
+> One event handler with a condition. Arg names and value shapes are real — adapt content, do not copy the task.
+
+```json
+{
+  "type": "event",
+  "event": "player_chat",
+  "position": 0,
+  "operations": [
+    {
+      "action": "if_variable_equals",
+      "is_inverted": false,
+      "values": [
+        { "name": "variable", "value": { "type": "variable", "variable": "counter", "scope": "game" } },
+        { "name": "compare", "value": { "type": "array", "values": [ { "type": "number", "number": "5" } ] } }
+      ],
+      "operations": [
+        {
+          "action": "player_send_message",
+          "values": [
+            { "name": "messages", "value": { "type": "text", "text": "Counter reached 5!", "parsing": "legacy" } },
+            { "name": "merging", "value": {} }
+          ],
+          "operations": []
+        }
+      ]
+    }
+  ]
+}
+```
+
+- Condition = an action object with `"operations"` nested; `else` is a separate sibling `{ "action": "else", "values": [], "operations": [...] }`.
+- `if_variable_equals` `compare` is an ARRAY; `if_variable_greater`/`_less` take a single number.
+- Full module wrapper and function handler skeleton: `docs/rules.md`.
