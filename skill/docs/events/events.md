@@ -36,11 +36,13 @@
 | ![enderman_escape](../../icons/events/enderman_escape.png) | enderman_escape | Эндермен убегает | Выполняет код, когда Эндермен телепортируется, чтобы избежать что-либо. | entity | true |  |  |  |
 | ![entity_bell_ring](../../icons/events/entity_bell_ring.png) | entity_bell_ring | Сущность звонит в колокол | Выполняет код, когда сущность звонит в колокол. | entity | true |  |  |  |
 | ![entity_block_break_progress_update](../../icons/events/entity_block_break_progress_update.png) | entity_block_break_progress_update | Обновление статуса поломки блока | Выполняет код, когда сущность обновляет статус поломки блока. | entity | false | Зомби |  |  |
+| ![entity_change_block](../../icons/events/entity_change_block.png) | entity_change_block | Сущность изменяет блок | Выполняет код, когда сущность изменяет блок в мире. | entity | true |  |  |  |
 | ![entity_combust](../../icons/events/entity_combust.png) | entity_combust | Сущность загорелась | Выполняет код, когда сущность загорается. | entity | true |  |  |  |
 | ![entity_damage_entity](../../icons/events/entity_damage_entity.png) | entity_damage_entity | Моб наносит урон мобу | Выполняет код, когда моб наносит урон другому мобу. | entity | true |  |  |  |
 | ![entity_damage_player](../../icons/events/entity_damage_player.png) | entity_damage_player | Существо ранит игрока | Выполняет код, когда существо ранит игрока. | player | true |  |  |  |
 | ![entity_death](../../icons/events/entity_death.png) | entity_death | Смерть сущности | Выполняет код, когда сущность умирает. | entity | true |  |  |  |
 | ![entity_drop_item](../../icons/events/entity_drop_item.png) | entity_drop_item | Существо выбрасывает предмет | Выполняет код, когда существо выбрасывает предмет. | entity | true |  |  |  |
+| ![entity_enters_reactable_block](../../icons/events/entity_enters_reactable_block.png) | entity_enters_reactable_block | Сущность оказывается в активном блоке | Выполняет код, когда сущность оказывается в активном блоке. Например, на большом капельнике, в паутине. | entity | true |  |  |  |
 | ![entity_equipment_changed](../../icons/events/entity_equipment_changed.png) | entity_equipment_changed | Сущность меняет экипировку | Выполняет код, когда экипировка сущности меняется. | entity | false |  | Событие возникает после изменения атрибутов или зачарований любой из частей экипировки. |  |
 | ![entity_explode](../../icons/events/entity_explode.png) | entity_explode | Сущность взрывается | Выполняет код, когда сущность взрывается. | entity | true |  |  |  |
 | ![entity_explosion](../../icons/events/entity_explosion.png) | entity_explosion | Сущность решила взорваться | Выполняет код, когда сущность решает взорваться. | entity | true |  |  |  |
@@ -58,6 +60,7 @@
 | ![entity_start_gliding](../../icons/events/entity_start_gliding.png) | entity_start_gliding | Сущность начинает лететь на элитрах | Выполняет код, когда сущность начинает лететь на элитрах. | entity | true |  |  |  |
 | ![entity_stop_gliding](../../icons/events/entity_stop_gliding.png) | entity_stop_gliding | Сущность перестаёт лететь на элитрах | Выполняет код, когда сущность перестаёт лететь на элитрах. | entity | true |  |  |  |
 | ![entity_take_damage](../../icons/events/entity_take_damage.png) | entity_take_damage | Сущность получает урон | Выполняет код, когда сущность получает урон. | entity | true |  |  |  |
+| ![entity_target](../../icons/events/entity_target.png) | entity_target | Сущность выбирает цель | Выполняет код, когда сущность выбирает новую цель для преследования или атаки. | entity | true |  |  |  |
 | ![entity_teleport](../../icons/events/entity_teleport.png) | entity_teleport | Сущность телепортируется | Выполняет код, когда сущность телепортируется. | entity | true |  |  |  |
 | ![entity_transform](../../icons/events/entity_transform.png) | entity_transform | Сущность заменяется другой сущностью | Выполняет код, когда сущность заменяется другой сущностью. | entity | true |  |  |  |
 | ![entity_unleash_event](../../icons/events/entity_unleash_event.png) | entity_unleash_event | Сущность отвязалась | Выполняет код, когда сущность отвязывается от поводка. | entity | true |  |  |  |
@@ -67,8 +70,8 @@
 | ![fishing_hook_state_change](../../icons/events/fishing_hook_state_change.png) | fishing_hook_state_change | Поплавок удочки изменяет состояние | Выполняет код, когда поплавок удочки изменяет своё состояние. | entity | false | Поплавком удочки |  |  |
 | ![fluid_level_change](../../icons/events/fluid_level_change.png) | fluid_level_change | Изменение уровня воды | Выполняет код, когда изменяется уровень воды в блоке. | world | true |  |  |  |
 | ![furnace_burn](../../icons/events/furnace_burn.png) | furnace_burn | Печь использует топливо | Выполняет код, когда печь использует предмет как топливо. | world | true | Печами<br/>Плавильнями<br/>Коптильнями |  |  |
-| ![furnace_smelt](../../icons/events/furnace_smelt.png) | furnace_smelt | Печь закончила плавку | Выполняет код, когда печь заканчивает плавку. | world | true | Печами<br/>Плавильнями<br/>Коптильнями |  |  |
-| ![furnace_start_smelt](../../icons/events/furnace_start_smelt.png) | furnace_start_smelt | Печь начала плавку | Выполняет код, когда печь начинает плавку. | world | false | Печами<br/>Плавильнями<br/>Коптильнями |  |  |
+| ![furnace_smelt](../../icons/events/furnace_smelt.png) | furnace_smelt | Печь закончила плавку | Выполняет код, когда печь заканчивает плавку. | world | true | Печами<br/>Плавильнями<br/>Коптильнями<br/>Кострами |  |  |
+| ![furnace_start_smelt](../../icons/events/furnace_start_smelt.png) | furnace_start_smelt | Печь начала плавку | Выполняет код, когда печь начинает плавку. | world | false | Печами<br/>Плавильнями<br/>Коптильнями<br/>Кострами<br/>Варочными стойками |  |  |
 | ![goat_ram_entity](../../icons/events/goat_ram_entity.png) | goat_ram_entity | Коза таранит сущность | Выполняет код, когда Коза таранит сущность. | entity | true |  |  |  |
 | ![hanging_break](../../icons/events/hanging_break.png) | hanging_break | Ломание висящего существа | Выполняет код, когда ломается висящая сущность. | entity | true | Рамками<br/>Картинами<br/>Поводками |  |  |
 | ![hopper_pickup_item](../../icons/events/hopper_pickup_item.png) | hopper_pickup_item | Воронка подбирает предмет | Выполняет код, когда воронка подбирает предмет. | entity | true |  | Чтобы выбрать предмет как сущность, используйте цель "Жертва". |  |
@@ -89,6 +92,7 @@
 | ![player_block_dispense_loot](../../icons/events/player_block_dispense_loot.png) | player_block_dispense_loot | Игрок заставляет блок выбросить лут | Выполняет код, когда игрок заставляет блок выбросить лут. | player | true | Сокровищницами |  |  |
 | ![player_break_block](../../icons/events/player_break_block.png) | player_break_block | Игрок сломал блок | Выполняет код, когда игрок сломал блок. | player | true |  | По умолчанию, это событие отменено, если игрок, находясь в творческом режиме, ломает блок, держа в руке меч или трезубец. |  |
 | ![player_break_item](../../icons/events/player_break_item.png) | player_break_item | Игрок ломает предмет | Выполняет код, когда игрок ломает предмет. | player | false |  |  |  |
+| ![player_change_block](../../icons/events/player_change_block.png) | player_change_block | Игрок изменяет блок | Выполняет код, когда игрок изменяет блок в мире. | player | true |  |  |  |
 | ![player_change_slot](../../icons/events/player_change_slot.png) | player_change_slot | Игрок меняет слот | Выполняет код, когда игрок меняет слот. | player | true |  |  |  |
 | ![player_chat](../../icons/events/player_chat.png) | player_chat | Игрок пишет сообщение в чат | Выполняет код, когда игрок пишет сообщение в чат. | player | true |  |  |  |
 | ![player_click_inventory](../../icons/events/player_click_inventory.png) | player_click_inventory | Игрок кликает в инвентаре | Выполняет код, когда игрок кликает в инвентаре. | player | true |  | По умолчанию, это событие отменено, если игрок находится в режиме наблюдателя. |  |
@@ -109,6 +113,7 @@
 | ![player_drop_item](../../icons/events/player_drop_item.png) | player_drop_item | Игрок выбрасывает предмет | Выполняет код, когда игрок выбрасывает предмет. | player | true |  |  |  |
 | ![player_edit_book](../../icons/events/player_edit_book.png) | player_edit_book | Игрок изменяет книгу | Выполняет код, когда игрок редактирует текст или подписывает Книгу с пером. | player | true |  |  |  |
 | ![player_enchant_item](../../icons/events/player_enchant_item.png) | player_enchant_item | Игрок зачаровывает предмет | Выполняет код, когда игрок зачаровывает предмет. | player | true | Столами зачарования |  |  |
+| ![player_enters_reactable_block](../../icons/events/player_enters_reactable_block.png) | player_enters_reactable_block | Игрок оказывается в активном блоке | Выполняет код, когда игрок оказывается в активном блоке. Например, на большом капельнике, в паутине. | player | true |  |  |  |
 | ![player_equipment_changed](../../icons/events/player_equipment_changed.png) | player_equipment_changed | Игрок меняет экипировку | Выполняет код, когда экипировка игрока меняется. | player | false |  | Событие возникает после изменения атрибутов или зачарований любой из частей экипировки. |  |
 | ![player_exhaustion](../../icons/events/player_exhaustion.png) | player_exhaustion | Игрок истощается | Выполняет код, когда игрок получает истощение. | player | true |  |  |  |
 | ![player_fail_move](../../icons/events/player_fail_move.png) | player_fail_move | Игроку не удалось передвинуться | Выполняет код, когда игроку не удаётся передвинуться с места. | player | false |  |  |  |
@@ -173,6 +178,7 @@
 | ![player_start_gliding](../../icons/events/player_start_gliding.png) | player_start_gliding | Игрок начинает лететь на элитрах | Выполняет код, когда игрок начинает лететь на элитрах. | player | true |  |  |  |
 | ![player_start_spectating_entity](../../icons/events/player_start_spectating_entity.png) | player_start_spectating_entity | Игрок начал следить за существом | Выполняет код, когда игрок начал следить за существом в режиме наблюдателя. | player | true |  |  |  |
 | ![player_start_sprint](../../icons/events/player_start_sprint.png) | player_start_sprint | Игрок начал бежать | Выполняет код, когда игрок начинает бежать. | player | true |  |  |  |
+| ![player_stonecutter_recipe_select](../../icons/events/player_stonecutter_recipe_select.png) | player_stonecutter_recipe_select | Игрок выбирает рецепт камнереза | Выполняет код, когда игрок выбирает рецепт камнереза. | player | true |  |  |  |
 | ![player_stop_flight](../../icons/events/player_stop_flight.png) | player_stop_flight | Игрок перестаёт лететь | Выполняет код, когда игрок перестаёт лететь. | player | true |  |  |  |
 | ![player_stop_gliding](../../icons/events/player_stop_gliding.png) | player_stop_gliding | Игрок перестаёт лететь на элитрах | Выполняет код, когда игрок перестаёт лететь на элитрах. | player | true |  |  |  |
 | ![player_stop_spectating_entity](../../icons/events/player_stop_spectating_entity.png) | player_stop_spectating_entity | Игрок перестал следить за существом | Выполняет код, когда игрок перестаёт следить за существом в режиме наблюдателя. | player | true |  |  |  |
@@ -250,11 +256,13 @@
 - `enderman_escape` — (no arguments)
 - `entity_bell_ring` — (no arguments)
 - `entity_block_break_progress_update` — (no arguments)
+- `entity_change_block` — (no arguments)
 - `entity_combust` — (no arguments)
 - `entity_damage_entity` — (no arguments)
 - `entity_damage_player` — (no arguments)
 - `entity_death` — (no arguments)
 - `entity_drop_item` — (no arguments)
+- `entity_enters_reactable_block` — (no arguments)
 - `entity_equipment_changed` — (no arguments)
 - `entity_explode` — (no arguments)
 - `entity_explosion` — (no arguments)
@@ -272,6 +280,7 @@
 - `entity_start_gliding` — (no arguments)
 - `entity_stop_gliding` — (no arguments)
 - `entity_take_damage` — (no arguments)
+- `entity_target` — (no arguments)
 - `entity_teleport` — (no arguments)
 - `entity_transform` — (no arguments)
 - `entity_unleash_event` — (no arguments)
@@ -303,6 +312,7 @@
 - `player_block_dispense_loot` — (no arguments)
 - `player_break_block` — (no arguments)
 - `player_break_item` — (no arguments)
+- `player_change_block` — (no arguments)
 - `player_change_slot` — (no arguments)
 - `player_chat` — (no arguments) [8/10]
 - `player_click_inventory` — (no arguments)
@@ -323,6 +333,7 @@
 - `player_drop_item` — (no arguments)
 - `player_edit_book` — (no arguments)
 - `player_enchant_item` — (no arguments)
+- `player_enters_reactable_block` — (no arguments)
 - `player_equipment_changed` — (no arguments)
 - `player_exhaustion` — (no arguments)
 - `player_fail_move` — (no arguments)
@@ -387,6 +398,7 @@
 - `player_start_gliding` — (no arguments)
 - `player_start_spectating_entity` — (no arguments)
 - `player_start_sprint` — (no arguments)
+- `player_stonecutter_recipe_select` — (no arguments)
 - `player_stop_flight` — (no arguments)
 - `player_stop_gliding` — (no arguments)
 - `player_stop_spectating_entity` — (no arguments)

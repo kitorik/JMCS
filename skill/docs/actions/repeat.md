@@ -10,7 +10,7 @@
 | ![repeat_multi_times](../../../icons/actions/repeat_multi_times.png) | repeat_multi_times | Цикл со счётчиком | Выполняет код заданное количество раз. | repeat | variable: variable<br/>amount: number |  |  |  |
 | ![repeat_on_circle](../../../icons/actions/repeat_on_circle.png) | repeat_on_circle | Проход по окружности | Последовательно выдаёт местоположение каждого блока окружности с указанными параметрами. | repeat | variable: variable<br/>center: location<br/>radius: number<br/>circle_points: number<br/>perpendicular_to_plane: vector<br/>start_angle: number<br/>angle_unit: enum<br/>&nbsp;&nbsp;- DEGREES<br/>&nbsp;&nbsp;- RADIANS |  |  |  |
 | ![repeat_on_grid](../../../icons/actions/repeat_on_grid.png) | repeat_on_grid | Проход по региону | Выдаёт местоположение каждого блока из заданного региона в указанную переменную. | repeat | variable: variable<br/>start: location<br/>end: location |  |  |  |
-| ![repeat_on_path](../../../icons/actions/repeat_on_path.png) | repeat_on_path | Проход по пути | Проходит от одного местоположения к другому с определённым шагом, присваивая текущее местоположение в указанную переменную. | repeat | variable: variable<br/>step: number<br/>locations: location<br/>rotation: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE |  |  |  |
+| ![repeat_on_path](../../../icons/actions/repeat_on_path.png) | repeat_on_path | Проход по пути | Проходит от одного местоположения к другому с определённым шагом, присваивая текущее местоположение в указанную переменную. | repeat | variable: variable<br/>locations: location<br/>step: number<br/>rotation: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE |  |  |  |
 | ![repeat_on_range](../../../icons/actions/repeat_on_range.png) | repeat_on_range | Цикл в диапазоне | Присваивает текущее число в указанную переменную из заданного диапазона с определённым шагом. | repeat | variable: variable<br/>start: number<br/>end: number<br/>interval: number |  |  |  |
 | ![repeat_on_sphere](../../../icons/actions/repeat_on_sphere.png) | repeat_on_sphere | Проход по сфере | Последовательно выдаёт местоположение каждой точки на сфере с указанными параметрами. | repeat | variable: variable<br/>center: location<br/>radius: number<br/>points: number<br/>rotate_location: enum<br/>&nbsp;&nbsp;- NO_CHANGES<br/>&nbsp;&nbsp;- INWARDS<br/>&nbsp;&nbsp;- OUTWARDS |  |  |  |
 | ![repeat_while](../../../icons/actions/repeat_while.png) | repeat_while | Цикл с условием | Выполняет код до тех пор, пока выбранное условие является истиной. | repeat |  |  |  |  |
@@ -25,7 +25,7 @@
 - `repeat_multi_times` — variable: variable, amount: number
 - `repeat_on_circle` — variable: variable, center: location, radius: number, circle_points: number, perpendicular_to_plane: vector, start_angle: number, angle_unit: enum
 - `repeat_on_grid` — variable: variable, start: location, end: location
-- `repeat_on_path` — variable: variable, step: number, locations: location, rotation: enum
+- `repeat_on_path` — variable: variable, locations: location, step: number, rotation: enum
 - `repeat_on_range` — variable: variable, start: number, end: number, interval: number
 - `repeat_on_sphere` — variable: variable, center: location, radius: number, points: number, rotate_location: enum
 - `repeat_while` — (no arguments)

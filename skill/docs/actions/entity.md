@@ -54,7 +54,7 @@
 | ![entity_roll_armadillo](../../../icons/actions/entity_roll_armadillo.png) | entity_roll_armadillo | Установить Броненосцу состояние защиты | Устанавливает броненосцу состояние защиты (свернут ли броненосец). | entity/goals | roll: enum<br/>&nbsp;&nbsp;- ROLL_OUT<br/>&nbsp;&nbsp;- ROLL_UP | Броненосцами |  |  |
 | ![entity_set_absorption_health](../../../icons/actions/entity_set_absorption_health.png) | entity_set_absorption_health | Установить дополнительное здоровье | Устанавливает дополнительное здоровье существа. | entity/parameters | health: number |  |  |  |
 | ![entity_set_age_lock](../../../icons/actions/entity_set_age_lock.png) | entity_set_age_lock | Установить блокировку роста | Устанавливает блокировку роста существу. | entity/settings | age_lock: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE | Стареющими |  |  |
-| ![entity_set_ai](../../../icons/actions/entity_set_ai.png) | entity_set_ai | Установить интеллект сущности | Устанавливает интеллект сущности. | entity/settings | ai: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE |  |  |  |
+| ![entity_set_ai](../../../icons/actions/entity_set_ai.png) | entity_set_ai | Установить интеллект сущности | Устанавливает интеллект сущности. | entity/goals | ai: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE |  |  |  |
 | ![entity_set_allay_dancing](../../../icons/actions/entity_set_allay_dancing.png) | entity_set_allay_dancing | Сделать Тихоню танцующим | Заставляет Тихоню отображать анимацию танца. | entity/goals | dance: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE | Тихонями |  |  |
 | ![entity_set_angry](../../../icons/actions/entity_set_angry.png) | entity_set_angry | Установить режим гнева | Устанавливает существу режим гнева на определённую цель. | entity/settings | angry: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE<br/>target: text | Пчёлами<br/>Волками<br/>Зомбифицированными пиглинами<br/>Эндерменами<br/>Мобами | Для корректной работы сущности необходима цель. |  |
 | ![entity_set_animal_age](../../../icons/actions/entity_set_animal_age.png) | entity_set_animal_age | Установить возраст животному | Устанавливает возраст животному. | entity/parameters | age: number<br/>lock: enum<br/>&nbsp;&nbsp;- ENABLE<br/>&nbsp;&nbsp;- DISABLE<br/>&nbsp;&nbsp;- DONT_CHANGE |  |  |  |
@@ -187,6 +187,7 @@
 | ![entity_set_rotation](../../../icons/actions/entity_set_rotation.png) | entity_set_rotation | Установить поворот | Устанавливает поворот сущности. | entity/movement | yaw: number<br/>pitch: number |  |  |  |
 | ![entity_set_rotation_by_vector](../../../icons/actions/entity_set_rotation_by_vector.png) | entity_set_rotation_by_vector | Установить поворот по вектору | Устанавливает поворот сущности по вектору. | entity/movement | vector: vector |  |  |  |
 | ![entity_set_sheep_sheared](../../../icons/actions/entity_set_sheep_sheared.png) | entity_set_sheep_sheared | Установить шерсть овце | Устанавливает, будет ли шерсть на овце. | entity | sheared: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE |  |  | deprecated |
+| ![entity_set_should_burn_in_day](../../../icons/actions/entity_set_should_burn_in_day.png) | entity_set_should_burn_in_day | Установить горение сущности днём | Устанавливает сущности возможность гореть днём. | entity/settings | should_burn: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE |  |  |  |
 | ![entity_set_shulker_bullet_target](../../../icons/actions/entity_set_shulker_bullet_target.png) | entity_set_shulker_bullet_target | Установить цель снаряду Шалкера | Устанавливает цель атаки снаряду Шалкера. | entity/goals | target: text | Снарядами Шалкера |  |  |
 | ![entity_set_shulker_peek](../../../icons/actions/entity_set_shulker_peek.png) | entity_set_shulker_peek | Установить процент открытия шалкера | Устанавливает шалкеру процент, на который он открыт. | entity/appearance | rolling: number<br/>silent: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE | Шалкерами |  |  |
 | ![entity_set_silenced](../../../icons/actions/entity_set_silenced.png) | entity_set_silenced | Заглушить сущность | Убирает звуки сущности. | entity/settings | silenced: enum<br/>&nbsp;&nbsp;- TRUE<br/>&nbsp;&nbsp;- FALSE |  |  |  |
@@ -436,6 +437,7 @@
 - `entity_set_rotation` — yaw: number, pitch: number
 - `entity_set_rotation_by_vector` — vector: vector
 - `entity_set_sheep_sheared` — sheared: enum ⚠ deprecated
+- `entity_set_should_burn_in_day` — should_burn: enum
 - `entity_set_shulker_bullet_target` — target: text
 - `entity_set_shulker_peek` — rolling: number, silent: enum
 - `entity_set_silenced` — silenced: enum

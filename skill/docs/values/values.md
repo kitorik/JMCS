@@ -111,6 +111,7 @@
 | ![event_knockback_event_type](../../icons/game_values/event_knockback_event_type.png) | event_knockback_event_type | Тип отталкивания | Получает тип отталкивания в событии. | Событие | text | Событием "Игрок отталкивается"<br/>Событием "Сущность отталкивается" |  |  |
 | ![event_knockback_vector](../../icons/game_values/event_knockback_vector.png) | event_knockback_vector | Вектор отталкивания | Получает вектор отталкивания в событии. | Событие | vector | Событием "Игрок отталкивается"<br/>Событием "Сущность отталкивается" |  |  |
 | ![event_message](../../icons/game_values/event_message.png) | event_message | Сообщение события | Получает системное сообщение, отправленное в событии. | Событие | text |  |  |  |
+| ![event_new_block](../../icons/game_values/event_new_block.png) | event_new_block | Новый блок события | Получает ID нового блока события. | Событие | text | Событиями "Изменяет блок" |  |  |
 | ![event_new_equipments](../../icons/game_values/event_new_equipments.png) | event_new_equipments | Экипировка | Получает экипировку из события. | Событие | map<text, item> | Событием "Игрок меняет экипировку"<br/>Событием "Сущность меняет экипировку" |  |  |
 | ![event_new_fishing_hook_state](../../icons/game_values/event_new_fishing_hook_state.png) | event_new_fishing_hook_state | Новое состояние поплавка | Получает новое состояние поплавка. | Событие | text | Событием "Поплавок удочки изменяет состояние" |  |  |
 | ![event_new_location](../../icons/game_values/event_new_location.png) | event_new_location | Новое местоположение игрока | Получает новое местоположение игрока. | Событие | location |  |  |  |
@@ -184,6 +185,7 @@
 | ![projectile_owner_uuid](../../icons/game_values/projectile_owner_uuid.png) | projectile_owner_uuid | UUID владельца снаряда | Получает UUID владельца снаряда. | Информация | text | Любыми снарядами |  |  |
 | ![projectile_power](../../icons/game_values/projectile_power.png) | projectile_power | Вектор движения снаряда | Получает вектор движения снаряда. | Статистика | vector | Огненными шарами<br/>Зарядами дракона<br/>Головами Иссушителя |  |  |
 | ![protocol_version](../../icons/game_values/protocol_version.png) | protocol_version | Версия протокола клиента | Получает версию протокола клиента игрока. | Статистика | number |  |  |  |
+| ![recipe_id](../../icons/game_values/event_recipe_id.png) | recipe_id | ID рецепта крафта | Получает ID рецепта крафта в событии. | Событие | text | Событиями крафта<br/>Событиями переплавки<br/>Инвентарём кузнечного стола |  |  |
 | ![remaining_air](../../icons/game_values/remaining_air.png) | remaining_air | Оставшийся воздух | Получает оставшееся количество тиков воздуха цели. | Статистика | number |  |  |  |
 | ![response_headers](../../icons/game_values/event_response_headers.png) | response_headers | Заголовки ответа на веб-запрос | Получает заголовки ответа на отправленный веб-запрос. | Событие | map<text, any> | Событием "Ответ от сервера" |  |  |
 | ![saddle_item](../../icons/game_values/saddle_item.png) | saddle_item | Предмет на седле | Получает седло или ковёр, надетые на цель. | Предмет | item | Свиньями<br/>Лошадьми<br/>Ламами |  |  |
@@ -202,6 +204,7 @@
 | ![target_block_face](../../icons/game_values/target_block_face.png) | target_block_face | Сторона целевого блока | Получает направление стороны блока, на которую смотрит цель. | Местоположение | text |  |  |  |
 | ![target_block_location](../../icons/game_values/target_block_location.png) | target_block_location | Местоположение целевого блока | Получает местоположение блока, на который смотрит цель. | Местоположение | location |  |  |  |
 | ![target_fluid_location](../../icons/game_values/target_fluid_location.png) | target_fluid_location | Местоположение целевой жидкости | Получает местоположение жидкости, на которую смотрит цель. | Местоположение | location |  |  |  |
+| ![target_reason](../../icons/game_values/event_target_reason.png) | target_reason | Причина выбора цели | Возвращает причину, по которой сущность выбрала свою текущую цель. | Событие | text | Событием "Сущность выбирает цель" |  |  |
 | ![targeted_entity](../../icons/game_values/targeted_entity.png) | targeted_entity | Цель для атаки | Получает текущую цель для атаки мобом. | Информация | text |  |  |  |
 | ![timestamp](../../icons/game_values/timestamp.png) | timestamp | UNIX-время | Получает текущее время как одно число в миллисекундах. | Мир | number |  |  |  |
 | ![unsaturated_regen_rate](../../icons/game_values/unsaturated_regen_rate.png) | unsaturated_regen_rate | Скорость регенерации без насыщения | Получает скорость регенерации игрока без насыщения. | Статистика | number |  |  |  |
@@ -338,6 +341,7 @@
 - `event_knockback_event_type` — (no arguments)
 - `event_knockback_vector` — (no arguments)
 - `event_message` — (no arguments)
+- `event_new_block` — (no arguments)
 - `event_new_equipments` — (no arguments)
 - `event_new_fishing_hook_state` — (no arguments)
 - `event_new_location` — (no arguments) [4/10]
@@ -411,6 +415,7 @@
 - `projectile_owner_uuid` — (no arguments)
 - `projectile_power` — (no arguments)
 - `protocol_version` — (no arguments)
+- `recipe_id` — (no arguments)
 - `remaining_air` — (no arguments)
 - `response_headers` — (no arguments)
 - `saddle_item` — (no arguments)
@@ -429,6 +434,7 @@
 - `target_block_face` — (no arguments)
 - `target_block_location` — (no arguments)
 - `target_fluid_location` — (no arguments)
+- `target_reason` — (no arguments)
 - `targeted_entity` — (no arguments)
 - `timestamp` — (no arguments)
 - `unsaturated_regen_rate` — (no arguments)
