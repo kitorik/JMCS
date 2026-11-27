@@ -1,6 +1,6 @@
 # JAI cheatsheet — ready patterns & handler notes
 
-> **Use as NOTES, not as a style template.** Take the pattern idea and re-derive your own JSON for the task: adapt structure, wording, argument values and design to what the player asked. Never copy a whole snippet as-is; every argument must fit THIS task.
+> Take the pattern idea and re-derive your own JSON for the task: adapt structure, wording, argument values and design to what the player asked; every argument must fit THIS task.
 
 ## Ready patterns
 
@@ -25,7 +25,7 @@ Trigger: `player_join`. A save-scope marker per player (e.g. `%player%_joined`) 
 
 ## Handler notes (community examples, merged)
 
-> Distilled from two real community handlers (a gifts/NPC module on `world_start` and an NPC control-panel module on `player_right_click_entity`). Syntax facts and techniques ONLY — not style, not naming, not structure to copy.
+> Distilled from two real community handlers (a gifts/NPC module on `world_start` and an NPC control-panel module on `player_right_click_entity`). Syntax facts and techniques.
 
 ### Value literals & parsing
 - `text` values carry a `parsing` mode: `"plain"` (literal) or `"legacy"` (color codes, hex like `&#A6FF6E`, placeholders). Use legacy for player-facing colored text.
@@ -48,8 +48,7 @@ Trigger: `player_join`. A save-scope marker per player (e.g. `%player%_joined`) 
 - **Polling loop:** `repeat_forever` + `control_wait` (20 ticks) inside, throttled by a size check — never spin without a wait.
 - **Batch start on `world_start`:** `entity_remove` on all entities + `set_variable_multiple` reset + `call_function` / `start_process`. `start_process` args: `process_name`, `local_variables_mode` (e.g. `DONT_COPY`), `target_mode` (e.g. `NO_TARGET`).
 
-> Caveat: one handler used `%math(1-breaker_on)` with a bare name inside — do
- NOT adopt that; keep the rule: wrap variables in the %var family inside %math().
+> Note: wrap variables in the %var family inside %math().
 
 ## Structure skeletons
 
@@ -85,7 +84,7 @@ Trigger: `player_join`. A save-scope marker per player (e.g. `%player%_joined`) 
 
 ### Real JSON handler (verified shape)
 
-> One event handler with a condition. Arg names and value shapes are real — adapt content, do not copy the task.
+> One event handler with a condition. Arg names and value shapes are real — adapt the content to your task.
 
 ```json
 {

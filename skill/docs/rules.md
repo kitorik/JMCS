@@ -15,7 +15,9 @@ Mandatory rules for building JustMc Creative+ JSON modules. Server version: **26
 ## Display entities
 - Displays spawn **from the bottom-right-back corner of the coordinate** (block displays have a built-in offset from the spawn point). Spawning at the cell corner aligns the render to the block.
 
-## Line limitsA **line** is one linear code flow (line-scope), without function branches.
+## Line limits
+
+A **line** is one linear code flow (line-scope), without function branches.
 
 | Limit | Value |
 |---|---|
@@ -79,9 +81,12 @@ Mandatory rules for building JustMc Creative+ JSON modules. Server version: **26
 ## Default build location
 - **If the player did not give coordinates where to build the map, build by default at the world spawn** — the world center where players spawn. Take the `spawn_location` game value (`selection: "null"`) and **lower the Y coordinate by 1** (`%math(%var(y)-1)` or `set_variable_change` with −1), so the build sits on the ground under the spawn point instead of floating at the spawn block.
 - Use exact coordinates only when the player explicitly gave them.
-## Function parameters (the `"Parameter"` value)A function handler declares its parameters in `values`: a single entry named `parameters` of type `array`, where each element is a value of type `parameter`:
+## Function parameters (the `"Parameter"` value)
 
-```json"values": [
+A function handler declares its parameters in `values`: a single entry named `parameters` of type `array`, where each element is a value of type `parameter`:
+
+```json
+"values": [
   {
     "name": "parameters",
     "value": {
@@ -101,7 +106,8 @@ Mandatory rules for building JustMc Creative+ JSON modules. Server version: **26
         }
       ]
     }
-  }]
+  }
+]
 ```
 - `type_key`: `singular` (one value) or `plural` (list of values).
 - `value_type`: the value type of the parameter (`location`, `number`, `text`, `item`, `vector`, ...). Strictly enforced — wrong type breaks the action.
@@ -168,7 +174,9 @@ A variable has NO value until an action in THIS module creates it (`set_variable
 - Check existence with `if_variable_exists` when the variable may genuinely be missing (e.g. first run).
 - Function parameters are the exception: they are created by the call — read them as `%var_line(name)`, name must match a declared parameter.
 
-## Pre-answer self-checkRun this reasoning pass over the FINAL module before giving it — think each item through against THIS task, do not recite it:
+## Pre-answer self-check
+
+Run this reasoning pass over the FINAL module before giving it — think each item through against THIS task, do not recite it:
 
 1. **IDs:** every action/event/value ID exists in the reference tables (not invented, not deprecated).
 2. **Slots:** every argument slot is filled per the action row; item/block/sound slots hold NBT item values, not text. For actions that store nothing (player feedback) — reasoned per slot, `{}` only where genuinely not needed.
@@ -181,18 +189,3 @@ A variable has NO value until an action in THIS module creates it (`set_variable
 9. **else:** sits right after its condition; no trailing `else` after independent `if`s.
 10. **Selections:** rebuilt inside every function (selections are not inherited).
 11. **JSON validity:** brackets balanced, commas between objects, quotes escaped inside strings — invalid JSON means the import fails or the module breaks silently.
-12. **Anti-patterns scan:** no text in item slots, no bare variables in %math(), no glued text around %math(), no zero-init, no trailing-else fallback, no static values in variables.
-
-
-## Common anti-patterns (re-check on failure)
-- Text placed in an item/block/sound slot — these all take NBT item values.
-- A bare variable name inside %math() or in a text slot — must be %var(name) / %var_local / %var_line / %var_save.
-- Text glued around %math() in a numeric slot — the whole slot must be exactly one %math(...).
-- A variable read that no action in the module creates (silently = 0/empty).
-- Zero-initializing variables ("declare" + set 0) — variables are already 0/empty.
-- A big loop without control_wait (>= 1 tick, integer TICKS) in the body.
-- A trailing else used as a "fallback" after several independent if-s — else binds to the LAST condition only.
-- call_function replaced with start_process.
-- select_add_* without a previously created selection; entity-variants used for players (or vice versa).
-- Static build-time values stored in a variable instead of a literal in the slot.
-- A numeric slot using a % placeholder without %math() wrapping.

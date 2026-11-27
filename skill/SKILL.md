@@ -19,14 +19,7 @@ Skill for coding JustMc **Creative+** modules: actions, events, game values, var
 
 > 🔍 **Version check (before the first JustMc answer):** read `VERSION.md` and compare with `version:` above. ANY mismatch (higher or lower) = the skill copy is outdated or corrupted: tell the user FIRST and ask them to reinstall JAI.zip (github.com/kitorik/JMCS) before answering. If equal — proceed silently.
 
-> 🎛️ **Mode check (once, before substantive JAI work):** ask «Сжатый» or «Полный». Сжатый = chat shorthand (docs/syntax.md) and compact answers; Полный = full official syntax and detailed answers. Default: **Полный**. The final JSON module is always full official syntax in both modes.
-
-## 🧠 How to think (not memorize)
-- The skill gives **verified IDs, argument types and server rules**; the goal, logic, values and edge cases are yours to reason.
-- **Never copy a snippet or pattern blindly** — adapt every argument to THIS task.
-- If the tables don't cover the case, say so and reason from the rules — do NOT invent IDs or arguments.
-
-## ⚡ Hard rules (always apply — details in docs/rules.md)
+ (always apply — details in docs/rules.md)
 1. **Fill EVERY argument slot** from the reference table; empty `{}` only after re-checking the row (or deliberately, for non-storing output actions: messages, sounds, particles, titles — reason per slot). Empty item/block/sound slots are almost always a bug.
 2. **Items are ALWAYS NBT strings** — docs/value-types/item.md.
 3. **Read variables ONLY via the %var family** (`%var`, `%var_local`, `%var_line`, `%var_save`) — also inside %math(). Bare names are plain text.
@@ -41,11 +34,11 @@ Skill for coding JustMc **Creative+** modules: actions, events, game values, var
 
 ## 📚 Docs map — minimal path (read ONLY what the task needs)
 
-| Task | Read | Skip |
-|------|------|------|
-| Any coding task | docs/lookup.md -> the ONE relevant docs/actions/*.md | the other action files |
-| Module structure, limits, patterns | docs/rules.md | everything else unless referenced |
-| Value formats (item NBT, location, map/array) | docs/value-types/<type>.md | the other 12 type files |
+| Task | Read |
+|------|------|
+| Any coding task | docs/lookup.md -> the ONE relevant docs/actions/*.md |
+| Module structure, limits, patterns | docs/rules.md |
+| Value formats (item NBT, location, map/array) | docs/value-types/<type>.md |
 | Placeholders, %math() | docs/syntax.md | — |
 | Events | docs/events/events.md | — |
 | Game values | docs/values/values.md | — |
@@ -71,13 +64,12 @@ Skill for coding JustMc **Creative+** modules: actions, events, game values, var
 - docs/value-types/*.md — 13 type files. Common literals: item = NBT string; location = `{ "type": "location", "x": 0, "y": 64, "z": 0, "yaw": 0, "pitch": 0 }`; vector = `{ "type": "vector", "x": 0, "y": 1, "z": 0 }` — most tasks never need the file
 - docs/examples/cheatsheet.md — ready patterns + real JSON handler + verified community handler notes
 
-**Never read the whole docs tree "for context"** — the routing table above is the required path.
 
 ## 🔍 Reading discipline (cost control)
 - Minimal path only; lookup.md first (frequency marks N/10: prefer high marks, double-check <= 3), then confirm exact arguments in the reference table.
-- Cheatsheet: take the IDEA, re-derive your own JSON — never copy style wholesale.
-- Do not quote the reference in answers — final JSON + short notes only.
-- Ask clarifications in ONE batch, not one per turn.
+- Cheatsheet: take the IDEA, re-derive your own JSON for THIS task.
+- Answers: final JSON + short notes.
+- Clarifications: one batch per turn.
 
 ## 💡 Best practices
 1. Prefer %math() over %var() for computations; split complex expressions into simple parts.
@@ -85,7 +77,7 @@ Skill for coding JustMc **Creative+** modules: actions, events, game values, var
 3. Default build location: world spawn (spawn_location) with Y lowered by 1 when no coordinates given — docs/rules.md.
 4. Delays: control_wait min 1 tick, integers in TICKS; under heavy load use the cpu_usage wait pattern.
 5. **Blueprint before JSON:** for non-trivial modules draft a 3-6 line plan (event, actions, variables, loops), then the final JSON in the SAME answer.
-6. Pre-answer self-check (docs/rules.md) + valid JSON (brackets, commas, escaped quotes) — as reasoning, not recitation.
+6. Run the pre-answer self-check (docs/rules.md) and validate the JSON (brackets, commas, escaped quotes) as reasoning.
 7. Answer in the player's language; IDs, code and value literals stay in English.
 
 ## 🔗 Resources
@@ -93,7 +85,7 @@ Skill for coding JustMc **Creative+** modules: actions, events, game values, var
 - [jmc-commandtree](https://github.com/White-145/jmc-commandtree) — command tree example
 
 ## 📝 Versions
-- **2.1.1** — Год: SKILL.md slimmed (dead example names in frontmatter, duplicated start-method/limits/best-practice text removed, stale table-format note removed); versions list shortened to recent entries (full history: VERSION.md / CHANGELOG.md).
+- **2.1.1** — Год: SKILL.md slimmed (dead example names, duplicates, stale notes); modes (Сжатый/Полный) removed — one full-syntax style; negative "how-not-to" guidance replaced with positive rules; versions history shortened (full history: VERSION.md / CHANGELOG.md).
 - **2.1.0** — Десятилетие: static data stays inline; slot-filling exception for non-storing player actions; version check in BOTH directions; Quick ref for all 8 action files + events + values (frequency marks); common value literals in the docs map; answer discipline; structure skeletons in cheatsheet; flat JAI.md build; handler notes from community examples; anti-bias start-method rule; FULL RESYNC of all 10 reference docs with the updated official assets (2026-11 format), rebuilt quick refs, real JSON handler example, JSON-validity self-check item, anti-patterns section.
 - **2.0.1** — Год: conversation-start Discord greeting; router SKILL.md + docs/syntax.md; pre-answer self-check; lookup.md.
 - **2.0.0** — Поколение: fill-every-slot hard rule; new docs/lookup.md; if_variable_not_equals restored.
