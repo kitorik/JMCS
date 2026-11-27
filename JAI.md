@@ -25,14 +25,7 @@ Skill for coding JustMc **Creative+** modules: actions, events, game values, var
 
 > 🔍 **Version check (before the first JustMc answer):** read `VERSION.md` and compare with `version:` above. ANY mismatch (higher or lower) = the skill copy is outdated or corrupted: tell the user FIRST and ask them to reinstall JAI.zip (github.com/kitorik/JMCS) before answering. If equal — proceed silently.
 
-> 🎛️ **Mode check (once, before substantive JAI work):** ask «Сжатый» or «Полный». Сжатый = chat shorthand (docs/syntax.md) and compact answers; Полный = full official syntax and detailed answers. Default: **Полный**. The final JSON module is always full official syntax in both modes.
-
-## 🧠 How to think (not memorize)
-- The skill gives **verified IDs, argument types and server rules**; the goal, logic, values and edge cases are yours to reason.
-- **Never copy a snippet or pattern blindly** — adapt every argument to THIS task.
-- If the tables don't cover the case, say so and reason from the rules — do NOT invent IDs or arguments.
-
-## ⚡ Hard rules (always apply — details in docs/rules.md)
+ (always apply — details in docs/rules.md)
 1. **Fill EVERY argument slot** from the reference table; empty `{}` only after re-checking the row (or deliberately, for non-storing output actions: messages, sounds, particles, titles — reason per slot). Empty item/block/sound slots are almost always a bug.
 2. **Items are ALWAYS NBT strings** — docs/value-types/item.md.
 3. **Read variables ONLY via the %var family** (`%var`, `%var_local`, `%var_line`, `%var_save`) — also inside %math(). Bare names are plain text.
@@ -47,11 +40,11 @@ Skill for coding JustMc **Creative+** modules: actions, events, game values, var
 
 ## 📚 Docs map — minimal path (read ONLY what the task needs)
 
-| Task | Read | Skip |
-|------|------|------|
-| Any coding task | docs/lookup.md -> the ONE relevant docs/actions/*.md | the other action files |
-| Module structure, limits, patterns | docs/rules.md | everything else unless referenced |
-| Value formats (item NBT, location, map/array) | docs/value-types/<type>.md | the other 12 type files |
+| Task | Read |
+|------|------|
+| Any coding task | docs/lookup.md -> the ONE relevant docs/actions/*.md |
+| Module structure, limits, patterns | docs/rules.md |
+| Value formats (item NBT, location, map/array) | docs/value-types/<type>.md |
 | Placeholders, %math() | docs/syntax.md | — |
 | Events | docs/events/events.md | — |
 | Game values | docs/values/values.md | — |
@@ -77,13 +70,12 @@ Skill for coding JustMc **Creative+** modules: actions, events, game values, var
 - docs/value-types/*.md — 13 type files. Common literals: item = NBT string; location = `{ "type": "location", "x": 0, "y": 64, "z": 0, "yaw": 0, "pitch": 0 }`; vector = `{ "type": "vector", "x": 0, "y": 1, "z": 0 }` — most tasks never need the file
 - docs/examples/cheatsheet.md — ready patterns + real JSON handler + verified community handler notes
 
-**Never read the whole docs tree "for context"** — the routing table above is the required path.
 
 ## 🔍 Reading discipline (cost control)
 - Minimal path only; lookup.md first (frequency marks N/10: prefer high marks, double-check <= 3), then confirm exact arguments in the reference table.
-- Cheatsheet: take the IDEA, re-derive your own JSON — never copy style wholesale.
-- Do not quote the reference in answers — final JSON + short notes only.
-- Ask clarifications in ONE batch, not one per turn.
+- Cheatsheet: take the IDEA, re-derive your own JSON for THIS task.
+- Answers: final JSON + short notes.
+- Clarifications: one batch per turn.
 
 ## 💡 Best practices
 1. Prefer %math() over %var() for computations; split complex expressions into simple parts.
@@ -91,7 +83,7 @@ Skill for coding JustMc **Creative+** modules: actions, events, game values, var
 3. Default build location: world spawn (spawn_location) with Y lowered by 1 when no coordinates given — docs/rules.md.
 4. Delays: control_wait min 1 tick, integers in TICKS; under heavy load use the cpu_usage wait pattern.
 5. **Blueprint before JSON:** for non-trivial modules draft a 3-6 line plan (event, actions, variables, loops), then the final JSON in the SAME answer.
-6. Pre-answer self-check (docs/rules.md) + valid JSON (brackets, commas, escaped quotes) — as reasoning, not recitation.
+6. Run the pre-answer self-check (docs/rules.md) and validate the JSON (brackets, commas, escaped quotes) as reasoning.
 7. Answer in the player's language; IDs, code and value literals stay in English.
 
 ## 🔗 Resources
@@ -99,7 +91,7 @@ Skill for coding JustMc **Creative+** modules: actions, events, game values, var
 - [jmc-commandtree](https://github.com/White-145/jmc-commandtree) — command tree example
 
 ## 📝 Versions
-- **2.1.1** — Год: SKILL.md slimmed (dead example names in frontmatter, duplicated start-method/limits/best-practice text removed, stale table-format note removed); versions list shortened to recent entries (full history: VERSION.md / CHANGELOG.md).
+- **2.1.1** — Год: SKILL.md slimmed (dead example names, duplicates, stale notes); modes (Сжатый/Полный) removed — one full-syntax style; negative "how-not-to" guidance replaced with positive rules; versions history shortened (full history: VERSION.md / CHANGELOG.md).
 - **2.1.0** — Десятилетие: static data stays inline; slot-filling exception for non-storing player actions; version check in BOTH directions; Quick ref for all 8 action files + events + values (frequency marks); common value literals in the docs map; answer discipline; structure skeletons in cheatsheet; flat JAI.md build; handler notes from community examples; anti-bias start-method rule; FULL RESYNC of all 10 reference docs with the updated official assets (2026-11 format), rebuilt quick refs, real JSON handler example, JSON-validity self-check item, anti-patterns section.
 - **2.0.1** — Год: conversation-start Discord greeting; router SKILL.md + docs/syntax.md; pre-answer self-check; lookup.md.
 - **2.0.0** — Поколение: fill-every-slot hard rule; new docs/lookup.md; if_variable_not_equals restored.
@@ -126,7 +118,7 @@ Before answering a user question about JustMc:
 4. If the versions match — proceed as usual.
 
 ## 2.1.1
-Год: SKILL.md slimmed — removed dead example names from frontmatter description, duplicated start-method bullet (dup of hard rule 8), duplicated server-limits paragraph (lives in rules.md), stale reference-table-format note (pre-resync format), redundant best-practice items; versions history shortened in SKILL.md (full history stays here and in CHANGELOG.md).
+Год: SKILL.md slimmed — removed dead example names, duplicated bullets, stale notes, redundant best-practice items; removed the mode system (Сжатый/Полный) — one full-syntax answer style; removed negative "how-not-to" guidance in favor of positive rules (anti-memorization section, anti-patterns section and self-check item 12, Skip column, negative cheatsheet warnings); versions history shortened in SKILL.md (full history stays here and in CHANGELOG.md).
 
 ## 2.1.0
 static data stays inline (no variables for build-time items/locations/texts); slot-filling exception for non-storing player actions; version check — ANY mismatch reported and update requested; Quick ref for all 8 action files (args, fixed parser bug), events and values (with frequency marks); common value literals in the docs map; answer discipline (no quoting reference, batch clarifications, blueprint before JSON); structure skeletons in cheatsheet; flat JAI.md build for models that cannot read zip; handler notes from community examples; anti-bias rule — never default the start method to item interaction; removed unidok link, dead example refs, obsolete intents.md. FULL RESYNC of all 10 reference docs with the updated official assets (2026-11 format), rebuilt quick refs, real JSON handler example, JSON-validity self-check item, anti-patterns section.
@@ -196,7 +188,9 @@ Mandatory rules for building JustMc Creative+ JSON modules. Server version: **26
 ## Display entities
 - Displays spawn **from the bottom-right-back corner of the coordinate** (block displays have a built-in offset from the spawn point). Spawning at the cell corner aligns the render to the block.
 
-## Line limitsA **line** is one linear code flow (line-scope), without function branches.
+## Line limits
+
+A **line** is one linear code flow (line-scope), without function branches.
 
 | Limit | Value |
 |---|---|
@@ -260,9 +254,12 @@ Mandatory rules for building JustMc Creative+ JSON modules. Server version: **26
 ## Default build location
 - **If the player did not give coordinates where to build the map, build by default at the world spawn** — the world center where players spawn. Take the `spawn_location` game value (`selection: "null"`) and **lower the Y coordinate by 1** (`%math(%var(y)-1)` or `set_variable_change` with −1), so the build sits on the ground under the spawn point instead of floating at the spawn block.
 - Use exact coordinates only when the player explicitly gave them.
-## Function parameters (the `"Parameter"` value)A function handler declares its parameters in `values`: a single entry named `parameters` of type `array`, where each element is a value of type `parameter`:
+## Function parameters (the `"Parameter"` value)
 
-```json"values": [
+A function handler declares its parameters in `values`: a single entry named `parameters` of type `array`, where each element is a value of type `parameter`:
+
+```json
+"values": [
   {
     "name": "parameters",
     "value": {
@@ -282,7 +279,8 @@ Mandatory rules for building JustMc Creative+ JSON modules. Server version: **26
         }
       ]
     }
-  }]
+  }
+]
 ```
 - `type_key`: `singular` (one value) or `plural` (list of values).
 - `value_type`: the value type of the parameter (`location`, `number`, `text`, `item`, `vector`, ...). Strictly enforced — wrong type breaks the action.
@@ -349,7 +347,9 @@ A variable has NO value until an action in THIS module creates it (`set_variable
 - Check existence with `if_variable_exists` when the variable may genuinely be missing (e.g. first run).
 - Function parameters are the exception: they are created by the call — read them as `%var_line(name)`, name must match a declared parameter.
 
-## Pre-answer self-checkRun this reasoning pass over the FINAL module before giving it — think each item through against THIS task, do not recite it:
+## Pre-answer self-check
+
+Run this reasoning pass over the FINAL module before giving it — think each item through against THIS task, do not recite it:
 
 1. **IDs:** every action/event/value ID exists in the reference tables (not invented, not deprecated).
 2. **Slots:** every argument slot is filled per the action row; item/block/sound slots hold NBT item values, not text. For actions that store nothing (player feedback) — reasoned per slot, `{}` only where genuinely not needed.
@@ -362,21 +362,6 @@ A variable has NO value until an action in THIS module creates it (`set_variable
 9. **else:** sits right after its condition; no trailing `else` after independent `if`s.
 10. **Selections:** rebuilt inside every function (selections are not inherited).
 11. **JSON validity:** brackets balanced, commas between objects, quotes escaped inside strings — invalid JSON means the import fails or the module breaks silently.
-12. **Anti-patterns scan:** no text in item slots, no bare variables in %math(), no glued text around %math(), no zero-init, no trailing-else fallback, no static values in variables.
-
-
-## Common anti-patterns (re-check on failure)
-- Text placed in an item/block/sound slot — these all take NBT item values.
-- A bare variable name inside %math() or in a text slot — must be %var(name) / %var_local / %var_line / %var_save.
-- Text glued around %math() in a numeric slot — the whole slot must be exactly one %math(...).
-- A variable read that no action in the module creates (silently = 0/empty).
-- Zero-initializing variables ("declare" + set 0) — variables are already 0/empty.
-- A big loop without control_wait (>= 1 tick, integer TICKS) in the body.
-- A trailing else used as a "fallback" after several independent if-s — else binds to the LAST condition only.
-- call_function replaced with start_process.
-- select_add_* without a previously created selection; entity-variants used for players (or vice versa).
-- Static build-time values stored in a variable instead of a literal in the slot.
-- A numeric slot using a % placeholder without %math() wrapping.
 
 
 <!-- ===== FILE: skill/docs/lookup.md ===== -->
@@ -4073,7 +4058,7 @@ A vector (x, y, z) — direction, velocity, scale. Like location, but without ya
 <!-- ===== FILE: skill/docs/examples/cheatsheet.md ===== -->
 # JAI cheatsheet — ready patterns & handler notes
 
-> **Use as NOTES, not as a style template.** Take the pattern idea and re-derive your own JSON for the task: adapt structure, wording, argument values and design to what the player asked. Never copy a whole snippet as-is; every argument must fit THIS task.
+> Take the pattern idea and re-derive your own JSON for the task: adapt structure, wording, argument values and design to what the player asked; every argument must fit THIS task.
 
 ## Ready patterns
 
@@ -4098,7 +4083,7 @@ Trigger: `player_join`. A save-scope marker per player (e.g. `%player%_joined`) 
 
 ## Handler notes (community examples, merged)
 
-> Distilled from two real community handlers (a gifts/NPC module on `world_start` and an NPC control-panel module on `player_right_click_entity`). Syntax facts and techniques ONLY — not style, not naming, not structure to copy.
+> Distilled from two real community handlers (a gifts/NPC module on `world_start` and an NPC control-panel module on `player_right_click_entity`). Syntax facts and techniques.
 
 ### Value literals & parsing
 - `text` values carry a `parsing` mode: `"plain"` (literal) or `"legacy"` (color codes, hex like `&#A6FF6E`, placeholders). Use legacy for player-facing colored text.
@@ -4121,8 +4106,7 @@ Trigger: `player_join`. A save-scope marker per player (e.g. `%player%_joined`) 
 - **Polling loop:** `repeat_forever` + `control_wait` (20 ticks) inside, throttled by a size check — never spin without a wait.
 - **Batch start on `world_start`:** `entity_remove` on all entities + `set_variable_multiple` reset + `call_function` / `start_process`. `start_process` args: `process_name`, `local_variables_mode` (e.g. `DONT_COPY`), `target_mode` (e.g. `NO_TARGET`).
 
-> Caveat: one handler used `%math(1-breaker_on)` with a bare name inside — do
- NOT adopt that; keep the rule: wrap variables in the %var family inside %math().
+> Note: wrap variables in the %var family inside %math().
 
 ## Structure skeletons
 
@@ -4158,7 +4142,7 @@ Trigger: `player_join`. A save-scope marker per player (e.g. `%player%_joined`) 
 
 ### Real JSON handler (verified shape)
 
-> One event handler with a condition. Arg names and value shapes are real — adapt content, do not copy the task.
+> One event handler with a condition. Arg names and value shapes are real — adapt the content to your task.
 
 ```json
 {
